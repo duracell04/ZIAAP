@@ -47,7 +47,7 @@ The MVP is accepted when:
 7. mismatched versions cannot form agreement;
 8. 99.2% uptime produces CHF 1,500 from the accepted basis-point rule;
 9. disputed inputs block that calculation;
-10. the residual packet contains only the human-owned causation issue;
+10. the residual packet contains only the human-owned gross-negligence limitation question;
 11. cached mode completes the full demo offline; and
 12. the flow is clear within three minutes.
 
