@@ -16,9 +16,9 @@ The visible demo flow is:
 
 **Humans intervene at consent and legal-authority points, not at every processing step.**
 
-The seven numbered documents are the authoritative specification. The
-[competitive strategy appendix](docs/appendices/competitive-strategy.md) is
-supporting context and cannot expand the hackathon scope.
+The seven numbered documents are the authoritative specification. Supporting
+appendices provide strategy and design ideas but cannot expand the hackathon
+scope.
 
 ## Repository map
 
@@ -38,3 +38,8 @@ supporting context and cannot expand the hackathon scope.
 5. [HCI and Information Architecture](docs/05-hci-information-architecture.md)
 6. [Technical Requirements](docs/06-technical-requirements.md)
 7. [Institutional Brand Book and Legal Interface Design System](docs/07-brand-book.md)
+
+## Supporting appendices
+
+- [Competitive Strategy](docs/appendices/competitive-strategy.md)
+- [Council of LLMs Concept](docs/appendices/council-of-llms-concept.md)
