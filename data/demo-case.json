@@ -1,1 +1,151 @@
-{}
+{
+  "matter": { "id": "ZIAAP-I0-001", "title": "Helvetia Cloud × Northstar Retail SaaS Agreement", "stage": "I0_CONTRACT_ALIGNMENT" },
+  "parties": [
+    {
+      "id": "supplier", "name": "Helvetia Cloud AG", "jurisdiction": "Switzerland", "role": "SaaS supplier", "confirmed": false, "materialStatus": "party_assertion",
+      "expectations": {
+        "uptime": "99.5% monthly uptime measured by supplier telemetry; planned maintenance excluded; credits are the exclusive SLA remedy.",
+        "liability": "Consequential loss excluded; aggregate liability capped at CHF 120,000, including outage-related claims.",
+        "legal_architecture": "Swiss substantive law, Zurich seat, Swiss Rules, one arbitrator, proceedings in English."
+      }
+    },
+    {
+      "id": "customer", "name": "Northstar Retail Ltd", "jurisdiction": "United Kingdom", "role": "Enterprise customer", "confirmed": false, "materialStatus": "party_assertion",
+      "expectations": {
+        "uptime": "99.5% measured from customer-facing availability; maintenance counts unless notified 72 hours ahead; credits accumulate for each complete 0.1-point shortfall.",
+        "liability": "The limitation should not protect intentional or grossly negligent conduct; the legal effect requires targeted review.",
+        "legal_architecture": "Initially expected English law and London; requires an explicit choice rather than a hybrid legal configuration."
+      }
+    }
+  ],
+  "clauses": [
+    {
+      "id": "clause-sla-4.2", "topic": "uptime", "title": "Availability, evidence, and service credits", "version": 1, "materialStatus": "source",
+      "sourcePassage": "Supplier will provide 99.5% monthly uptime, excluding scheduled maintenance. Service credits apply as set out in the Order Form.",
+      "proposedLanguage": "If actual monthly uptime falls below 99.5%, Customer receives 5% of the monthly fee for each complete 0.1 percentage-point shortfall, capped at 100% of the monthly fee.",
+      "provenance": "Draft SaaS Agreement, clause 4.2"
+    },
+    {
+      "id": "clause-liability-11", "topic": "liability", "title": "Consequential loss and liability cap", "version": 1, "materialStatus": "source",
+      "sourcePassage": "Neither party is liable for indirect or consequential loss. Supplier's aggregate liability is capped at CHF 120,000.",
+      "proposedLanguage": "Indirect and consequential loss is excluded and aggregate liability is capped at CHF 120,000, subject to liabilities that cannot validly be excluded or limited. Targeted professional review is required before signature.",
+      "provenance": "Draft SaaS Agreement, clause 11"
+    },
+    {
+      "id": "clause-disputes-15", "topic": "legal_architecture", "title": "Governing law and arbitration", "version": 1, "materialStatus": "source",
+      "sourcePassage": "This Agreement is governed by Swiss law. Disputes shall be finally resolved by arbitration in Zurich.",
+      "proposedLanguage": "Swiss substantive law; Swiss Rules; one arbitrator; Zurich seat; English language; mandatory laws applying irrespective of party choice are reserved.",
+      "provenance": "Draft SaaS Agreement, clause 15"
+    }
+  ],
+  "analysis": {
+    "findings": [
+      {
+        "id": "finding-uptime", "topic": "uptime", "dimension": "semantic", "severity": "high", "authorityClass": "advisory", "materialStatus": "provisional_ai_analysis",
+        "title": "The parties measure and price the same uptime promise differently",
+        "supplierPosition": "Supplier telemetry controls and the draft does not define a stepped credit formula.",
+        "customerPosition": "Customer-facing evidence should control and each complete 0.1-point shortfall should produce a 5% credit.",
+        "consequence": "At 99.2% uptime, the remedy cannot be reproduced unless measurement, exclusions, step size, rate, fee, and cap are explicit.",
+        "uncertainty": "The draft does not define the evidence hierarchy or complete-step calculation.",
+        "sourceIds": ["source-draft-sla"],
+        "options": [
+          {
+            "id": "uptime-executable", "label": "Executable stepped credit", "tradeoff": "Creates a reproducible remedy from shared evidence.",
+            "language": "Monthly uptime is determined by the jointly visible external monitor. Scheduled maintenance is excluded only with 72 hours' notice and is capped at four hours monthly. If uptime falls below 99.5%, Customer receives 5% of the monthly fee for each complete 0.1 percentage-point shortfall, capped at 100% of the monthly fee.",
+            "serviceCreditRule": { "thresholdBps": 9950, "shortfallStepBps": 10, "creditPercentPerStep": 5, "capPercent": 100, "monthlyFeeChf": 10000 },
+            "evidenceHierarchy": { "primarySource": "Joint external availability monitor", "secondarySource": "Supplier telemetry", "maintenanceNoticeHours": 72, "maintenanceMonthlyCapHours": 4 },
+            "liabilityCapChf": null, "legalArchitecture": null, "unresolvedMatters": []
+          },
+          {
+            "id": "uptime-fixed-credit", "label": "Fixed 10% shortfall credit", "tradeoff": "Simpler remedy but less sensitive to outage severity.",
+            "language": "Monthly uptime is determined by the jointly visible external monitor. If uptime falls below 99.5%, Customer receives a fixed credit equal to 10% of the monthly fee, capped at that amount.",
+            "serviceCreditRule": { "thresholdBps": 9950, "shortfallStepBps": 10, "creditPercentPerStep": 10, "capPercent": 10, "monthlyFeeChf": 10000 },
+            "evidenceHierarchy": { "primarySource": "Joint external availability monitor", "secondarySource": "Supplier telemetry", "maintenanceNoticeHours": 72, "maintenanceMonthlyCapHours": 4 },
+            "liabilityCapChf": null, "legalArchitecture": null, "unresolvedMatters": []
+          }
+        ]
+      },
+      {
+        "id": "finding-liability", "topic": "liability", "dimension": "legal", "severity": "high", "authorityClass": "advisory", "materialStatus": "provisional_ai_analysis",
+        "title": "The liability cap creates a targeted mandatory-law review question",
+        "supplierPosition": "The CHF 120,000 cap should apply to all outage-related claims.",
+        "customerPosition": "The cap should not protect intentional or grossly negligent conduct.",
+        "consequence": "The selected legal architecture may affect the validity and interpretation of advance limitations; the system cannot determine enforceability.",
+        "uncertainty": "Targeted professional review is required before signature.",
+        "sourceIds": ["source-co-100"],
+        "options": [
+          {
+            "id": "liability-review", "label": "CHF 120,000 cap with mandatory-law reservation", "tradeoff": "Preserves commercial certainty without asserting enforceability.",
+            "language": "Indirect and consequential loss is excluded and aggregate liability is capped at CHF 120,000, subject to liabilities that cannot validly be excluded or limited. The effect of intentional or grossly negligent conduct requires targeted professional review.",
+            "serviceCreditRule": null, "evidenceHierarchy": null, "liabilityCapChf": 120000, "legalArchitecture": null,
+            "unresolvedMatters": ["Whether intentional or grossly negligent conduct affects the agreed limitation under applicable mandatory law."]
+          }
+        ]
+      },
+      {
+        "id": "finding-law", "topic": "legal_architecture", "dimension": "legal", "severity": "material", "authorityClass": "advisory", "materialStatus": "provisional_ai_analysis",
+        "title": "The parties assumed different legal and procedural architectures",
+        "supplierPosition": "Swiss substantive law and Zurich arbitration under the Swiss Rules.",
+        "customerPosition": "English law and London were initially assumed.",
+        "consequence": "The parties must choose one explicit architecture; ZIAAP does not blend the systems.",
+        "uncertainty": "Mandatory laws applying irrespective of party choice remain reserved.",
+        "sourceIds": ["source-swiss-model-clause"],
+        "options": [
+          {
+            "id": "law-swiss", "label": "Swiss law + Zurich seat", "tradeoff": "One clean architecture with English-language proceedings.",
+            "language": "This Agreement is governed by Swiss substantive law. Disputes are finally resolved under the Swiss Rules of International Arbitration by one arbitrator seated in Zurich, Switzerland, in English. Mandatory laws applying irrespective of party choice are reserved.",
+            "serviceCreditRule": null, "evidenceHierarchy": null, "liabilityCapChf": null,
+            "legalArchitecture": { "substantiveLaw": "Swiss substantive law", "seat": "Zurich, Switzerland", "rules": "Swiss Rules of International Arbitration", "language": "English", "arbitrators": 1 },
+            "unresolvedMatters": []
+          }
+        ]
+      }
+    ],
+    "sources": [
+      { "id": "source-draft-sla", "jurisdiction": "Contract", "authority": "Party draft", "title": "Draft SaaS Agreement, clause 4.2", "url": "https://example.invalid/draft#clause-4-2", "passage": "99.5% monthly uptime; service credits to be specified.", "retrievalMode": "curated", "verificationStatus": "verified", "materialStatus": "legal_source" },
+      { "id": "source-co-100", "jurisdiction": "Switzerland", "authority": "Federal legislation", "title": "Swiss Code of Obligations, Article 100", "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en", "passage": "Advance exclusion or limitation for intentional or grossly negligent conduct raises a targeted statutory constraint requiring professional review.", "retrievalMode": "curated", "verificationStatus": "review_required", "materialStatus": "legal_source" },
+      { "id": "source-swiss-model-clause", "jurisdiction": "Switzerland", "authority": "Arbitration model clause", "title": "Swiss Arbitration Centre Model Clause", "url": "https://www.swissarbitration.org/centre/arbitration/arbitration-clauses/", "passage": "The model clause separately specifies rules, number of arbitrators, seat, and language.", "retrievalMode": "curated", "verificationStatus": "verified", "materialStatus": "legal_source" }
+    ],
+    "metadata": { "mode": "cached", "label": "Cached verified fallback", "generatedAt": "2026-07-11T09:00:00.000Z", "sourceCoverage": "Three bounded divergence questions with explicit source and review status." }
+  },
+  "decisions": [
+    {
+      "topic": "uptime", "selectedOptionId": "uptime-executable", "version": 1, "materialStatus": "draft",
+      "language": "Monthly uptime is determined by the jointly visible external monitor. Scheduled maintenance is excluded only with 72 hours' notice and is capped at four hours monthly. If uptime falls below 99.5%, Customer receives 5% of the monthly fee for each complete 0.1 percentage-point shortfall, capped at 100% of the monthly fee.",
+      "serviceCreditRule": { "thresholdBps": 9950, "shortfallStepBps": 10, "creditPercentPerStep": 5, "capPercent": 100, "monthlyFeeChf": 10000 },
+      "evidenceHierarchy": { "primarySource": "Joint external availability monitor", "secondarySource": "Supplier telemetry", "maintenanceNoticeHours": 72, "maintenanceMonthlyCapHours": 4 },
+      "liabilityCapChf": null, "legalArchitecture": null, "unresolvedMatters": [], "confirmations": { "supplier": null, "customer": null }
+    },
+    {
+      "topic": "liability", "selectedOptionId": "liability-review", "version": 1, "materialStatus": "draft",
+      "language": "Indirect and consequential loss is excluded and aggregate liability is capped at CHF 120,000, subject to liabilities that cannot validly be excluded or limited. The effect of intentional or grossly negligent conduct requires targeted professional review.",
+      "serviceCreditRule": null, "evidenceHierarchy": null, "liabilityCapChf": 120000, "legalArchitecture": null,
+      "unresolvedMatters": ["Whether intentional or grossly negligent conduct affects the agreed limitation under applicable mandatory law."], "confirmations": { "supplier": null, "customer": null }
+    },
+    {
+      "topic": "legal_architecture", "selectedOptionId": "law-swiss", "version": 1, "materialStatus": "draft",
+      "language": "This Agreement is governed by Swiss substantive law. Disputes are finally resolved under the Swiss Rules of International Arbitration by one arbitrator seated in Zurich, Switzerland, in English. Mandatory laws applying irrespective of party choice are reserved.",
+      "serviceCreditRule": null, "evidenceHierarchy": null, "liabilityCapChf": null,
+      "legalArchitecture": { "substantiveLaw": "Swiss substantive law", "seat": "Zurich, Switzerland", "rules": "Swiss Rules of International Arbitration", "language": "English", "arbitrators": 1 },
+      "unresolvedMatters": [], "confirmations": { "supplier": null, "customer": null }
+    }
+  ],
+  "legalConstraint": {
+    "id": "constraint-co-100", "query": "Swiss Code of Obligations Article 100 advance limitation intentional or gross negligence", "headline": "Legal constraint identified",
+    "source": { "id": "source-co-100", "jurisdiction": "Switzerland", "authority": "Federal legislation", "title": "Swiss Code of Obligations, Article 100", "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en", "passage": "Advance exclusion or limitation for intentional or grossly negligent conduct raises a targeted statutory constraint requiring professional review.", "retrievalMode": "curated", "verificationStatus": "review_required", "materialStatus": "legal_source" },
+    "retrievedAt": "2026-07-11T09:00:00.000Z", "mode": "cached_verified_fallback", "reviewInstruction": "Targeted professional review required before signature.",
+    "conclusion": "No enforceability conclusion is made. The constraint is isolated for qualified review."
+  },
+  "futureEvent": { "actualUptimeBps": 9920, "inputsConfirmed": true, "claimedLossChf": 60000 },
+  "residualReviewPacket": {
+    "issue": "Whether the supplier's conduct amounts to gross negligence and affects the agreed limitation of liability.",
+    "materialStatus": "reserved_for_human_review", "authorityClass": "adjudicative", "agreedClauseTopic": "liability",
+    "supplierPosition": "The agreed CHF 120,000 cap applies, subject to mandatory law.",
+    "customerPosition": "Grossly negligent conduct should not receive the benefit of the limitation.",
+    "evidenceNeeded": ["Incident-response record", "Internal escalation timeline", "Maintenance and monitoring evidence"],
+    "sourceIds": ["source-co-100"], "noAutomatedConclusion": true
+  },
+  "ledger": [
+    { "id": "event-1", "timestamp": "2026-07-11T09:00:00.000Z", "actor": "System", "action": "Seeded demonstration data loaded", "objectId": "ZIAAP-I0-001", "authorityClass": "administrative", "detail": "Validated fixture loaded; no live analysis implied." }
+  ]
+}
