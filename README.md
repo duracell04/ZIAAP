@@ -64,8 +64,9 @@ honest fallback labels.
 ## Supporting appendices
 
 - [Competitive Strategy](docs/appendices/competitive-strategy.md)
+- [Intellectual Foundations of Contract Alignment](docs/appendices/intellectual-foundations-of-alignment.md)
 - [Council of LLMs Concept](docs/appendices/council-of-llms-concept.md)
 - [Full Contract-to-Resolution Vision](docs/appendices/full-lifecycle-vision.md)
 
-The seven numbered documents govern the prototype. Appendices record strategy
-and future ideas but cannot expand the MVP.
+The seven numbered documents govern the prototype. Appendices record strategy,
+theory, and future ideas but cannot expand the MVP.
