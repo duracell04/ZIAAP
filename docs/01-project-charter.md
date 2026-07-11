@@ -245,6 +245,9 @@ The hackathon prototype will not include:
 * general-purpose legal coverage.
 
 These capabilities belong to the broader project roadmap rather than the hackathon build.
+Their possible relationship to the post-dispute service is described in the
+non-normative [Full Contract-to-Resolution Vision](appendices/full-lifecycle-vision.md).
+That appendix records a future product direction and does not expand this Charter’s hackathon scope.
 
 ---
 

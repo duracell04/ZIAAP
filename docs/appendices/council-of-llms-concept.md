@@ -142,7 +142,13 @@ type CaseState = {
   matter: {
     id: string
     title: string
-    stage: "I0_ALIGNMENT" | "I1_REASONING" | "I2_HUMAN_REVIEW"
+    stage:
+      | "I0_CONTRACT_ALIGNMENT"
+      | "P0_PERFORMANCE"
+      | "I1_DISPUTE_STRUCTURING"
+      | "MS_RESOLUTION"
+      | "I2_RESIDUAL_CASE"
+      | "I3_HUMAN_DETERMINATION"
   }
   parties: Party[]
   documents: DocumentRecord[]
@@ -161,7 +167,9 @@ type CaseState = {
 
 This sketch is conceptual. The Technical Requirements document must define the
 actual types, validation rules, provenance model, and orchestration contract if
-the idea enters implementation scope.
+the idea enters implementation scope. Stage names follow the non-normative
+[Full Contract-to-Resolution Vision](full-lifecycle-vision.md); the hackathon
+prototype begins at `I1_DISPUTE_STRUCTURING`.
 
 ## 6. Optional Council Reasoning Workspace
 

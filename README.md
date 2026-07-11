@@ -43,3 +43,4 @@ scope.
 
 - [Competitive Strategy](docs/appendices/competitive-strategy.md)
 - [Council of LLMs Concept](docs/appendices/council-of-llms-concept.md)
+- [Full Contract-to-Resolution Vision](docs/appendices/full-lifecycle-vision.md)
