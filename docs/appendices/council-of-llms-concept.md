@@ -168,8 +168,9 @@ type CaseState = {
 This sketch is conceptual. The Technical Requirements document must define the
 actual types, validation rules, provenance model, and orchestration contract if
 the idea enters implementation scope. Stage names follow the non-normative
-[Full Contract-to-Resolution Vision](full-lifecycle-vision.md); the hackathon
-prototype begins at `I1_DISPUTE_STRUCTURING`.
+[Full Contract-to-Resolution Vision](full-lifecycle-vision.md). The hackathon
+prototype now implements a narrow `I0_CONTRACT_ALIGNMENT` slice; Council
+orchestration remains outside scope.
 
 ## 6. Optional Council Reasoning Workspace
 
@@ -203,7 +204,7 @@ Example proposition:
 
 | Stage | Example treatment |
 | --- | --- |
-| AI extraction | SLA report shows 98.7% uptime. |
+| AI extraction | SLA report shows 99.2% uptime. |
 | AI inference | This may constitute breach under clause 4.2. |
 | Respondent contestation | A maintenance window should be excluded. |
 | Missing evidence | The scheduled-maintenance notice has not been uploaded. |

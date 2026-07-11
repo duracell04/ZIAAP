@@ -148,10 +148,11 @@ Where premises differ, the system must show labelled party scenarios and, where
 possible, an agreed-facts-only scenario. It must not label an amount as due merely
 because arithmetic is correct.
 
-The current I0 outage preview remains unchanged: accepted inputs produce the
-contractual CHF 3,000 service credit. A disputed input blocks an authoritative
-result, and the CHF 60,000 consequential-loss claim remains for human review
-because causation, classification, evidence, and legal effect are unresolved.
+The I0 outage preview consumes the accepted executable rule: 99.2% actual uptime
+against a 99.5% threshold creates three complete 0.1-point shortfall steps. At
+5% per step on a CHF 10,000 fee, the reproducible credit is CHF 1,500. A disputed
+input blocks the result. Whether grossly negligent conduct affects the agreed
+limitation remains reserved for human review.
 
 ## 7. Consequential Legal Review
 

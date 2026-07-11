@@ -4,8 +4,8 @@
 
 This appendix records the broader ZIAAP lifecycle from pre-signature contract
 alignment through performance, dispute structuring, settlement, and human
-determination. It explains how the current post-dispute prototype could fit into
-a future product without changing the locked MVP.
+determination. The current prototype implements a narrow I0 alignment cycle and
+only previews later continuity.
 
 The authoritative hackathon scope remains the seven numbered documents. In
 particular, the [Product Requirements](../04-product-requirements.md) control the
@@ -14,15 +14,18 @@ contract monitoring.
 
 ## 1. Current MVP and Future Vision
 
-| Current hackathon MVP | Future lifecycle vision |
+| Current I0-first hackathon MVP | Future lifecycle vision |
 | --- | --- |
-| Begins after a contract is signed and a dispute exists | Begins while the parties are negotiating a draft contract |
-| Structures an existing dispute | Aligns expectations, records performance, and later structures any dispute |
-| Demonstrates I1, M/S, I2, and handover into I3 | Connects I0, P0, I1, M/S, I2, and I3 |
+| Begins while the parties negotiate one seeded SaaS draft | Supports broader contracts and controlled jurisdiction packs |
+| Aligns three topics and creates an Alignment Annex | Aligns expectations, records performance, and later structures any dispute |
+| Demonstrates I0 plus a compact M/S and I3 preview | Connects I0, P0, I1, M/S, I2, and I3 |
 | Uses one seeded Swiss B2B software dispute | May later support controlled jurisdiction and contract variants |
 | Ends at bilateral settlement or clean human handover | Preserves continuity from drafting through final resolution |
 
-### Locked hackathon workflow
+### Superseded post-dispute workflow
+
+The following remains useful roadmap context but is no longer the central live
+hackathon workflow:
 
 ```text
 Existing signed contract + dispute
@@ -159,7 +162,8 @@ without deciding that a breach or legal consequence has occurred.
 
 When disagreement arises, claims, defences, facts, evidence, chronology,
 contractual obligations, and legal issues are assembled into one source-linked,
-contestable case state. This is where the current hackathon prototype begins.
+contestable case state. The current prototype previews continuity into this stage
+but does not implement full dispute structuring.
 
 ### M/S: Mechanical and Settlement Track
 
@@ -220,7 +224,7 @@ revised to define:
 6. privacy, privilege, confidentiality, retention, and access controls;
 7. failure modes for conflicting laws, incomplete information, and unresolved party divergence;
 8. acceptance tests proving that the system does not make party-controlled or adjudicative choices; and
-9. a narrow demonstrable use case that does not compromise the post-dispute MVP.
+9. a narrow demonstrable use case that does not compromise the I0-first MVP.
 
 Adoption requires deliberate updates to the Project Charter, Product
 Requirements, Legal Governance, HCI specification, and Technical Requirements.
@@ -230,13 +234,13 @@ An appendix alone cannot authorise implementation.
 
 For the current prototype:
 
-- the contract is already signed;
-- the dispute has already arisen;
-- no pre-signature alignment interface is built;
-- no cross-jurisdiction legal comparison engine is built;
+- one seeded draft is aligned before signature;
+- exactly three divergence topics are supported;
+- legal comparison is curated and advisory;
+- one Alignment Annex is generated from demonstrative confirmations;
 - no performance-monitoring workflow is built;
-- no Alignment Annex is generated; and
-- no additional lifecycle stages are added to the application.
+- the later outage is a continuity preview rather than a full dispute product; and
+- no complete settlement or arbitration stage is implemented.
 
 The full lifecycle is retained here so that the prototype can demonstrate a
 credible wedge into the broader vision without pretending to implement that

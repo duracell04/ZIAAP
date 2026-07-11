@@ -3,14 +3,31 @@
 > **Supporting strategy appendix — not a build specification.**
 
 This appendix preserves the commercial and competitive reasoning behind the
-hackathon wedge. It informs positioning, pitch preparation, roadmap discussion,
-and Q&A. It does not add product requirements or expand the live demo.
+company vision and its I0-first hackathon wedge. It informs positioning, pitch
+preparation, roadmap discussion, and Q&A. It does not add product requirements.
 
 ## 1. Focused Positioning
 
-### Hackathon USP
+### Company-level USP
 
-> **ZIAAP turns a disputed commercial contract into a source-linked case state, resolves deterministic issues automatically, supports bilateral settlement, and escalates only residual adjudicative questions through a clean human handover.**
+> **ZIAAP is a zero-instance, authority-aware contract-to-resolution protocol that aligns party meaning and legal assumptions before signature, preserves a shared and source-linked legal state throughout performance, and escalates only residual adjudicative questions to human authority.**
+
+Or, for the memorable external claim:
+
+> **ZIAAP makes the contract itself the beginning of the dispute-resolution system.**
+
+### Hackathon product
+
+The prototype proves one bilateral alignment cycle and a compact continuity
+preview:
+
+> **ZIAAP reveals where two parties think the same draft means different things, helps them resolve the divergence, and turns the agreed meaning into executable and arbitration-ready contract state.**
+
+> **Draft contract → independent party profiles → alignment matrix → scenario test → agreed clause language → Alignment Annex → compact future-dispute preview**
+
+### Customer value proposition
+
+> **ZIAAP reduces future dispute cost by resolving hidden contractual misalignment before signature and carrying the agreed meaning forward, so lawyers and arbitrators do not need to reconstruct the parties’ expectations later.**
 
 ### Operational principle
 
@@ -21,12 +38,12 @@ deterministic calculations using confirmed inputs, and lets parties control
 settlement. A lawyer or arbitrator receives the unresolved, pre-structured issue
 rather than reconstructing the entire matter.
 
-### Three-minute pitch
+### Three-minute narrative
 
-> **Documents in → structured case → mechanical result → settlement proposal → clean human escalation.**
+> **Two parties think they agree → ZIAAP reveals divergent outcomes → they resolve the differences before signature → agreed meaning becomes structured state → a later outage is partly resolved without reconstruction → only the residual question reaches a human.**
 
-The pitch should prove this post-dispute wedge without claiming that the
-hackathon prototype implements the complete contract-to-arbitration lifecycle.
+The pitch proves zero-instance alignment without claiming that the hackathon
+implements continuous performance, complete settlement, or arbitration.
 
 ## 2. Competitive Landscape
 
@@ -65,6 +82,8 @@ platform question, not as a hackathon requirement. ([Opus 2 for arbitral institu
 
 ZIAAP’s defensible product thesis is the combination of:
 
+- **Zero-instance bilateral alignment:** the parties expose semantic, commercial, and legal divergence before contractual commitment.
+- **Persistent contract-to-resolution state:** agreed meaning, formulas, evidence duties, and authority boundaries continue beyond the PDF.
 - **Authority-based routing:** automation depends on legal effect and reserved authority, not confidence alone.
 - **Administrative and mechanical processing:** routine work and reproducible calculations do not require blanket human approval.
 - **Party-controlled settlement:** identical complete terms require separate affirmative acceptance.
@@ -96,7 +115,7 @@ integration into a transparent, authority-aware legal process.
 
 - Do not describe ZIAAP as an AI judge, autonomous arbitrator, or autonomous award system.
 - Do not claim human-reviewed AI arbitration as the unique innovation.
-- Lead with the narrow post-dispute workflow, not the entire long-term architecture.
+- Lead with the I0 alignment cycle and show later dispute handling only as continuity proof.
 - Show evidence and legal effect before recommendations.
 - Treat human attention as reserved authority and exception capacity, not a review step after every model action.
 - Keep confidential settlement reasoning outside the clean merits handover.

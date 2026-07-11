@@ -1,5 +1,22 @@
 # Institutional Brand Book and Legal Interface Design System
 
+> **Hackathon application:** the brand system is implemented through an I0-first
+> bilateral alignment workspace. Later dispute and tribunal interfaces remain
+> part of the broader design system, not the central live build.
+
+## Hackathon view mapping
+
+| View | Brand and interaction emphasis |
+| --- | --- |
+| Party Intent Capture | Symmetrical party cards, plain language, independent confirmation, and visible privacy boundary |
+| Alignment Matrix | Evidence before recommendation, source trace, divergence type, uncertainty, and equal party treatment |
+| Scenario and Clause Resolution | Protective friction, exact versions, separate consent, and deterministic results distinct from AI advice |
+| Alignment Annex and Continuity | Formal document surface, persistent state, human accountability, and clear mechanical/adjudicative separation |
+
+The implementation uses the ivory document surface, restrained Civic Red,
+institutional serif hierarchy, functional sans-serif controls, provenance
+monospace, and named semantic states defined below.
+
 **Subtitle:** Brand identity, semantic status grammar, and shadcn/ui implementation specification  
 **Status:** Hackathon implementation baseline  
 **Version:** 1.0
@@ -1006,4 +1023,3 @@ The internal legal interface communicates:
 - [shadcn/ui sidebar](https://ui.shadcn.com/docs/components/radix/sidebar)
 - [shadcn/ui components configuration](https://ui.shadcn.com/docs/components-json)
 - [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
-

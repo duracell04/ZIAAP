@@ -1,369 +1,134 @@
 # Project Charter
 
-## AI-Native Settlement and Arbitration-Readiness Service
+## AI-Native Bilateral Contract Alignment Service
 
 **Hackathon:** Omnilex Legal AI-Native Services Hackathon  
 **Date:** 11 July 2026  
 **Owner:** Enrique Georg Zbinden  
-**Status:** Hackathon scope locked  
-**Document purpose:** Define the problem, product thesis, target users, value proposition, MVP boundaries, and governing principles for the hackathon prototype.
+**Status:** I0-first hackathon scope locked
 
----
+## 1. Purpose
 
-## 1. Project Purpose
+The project demonstrates a narrow AI-native service that helps two commercial
+parties discover and resolve differences in meaning, risk allocation, and legal
+assumptions before signing a contract.
 
-The project will demonstrate a narrow AI-native legal service that converts a disputed commercial contract into a structured, auditable case file and routes the matter toward either:
-
-1. a bilaterally accepted settlement; or
-2. a clean handover for human legal or arbitral review.
-
-The prototype focuses exclusively on the post-dispute workflow.
-
-It structures documents, facts, evidence, contractual obligations, calculations, settlement options, and unresolved legal issues. It does not adjudicate disputed substantive matters and does not issue an arbitral award.
-
----
+The system does not decide what the parties should agree. It exposes divergence,
+links relevant sources, drafts alternatives, tests scenarios, and records the
+terms each party separately confirms.
 
 ## 2. Problem
 
-Commercial disputes are expensive before formal adjudication even begins.
-
-Contracts, correspondence, invoices, system records, and party statements are usually stored across separate documents and systems. Lawyers and decision-makers must repeatedly reconstruct:
-
-* what the contract required;
-* what happened;
-* which facts are agreed;
-* which facts are disputed;
-* what evidence supports each proposition;
-* which matters can be calculated mechanically;
-* which matters can be settled;
-* which questions require human legal judgment.
-
-This creates duplicated work, unnecessary legal cost, slow case preparation, weak source traceability, and avoidable escalation.
-
-Settlement work is also frequently disconnected from the underlying merits record. When settlement fails, the legal team must reconstruct the case again for arbitration or litigation.
-
----
+Two parties can sign the same words while expecting different outcomes.
+Ambiguity commonly remains hidden in performance standards, measurements,
+remedies, liability allocation, evidence duties, governing law, and dispute
+procedure. The disagreement becomes visible only after performance fails, when
+lawyers must reconstruct both the contract and the parties’ assumptions.
 
 ## 3. Product Thesis
 
-> A legal service should be delivered as a transparent process rather than as a chatbot response.
+> **ZIAAP makes the contract itself the beginning of the dispute-resolution system.**
 
-The system converts a commercial contract dispute into a structured legal workflow.
+The service creates a persistent, source-linked contract state before signature.
+That state records agreed meaning, obligations, formulas, remedies, evidence
+requirements, authority boundaries, and unresolved caveats so later events do
+not require reconstruction from zero.
 
-It automates administrative and mechanical work, supports advisory settlement activity, and transfers only genuinely adjudicative questions to an authorised human decision-maker.
+## 4. Reference Scenario
 
-The system therefore separates four authority classes:
+The seeded case is a cross-border SaaS draft between:
 
-| Authority class | System role | Legal effect |
+- **Helvetia Cloud AG**, a Swiss supplier; and
+- **Northstar Retail Ltd**, a UK customer.
+
+The prototype aligns three topics:
+
+1. 99.5% uptime, evidence hierarchy, and a stepped service-credit formula;
+2. consequential-loss treatment and liability caps; and
+3. governing law, arbitral seat, rules, and proceeding language.
+
+The selected fixture architecture uses Swiss substantive law, Zurich seat,
+Swiss Rules, one arbitrator, and English proceedings, while reserving mandatory
+laws that may apply irrespective of party choice.
+
+## 5. Hackathon Workflow
+
+```text
+Draft contract
+→ independent party profiles
+→ alignment matrix
+→ scenario and consequence test
+→ agreed clause language
+→ separate bilateral confirmation
+→ Alignment Annex and structured contract state
+→ compact future-outage preview
+```
+
+The future preview proves only that confirmed state can calculate one mechanical
+service credit and isolate one residual causation question for human review.
+
+## 6. Authority Model
+
+| Class | System treatment | Authority |
 | --- | --- | --- |
-| **Administrative** | Organise, extract, classify, retrieve, and record | Procedural operation |
-| **Mechanical** | Apply an agreed formula to verified inputs | Provisional result, subject to correction and applicable party agreement |
-| **Advisory** | Analyse, model, draft, and propose | Non-binding unless accepted by the parties or adopted by an authorised human |
-| **Adjudicative** | Structure evidence and prepare balanced arguments | Final authority remains human-owned |
+| Administrative | Extract, organise, compare, link, version, and record | System may execute within defined rules |
+| Mechanical | Apply disclosed formula to confirmed inputs | Deterministic code; disputed inputs block execution |
+| Advisory | Explain consequences and draft alternatives | Parties or qualified professionals decide |
+| Adjudicative | Structure competing positions and evidence | Authorised human determines |
 
----
+Humans intervene at consent and legal-authority points, not after every routine
+AI action.
 
-## 4. Target Users
+## 7. Required Outputs
 
-The primary users are:
+- independent party intent profiles;
+- source-linked Alignment Matrix;
+- three divergence findings;
+- clause options and scenario consequences;
+- separately confirmed final language;
+- Alignment Annex;
+- structured contract state and ledger;
+- deterministic future service-credit result; and
+- residual human-review packet concerning gross negligence and the liability limitation.
 
-* general counsel;
-* commercial managers;
-* SME founders;
-* external counsel;
-* claims teams;
-* lawyers or arbitrators receiving unresolved matters.
+## 8. Legal Boundaries
 
-The prototype is designed for users handling a defined commercial contract dispute rather than for general legal research or open-ended legal advice.
-
----
-
-## 5. Value Proposition
-
-The service delivers:
-
-### Faster case structuring
-
-Documents are converted into a structured case state containing contracts, obligations, claims, defences, facts, evidence, calculations, and unresolved issues.
-
-### Defensible outputs
-
-Every material proposition links back to a source document and relevant passage.
-
-### Reduced human-review load
-
-Administrative and mechanical tasks are automated while human attention is reserved for consent, disputed legal conclusions, and adjudicative decisions.
-
-### Safer settlement
-
-Settlement proposals remain non-binding until separately accepted by both parties.
-
-### Clean escalation
-
-When settlement fails, confidential negotiation material remains outside the tribunal-visible merits record.
-
-### Arbitration readiness
-
-The system produces a neutral, source-linked handover package for a lawyer or arbitrator.
-
----
-
-## 6. Reference Scenario
-
-The hackathon prototype will use one seeded Swiss B2B software dispute.
-
-A software provider promised **99.9% monthly uptime**. Following a serious outage:
-
-* the customer claims contractual service credits;
-* the customer additionally claims CHF 60,000 in consequential losses;
-* the supplier accepts that downtime occurred;
-* the supplier disputes causation, the loss amount, and the completeness of the customer’s evidence.
-
-This scenario demonstrates all four authority classes:
-
-| Issue | Authority class | Prototype treatment |
-| --- | --- | --- |
-| Document organisation | Administrative | Extract and link documents automatically |
-| SLA service credit | Mechanical | Calculate from confirmed contractual inputs |
-| Commercial settlement | Advisory | Generate a non-binding proposal |
-| Consequential-loss liability | Adjudicative | Prepare balanced materials for human review |
-
----
-
-## 7. Hackathon MVP
-
-### 7.1 Inputs
-
-The prototype receives:
-
-* one commercial contract;
-* one SLA or contractual schedule;
-* one claimant statement;
-* one respondent statement;
-* one invoice;
-* a small evidence bundle;
-* selected system logs and correspondence.
-
-### 7.2 System Actions
-
-The system will:
-
-1. extract the parties, contractual obligations, dates, amounts, formulae, and remedies;
-2. build a source-linked case chronology;
-3. separate agreed, disputed, inferred, and missing facts;
-4. connect each material factual proposition to its source;
-5. classify each issue as administrative, mechanical, advisory, or adjudicative;
-6. calculate one mechanical contractual issue from confirmed inputs;
-7. generate a non-binding settlement proposal;
-8. record separate acceptance or rejection by each party;
-9. isolate confidential settlement information from the merits record;
-10. prepare unresolved issues for human legal or arbitral review;
-11. record sources, corrections, approvals, and actions in a case ledger.
-
-### 7.3 Outputs
-
-The MVP will produce:
-
-* **Contract Map**
-* **Case Chronology**
-* **Evidence Matrix**
-* **Authority Matrix**
-* **Mechanical Calculation**
-* **Settlement Proposal**
-* **Settlement Agreement**, following bilateral acceptance
-* **Clean Merits Case Record**
-* **Residual-Issues Memorandum**
-* **Case Ledger**
-
-The detailed hackathon scope, including the six-screen interface, acceptance tests, authority-routing model, and three-minute demonstration sequence, is defined in the accompanying scope document.
-
----
-
-## 8. Human Control
-
-Human authority remains explicit throughout the workflow.
-
-### Party-controlled decisions
-
-The parties retain authority over:
-
-* factual corrections;
-* acceptance of settlement terms;
-* waiver or release of rights;
-* approval of consequential commercial actions.
-
-### Human legal review
-
-A lawyer or other qualified reviewer remains responsible for:
-
-* contested legal interpretations;
-* jurisdictional conclusions;
-* limitation-period decisions;
-* evidentiary disputes;
-* substantive liability analysis;
-* final legal submissions.
-
-### Human arbitral authority
-
-A human arbitrator or tribunal remains responsible for:
-
-* determining disputed liability;
-* assessing credibility;
-* resolving contested damages;
-* interpreting open-textured legal standards;
-* determining remedies;
-* issuing any arbitral award.
-
-The system may structure, analyse, compare, and draft. It does not independently exercise adjudicative authority.
-
----
+- ZIAAP compares legal configurations; it does not merge Swiss and English law.
+- Parties select governing law, seat, rules, language, and final terms.
+- AI does not declare a clause enforceable or provide a binding legal conclusion.
+- Unresolved mandatory-law questions are visibly routed to qualified review.
+- Demonstrative confirmations are not production electronic signatures.
+- Adjudicative authority remains human-owned.
 
 ## 9. Scope Exclusions
 
-The hackathon prototype will not include:
+The MVP excludes general uploads, arbitrary contracts, broad legal research,
+authentication, production signatures, persistent multi-tenant storage,
+performance monitoring, a complete settlement workflow, complete arbitration,
+autonomous adjudication, multiple jurisdictions beyond the seeded comparison,
+and Council-of-LLMs orchestration.
 
-* pre-signature contract alignment;
-* full contract simulation;
-* complete party-specific environments;
-* production arbitrator appointment;
-* procedural hearings;
-* evidence rulings;
-* a full arbitrator decision composer;
-* autonomous findings on liability or credibility;
-* comprehensive case-outcome prediction;
-* live court or authority filings;
-* payment execution;
-* production e-signatures;
-* consent awards;
-* multiple jurisdictions;
-* complete limitation-period automation;
-* institutional case administration;
-* production-grade identity verification;
-* production-grade cryptography;
-* multi-tenant case management;
-* persistent production storage;
-* general-purpose legal coverage.
+The former full post-dispute workflow is roadmap context. It is not a second live
+product in this hackathon build.
 
-These capabilities belong to the broader project roadmap rather than the hackathon build.
-Their possible relationship to the post-dispute service is described in the
-non-normative [Full Contract-to-Resolution Vision](appendices/full-lifecycle-vision.md).
-That appendix records a future product direction and does not expand this Charter’s hackathon scope.
+## 10. Success Criteria
 
----
+The prototype succeeds when judges can see that:
 
-## 10. Fundamental Legal Principles
+1. both parties independently state and confirm expectations;
+2. semantic, commercial, and legal divergence is visibly separated;
+3. every material finding has provenance and uncertainty;
+4. the system never selects the final legal architecture;
+5. exact clause versions require separate confirmation by both parties;
+6. editing confirmed language invalidates prior confirmations;
+7. the Alignment Annex records shared meaning and unresolved caveats;
+8. 99.2% uptime produces a reproducible CHF 1,500 service credit from the accepted state;
+9. the gross-negligence limitation question remains reserved for a human; and
+10. the complete story is demonstrable in three minutes without network access.
 
-### Human-owned adjudication
+## 11. Charter Statement
 
-Binding legal authority remains with authorised human decision-makers.
-
-### Explicit consent
-
-Settlement becomes binding only through separate, affirmative acceptance by both parties.
-
-### Contestability
-
-Users can correct extracted facts, contest AI inferences, and provide additional evidence.
-
-### Procedural equality
-
-The system presents both parties’ evidence and arguments through equivalent structures.
-
-### Settlement confidentiality
-
-Confidential settlement positions remain separate from the merits record used for human adjudicative review.
-
-### Source traceability
-
-Every material proposition should be linked to its contractual, factual, evidentiary, or legal source.
-
-### Visible legal effect
-
-Each output must clearly state whether it is administrative, provisional, advisory, accepted, rejected, or reserved for human determination.
-
-### Escalation by authority
-
-Issues escalate because of their legal nature, uncertainty, or disputed inputs, rather than simply because the AI expresses low confidence.
-
----
-
-## 11. Fundamental Product Principles
-
-### Structured workflow before conversation
-
-The primary product is a case workspace, not a blank chatbot.
-
-### Evidence before recommendation
-
-Users should see the underlying clauses, facts, and evidence before viewing the preferred settlement proposal or legal position.
-
-### Deterministic calculations
-
-Numerical calculations use deterministic code. AI may extract and explain the inputs, but the formula and result must remain reproducible.
-
-### Visible epistemic status
-
-An established fact, party assertion, disputed proposition, missing fact, and AI inference must appear as different states.
-
-### Symmetrical reasoning
-
-The system prepares the strongest relevant arguments for both parties.
-
-### Human review at material authority points
-
-Human intervention is concentrated at consent and adjudicative decision points rather than inserted into every administrative action.
-
-### Auditability by design
-
-Provenance, status changes, corrections, approvals, and timestamps form part of the core case state.
-
-### Clear separation of records
-
-The confidential settlement workspace and the tribunal-visible merits record remain logically separated.
-
----
-
-## 12. Business Model
-
-The service can be offered through:
-
-* a fixed fee per dispute;
-* a subscription covering a defined number of active matters;
-* separately priced human legal review;
-* separately priced arbitral or institutional escalation;
-* white-label licensing to law firms, claims teams, and dispute-resolution providers.
-
-The commercial logic is based on scaling legal production without scaling junior legal headcount proportionally.
-
-Efficiency becomes operating margin rather than lost billable time.
-
----
-
-## 13. Success Criteria
-
-The prototype is successful when a judge can observe one coherent legal service from source documents to either settlement or human-ready escalation.
-
-The MVP must demonstrate that:
-
-1. the seeded case loads reliably;
-2. core contract and case information is extracted into structured data;
-3. every material proposition links to a source;
-4. agreed, disputed, inferred, and missing facts are visibly separated;
-5. issues are correctly routed through the Authority Matrix;
-6. the mechanical calculation is reproducible;
-7. settlement requires separate acceptance by both parties;
-8. rejected settlement information remains outside the merits handover;
-9. the human-handover memorandum presents both parties’ arguments neutrally;
-10. every correction, approval, and action appears in the case ledger;
-11. the system never presents itself as a court, AI judge, or autonomous arbitrator;
-12. the complete workflow can be demonstrated clearly within three minutes.
-
----
-
-## 14. Charter Statement
-
-> The hackathon project will demonstrate an AI-native legal service that converts a commercial contract dispute into a structured, source-linked, and auditable case.
-
-> The system will automate administrative and mechanical work, support non-binding settlement, and prepare unresolved adjudicative issues for human review.
-
-> Every material conclusion will be traceable. Every AI inference will remain contestable. Every binding settlement will require explicit consent. Every adjudicative decision will remain human-owned.
+> ZIAAP reveals where parties expect different outcomes before they sign,
+> supports them in selecting explicit contractual language, and preserves that
+> shared meaning as a source-linked legal state. Automation follows legal effect;
+> consent remains bilateral; adjudication remains human-owned.
