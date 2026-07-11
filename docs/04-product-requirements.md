@@ -1,292 +1,262 @@
 # Product Requirements Document
 
-## AI-Native Settlement and Arbitration-Readiness Service
+## I0 Pre-Signature Bilateral Contract-Alignment Engine
 
-**Status:** Hackathon implementation contract  
-**Scope:** One seeded Swiss B2B software dispute  
+**Status:** Authoritative hackathon implementation contract  
+**Scope:** One seeded Swiss-UK B2B SaaS contract before signature, plus one compact future-event continuity preview  
 **Audience:** Product, design, engineering, legal review, and demo presenters  
-**Priority rule:** P0 requirements define the complete hackathon build. Roadmap ideas do not expand the MVP.
+**Priority rule:** P0 requirements define the complete hackathon build. Post-dispute settlement and full arbitral workflows remain roadmap architecture.
 
 ## 1. Product Outcome
 
-> **Turn a disputed commercial contract into a structured, source-linked case, resolve one deterministic issue, support bilateral settlement, and transfer any unresolved adjudicative issue to a human through a clean handover.**
+> **ZIAAP tests whether two parties expect the same contract language to produce the same legal and commercial outcome before they sign.**
 
-The prototype must demonstrate one coherent legal service rather than a collection of AI features.
+The hackathon prototype demonstrates one narrow legal service:
 
 ```text
-Seeded documents
--> structured case
--> source-linked facts and evidence
--> authority routing
--> deterministic service-credit calculation
--> non-binding settlement proposal
--> bilateral acceptance or rejection
--> settlement agreement or clean human handover
--> complete case ledger
+Draft contract
+→ independent Party A expectations
+→ independent Party B expectations
+→ divergence detection
+→ legal and commercial consequence analysis
+→ scenario testing
+→ revised clause options
+→ bilateral confirmation of the same frozen clause version
+→ Alignment Annex and structured contract state
+→ future-event preview
+→ deterministic service-credit result
+→ one residual legal issue routed to a qualified human
 ```
 
-The MVP ends when the parties settle or the unresolved matter is ready for human legal or arbitral review.
+The prototype proves that the contract itself can become the beginning of the dispute-resolution system.
 
-## 2. Users and Core Needs
+## 2. Locked USP and UVP
+
+### USP
+
+> **ZIAAP is a zero-instance, authority-aware contract protocol that identifies hidden divergence between party expectations before signature, records the agreed resolution as structured contract state, and carries that state into future performance and dispute resolution.**
+
+### UVP
+
+> **ZIAAP reduces future dispute cost by resolving hidden contractual misalignment before signature and preserving the agreed meaning, evidence rules and authority boundaries for later use.**
+
+## 3. Users
 
 | User | Core need | Product responsibility |
 | --- | --- | --- |
-| Initiating party | Present its claim, verify the record, and make a settlement decision | Show its position, sources, corrections, and settlement controls clearly |
-| Responding party | Present its defence, contest propositions, and make an independent settlement decision | Provide equivalent structure, visibility, and controls |
-| Human reviewer | Understand the remaining dispute without reconstructing the file | Receive a neutral, source-linked merits record and residual-issues memorandum |
-| Demo operator | Run the complete workflow reliably | Load, reset, and advance the seeded case without hidden setup |
+| Swiss supplier representative | State intended performance, risk allocation and evidence expectations independently | Preserve a private intent profile until comparison is authorised |
+| UK customer representative | State expected remedies, measurement rules and legal architecture independently | Provide equivalent structure and controls |
+| Qualified legal reviewer | Review consequential legal constraints and unresolved legal questions | Receive a focused source-linked review packet |
+| Demo operator | Run the seeded workflow reliably | Load, reset and advance the complete vertical slice |
 
-Production authentication and representative-authority verification are outside the hackathon build. The prototype uses an explicit role switch.
+Production authentication, corporate-authority verification and electronic signature are outside P0. The prototype uses explicit role switching and records demo confirmations as process state.
 
-## 3. Seeded Demo Case
+## 4. Seeded Contract Scope
 
-The MVP uses one fixed Swiss B2B software dispute:
+The MVP uses one fixed Swiss-UK SaaS contract and only three subject areas:
 
-- the supplier promised 99.9% monthly uptime;
-- a documented outage occurred;
-- the contractual service credit is calculated from confirmed inputs;
-- the customer additionally claims CHF 60,000 in consequential losses;
-- the supplier disputes causation, quantum, and evidentiary completeness;
-- the service-credit issue is mechanical;
-- consequential-loss liability remains reserved for human determination.
+1. **Uptime, measurement and service credits**
+2. **Liability cap and consequential loss**
+3. **Governing law, arbitral seat, language and rules**
 
-The case bundle contains:
+The seeded draft contains plausible ambiguity and hidden expectation divergence. The later outage preview uses the exact state confirmed during I0.
 
-- one commercial contract;
-- one SLA or contractual schedule;
-- one claimant statement;
-- one respondent statement;
-- one invoice;
-- selected logs, correspondence, and supporting evidence.
+## 5. Golden-Path User Journey
 
-## 4. Golden-Path User Journey
+1. The operator loads the seeded draft contract.
+2. Party A completes its private intent profile for the three clause groups.
+3. Party B independently completes its private intent profile.
+4. The system compares both profiles against the draft and creates an Alignment Matrix.
+5. Each material divergence shows both expectations, the source clause, commercial consequence, relevant legal constraint and authority class.
+6. The system runs one realistic outage scenario and shows how the original draft produces different outcomes under the parties’ assumptions.
+7. The system proposes revised clause options.
+8. Each party separately reviews and confirms the same frozen clause version.
+9. Any material edit increments the version and clears earlier confirmations.
+10. Matching confirmations generate an Alignment Annex and persistent structured contract state.
+11. The product fast-forwards to a later outage.
+12. Deterministic code calculates the agreed CHF 3,000 service credit from the confirmed formula and inputs.
+13. A CHF 60,000 consequential-loss question is isolated for qualified human determination.
+14. The ledger shows the complete provenance, version and confirmation history.
 
-1. The operator loads the seeded case.
-2. The parties review the contract map, chronology, claims, defences, and factual propositions.
-3. A user opens a material proposition and sees the exact supporting source passage.
-4. A party corrects or contests one proposition, and the case ledger records the change.
-5. The system classifies each issue by authority and calculates the service credit with deterministic code.
-6. The system generates a clearly labelled non-binding settlement proposal.
-7. Each party independently accepts or rejects the same frozen version.
-8. Matching acceptance produces a settlement agreement. Any rejection or mismatch produces a clean human handover.
-9. The reviewer sees the merits record, competing positions, unresolved questions, and supporting sources without protected settlement content.
-10. The operator opens the ledger and shows the complete material history.
+## 6. Required Product Surfaces
 
-## 5. Required Product Surfaces
+### 6.1 Independent Party Intent
 
-The MVP contains six simple surfaces.
+For each party and clause group, capture:
 
-### 5.1 Case Overview
+- expected outcome;
+- intended interpretation;
+- commercial risk tolerance;
+- preferred evidence and measurement method;
+- preferred governing-law and arbitral architecture;
+- short rationale;
+- completion status.
 
-Shows:
+One party’s private profile remains unavailable to the other until the comparison stage.
 
-- parties;
-- claim amount;
-- dispute summary;
-- current workflow stage;
-- key unresolved issue;
-- role switch;
-- load and reset controls.
+### 6.2 Alignment Matrix
 
-### 5.2 Contract and Facts
+For every material divergence, show:
 
-Shows:
+- Party A expectation;
+- Party B expectation;
+- source contract text and location;
+- divergence type and materiality;
+- commercial consequence;
+- one linked legal constraint where relevant;
+- administrative, mechanical, advisory or adjudicative classification;
+- correction or contestation controls;
+- resolution status.
 
-- relevant obligations and remedies;
-- chronology;
-- claims and defences;
-- agreed, disputed, inferred, and missing propositions;
-- correction and contestation controls.
+### 6.3 Scenario and Clause Resolution
 
-### 5.3 Evidence and Authority
+Show:
 
-Shows:
+- seeded outage facts;
+- the result under Party A’s assumptions;
+- the result under Party B’s assumptions;
+- the reason for the difference;
+- revised clause options;
+- formula, inputs, exclusions and evidence hierarchy;
+- frozen clause version;
+- separate confirmation state for both parties.
 
-- each material proposition;
-- supporting and contrary sources;
-- source passage and document location;
-- administrative, mechanical, advisory, or adjudicative classification;
-- review or escalation status.
+### 6.4 Alignment Annex and Future Preview
 
-### 5.4 Mechanical Calculation
+The Alignment Annex contains:
 
-Shows:
+- agreed clause text;
+- stable clause identifier and version;
+- formula and units;
+- required inputs;
+- measurement and evidence hierarchy;
+- remedy;
+- governing law, seat, language and rules;
+- authority class;
+- unresolved matters;
+- party confirmations;
+- source links;
+- version history.
 
-- contractual formula;
-- formula version;
-- inputs and their sources;
-- confirmation status;
-- intermediate values;
-- result;
-- any blocking disputed input.
+The continuity preview then displays:
 
-### 5.5 Settlement Workspace
+- the exact confirmed state used;
+- future outage inputs and sources;
+- deterministic service-credit trace and result;
+- one residual legal question;
+- both relevant positions;
+- missing evidence or assumptions;
+- the required human decision.
 
-Shows:
-
-- system-generated non-binding proposal;
-- frozen proposal version;
-- separate response control for each party;
-- pending, accepted, rejected, or mismatched status;
-- settlement agreement only after matching acceptance.
-
-### 5.6 Human Handover and Case Ledger
-
-Shows:
-
-- clean merits record;
-- unresolved issues;
-- strongest relevant position for each party;
-- missing evidence and uncertainty;
-- requested human decision;
-- chronological ledger of sources, corrections, classifications, calculations, responses, and generated outputs.
-
-## 6. P0 Functional Requirements
+## 7. P0 Functional Requirements
 
 | ID | Requirement | Acceptance test |
 | --- | --- | --- |
-| PRD-01 | The operator can load and reset the seeded case. | The same initial case state appears after every reset. |
-| PRD-02 | The system presents one structured case state containing parties, documents, obligations, events, propositions, evidence, issues, calculations, settlement state, and ledger events. | All six surfaces read from the same case state. |
-| PRD-03 | Every material proposition links to a source passage or carries an explicit unsupported status. | Selecting a proposition opens its document, location, and excerpt. |
-| PRD-04 | Each party can correct an extraction, contest an inference, and add a short reason. | The visible state updates and the prior state remains recorded in the ledger. |
-| PRD-05 | Every issue is classified as administrative, mechanical, advisory, or adjudicative. | The service credit routes to calculation and consequential-loss liability routes to human review. |
-| PRD-06 | The service-credit result is calculated with deterministic code using visible inputs. | Reloading with unchanged inputs produces the same result and calculation trace. |
-| PRD-07 | The system generates a clearly labelled non-binding settlement proposal. | The proposal carries advisory status and creates no agreement by itself. |
-| PRD-08 | Settlement requires separate responses to the same frozen version from both parties. | One acceptance, one rejection, no response, or a version mismatch prevents settlement. |
-| PRD-09 | Settlement-only content remains separate from the merits record. | A failed-settlement handover contains no offers, concessions, or private settlement parameters. |
-| PRD-10 | Failed settlement produces a neutral residual-issues memorandum for human review. | The memorandum contains the unresolved issue, both positions, sources, gaps, and requested decision. |
-| PRD-11 | Every material action creates a ledger event. | The ledger records actor, action, object, prior status, new status, source or reason, and timestamp. |
-| PRD-12 | The interface states the legal and epistemic status of every material output. | AI analysis never appears as an established fact, binding settlement, or arbitral decision. |
+| PRD-01 | The operator can load and reset the seeded contract state. | Every reset restores the same draft, profiles, versions and ledger baseline. |
+| PRD-02 | Both parties can complete separate intent profiles for all three clause groups. | Each profile persists independently and carries party, clause and version identifiers. |
+| PRD-03 | The system compares the two profiles with the source draft. | The Alignment Matrix identifies every seeded material divergence. |
+| PRD-04 | Every divergence links to the exact source clause or is marked unsupported. | Selecting the source opens its document location and excerpt. |
+| PRD-05 | Every divergence states its commercial consequence, legal constraint and authority class. | All seeded divergences display the required fields. |
+| PRD-06 | The outage scenario produces separate outcomes under the parties’ original assumptions. | The result changes because of visible interpretation or formula differences. |
+| PRD-07 | The system proposes revised language for each unresolved clause group. | Each option is labelled AI-assisted and remains non-binding. |
+| PRD-08 | Clause language is versioned and frozen before confirmation. | Editing a clause creates a new version and clears earlier confirmations. |
+| PRD-09 | Agreement exists only when both parties confirm the same version. | Missing, mismatched or stale confirmations prevent annex generation. |
+| PRD-10 | The system generates a structured Alignment Annex from confirmed versions. | Every annex clause maps to the frozen text, formula, evidence rule, authority class and confirmations. |
+| PRD-11 | The future preview uses the exact confirmed contract state. | The preview references the same clause and formula versions as the annex. |
+| PRD-12 | The service credit is calculated with deterministic code. | Identical confirmed inputs always reproduce CHF 3,000 and the same trace. |
+| PRD-13 | The residual consequential-loss issue routes to a qualified human. | No interface state presents an autonomous legal determination. |
+| PRD-14 | Every material action creates a ledger event. | The ledger records actor, object, prior state, new state, source or reason, version and timestamp. |
+| PRD-15 | AI outputs remain contestable and visibly distinct from confirmed contract state. | Users can correct or contest outputs, and status labels remain explicit. |
 
-## 7. Role and Permission Rules
+## 8. Roles and Authority
 
-| Action | Initiating party | Responding party | Human reviewer | Demo operator |
-| --- | ---: | ---: | ---: | ---: |
-| View shared merits record | Yes | Yes | Yes | Yes |
-| Correct own submitted information | Yes | Yes | No | Demo control only |
-| Contest a material proposition | Yes | Yes | View | Demo control only |
-| View source passages | Yes | Yes | Yes | Yes |
-| View mechanical calculation | Yes | Yes | Yes | Yes |
-| Respond to settlement proposal | Own response only | Own response only | No | Demo control only |
-| View settlement-only material | Own and shared proposal state | Own and shared proposal state | No | Yes for demonstration |
-| View clean human handover | Yes | Yes | Yes | Yes |
-| Issue a binding adjudicative decision | No | No | Outside MVP | No |
+| Activity | System | Parties | Qualified human |
+| --- | --- | --- | --- |
+| Extraction and comparison | Automated, source-linked and contestable | Correct or contest | Review only where consequential |
+| Divergence identification | Automated and advisory | Add context or dispute | Review legal significance where required |
+| Scenario calculation | Deterministic | Confirm or dispute inputs | Resolve consequential disputed premises |
+| Clause drafting | AI-assisted | Select, edit and negotiate alignment | Review consequential legal architecture |
+| Clause acceptance | Record exact version | Both parties separately confirm | Verify authority or form outside P0 |
+| Routine future calculation | Automated from agreed state | Inspect and contest inputs | Review exceptions |
+| Contested legal judgment | Prepare focused packet | State positions | Determine the issue |
 
-Both parties receive equivalent information structures and interaction controls.
+Human attention is concentrated at contractual consent, consequential legal review and adjudicative authority points.
 
-## 8. Product and HCI Rules
+## 9. HCI Rules
 
 The interface must:
 
-- present evidence before recommendations;
-- distinguish established facts, party assertions, disputes, missing information, AI inferences, and calculations;
-- use plain legal status labels;
-- show both parties symmetrically;
-- keep the main workflow visible without requiring a chatbot conversation;
-- use deliberate confirmation for settlement responses and material corrections;
-- keep the human owner of any consequential decision explicit.
+- use a structured workspace rather than a blank chatbot;
+- preserve private intent until comparison is authorised;
+- present both parties symmetrically;
+- show source text before recommendations;
+- distinguish draft language, party expectations, AI analysis, scenario results and confirmed state;
+- expose uncertainty and assumptions;
+- make correction and contestation available on material outputs;
+- require deliberate confirmation of a frozen version;
+- show that demo confirmation is not an electronic signature;
+- identify the human owner of consequential decisions.
 
-## 9. Data and AI Requirements
+## 10. Data and AI Requirements
 
-### Shared case state
+All surfaces operate on one versioned `ContractAlignmentState` containing:
 
-All surfaces operate on one versioned case object. A material update changes the case state and creates a ledger event.
+- contract and clause versions;
+- private party-intent profiles;
+- divergences;
+- legal constraints;
+- scenarios;
+- revised clause options;
+- party confirmations;
+- Alignment Annex;
+- future-event inputs and calculations;
+- residual human-review issue;
+- ledger events.
 
-### Structured AI output
+AI may support extraction, comparison, divergence explanation, legal-source linking, clause drafting and human-packet drafting. Application code controls permissions, visibility, versioning, confirmation matching, state transitions, deterministic calculations and ledger creation.
 
-AI functions return defined fields rather than free-form application state. At minimum, outputs identify:
+The seeded structured result must remain available when a live model or retrieval call fails.
 
-- proposition or conclusion;
-- source references;
-- status;
-- authority class;
-- uncertainty or missing information;
-- generated-by metadata.
+## 11. Explicit Non-Goals
 
-### Bounded AI functions
+P0 excludes:
 
-The MVP may use AI for:
+- post-dispute claimant and respondent intake;
+- settlement proposal workspaces;
+- bilateral dispute settlement;
+- settlement agreement generation;
+- settlement-merits firewalls;
+- full merits case records;
+- post-dispute evidence reconstruction;
+- complete arbitral handover or case administration;
+- autonomous legal advice or adjudication;
+- production identity verification, signatures, payments, storage or integrations;
+- arbitrary contracts, jurisdictions or scenarios.
 
-- extraction;
-- classification;
-- source linking;
-- chronology drafting;
-- issue structuring;
-- settlement drafting;
-- handover drafting.
+These remain roadmap capabilities. The compact continuity preview exists only to prove that the I0 structured contract state remains useful later.
 
-Application logic controls workflow state, permissions, settlement formation rules, record separation, and calculations.
-
-### Deterministic services
-
-Normal application code controls:
-
-- service-credit arithmetic;
-- version matching;
-- bilateral acceptance state;
-- authority-routing rules where predefined;
-- ledger-event creation;
-- settlement and merits separation.
-
-### Demo fallback
-
-The seeded structured result must remain available when a live model call fails. The demo must complete from cached or precomputed case data without changing the visible legal workflow.
-
-A production local-model deployment and model-diverse AI council remain roadmap architecture rather than hackathon requirements.
-
-## 10. Success Metrics
+## 12. Success Metrics
 
 The MVP succeeds when:
 
 1. the complete golden path runs in three minutes or less;
-2. 100% of material propositions are source-linked or explicitly unsupported;
-3. the deterministic calculation reproduces the same result from the same inputs;
-4. settlement cannot form without matching bilateral acceptance;
-5. failed-settlement information remains absent from the human merits handover;
-6. the consequential-loss issue remains visibly reserved for human determination;
-7. every demonstrated material action appears in the ledger;
-8. the workflow completes reliably through live, cached, or seeded execution.
-
-## 11. Explicit Non-Goals
-
-The hackathon MVP excludes:
-
-- pre-signature alignment and contract simulation;
-- arbitrary disputes and multi-jurisdiction coverage;
-- general-purpose legal research or advice;
-- autonomous findings on liability, credibility, causation, disputed damages, remedies, or awards;
-- arbitrator appointment, hearings, filings, institutional administration, or award issuance;
-- production authentication, identity verification, electronic signatures, payments, or cryptography;
-- production storage, multi-tenancy, enterprise integrations, and notification systems;
-- outcome prediction;
-- a production local-model stack or multi-agent AI council;
-- commercial billing and subscription infrastructure.
-
-## 12. Optional P1 Polish
-
-P1 work begins only after the complete P0 demo passes reliably three consecutive times.
-
-Possible P1 additions are:
-
-- live document upload for the seeded file types;
-- live model extraction with seeded fallback;
-- downloadable settlement or handover document;
-- improved transitions and responsive layout;
-- a concise explanation of the broader production architecture.
+2. all seeded material divergences are detected and source-linked;
+3. the original draft visibly produces different scenario outcomes under the two parties’ assumptions;
+4. both parties must confirm the same frozen version;
+5. any edit invalidates stale confirmations;
+6. the Alignment Annex is generated only from bilaterally confirmed clauses;
+7. the future preview uses the exact annex state;
+8. the deterministic calculation reproduces CHF 3,000;
+9. the consequential-loss issue remains reserved for a qualified human;
+10. every material action is reconstructable from the ledger;
+11. the demo remains reliable through live, cached or seeded execution.
 
 ## 13. Definition of Done
 
-The product is hackathon-ready when:
-
-- all twelve P0 requirements pass;
-- the six surfaces form one coherent workflow;
-- the same case can demonstrate both settlement and failed-settlement branches;
-- every visible material conclusion has a status and provenance;
-- no protected settlement content leaks into the merits handover;
-- no interface element implies autonomous adjudicative authority;
-- the demo has been reset and completed successfully three consecutive times;
-- one presenter can explain the problem, workflow, legal safeguards, and value within three minutes.
+The product is hackathon-ready when all P0 acceptance tests pass, the four surfaces form one coherent I0-first workflow, the seeded case resets reliably, the demo completes successfully three consecutive times, and one presenter can explain the problem, alignment process, future continuity and authority safeguards within three minutes.
 
 ## 14. Specification Authority
 
-The Project Charter defines the locked hackathon purpose and boundaries. Legal Governance defines authority, consent, and procedural safeguards. This PRD translates those rules into the product behaviours that must be implemented and demonstrated.
+The Project Charter defines the locked I0-first purpose. Legal Governance defines authority, consent and escalation. This PRD defines the product behaviour to implement and demonstrate.
+
+> **Draft → independent party expectations → divergence matrix → legal source → scenario test → revised clause → bilateral confirmation → Alignment Annex → future mechanical result → residual human decision.**
