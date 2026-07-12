@@ -3,26 +3,27 @@ import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 import { alignmentAnalysisSchema, partyProfileSchema } from "@/lib/case-model";
 import { getDemoState } from "@/lib/demo-data";
+import { executionFailure, failureResponse } from "@/lib/execution";
 
 export const runtime = "nodejs";
 
 const requestSchema = z.object({
-  mode: z.enum(["cached", "live"]),
+  executionMode: z.enum(["illustrative", "live"]),
   parties: z.array(partyProfileSchema).length(2),
 });
 
-const liveOutputSchema = alignmentAnalysisSchema.omit({ metadata: true });
+const liveOutputSchema = z.object({ findings: alignmentAnalysisSchema.shape.findings, sources: alignmentAnalysisSchema.shape.sources });
 
-function cachedResponse(notice?: string) {
+function illustrativeResponse() {
   const cached = getDemoState().analysis;
   return {
     ...cached,
     metadata: {
       ...cached.metadata,
-      mode: notice ? ("fallback" as const) : ("cached" as const),
-      label: "Cached verified fallback" as const,
+      executionMode: "illustrative" as const, executionStatus: "illustrative_only" as const,
+      label: "Illustrative analysis fixture" as const, artifactId: "alignment-illustrative-v1",
       generatedAt: new Date().toISOString(),
-      notice,
+      provenance: "Curated offline synthetic fixture",
     },
   };
 }
@@ -33,13 +34,12 @@ export async function POST(request: Request) {
     return Response.json({ error: "Invalid alignment-analysis request." }, { status: 400 });
   }
 
-  if (parsed.data.mode === "cached") {
-    return Response.json(cachedResponse());
+  if (parsed.data.executionMode === "illustrative") {
+    return Response.json(illustrativeResponse());
   }
 
-  if (!process.env.OPENAI_API_KEY) {
-    return Response.json(cachedResponse("Live analysis is unavailable; the validated cached analysis was restored."));
-  }
+  if (process.env.ZIAAP_LIVE_EXECUTION_ENABLED !== "true") return failureResponse(executionFailure("live_execution_disabled", "Live execution is disabled in this showcase environment.", false), 403);
+  if (!process.env.OPENAI_API_KEY) return failureResponse(executionFailure("credentials_unavailable", "Live analysis credentials are unavailable.", false), 503);
 
   try {
     const fixture = getDemoState();
@@ -64,14 +64,16 @@ export async function POST(request: Request) {
     const analysis = alignmentAnalysisSchema.parse({
       ...output,
       metadata: {
-        mode: "live",
+        executionMode: "live", executionStatus: "executed_unverified", artifactId: crypto.randomUUID(),
         label: "Live AI analysis",
         generatedAt: new Date().toISOString(),
         sourceCoverage: "Live comparison grounded in the three curated legal questions; source verification remains visible.",
+        provenance: `Live OpenAI execution using ${process.env.OPENAI_MODEL ?? "gpt-5-mini"}`,
       },
     });
     return Response.json(analysis);
-  } catch {
-    return Response.json(cachedResponse("Live analysis timed out or failed schema validation; the validated cached analysis was restored."));
+  } catch (error) {
+    const timedOut = error instanceof Error && (error.name === "AbortError" || error.message.toLowerCase().includes("timeout"));
+    return failureResponse(executionFailure(timedOut ? "timeout" : "provider_failure", timedOut ? "Live analysis timed out." : "The live analysis provider failed or returned unusable output.", true), timedOut ? 504 : 502);
   }
 }

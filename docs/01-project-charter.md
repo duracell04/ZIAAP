@@ -1,134 +1,117 @@
 # Project Charter
 
-## AI-Native Arbitrator Appointment Service
-
-**Status:** Normative hackathon charter
-
-**Date:** 12 July 2026
-
-**Principal scenario:** Swiss supplier and UK customer negotiating a SaaS agreement
+## Synthetic Showcase of AI-Native Dispute Governance
 
 ## 1. Purpose
 
-ZIAAP demonstrates how two commercial parties can jointly design their future
-dispute-resolution environment while their interests remain aligned. They align
-contractual governance, configure an explicit decision constitution, test that
-protocol against hypothetical disputes, approve the observed behavior, and
-freeze the exact package before a dispute exists.
+ZIAAP demonstrates how parties can design dispute governance before conflict,
+inspect AI-supported behavior, identify an exact protocol configuration, and
+simulate its later application while preserving independent human control.
 
-## 2. Canonical Product Characterisation
+> ZIAAP is an AI-native dispute-governance and arbitration protocol that parties
+> configure, test, and acknowledge before conflict, then simulate applying under
+> a human arbitrator when a later dispute arises.
 
-> **An AI-native, ZIAAP-powered arbitrator is a human arbitrator legally
-> appointed by the parties who conducts proceedings through a jointly
-> configured, tested, and version-locked ZIAAP decision protocol.**
+## 2. Product thesis
 
-The human arbitrator holds legal office, remains independent, owns the final
-reasoning, and signs any award. The ZIAAP protocol performs the process
-agent-first and may produce a proposed determination with no independent legal
-effect.
+Conventional dispute clauses choose law, seat, rules, and tribunal structure but
+often leave evidence, interpretation, commercial values, remedy mechanics,
+uncertainty, AI behavior, and change policy unspecified. ZIAAP moves those choices
+into a visible pre-conflict governance process.
 
-### 2.1 Canonical Calibration Terminology
+The human and protocol are distinct. The protocol structures selected process and
+may produce a provisional simulation output. Only a properly appointed human in a
+future production setting could exercise arbitral authority. This showcase
+appoints nobody and creates no award.
 
-> **The parties align with each other, calibrate the AI-native arbitrator’s
-> reasoning, validate it through stress tests, and then version-lock the
-> approved arbitral runtime.**
+## 3. Scope through the human-review gate
 
-The four formation concepts are distinct:
+The alpha must provide:
 
-1. **Party alignment:** the parties clarify expectations and identify disagreement.
-2. **Arbitral reasoning calibration:** the parties adjust the Constitution,
-   reasoning instructions, exemplars, source hierarchy, evidentiary standards,
-   uncertainty thresholds, escalation rules, and remedy boundaries.
-3. **Stress testing and validation:** hypothetical cases test whether the
-   calibrated runtime behaves as intended and observes every safeguard.
-4. **Version-locking:** the parties approve and freeze the exact validated
-   runtime configuration.
+1. an opening experience understandable without a presenter;
+2. complete Party Alignment from draft and expectations to Alignment Annex;
+3. the locked authority and lifecycle model;
+4. separate illustrative and live-unverified execution actions;
+5. fail-closed API and UI behavior;
+6. integrity-enforcing simulated transition verification;
+7. attack-oriented tests and canonical documentation; and
+8. a real-reviewer package.
 
-Arbitral reasoning calibration is technically **inference-time protocol
-calibration**. It does not modify the underlying model’s weights. The term
-**model fine-tuning** is reserved for additional training that changes model
-weights and is outside the relationship-specific appointment process.
+Stages 2–5 are revised to completion only after real reviewer feedback.
 
-## 3. Product Thesis
+## 4. Authority constitution
 
-Future dispute cost is partly a governance-design problem. Parties can reduce
-later uncertainty by agreeing in advance on:
+The showcase enforces:
 
-- contract meaning, formulas, evidence, and remedies;
-- law, seat, rules, language, and the human arbitrator;
-- interpretation, evidentiary treatment, fairness, commercial values, and discretion;
-- escalation, amendment, model identity, tools, and retrieval boundaries; and
-- the behavior demonstrated by agreed stress-test validation cases.
+- `lifecycleMode: simulation_only`;
+- artifact execution status of `not_executed`, `illustrative_only`,
+  `executed_unverified`, or `failed`;
+- workflow lifecycle from `draft` through `closed`;
+- `legalEffect: false`; and
+- synthetic data only.
 
-This creates a privately designed procedural constitution without pretending
-that software itself holds arbitral office.
+`authoritative` and `validated` exist only as reserved future vocabulary and are
+unreachable. No ordinary authoritative `appointed` status exists.
 
-## 4. Required Lifecycle
+Illustrative and executed-unverified artifacts may be acknowledged for a
+simulated ceremony. Failed and not-executed artifacts may not. No current artifact
+may receive authoritative approval.
+
+## 5. Required lifecycle
 
 ```text
-G0 Governance Alignment
-→ C0 Arbitral Reasoning Calibration
-→ T0 Stress Testing and Validation
-→ A0 Freeze, Bilateral Approval, and Human Appointment
-→ D0 Later Dispute Bound to the Frozen Hash
-→ S0 Optional Sealed Settlement Facilitation
-→ P0 Provisional Protocol Determination
-→ H0 Independent Human Decision and Signature
+Party Alignment
+→ Arbitral Reasoning Calibration
+→ Stress Testing
+→ Exact protocol manifest
+→ Simulated appointment under the acknowledged protocol manifest
+→ Later Synthetic Dispute
+→ Optional sealed Settlement Facilitation
+→ Provisional Simulation-Only Determination
+→ Simulated Human Decision
 ```
 
-Alignment is not mediation. Settlement Facilitation begins only after a dispute,
-is voluntary and non-binding, and cannot impose an outcome. Arbitration is
-adjudicative and ends only through a human-issued decision or a valid settlement.
+Party Alignment, reasoning calibration, stress testing, independent validation,
+manifest acknowledgement, simulated appointment, settlement, and human legal
+authority remain separate concepts.
 
-## 5. Authority Model
+## 6. Outputs
 
-| Class | Protocol activity | Legal effect |
-| --- | --- | --- |
-| Administrative | Extract, organise, compare, link, version, hash, and record | No independent legal effect |
-| Mechanical | Apply a disclosed formula to confirmed inputs | Reproducible result; disputed inputs block authority |
-| Advisory | Explain, draft, propose options, and facilitate settlement | Non-binding until adopted by the competent actor |
-| Adjudicative assistance | Structure the record, reason under the frozen constitution, and propose a determination | Provisional only; the human arbitrator independently decides and signs |
+Before human review:
 
-## 6. Prototype Outputs
+- opening proposition and lifecycle explanation;
+- source-linked Divergence and Resolution Report;
+- deterministic formula and evidence specification;
+- exact-version Contract Governance Alignment Annex;
+- authority-labelled illustrative/live artifacts;
+- attack-test and verification evidence; and
+- guided reviewer script, questionnaire, findings template, and demo procedure.
 
-- Contract Governance Alignment Annex;
-- versioned Arbitrator Constitution;
-- four-case Stress-Test Validation Report with bilateral behavior approval;
-- canonical SHA-256 protocol manifest;
-- simulated Appointment Record and human acceptance;
-- hash-bound later dispute record;
-- optional sealed non-binding settlement proposal;
-- provisional ZIAAP determination; and
-- independently reasoned, simulated human award record.
+The later final dossier is outside the alpha reviewer gate.
 
-## 7. Legal and Product Boundaries
+## 7. Exact protocol manifest boundary
 
-- Never describe software alone as the appointed arbitrator.
-- Never describe a proposed determination as an award or binding decision.
-- Never let model confidence bypass evidence, mandatory law, objections, or human judgment.
-- Never substitute a different model, prompt, retrieval pack, tool policy, or engine under an existing hash.
-- Settlement content stays sealed from merits reasoning unless the parties execute a settlement or validly agree otherwise.
-- The human arbitrator cannot rubber-stamp the protocol output; assessment, review, reasons, and signature are separate recorded acts.
+The manifest identifies selected contractual decisions, legal architecture,
+Constitution, declared model identity, prompt/retrieval/tool/engine versions,
+stress artifacts, fictional human-arbitrator record, and change policy. It is not
+a build, dependency, provider, environment, runtime, or signature attestation.
 
-## 8. Scope Lock
+## 8. Public exposure policy
 
-The MVP uses one seeded contract, one fictional human arbitrator, one declared
-model identity, four stress-test cases, one later outage, one settlement
-proposal, and one award preview. It excludes production signatures,
-authentication, persistence, private caucuses, a mediator persona, arbitrary
-contracts, institutional administration, production awards, and multi-model
-Council orchestration.
+The public showcase is illustrative-only, synthetic, simulation-only, and
+deterministic. Unrestricted live model and retrieval endpoints, provider
+credentials, and uncontrolled spending are disabled. A separate restricted live
+environment may be considered later and is not part of this charter.
 
-## 9. Success Criteria
+## 9. Non-goals
 
-The prototype succeeds when a reviewer can see that:
+No production dispute processing, confidential matter intake, identity proof,
+legal appointment, signature, operative award, sovereign runtime, institutional
+integration, Council of LLMs, DLT execution, or smart-contract enforcement.
 
-1. parties align contract governance separately from protocol appointment;
-2. every behavior-affecting edit creates a new version and clears approval;
-3. stress-test validation covers mechanical correctness, disputed evidence, mandatory law, and party symmetry;
-4. the exact package is hashed and separately approved;
-5. the human arbitrator accepts the mandate and disclosure duties;
-6. a later dispute cannot run under a mismatched appointment;
-7. settlement activates only by bilateral consent and remains sealed;
-8. the protocol proposal has no independent legal effect; and
-9. only an independently reasoned human decision can be signed.
+## 10. Alpha success criteria
+
+A first-time viewer can accurately explain the commercial problem, pre-conflict
+timing, Party Alignment, AI contribution, human control, illustrative versus live
+execution, genuine validation boundary, manifest scope, and commercially useful
+output. Automated and browser gates pass. The team then stops for real feedback.

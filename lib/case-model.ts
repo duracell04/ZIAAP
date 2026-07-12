@@ -2,6 +2,19 @@ import { z } from "zod";
 
 export const topicSchema = z.enum(["uptime", "liability", "legal_architecture"]);
 export const authoritySchema = z.enum(["administrative", "mechanical", "advisory", "adjudicative"]);
+export const lifecycleModeSchema = z.enum(["simulation_only", "authoritative"]);
+export const executionStatusSchema = z.enum(["not_executed", "illustrative_only", "executed_unverified", "validated", "failed"]);
+export const lifecycleStatusSchema = z.enum(["draft", "manifest_prepared", "manifest_acknowledged", "appointment_simulated", "dispute_simulated", "closed"]);
+export const showcaseAuthoritySchema = z.object({
+  lifecycleMode: z.literal("simulation_only"), executionStatus: executionStatusSchema,
+  legalEffect: z.literal(false), syntheticData: z.literal(true), provenance: z.string(),
+  limitations: z.object({
+    productionIdentityVerified: z.literal(false), institutionalAppointment: z.literal(false),
+    productionSignature: z.literal(false), operativeAward: z.literal(false),
+  }),
+}).superRefine((value, context) => {
+  if (value.executionStatus === "validated") context.addIssue({ code: "custom", message: "Validated status is reserved for future independent evaluation." });
+});
 export const materialStatusSchema = z.enum([
   "source", "party_assertion", "provisional_ai_analysis", "legal_source", "draft",
   "agreed_contractual_text", "reproducible_calculation", "protocol_constitution",
@@ -59,6 +72,8 @@ export const clauseSchema = z.object({
 
 export const optionSchema = z.object({
   id: z.string(), label: z.string(), language: z.string(), tradeoff: z.string(),
+  commercialConsequence: z.string(), evidenceRequirements: z.array(z.string()).min(1),
+  legalReviewBoundary: z.string(), selectionConsequence: z.string(),
   serviceCreditRule: serviceCreditRuleSchema.nullable(), evidenceHierarchy: evidenceHierarchySchema.nullable(),
   liabilityCapChf: z.number().positive().nullable(), legalArchitecture: legalArchitectureSchema.nullable(),
   unresolvedMatters: z.array(z.string()),
@@ -69,16 +84,20 @@ export const divergenceFindingSchema = z.object({
   title: z.string(), supplierPosition: z.string(), customerPosition: z.string(), consequence: z.string(),
   uncertainty: z.string(), severity: z.enum(["material", "high"]), authorityClass: authoritySchema,
   materialStatus: z.literal("provisional_ai_analysis"), sourceIds: z.array(z.string()).min(1),
-  options: z.array(optionSchema).min(1),
+  unresolvedMatters: z.array(z.string()), options: z.array(optionSchema).min(1),
 });
 
 export const alignmentAnalysisSchema = z.object({
   findings: z.array(divergenceFindingSchema).length(3), sources: z.array(legalSourceSchema),
   metadata: z.object({
-    mode: z.enum(["cached", "live", "fallback"]),
-    label: z.enum(["Live AI analysis", "Cached verified fallback"]),
-    generatedAt: z.string(), sourceCoverage: z.string(), notice: z.string().optional(),
+    executionMode: z.enum(["illustrative", "live"]), executionStatus: executionStatusSchema,
+    label: z.enum(["Live AI analysis", "Illustrative analysis fixture"]), artifactId: z.string(),
+    generatedAt: z.string(), sourceCoverage: z.string(), provenance: z.string(), notice: z.string().optional(),
   }),
+}).superRefine((value, context) => {
+  if (!(["illustrative_only", "executed_unverified"] as string[]).includes(value.metadata.executionStatus)) {
+    context.addIssue({ code: "custom", message: "Analysis artifacts must be illustrative or executed-unverified." });
+  }
 });
 
 export const confirmationSchema = z.object({ supplier: z.number().int().nullable(), customer: z.number().int().nullable() });
@@ -101,7 +120,6 @@ export const protocolIdentitySchema = z.object({
 
 export const arbitratorConstitutionSchema = z.object({
   id: z.string(), version: z.number().int().positive(),
-  status: z.enum(["candidate", "calibrated", "frozen", "appointed"]),
   materialStatus: z.literal("protocol_constitution"), legalArchitecture: legalArchitectureSchema,
   humanArbitrator: humanArbitratorSchema,
   principles: z.object({
@@ -115,28 +133,33 @@ export const arbitratorConstitutionSchema = z.object({
   }),
   protocolIdentity: protocolIdentitySchema,
   changePolicy: z.literal("Any behavior-affecting change creates a new version, reruns stress-test validation, and requires fresh bilateral approval."),
-});
+}).strict();
 
 export const calibrationResultSchema = z.object({
   summary: z.string(), behavior: z.string(), safeguardsObserved: z.array(z.string()).min(1),
-  outcome: z.string(), passed: z.boolean(), materialStatus: z.literal("calibration_result"),
+  outcome: z.string(), limitations: z.array(z.string()).min(1), artifactId: z.string(),
+  executionStatus: executionStatusSchema, materialStatus: z.literal("calibration_result"),
 });
 
 export const calibrationScenarioSchema = z.object({
   id: z.string(), title: z.string(), category: z.enum(["mechanical", "evidence", "mandatory_law", "symmetry"]),
   facts: z.array(z.string()).min(1), evidence: z.array(z.string()).min(1), question: z.string(),
   requiredSafeguards: z.array(z.string()).min(1), acceptableBehavior: z.string(),
-  result: calibrationResultSchema.nullable(), passed: z.boolean(),
-  approvals: z.object({ supplier: z.boolean(), customer: z.boolean() }),
+  result: calibrationResultSchema.nullable(), selectedArtifactId: z.string().nullable(),
+  simulatedAcknowledgements: z.object({ supplier: z.string().nullable(), customer: z.string().nullable() }),
 });
 
 export const appointmentRecordSchema = z.object({
   id: z.string(), materialStatus: z.literal("appointment_record"),
-  status: z.enum(["draft", "frozen", "party_approved", "appointed"]),
-  manifestHash: z.string().nullable(), constitutionVersion: z.number().int().positive(),
-  calibrationIds: z.array(z.string()), confirmations: z.object({ supplier: z.string().nullable(), customer: z.string().nullable() }),
-  disclosuresReviewed: z.boolean(), arbitratorAccepted: z.boolean(),
-  simulatedSignature: z.string().nullable(), frozenAt: z.string().nullable(),
+  manifestVersion: z.number().int().positive(), manifestHash: z.string().nullable(), constitutionVersion: z.number().int().positive(),
+  calibrationIds: z.array(z.string()), simulatedAcknowledgements: z.object({ supplier: z.string().nullable(), customer: z.string().nullable() }),
+  disclosuresReviewed: z.boolean(), simulatedArbitratorAccepted: z.boolean(),
+  simulatedAcceptanceRecord: z.string().nullable(), preparedAt: z.string().nullable(), simulatedAt: z.string().nullable(),
+}).strict();
+
+export const alignmentScenarioSchema = z.object({
+  id: z.string(), topic: z.literal("uptime"), decisionVersion: z.number().int().positive(),
+  selectedOptionId: z.string(), actualUptimeBps: z.number().int().min(0).max(10_000), inputsConfirmed: z.boolean(),
 });
 
 export const disputeSessionSchema = z.object({
@@ -162,7 +185,10 @@ export const proposedDeterminationSchema = z.object({
   sourceIds: z.array(z.string()), counterarguments: z.array(z.string()), uncertainty: z.array(z.string()),
   escalationFlags: z.array(z.string()), reasoningSummary: z.string(), proposedDisposition: z.string(),
   materialStatus: z.literal("proposed_determination"), independentLegalEffect: z.literal(false),
-  metadata: z.object({ mode: z.enum(["cached", "live", "fallback"]), label: z.string(), notice: z.string().optional() }),
+  metadata: z.object({
+    executionMode: z.enum(["illustrative", "live"]), executionStatus: executionStatusSchema,
+    artifactId: z.string(), label: z.string(), provenance: z.string(), notice: z.string().optional(),
+  }),
 });
 
 export const humanDecisionSchema = z.object({
@@ -177,16 +203,37 @@ export const ledgerEventSchema = z.object({
 });
 
 export const contractStateSchema = z.object({
+  lifecycleMode: z.literal("simulation_only"), lifecycleStatus: lifecycleStatusSchema,
+  legalEffect: z.literal(false), syntheticData: z.literal(true),
   matter: z.object({ id: z.string(), title: z.string(), stage: z.string() }),
   parties: z.array(partyProfileSchema).length(2), clauses: z.array(clauseSchema).length(3),
-  analysis: alignmentAnalysisSchema, decisions: z.array(alignmentDecisionSchema).length(3), legalConstraint: legalConstraintSchema,
+  analysis: alignmentAnalysisSchema, decisions: z.array(alignmentDecisionSchema).length(3), alignmentScenario: alignmentScenarioSchema,
+  legalConstraint: legalConstraintSchema,
   constitution: arbitratorConstitutionSchema, calibrationScenarios: z.array(calibrationScenarioSchema).length(4),
   appointment: appointmentRecordSchema, dispute: disputeSessionSchema, settlement: settlementTrackSchema,
   proposedDetermination: proposedDeterminationSchema.nullable(), humanDecision: humanDecisionSchema,
   ledger: z.array(ledgerEventSchema),
+}).superRefine((state, context) => {
+  if (state.analysis.metadata.executionStatus === "validated") context.addIssue({ code: "custom", path: ["analysis", "metadata", "executionStatus"], message: "Validated is unreachable in this showcase." });
+  for (const [index, scenario] of state.calibrationScenarios.entries()) {
+    if (scenario.result?.executionStatus === "validated") context.addIssue({ code: "custom", path: ["calibrationScenarios", index, "result", "executionStatus"], message: "Validated is unreachable in this showcase." });
+    if (scenario.selectedArtifactId && (!scenario.result || scenario.selectedArtifactId !== scenario.result.artifactId || !["illustrative_only", "executed_unverified"].includes(scenario.result.executionStatus))) {
+      context.addIssue({ code: "custom", path: ["calibrationScenarios", index, "selectedArtifactId"], message: "Only an eligible exact artifact may be selected." });
+    }
+  }
+  const ids = state.appointment.calibrationIds;
+  if (new Set(ids).size !== ids.length) context.addIssue({ code: "custom", path: ["appointment", "calibrationIds"], message: "Scenario references must be unique." });
+  if (ids.some((id) => !state.calibrationScenarios.some((scenario) => scenario.id === id))) context.addIssue({ code: "custom", path: ["appointment", "calibrationIds"], message: "Scenario references must resolve." });
+  if (["manifest_prepared", "manifest_acknowledged", "appointment_simulated", "dispute_simulated", "closed"].includes(state.lifecycleStatus) && !state.appointment.manifestHash) {
+    context.addIssue({ code: "custom", path: ["lifecycleStatus"], message: "Prepared lifecycle states require a manifest hash." });
+  }
+  if (["appointment_simulated", "dispute_simulated", "closed"].includes(state.lifecycleStatus) && !state.appointment.simulatedAt) context.addIssue({ code: "custom", path: ["appointment", "simulatedAt"], message: "Simulated lifecycle states require a simulation record." });
 });
 
 export type Topic = z.infer<typeof topicSchema>;
+export type LifecycleMode = z.infer<typeof lifecycleModeSchema>;
+export type ExecutionStatus = z.infer<typeof executionStatusSchema>;
+export type LifecycleStatus = z.infer<typeof lifecycleStatusSchema>;
 export type ServiceCreditRule = z.infer<typeof serviceCreditRuleSchema>;
 export type PartyProfile = z.infer<typeof partyProfileSchema>;
 export type DivergenceFinding = z.infer<typeof divergenceFindingSchema>;

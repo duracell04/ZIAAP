@@ -7,9 +7,10 @@ describe("lawyer-grade contract state", () => {
     const state = contractStateSchema.parse(getDemoState());
     expect(state.analysis.findings).toHaveLength(3);
     expect(state.analysis.findings.every((finding) => finding.materialStatus === "provisional_ai_analysis" && finding.sourceIds.length > 0)).toBe(true);
-    expect(state.constitution).toMatchObject({ materialStatus: "protocol_constitution", status: "candidate" });
+    expect(state).toMatchObject({ lifecycleMode: "simulation_only", lifecycleStatus: "draft", legalEffect: false, syntheticData: true });
+    expect(state.constitution).toMatchObject({ materialStatus: "protocol_constitution" });
     expect(state.calibrationScenarios).toHaveLength(4);
-    expect(state.appointment.status).toBe("draft");
+    expect(state.appointment.manifestHash).toBeNull();
     expect(state.proposedDetermination).toBeNull();
   });
 
@@ -35,5 +36,31 @@ describe("lawyer-grade contract state", () => {
     expect(annex.decisions[0].serviceCreditRule).toEqual(alternative.serviceCreditRule);
     expect(annex.decisions[0].language).toBe(alternative.language);
     expect(annex.generatedFromState).toBe(true);
+  });
+
+  it("rejects reserved authoritative, validated, and ordinary appointed state", () => {
+    const authoritative = structuredClone(getDemoState()) as unknown as Record<string, unknown>;
+    authoritative.lifecycleMode = "authoritative";
+    expect(contractStateSchema.safeParse(authoritative).success).toBe(false);
+
+    const validated = structuredClone(getDemoState());
+    validated.analysis.metadata.executionStatus = "validated";
+    expect(contractStateSchema.safeParse(validated).success).toBe(false);
+
+    const appointed = structuredClone(getDemoState()) as unknown as { appointment: Record<string, unknown> };
+    appointed.appointment.status = "appointed";
+    expect(contractStateSchema.safeParse(appointed).success).toBe(false);
+  });
+
+  it("resets cleanly after a failed-artifact selection attempt", () => {
+    const original = getDemoState();
+    const failed = structuredClone(original);
+    failed.calibrationScenarios[0].result = {
+      summary: "Failed", behavior: "No usable output", safeguardsObserved: ["none"], outcome: "Failure",
+      limitations: ["Provider failed"], artifactId: "failed", executionStatus: "failed", materialStatus: "calibration_result",
+    };
+    failed.calibrationScenarios[0].selectedArtifactId = null;
+    expect(contractStateSchema.safeParse(failed).success).toBe(true);
+    expect(getDemoState()).toEqual(original);
   });
 });

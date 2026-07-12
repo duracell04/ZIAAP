@@ -7,16 +7,17 @@ import { ConstitutionBuilder } from "@/components/case-map";
 import { ValidationLab } from "@/components/reasoning-card";
 import { AppointmentCeremony } from "@/components/evidence-card";
 import { DisputePreview } from "@/components/decision-panel";
+import { OpeningExperience } from "@/components/opening-experience";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  normalizeDecisionStatus, proposedDeterminationSchema, settlementProposalSchema,
+  alignmentAnalysisSchema, applyOption, normalizeDecisionStatus, proposedDeterminationSchema, settlementProposalSchema, updateDecisionLanguage,
   type ArbitratorConstitution, type ContractState, type LedgerEvent, type Topic,
 } from "@/lib/case-model";
-import { buildProtocolManifest, canAppoint, computeProtocolHash, humanDecisionCanSign, invalidateProtocolState } from "@/lib/protocol";
+import { humanDecisionCanSign, invalidatePreparedManifest, invalidateProtocolState, prepareProtocolManifest, simulateAppointmentTransition } from "@/lib/protocol";
 
-const steps = ["Party Alignment", "Arbitral Reasoning Calibration", "Stress Testing and Validation", "Version-Locking and Appointment", "Later Dispute"];
-const stepNotes = ["Clarify expectations", "Calibrate protocol", "Validate behavior", "Freeze exact runtime", "Agent-first process"];
+const steps = ["Party Alignment", "Arbitral Reasoning Calibration", "Stress Testing", "Protocol Manifest and Simulated Appointment", "Later Synthetic Dispute"];
+const stepNotes = ["Clarify expectations", "Calibrate protocol", "Inspect behavior", "Acknowledge exact manifest", "Human-controlled simulation"];
 
 function newEvent(actor: string, action: string, objectId: string, detail: string, authorityClass: LedgerEvent["authorityClass"]): LedgerEvent {
   return { id: crypto.randomUUID(), timestamp: new Date().toISOString(), actor, action, objectId, detail, authorityClass };
@@ -24,34 +25,72 @@ function newEvent(actor: string, action: string, objectId: string, detail: strin
 
 export function DemoWorkspace({ initialState }: { initialState: ContractState }) {
   const [state, setState] = useState(initialState);
+  const [experience, setExperience] = useState<"opening" | "guided" | "explore">("opening");
   const [step, setStep] = useState(0);
+  const [alignmentBusy, setAlignmentBusy] = useState(false);
+  const [alignmentNotice, setAlignmentNotice] = useState("");
+  const [analysisActive, setAnalysisActive] = useState(true);
   const [calibrating, setCalibrating] = useState(false);
   const [calibrationNotice, setCalibrationNotice] = useState("");
   const [disputeBusy, setDisputeBusy] = useState(false);
   const [disputeNotice, setDisputeNotice] = useState("");
 
   function reset() {
-    setState(structuredClone(initialState)); setStep(0); setCalibrationNotice(""); setDisputeNotice("");
+    setState(structuredClone(initialState)); setStep(0); setAnalysisActive(true); setAlignmentNotice(""); setCalibrationNotice(""); setDisputeNotice("");
   }
 
   function editExpectation(partyId: string, topic: Topic, value: string) {
-    setState((current) => ({ ...current, parties: current.parties.map((party) => party.id === partyId ? { ...party, confirmed: false, expectations: { ...party.expectations, [topic]: value } } : party) }));
+    setAnalysisActive(false);
+    setState((current) => { const base = invalidatePreparedManifest(current); return { ...base, parties: base.parties.map((party) => party.id === partyId ? { ...party, confirmed: false, expectations: { ...party.expectations, [topic]: value } } : party) }; });
   }
 
   function confirmProfile(partyId: string) {
-    setState((current) => ({
-      ...current,
-      parties: current.parties.map((party) => party.id === partyId ? { ...party, confirmed: !party.confirmed } : party),
-      ledger: [...current.ledger, newEvent(partyId, "Updated governance profile confirmation", partyId, "Separate party assertion; not protocol appointment.", "advisory")],
-    }));
+    setState((current) => { const base = invalidatePreparedManifest(current); return {
+      ...base,
+      parties: base.parties.map((party) => party.id === partyId ? { ...party, confirmed: !party.confirmed } : party),
+      ledger: [...base.ledger, newEvent(partyId, "Updated governance profile confirmation", partyId, "Separate party assertion; not protocol appointment.", "advisory")],
+    }; });
   }
 
   function confirmClause(topic: Topic, party: "supplier" | "customer") {
-    setState((current) => ({
-      ...current,
-      decisions: current.decisions.map((decision) => decision.topic === topic ? normalizeDecisionStatus({ ...decision, confirmations: { ...decision.confirmations, [party]: decision.confirmations[party] === decision.version ? null : decision.version } }) : decision),
-      ledger: [...current.ledger, newEvent(party, "Updated contract-version confirmation", topic, "Exact contract text only; separate from appointment approval.", "advisory")],
-    }));
+    setState((current) => { const base = invalidatePreparedManifest(current); return {
+      ...base,
+      decisions: base.decisions.map((decision) => decision.topic === topic ? normalizeDecisionStatus({ ...decision, confirmations: { ...decision.confirmations, [party]: decision.confirmations[party] === decision.version ? null : decision.version } }) : decision),
+      ledger: [...base.ledger, newEvent(party, "Updated contract-version confirmation", topic, "Exact contract text only; separate from appointment approval.", "advisory")],
+    }; });
+  }
+
+  async function runAlignment(executionMode: "illustrative" | "live") {
+    setAlignmentBusy(true); setAlignmentNotice("");
+    try {
+      const response = await fetch("/api/analyze", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ executionMode, parties: state.parties }) });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.reason ?? "Alignment execution failed.");
+      const analysis = alignmentAnalysisSchema.parse(payload);
+      setState((current) => ({ ...invalidatePreparedManifest(current), analysis }));
+      setAnalysisActive(true); setAlignmentNotice(`${analysis.metadata.label} selected. It has no independent legal effect.`);
+    } catch (error) {
+      setAnalysisActive(false); setAlignmentNotice(error instanceof Error ? error.message : "Alignment execution failed.");
+    } finally { setAlignmentBusy(false); }
+  }
+
+  function selectOption(topic: Topic, optionId: string) {
+    setState((current) => {
+      const option = current.analysis.findings.find((finding) => finding.topic === topic)?.options.find((item) => item.id === optionId);
+      if (!option) return current;
+      const base = invalidatePreparedManifest(current);
+      const decisions = base.decisions.map((decision) => decision.topic === topic ? applyOption(decision, option) : decision);
+      const selected = decisions.find((decision) => decision.topic === topic)!;
+      return { ...base, decisions, alignmentScenario: topic === "uptime" ? { ...base.alignmentScenario, selectedOptionId: optionId, decisionVersion: selected.version } : base.alignmentScenario };
+    });
+  }
+
+  function editDecision(topic: Topic, language: string) {
+    setState((current) => { const base = invalidatePreparedManifest(current); const decisions = base.decisions.map((decision) => decision.topic === topic ? updateDecisionLanguage(decision, language) : decision); const uptime = decisions.find((decision) => decision.topic === "uptime")!; return { ...base, decisions, alignmentScenario: { ...base.alignmentScenario, decisionVersion: uptime.version } }; });
+  }
+
+  function updateAlignmentScenario(field: "actualUptimeBps" | "inputsConfirmed", value: number | boolean) {
+    setState((current) => ({ ...invalidatePreparedManifest(current), alignmentScenario: { ...current.alignmentScenario, [field]: value } }));
   }
 
   function updatePrinciple(field: keyof ArbitratorConstitution["principles"], value: string) {
@@ -63,70 +102,60 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
     });
   }
 
-  async function runValidation(mode: "cached" | "live") {
+  async function runValidation(executionMode: "illustrative" | "live") {
     setCalibrating(true); setCalibrationNotice("");
     try {
-      const response = await fetch("/api/calibrate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode, constitution: state.constitution, scenarios: state.calibrationScenarios }) });
+      const response = await fetch("/api/calibrate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ executionMode, constitution: state.constitution, scenarios: state.calibrationScenarios }) });
       const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error ?? "Validation failed.");
+      if (!response.ok) throw new Error(payload.reason ?? payload.error ?? "Stress-test execution failed.");
       setState((current) => ({
-        ...current, constitution: { ...current.constitution, status: "calibrated" },
+        ...current,
         calibrationScenarios: current.calibrationScenarios.map((scenario) => {
           const match = payload.results.find((item: { scenarioId: string }) => item.scenarioId === scenario.id);
-          return match ? { ...scenario, result: match.result, passed: match.result.passed, approvals: { supplier: false, customer: false } } : scenario;
+          return match ? { ...scenario, result: match.result, selectedArtifactId: match.result.artifactId, simulatedAcknowledgements: { supplier: null, customer: null } } : scenario;
         }),
-        appointment: { ...current.appointment, status: "draft", manifestHash: null, confirmations: { supplier: null, customer: null } },
+        lifecycleStatus: "draft", appointment: { ...current.appointment, manifestHash: null, simulatedAcknowledgements: { supplier: null, customer: null } },
         ledger: [...current.ledger, newEvent("System", "Ran stress-test validation", current.constitution.id, payload.metadata.label, "administrative")],
       }));
       setCalibrationNotice(payload.metadata.notice ?? `${payload.metadata.label} completed.`);
-    } catch (error) { setCalibrationNotice(error instanceof Error ? error.message : "Validation failed."); }
+    } catch (error) {
+      setState((current) => ({ ...current, calibrationScenarios: current.calibrationScenarios.map((scenario) => ({ ...scenario, selectedArtifactId: null, simulatedAcknowledgements: { supplier: null, customer: null } })) }));
+      setCalibrationNotice(error instanceof Error ? error.message : "Execution failed.");
+    }
     finally { setCalibrating(false); }
   }
 
-  function approveScenario(id: string, party: "supplier" | "customer") {
+  function acknowledgeScenario(id: string, party: "supplier" | "customer") {
     setState((current) => ({
       ...current,
-      calibrationScenarios: current.calibrationScenarios.map((scenario) => scenario.id === id ? { ...scenario, approvals: { ...scenario.approvals, [party]: !scenario.approvals[party] } } : scenario),
-      appointment: { ...current.appointment, status: "draft", manifestHash: null, confirmations: { supplier: null, customer: null } },
-      ledger: [...current.ledger, newEvent(party, "Updated validation approval", id, "Approval applies to the observed behavior of this exact scenario version.", "advisory")],
+      calibrationScenarios: current.calibrationScenarios.map((scenario) => scenario.id === id && scenario.result ? { ...scenario, simulatedAcknowledgements: { ...scenario.simulatedAcknowledgements, [party]: scenario.simulatedAcknowledgements[party] === scenario.result.artifactId ? null : scenario.result.artifactId } } : scenario),
+      lifecycleStatus: "draft", appointment: { ...current.appointment, manifestHash: null, simulatedAcknowledgements: { supplier: null, customer: null } },
+      ledger: [...current.ledger, newEvent(party, "Updated simulated artifact acknowledgement", id, "No legal or authoritative effect.", "advisory")],
     }));
   }
 
   async function freezePackage() {
-    const hash = await computeProtocolHash(buildProtocolManifest(state));
-    setState((current) => ({
-      ...current, constitution: { ...current.constitution, status: "frozen" },
-      appointment: { ...current.appointment, status: "frozen", manifestHash: hash, constitutionVersion: current.constitution.version, confirmations: { supplier: null, customer: null }, frozenAt: new Date().toISOString() },
-      ledger: [...current.ledger, newEvent("System", "Froze appointment manifest", current.appointment.id, hash, "administrative")],
-    }));
+    setState(await prepareProtocolManifest(state));
   }
 
   function confirmHash(party: "supplier" | "customer") {
     setState((current) => {
       const hash = current.appointment.manifestHash;
       if (!hash) return current;
-      const confirmations = { ...current.appointment.confirmations, [party]: current.appointment.confirmations[party] === hash ? null : hash };
-      const partyApproved = confirmations.supplier === hash && confirmations.customer === hash;
-      return { ...current, appointment: { ...current.appointment, confirmations, status: partyApproved ? "party_approved" : "frozen" }, ledger: [...current.ledger, newEvent(party, "Updated exact-hash approval", current.appointment.id, hash, "advisory")] };
+      const simulatedAcknowledgements = { ...current.appointment.simulatedAcknowledgements, [party]: current.appointment.simulatedAcknowledgements[party] === hash ? null : hash };
+      const acknowledged = simulatedAcknowledgements.supplier === hash && simulatedAcknowledgements.customer === hash;
+      return { ...current, lifecycleStatus: acknowledged ? "manifest_acknowledged" : "manifest_prepared", appointment: { ...current.appointment, simulatedAcknowledgements }, ledger: [...current.ledger, newEvent(party, "Updated exact-hash simulated acknowledgement", current.appointment.id, hash, "advisory")] };
     });
   }
 
-  function setReviewFlag(field: "disclosuresReviewed" | "arbitratorAccepted", value: boolean) {
+  function setReviewFlag(field: "disclosuresReviewed" | "simulatedArbitratorAccepted", value: boolean) {
     setState((current) => ({ ...current, appointment: { ...current.appointment, [field]: value } }));
   }
 
-  function appoint() {
-    setState((current) => {
-      if (!current.appointment.manifestHash || !canAppoint(current)) return current;
-      const signature = `${current.constitution.humanArbitrator.name} · accepted ${new Date().toISOString()} · prototype signature`;
-      return {
-        ...current, matter: { ...current.matter, stage: "A0_PROTOCOL_APPOINTED" }, constitution: { ...current.constitution, status: "appointed" },
-        appointment: { ...current.appointment, status: "appointed", simulatedSignature: signature },
-        dispute: { ...current.dispute, appointmentHash: current.appointment.manifestHash, stage: "settlement" },
-        settlement: { ...current.settlement, status: "awaiting_consent" },
-        ledger: [...current.ledger, newEvent(current.constitution.humanArbitrator.name, "Accepted AI-native arbitration appointment", current.appointment.id, "Human legal actor; frozen ZIAAP protocol; simulated execution only.", "adjudicative")],
-      };
-    });
+  async function appoint() {
+    const result = await simulateAppointmentTransition(state);
+    if (result.ok) setState(result.state);
+    else setCalibrationNotice(result.reason);
   }
 
   function toggleSettlementConsent(party: "supplier" | "customer") {
@@ -152,7 +181,8 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
       const notSettled = responses.supplier === "decline" || responses.customer === "decline";
       return {
         ...current,
-        settlement: { ...current.settlement, responses, status: settled ? "settled" : notSettled ? "not_settled" : "active", meritsRecord: settled ? ["A settlement was accepted by both parties."] : notSettled ? ["Settlement facilitation occurred and ended without settlement."] : [] },
+        lifecycleStatus: settled ? "closed" : current.lifecycleStatus,
+        settlement: { ...current.settlement, responses, status: settled ? "settled" : notSettled ? "not_settled" : "active", meritsRecord: settled ? ["A synthetic settlement was accepted by both parties in the simulation."] : notSettled ? ["Settlement facilitation occurred and ended without settlement."] : [] },
         dispute: { ...current.dispute, stage: settled ? "closed" : notSettled ? "arbitration" : current.dispute.stage },
         ledger: [...current.ledger, newEvent(party, "Recorded sealed settlement response", current.dispute.id, response === "decline" ? "Settlement ended; content remains sealed." : "Response stored in sealed track.", "advisory")],
       };
@@ -163,14 +193,14 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
     setState((current) => ({ ...current, humanDecision: { ...current.humanDecision, preliminaryAssessment: value } }));
   }
 
-  async function runDetermination(mode: "cached" | "live") {
+  async function runDetermination(executionMode: "illustrative" | "live") {
     setDisputeBusy(true); setDisputeNotice("");
     try {
-      const response = await fetch("/api/dispute-preview", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode, state }) });
+      const response = await fetch("/api/dispute-preview", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ executionMode, state }) });
       const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error ?? "Frozen protocol could not run.");
+      if (!response.ok) throw new Error(payload.reason ?? payload.error ?? "Protocol execution failed.");
       const determination = proposedDeterminationSchema.parse(payload);
-      setState((current) => ({ ...current, proposedDetermination: determination, dispute: { ...current.dispute, stage: "human_review" }, ledger: [...current.ledger, newEvent("Frozen ZIAAP protocol", "Produced provisional determination", determination.id, "No independent legal effect; human adoption required.", "adjudicative")] }));
+      setState((current) => ({ ...current, lifecycleStatus: "dispute_simulated", proposedDetermination: determination, dispute: { ...current.dispute, stage: "human_review" }, ledger: [...current.ledger, newEvent("ZIAAP simulation protocol", "Produced provisional simulation-only determination", determination.id, "No independent legal effect; future human judgment remains required.", "advisory")] }));
       setDisputeNotice(determination.metadata.notice ?? determination.metadata.label);
     } catch (error) { setDisputeNotice(error instanceof Error ? error.message : "Frozen protocol could not run."); }
     finally { setDisputeBusy(false); }
@@ -187,18 +217,20 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   function signDecision() {
     setState((current) => {
       if (!humanDecisionCanSign(current)) return current;
-      const signature = `${current.constitution.humanArbitrator.name} · signed ${new Date().toISOString()} · prototype award`;
-      return { ...current, humanDecision: { ...current.humanDecision, simulatedSignature: signature }, dispute: { ...current.dispute, stage: "closed" }, matter: { ...current.matter, stage: "A3_HUMAN_AWARD_PREVIEW" }, ledger: [...current.ledger, newEvent(current.constitution.humanArbitrator.name, "Signed simulated human award", current.dispute.id, current.humanDecision.status, "adjudicative")] };
+      const signature = `${current.constitution.humanArbitrator.name} · simulated decision record ${new Date().toISOString()} · no legal effect`;
+      return { ...current, lifecycleStatus: "closed", humanDecision: { ...current.humanDecision, simulatedSignature: signature }, dispute: { ...current.dispute, stage: "closed" }, matter: { ...current.matter, stage: "H0_SIMULATED_HUMAN_DECISION" }, ledger: [...current.ledger, newEvent(current.constitution.humanArbitrator.name, "Recorded simulated human decision", current.dispute.id, current.humanDecision.status, "advisory")] };
     });
   }
 
+  if (experience === "opening") return <OpeningExperience beginGuided={() => { setExperience("guided"); setStep(0); }} explore={() => { setExperience("explore"); setStep(0); }} />;
+
   return <main className="app-shell">
-    <aside className="sidebar"><div className="wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>AI-native arbitrator</small></div></div><nav aria-label="Appointment workflow">{steps.map((label, index) => <button key={label} className={index === step ? "nav-step active" : "nav-step"} onClick={() => setStep(index)} aria-current={index === step ? "step" : undefined}><span>{index + 1}</span><div>{label}<small>{stepNotes[index]}</small></div></button>)}</nav><div className="sidebar-note"><ShieldAlert size={16} /><p>The human arbitrator holds legal office. The version-locked ZIAAP protocol runs the process agent-first. Only the human signs an award.</p></div><Button variant="ghost" onClick={reset}><RefreshCcw size={15} /> Reset demo</Button></aside>
-    <section className="workspace"><header className="topbar"><div><Badge tone="red">{state.matter.stage}</Badge><span className="matter-id">{state.matter.id}</span></div><div className="topbar-status"><span><i className={state.constitution.status === "appointed" ? "dot done" : "dot"} />Protocol {state.constitution.status}</span><span><i className={state.appointment.status === "appointed" ? "dot done" : "dot"} />Appointment</span></div></header>
+    <aside className="sidebar"><div className="wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>Dispute governance protocol</small></div></div><nav aria-label="Showcase workflow">{steps.map((label, index) => <button key={label} className={index === step ? "nav-step active" : "nav-step"} onClick={() => setStep(index)} aria-current={index === step ? "step" : undefined}><span>{index + 1}</span><div>{label}<small>{stepNotes[index]}</small></div></button>)}</nav><div className="sidebar-note"><ShieldAlert size={16} /><p>Synthetic data · simulation only · no legal effect. The fictional human arbitrator and protocol remain distinct.</p></div><Button variant="ghost" onClick={() => setExperience("opening")}><ArrowLeft size={15} /> Return to introduction</Button><Button variant="ghost" onClick={reset}><RefreshCcw size={15} /> Reset demo</Button></aside>
+    <section className="workspace"><header className="topbar"><div><Badge tone="red">{state.lifecycleMode}</Badge><span className="matter-id">{state.matter.id}</span></div><div className="topbar-status"><span><i className={state.appointment.manifestHash ? "dot done" : "dot"} />Exact manifest</span><span><i className={state.lifecycleStatus === "appointment_simulated" ? "dot done" : "dot"} />{state.lifecycleStatus}</span></div></header>
       <div className="content">
-        {step === 0 && <GovernanceAlignment state={state} editExpectation={editExpectation} confirmProfile={confirmProfile} confirmClause={confirmClause} />}
+        {step === 0 && <GovernanceAlignment state={state} busy={alignmentBusy} notice={alignmentNotice} analysisActive={analysisActive} runAlignment={runAlignment} editExpectation={editExpectation} confirmProfile={confirmProfile} selectOption={selectOption} editDecision={editDecision} updateAlignmentScenario={updateAlignmentScenario} confirmClause={confirmClause} />}
         {step === 1 && <ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} />}
-        {step === 2 && <ValidationLab state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} approveScenario={approveScenario} />}
+        {step === 2 && <ValidationLab state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} acknowledgeScenario={acknowledgeScenario} />}
         {step === 3 && <AppointmentCeremony state={state} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
         {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} runDetermination={runDetermination} updateDecision={updateDecision} toggleChecklist={toggleChecklist} signDecision={signDecision} />}
       </div>

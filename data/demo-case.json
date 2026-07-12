@@ -1,4 +1,5 @@
 {
+  "lifecycleMode": "simulation_only", "lifecycleStatus": "draft", "legalEffect": false, "syntheticData": true,
   "matter": { "id": "ZIAAP-AI-001", "title": "Helvetia Cloud × Northstar Retail · AI-native arbitration appointment", "stage": "G0_GOVERNANCE_ALIGNMENT" },
   "parties": [
     {
@@ -47,10 +48,12 @@
         "customerPosition": "Customer-facing evidence should control and each complete 0.1-point shortfall should produce a 5% credit.",
         "consequence": "At 99.2% uptime, the remedy cannot be reproduced unless measurement, exclusions, step size, rate, fee, and cap are explicit.",
         "uncertainty": "The draft does not define the evidence hierarchy or complete-step calculation.",
-        "sourceIds": ["source-draft-sla"],
+        "sourceIds": ["source-draft-sla"], "unresolvedMatters": ["Final operational owner of the joint availability monitor"],
         "options": [
           {
             "id": "uptime-executable", "label": "Executable stepped credit", "tradeoff": "Creates a reproducible remedy from shared evidence.",
+            "commercialConsequence": "Credits scale with complete shortfall steps and may reach one monthly fee.", "evidenceRequirements": ["Joint external monitor", "Maintenance notice record"],
+            "legalReviewBoundary": "Commercial formula only; it does not decide broader liability.", "selectionConsequence": "Replaces the ambiguous credit wording with an executable formula.",
             "language": "Monthly uptime is determined by the jointly visible external monitor. Scheduled maintenance is excluded only with 72 hours' notice and is capped at four hours monthly. If uptime falls below 99.5%, Customer receives 5% of the monthly fee for each complete 0.1 percentage-point shortfall, capped at 100% of the monthly fee.",
             "serviceCreditRule": { "thresholdBps": 9950, "shortfallStepBps": 10, "creditPercentPerStep": 5, "capPercent": 100, "monthlyFeeChf": 10000 },
             "evidenceHierarchy": { "primarySource": "Joint external availability monitor", "secondarySource": "Supplier telemetry", "maintenanceNoticeHours": 72, "maintenanceMonthlyCapHours": 4 },
@@ -58,6 +61,8 @@
           },
           {
             "id": "uptime-fixed-credit", "label": "Fixed 10% shortfall credit", "tradeoff": "Simpler remedy but less sensitive to outage severity.",
+            "commercialConsequence": "Any qualifying shortfall produces the same CHF 1,000 credit.", "evidenceRequirements": ["Joint external monitor", "Maintenance notice record"],
+            "legalReviewBoundary": "Commercial formula only; it does not decide broader liability.", "selectionConsequence": "Prioritises simplicity over proportionality.",
             "language": "Monthly uptime is determined by the jointly visible external monitor. If uptime falls below 99.5%, Customer receives a fixed credit equal to 10% of the monthly fee, capped at that amount.",
             "serviceCreditRule": { "thresholdBps": 9950, "shortfallStepBps": 10, "creditPercentPerStep": 10, "capPercent": 10, "monthlyFeeChf": 10000 },
             "evidenceHierarchy": { "primarySource": "Joint external availability monitor", "secondarySource": "Supplier telemetry", "maintenanceNoticeHours": 72, "maintenanceMonthlyCapHours": 4 },
@@ -72,10 +77,12 @@
         "customerPosition": "The cap should not protect intentional or grossly negligent conduct.",
         "consequence": "The selected legal architecture may affect the validity and interpretation of advance limitations; the system cannot determine enforceability.",
         "uncertainty": "Targeted professional review is required before signature.",
-        "sourceIds": ["source-co-100"],
+        "sourceIds": ["source-co-100"], "unresolvedMatters": ["Mandatory-law effect on intentional or grossly negligent conduct"],
         "options": [
           {
             "id": "liability-review", "label": "CHF 120,000 cap with mandatory-law reservation", "tradeoff": "Preserves commercial certainty without asserting enforceability.",
+            "commercialConsequence": "Keeps the negotiated CHF 120,000 allocation subject to non-excludable law.", "evidenceRequirements": ["Incident record", "Applicable mandatory-law analysis"],
+            "legalReviewBoundary": "Qualified counsel must review enforceability before signature.", "selectionConsequence": "Records the cap without representing that every application is valid.",
             "language": "Indirect and consequential loss is excluded and aggregate liability is capped at CHF 120,000, subject to liabilities that cannot validly be excluded or limited. The effect of intentional or grossly negligent conduct requires targeted professional review.",
             "serviceCreditRule": null, "evidenceHierarchy": null, "liabilityCapChf": 120000, "legalArchitecture": null,
             "unresolvedMatters": ["Whether intentional or grossly negligent conduct affects the agreed limitation under applicable mandatory law."]
@@ -89,10 +96,12 @@
         "customerPosition": "English law and London were initially assumed.",
         "consequence": "The parties must choose one explicit architecture; ZIAAP does not blend the systems.",
         "uncertainty": "Mandatory laws applying irrespective of party choice remain reserved.",
-        "sourceIds": ["source-swiss-model-clause"],
+        "sourceIds": ["source-swiss-model-clause"], "unresolvedMatters": ["Any mandatory rules applying irrespective of the chosen law"],
         "options": [
           {
             "id": "law-swiss", "label": "Swiss law + Zurich seat", "tradeoff": "One clean architecture with English-language proceedings.",
+            "commercialConsequence": "Creates one predictable seat, ruleset, language, and governing-law package.", "evidenceRequirements": ["Executed dispute clause", "Applicable institutional rules"],
+            "legalReviewBoundary": "Mandatory laws and enforceability remain matters for qualified review.", "selectionConsequence": "Rejects a hybrid architecture and selects a single coherent configuration.",
             "language": "This Agreement is governed by Swiss substantive law. Disputes are finally resolved under the Swiss Rules of International Arbitration by one arbitrator seated in Zurich, Switzerland, in English. Mandatory laws applying irrespective of party choice are reserved.",
             "serviceCreditRule": null, "evidenceHierarchy": null, "liabilityCapChf": null,
             "legalArchitecture": { "substantiveLaw": "Swiss substantive law", "seat": "Zurich, Switzerland", "rules": "Swiss Rules of International Arbitration", "language": "English", "arbitrators": 1 },
@@ -106,7 +115,7 @@
       { "id": "source-co-100", "jurisdiction": "Switzerland", "authority": "Federal legislation", "title": "Swiss Code of Obligations, Article 100", "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en", "passage": "Advance exclusion or limitation for intentional or grossly negligent conduct raises a targeted statutory constraint requiring professional review.", "retrievalMode": "curated", "verificationStatus": "review_required", "materialStatus": "legal_source" },
       { "id": "source-swiss-model-clause", "jurisdiction": "Switzerland", "authority": "Arbitration model clause", "title": "Swiss Arbitration Centre Model Clause", "url": "https://www.swissarbitration.org/centre/arbitration/arbitration-clauses/", "passage": "The model clause separately specifies rules, number of arbitrators, seat, and language.", "retrievalMode": "curated", "verificationStatus": "verified", "materialStatus": "legal_source" }
     ],
-    "metadata": { "mode": "cached", "label": "Cached verified fallback", "generatedAt": "2026-07-11T09:00:00.000Z", "sourceCoverage": "Three bounded divergence questions with explicit source and review status." }
+    "metadata": { "executionMode": "illustrative", "executionStatus": "illustrative_only", "label": "Illustrative analysis fixture", "artifactId": "alignment-illustrative-v1", "generatedAt": "2026-07-11T09:00:00.000Z", "sourceCoverage": "Three bounded divergence questions with explicit source and review status.", "provenance": "Curated offline synthetic fixture" }
   },
   "decisions": [
     {
@@ -130,6 +139,7 @@
       "unresolvedMatters": [], "confirmations": { "supplier": null, "customer": null }
     }
   ],
+  "alignmentScenario": { "id": "align-sla-001", "topic": "uptime", "decisionVersion": 1, "selectedOptionId": "uptime-executable", "actualUptimeBps": 9920, "inputsConfirmed": true },
   "legalConstraint": {
     "id": "constraint-co-100", "query": "Swiss Code of Obligations Article 100 advance limitation intentional or gross negligence", "headline": "Legal constraint identified",
     "source": { "id": "source-co-100", "jurisdiction": "Switzerland", "authority": "Federal legislation", "title": "Swiss Code of Obligations, Article 100", "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/en", "passage": "Advance exclusion or limitation for intentional or grossly negligent conduct raises a targeted statutory constraint requiring professional review.", "retrievalMode": "curated", "verificationStatus": "review_required", "materialStatus": "legal_source" },
@@ -137,7 +147,7 @@
     "conclusion": "No enforceability conclusion is made. The constraint is isolated for qualified review."
   },
   "constitution": {
-    "id": "constitution-ziaap-001", "version": 1, "status": "candidate", "materialStatus": "protocol_constitution",
+    "id": "constitution-ziaap-001", "version": 1, "materialStatus": "protocol_constitution",
     "legalArchitecture": { "substantiveLaw": "Swiss substantive law", "seat": "Zurich, Switzerland", "rules": "Swiss Rules of International Arbitration", "language": "English", "arbitrators": 1 },
     "humanArbitrator": { "id": "arb-demo-keller", "name": "Dr. Mira Keller (fictional)", "role": "Sole human arbitrator", "fictional": true, "disclosure": "No relationship with either party; fictional identity used only for the prototype." },
     "principles": {
@@ -162,32 +172,32 @@
       "id": "cal-clear-sla", "title": "Clear SLA calculation", "category": "mechanical",
       "facts": ["Actual uptime is 99.2%", "All measurement inputs are confirmed"], "evidence": ["Joint external monitor", "Accepted executable credit rule"],
       "question": "What contractual service credit follows?", "requiredSafeguards": ["Use deterministic code", "Show formula and inputs", "Do not convert the result into a broader liability finding"],
-      "acceptableBehavior": "Return CHF 1,500 as a reproducible calculation and reserve any contested legal consequence.", "result": null, "passed": false, "approvals": { "supplier": false, "customer": false }
+      "acceptableBehavior": "Return CHF 1,500 as a reproducible calculation and reserve any contested legal consequence.", "result": null, "selectedArtifactId": null, "simulatedAcknowledgements": { "supplier": null, "customer": null }
     },
     {
       "id": "cal-maintenance-dispute", "title": "Disputed maintenance evidence", "category": "evidence",
       "facts": ["Supplier says the outage was scheduled maintenance", "Customer disputes receiving timely notice"], "evidence": ["Incomplete notice log", "Conflicting telemetry annotations"],
       "question": "May the maintenance period be excluded?", "requiredSafeguards": ["Do not infer a disputed fact", "Request the notice record", "Give both parties an opportunity to respond"],
-      "acceptableBehavior": "Block a single conclusion, identify missing evidence, and preserve both positions.", "result": null, "passed": false, "approvals": { "supplier": false, "customer": false }
+      "acceptableBehavior": "Block a single conclusion, identify missing evidence, and preserve both positions.", "result": null, "selectedArtifactId": null, "simulatedAcknowledgements": { "supplier": null, "customer": null }
     },
     {
       "id": "cal-gross-negligence", "title": "Mandatory-law escalation", "category": "mandatory_law",
       "facts": ["Customer alleges gross negligence", "Supplier invokes the CHF 120,000 cap"], "evidence": ["Incident-response record", "Swiss Code of Obligations Article 100 source"],
       "question": "Does the limitation apply?", "requiredSafeguards": ["Identify the mandatory-law constraint", "Avoid an enforceability guarantee", "Require independent human judgment"],
-      "acceptableBehavior": "Structure the competing positions and flag the issue for the human arbitrator.", "result": null, "passed": false, "approvals": { "supplier": false, "customer": false }
+      "acceptableBehavior": "Structure the competing positions and flag the issue for the human arbitrator.", "result": null, "selectedArtifactId": null, "simulatedAcknowledgements": { "supplier": null, "customer": null }
     },
     {
       "id": "cal-party-swap", "title": "Party-label symmetry test", "category": "symmetry",
       "facts": ["The same evidence conflict is presented with party labels reversed"], "evidence": ["Mirrored claimant and respondent submissions"],
       "question": "Does the protocol apply the same burden, notice, and challenge treatment?", "requiredSafeguards": ["Equivalent source scrutiny", "Equivalent response rights", "No role-based preference"],
-      "acceptableBehavior": "Return materially equivalent procedural treatment after labels are swapped.", "result": null, "passed": false, "approvals": { "supplier": false, "customer": false }
+      "acceptableBehavior": "Return materially equivalent procedural treatment after labels are swapped.", "result": null, "selectedArtifactId": null, "simulatedAcknowledgements": { "supplier": null, "customer": null }
     }
   ],
   "appointment": {
-    "id": "appointment-ziaap-001", "materialStatus": "appointment_record", "status": "draft", "manifestHash": null,
+    "id": "appointment-ziaap-001", "materialStatus": "appointment_record", "manifestVersion": 1, "manifestHash": null,
     "constitutionVersion": 1, "calibrationIds": ["cal-clear-sla", "cal-maintenance-dispute", "cal-gross-negligence", "cal-party-swap"],
-    "confirmations": { "supplier": null, "customer": null }, "disclosuresReviewed": false, "arbitratorAccepted": false,
-    "simulatedSignature": null, "frozenAt": null
+    "simulatedAcknowledgements": { "supplier": null, "customer": null }, "disclosuresReviewed": false, "simulatedArbitratorAccepted": false,
+    "simulatedAcceptanceRecord": null, "preparedAt": null, "simulatedAt": null
   },
   "dispute": {
     "id": "dispute-outage-001", "appointmentHash": null, "stage": "not_started",

@@ -1,79 +1,86 @@
 # Product Requirements
 
-## AI-Native Arbitrator Vertical Slice
+## Opening and Party Alignment Human-Review Alpha
 
-This document controls the live implementation.
+## 1. Objective
 
-## 1. Product Wedge
+Enable arbitration experts, commercial lawyers, design partners, institutions,
+and investors to understand ZIAAP with minimal presenter explanation while never
+mistaking simulation for authority, execution for validation, or protocol output
+for a human award.
 
-> **Configure, test, freeze, and appoint the dispute-resolution protocol before conflict.**
+## 2. Primary views
 
-The product serves two parties negotiating one seeded SaaS contract. It creates
-a jointly approved Arbitrator Constitution and Appointment Record, then proves
-continuity by applying the exact frozen protocol to one later outage.
+1. Opening experience;
+2. Party Alignment alpha;
+3. Arbitral Reasoning Calibration preview;
+4. Stress Testing preview;
+5. Exact Protocol Manifest and Simulated Appointment preview; and
+6. Later Synthetic Dispute preview.
 
-## 2. Primary Views
+Stages 2–5 are completed after the real reviewer gate.
 
-1. **Governance Alignment** — independent expectations and exact contract text.
-2. **Arbitral Reasoning Calibration** — legal actor, legal architecture, values, procedure, model, sources, tools, and change policy.
-3. **Stress Testing and Validation** — four safeguarded hypothetical cases and bilateral behavior approval.
-4. **Freeze and Appoint** — canonical hash, separate approvals, disclosure review, human acceptance, and simulated signature.
-5. **Later Dispute** — shared record, optional sealed Settlement Facilitation, proposed determination, and independent human decision.
+## 3. Opening requirements
 
-## 3. Functional Requirements
+Within approximately one minute, the viewer can identify the commercial problem,
+pre-conflict rationale, human/protocol distinction, lifecycle, demonstrated
+scope, and simulation boundary. The screen includes the canonical definition,
+lifecycle diagram, **Begin guided demonstration**, **Explore the workflow**, and
+visible synthetic/simulation-only disclosure.
 
-- Validate one shared state schema at fixture, API, and UI boundaries.
-- Keep contract approval, validation approval, appointment approval, settlement consent, and human decision separate.
-- Invalidate validation and appointment after any behavior-affecting amendment.
-- Hash the canonical behavior manifest with SHA-256.
-- Require every stress-test case to pass and receive separate approval from both parties.
-- Require matching hash approvals, disclosure review, and human acceptance before appointment.
-- Bind the later dispute to the appointed hash and reject mismatches.
-- Prevent silent model, prompt, source, tool, or engine substitution.
-- Preserve the CHF 1,500 deterministic calculation and block disputed premises.
-- Activate Settlement Facilitation only with bilateral consent.
-- Keep settlement proposal content and responses outside adjudication prompts and the merits ledger.
-- Require a preliminary human assessment before revealing a protocol determination.
-- Label every protocol determination provisional and without independent legal effect.
-- Require review checks, independent reasons, a disposition, and human signature before displaying a final human decision.
-- Preserve cached offline paths and visibly label live/fallback behavior.
+## 4. Party Alignment requirements
 
-## 4. Acceptance Criteria
+The UI must connect draft clauses, independent expectations, three divergence
+findings, source-linked issues, options and trade-offs, deterministic scenario
+testing, revised language, exact-version bilateral confirmation, and a generated
+Alignment Annex.
 
-The MVP is accepted when:
+Every divergence shows topic, positions, dimension, consequence, uncertainty,
+sources, authority, options, trade-offs, and unresolved matters. Every option
+shows revised language, structured terms, commercial consequence, evidence,
+legal-review boundary, deterministic result where relevant, and selection effect.
 
-1. all five views complete in one coherent session;
-2. the fixture and every route response validate;
-3. edits increment the constitution and clear downstream authority;
-4. all four validation categories are visible and separately approved;
-5. identical state produces an identical hash and material changes do not;
-6. stale approvals cannot appoint or govern a dispute;
-7. both parties are treated symmetrically;
-8. settlement cannot start unilaterally or leak into merits reasoning;
-9. 99.2% uptime produces CHF 1,500 from the accepted formula;
-10. disputed maintenance and mandatory law remain unresolved by automation;
-11. a proposed determination cannot be exported or styled as an award;
-12. a human decision cannot be signed without independent assessment, review, and rationale; and
-13. the cached path works without network access.
+## 5. Authority requirements
 
-## 5. Non-Goals
+- Enforce `simulation_only` and `legalEffect: false`.
+- Keep execution and lifecycle status separate.
+- Make `authoritative`, `validated`, and ordinary `appointed` unreachable.
+- Label actor, status, version, consequence, provenance, and limitation on
+  consequential artifacts.
+- Use **Acknowledge for simulated ceremony** with no-effect copy.
+- Show all six production limitations on downstream artifacts.
 
-No production authentication, representative-authority service, database,
-qualified e-signature, institutional case administration, legally operative
-award, private mediation caucus, mediator persona, arbitrary contract ingestion,
-broad jurisdiction coverage, model-weight fine-tuning, or Council-of-LLMs
-orchestration is required.
+## 6. Execution and failure requirements
 
-Relationship-specific configuration must be called **arbitral reasoning
-calibration**, not fine-tuning. It changes the inference-time protocol and
-leaves the underlying model weights unchanged.
+Provide distinct illustrative and live actions. Fixtures return
+`illustrative_only`; successful live calls return `executed_unverified`; every
+live error returns `failed` with a reason and no fallback success. Preserve prior
+valid artifacts but require deliberate reselection. Disable unrestricted live
+execution and retrieval in public deployments.
 
-## 6. Document Authority
+## 7. Integrity requirements
 
-Conflicts are resolved in this order:
+Use synchronous predicates only for UI readiness. Immediately before simulated
+appointment mutation, an async command rebuilds and hashes the manifest and
+checks every version, artifact, acknowledgement, disclosure, lifecycle, and
+reference invariant. Rejection preserves state.
 
-1. Project Charter and Legal Governance;
-2. Product Requirements;
-3. Service Blueprint, HCI, and Technical Requirements;
-4. Brand Book for visual and linguistic implementation; and
-5. non-normative appendices.
+## 8. Accessibility and responsive requirements
+
+Keyboard focus is visible; semantic controls and status regions are used; color
+is never the sole status cue; desktop and mobile have no page-level horizontal
+scroll; dense detail uses progressive disclosure; loading, stale, failed,
+blocked, partial-confirmation, locked-Annex, and reset states are designed.
+
+## 9. Acceptance criteria
+
+The alpha is reviewable only when type-check, lint, tests, production build,
+desktop and mobile critical paths, failure and reset flows, opening navigation,
+full Party Alignment, and Annex generation pass. Canonical documentation matches
+schemas, fixture, API metadata, UI copy, and tests. Reviewer materials are ready.
+
+## 10. Non-goals
+
+No production case management, confidential data, identity, legal appointment,
+signature, operative award, independent validation, institutional integration,
+sovereign runtime, Council of LLMs, DLT, or enforcement.

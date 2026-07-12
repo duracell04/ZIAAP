@@ -1,214 +1,105 @@
 # Institutional Brand Book
 
-## AI-Native Arbitration With Visible Human Authority
+## Calm Precision for AI-Native Dispute Governance
 
-**Status:** Normative interface and language baseline
+## 1. Canonical description
 
-**Version:** 2.0
+> ZIAAP is an AI-native dispute-governance and arbitration protocol that parties
+> configure, test, and acknowledge before conflict, then simulate applying under
+> a human arbitrator when a later dispute arises.
 
-## 1. Brand Foundation
+Lead with the commercial problem and pre-conflict governance insight. Never use
+“AI arbitrator” as shorthand for software holding arbitral office.
 
-### Mission
+## 2. Voice
 
-Help contracting parties design and test dispute governance before conflict,
-then give an appointed human arbitrator a transparent, version-locked,
-agent-first decision environment.
+Precise, calm, institutional, candid, and commercially literate. Explain what an
+artifact does and does not establish. Prefer verbs such as compare, structure,
+calculate, identify, acknowledge, simulate, review, and reject.
 
-### Canonical Product Definition
+Avoid validated, appointed, signed, award, binding, secure, autonomous, or
+enforceable unless the sentence explicitly describes a future concept or negates
+the claim for the current showcase.
 
-> **An AI-native, ZIAAP-powered arbitrator is a human arbitrator legally
-> appointed by the parties who conducts proceedings through a jointly
-> configured, tested, and version-locked ZIAAP decision protocol.**
+## 3. Canonical terminology
 
-### External proposition
+| Use | Meaning |
+|---|---|
+| Party Alignment | Parties expose and resolve contractual expectations |
+| Arbitral Reasoning Calibration | Inference-time protocol configuration; weights unchanged |
+| Stress Testing | Hypothetical observed behavior, not independent validation |
+| Exact protocol manifest | Digestible selected configuration, not runtime attestation |
+| Acknowledge for simulated ceremony | No legal or authoritative effect |
+| Simulated appointment under the acknowledged protocol manifest | Internal showcase lifecycle only |
+| Provisional simulation-only determination | Non-operative protocol artifact |
+| Simulated human decision | Fictional, unsigned, and non-operative |
 
-> **Design the dispute system before the dispute.**
+## 4. Visual character
 
-### Product proposition
+Warm institutional paper, charcoal structure, oxblood authority cautions,
+reasoning blue, evidence green, and amber uncertainty. Serif display typography
+signals deliberation; restrained sans-serif and monospace identify controls,
+status, versions, and hashes.
 
-> **Jointly configured. Stress-tested. Version-locked. Human-issued.**
+The interface should feel like a carefully designed governance instrument, not a
+generic chatbot, court portal, crypto product, or futuristic control room.
 
-### Lifecycle line
+## 5. Semantic treatments
 
-> **Alignment before conflict → optional sealed settlement facilitation →
-> binding human-issued arbitration award.**
+Source text is neutral. Party assertions are contextual. AI-supported analysis is
+blue and always paired with execution status. Legal constraints use red and a
+review boundary. Deterministic calculations use green with visible formula and
+inputs. Proposed options remain selectable and non-agreed. Agreed text shows exact
+version and bilateral confirmation.
 
-## 2. Naming Constitution
+## 6. Required artifact fields
 
-| Term | Required meaning |
-| --- | --- |
-| AI-native arbitrator | Public product term for the human arbitrator operating the frozen ZIAAP protocol |
-| ZIAAP-powered arbitrator | Equivalent public term, always defined on first consequential use |
-| Human arbitrator | The legally appointed actor who owns procedure, judgment, and signature |
-| ZIAAP decision protocol | The technical and contractual system jointly configured and version-locked by the parties |
-| Party alignment | The parties clarify expectations and identify disagreement with each other |
-| Arbitral reasoning calibration | Public term for relationship-specific adjustment of the inference-time protocol; model weights remain unchanged |
-| Inference-time protocol calibration | Technical term for arbitral reasoning calibration |
-| Stress testing and validation | Hypothetical cases used to inspect safeguards and approve observed protocol behaviour |
-| Version-locking | Freezing the exact validated runtime configuration and its manifest |
-| Model fine-tuning | Separate additional training that changes the underlying model’s weights |
-| Proposed determination | Protocol reasoning output with no independent legal effect |
-| Final human decision | Human-adopted reasoning and operative disposition |
+Every consequential artifact shows:
 
-Never use the unqualified term **AI arbitrator**. Never label protocol output an
-award, verdict, final decision, or binding result. Never describe
-relationship-specific arbitral reasoning calibration as fine-tuning.
+- artifact type and actor;
+- `simulation_only`;
+- execution status;
+- version;
+- source/provenance;
+- consequence;
+- `legalEffect: false`; and
+- synthetic data, no production identity verification, no institutional
+  appointment, no production signature, and no legally operative award.
 
-## 3. Brand Character
+## 7. Interaction language
 
-ZIAAP is calm, precise, neutral, serious, inspectable, technically sophisticated,
-and procedurally fair. It is an institutional decision environment, not a
-chatbot, AI personality, autonomous judge, or black-box prediction product.
+Approved primary labels:
 
-The visual concept remains:
-
-> **A classical legal institution translated into a transparent computational protocol.**
-
-## 4. Five-View Mapping
-
-| View | Emphasis |
-| --- | --- |
-| Governance Alignment | Symmetry, independent assertions, exact versions, and consent separation |
-| Arbitral Reasoning Calibration | Human/protocol distinction, editable principles, model identity, and amendment consequences |
-| Stress Testing and Validation | Hypothetical record, required safeguards, observed behavior, and bilateral approval |
-| Freeze and Appoint | Readiness, hash integrity, disclosure, human acceptance, and simulated execution |
-| Later Dispute | Shared merits record, sealed settlement, provisional proposal, and independent human signature |
-
-There are exactly five primary views in the prototype. There is no separate
-arbitrator dashboard, design-system route, or six-screen flow requirement.
-
-## 5. Core Design Principles
-
-1. **Authority through explicit allocation.** Human and protocol roles are never visually merged.
-2. **Trust through inspectability.** Sources, versions, safeguards, objections, and hashes remain visible.
-3. **Evidence before disposition.** Claims, defences, evidence, and uncertainty precede any proposal.
-4. **Symmetry between parties.** Density, order, controls, and response rights remain equivalent.
-5. **Calibrated reliance.** Protocol output looks provisional; a human signature looks final.
-6. **Protective friction.** Constitution edits, approvals, settlement, and signature require deliberate steps.
-7. **Segregation by purpose.** Settlement surfaces are visibly and technically sealed from merits.
-8. **Accessibility as fairness.** Meaning never depends on color alone.
-
-## 6. Visual Identity
-
-### Palette
-
-| Token | Value | Use |
-| --- | --- | --- |
-| Juris Ink | `#1E2428` | Primary text, institutional surfaces, human authority |
-| Archive Ivory | `#F8F4EC` | Document and card surfaces |
-| Civic Red | `#9F332C` | Consequential states, objections, sealed boundaries |
-| Reasoning Blue | `#3F5E68` | Protocol analysis, active inspection, calibration |
-| Review Green | `#3F6955` | Completed safeguards and human execution |
-| Caution Amber | `#8A682C` | Incomplete, pending, and blocked states |
-
-Use Georgia or an equivalent institutional serif for document titles and human
-decision surfaces; a functional sans-serif for controls and body text; and
-monospace only for hashes, versions, IDs, formulas, and timestamps.
-
-## 7. Semantic Treatments
-
-| State | Label | Visual rule |
-| --- | --- | --- |
-| Party input | `PARTY ASSERTION` | Neutral surface with explicit party name |
-| Contract agreement | `AGREED CONTRACTUAL TEXT` | Green confirmation, exact version nearby |
-| Reasoning calibration | `ARBITRAL REASONING CALIBRATION` | Institutional surface with version, editable protocol, and human actor |
-| Validation | `VALIDATION RESULT` | Reasoning Blue; safeguards before pass state |
-| Frozen package | `FROZEN MANIFEST HASH` | Dark integrity surface with full monospace hash |
-| Appointment | `APPOINTED · PROTOTYPE` | Human name, disclosure, acceptance, timestamp |
-| Settlement | `SEALED FROM MERITS` | Civic Red boundary; content confined inside |
-| Protocol proposal | `PROPOSED DETERMINATION · NO INDEPENDENT LEGAL EFFECT` | Reasoning Blue, no final-decision styling |
-| Human result | `FINAL HUMAN DECISION · PROTOTYPE` | Double or strong Review Green border, human name and signature |
-
-Passing validation means safeguards were observed; it does not mean the answer
-is universally correct. Appointment means the prototype gates completed; it does
-not represent production execution.
-
-## 8. Required Material Fields
-
-Every material card exposes as applicable:
-
-- type and authority label;
-- actor or generating system;
-- source or source status;
-- supporting and contrary material;
-- uncertainty and objections;
-- model, prompt, engine, or formula version;
-- available correction or challenge action;
-- review state; and
-- timestamp or exact hash.
-
-## 9. Interaction Language
-
-Preferred actions:
-
+- `Begin guided demonstration`
+- `Explore the workflow`
+- `View illustrative example`
+- `Run live execution`
 - `Confirm this profile`
-- `Approve this observed behavior`
-- `Freeze exact appointment package`
-- `Approve exact hash`
-- `Complete simulated appointment`
-- `Generate non-binding proposal`
-- `Run frozen protocol`
-- `Adopt`, `Modify`, or `Reject`
-- `Sign simulated human award`
+- `Confirm exact version`
+- `Acknowledge for simulated ceremony`
+- `Prepare exact protocol manifest`
+- `Simulate appointment under acknowledged manifest`
+- `Return to introduction`
 
-Excluded language:
+Failures name the cause and recovery. Never say that an illustrative fixture was
+restored after live failure.
 
-- AI arbitrator;
-- AI verdict;
-- AI decides;
-- objective truth;
-- unbiased decision;
-- guaranteed outcome;
-- case solved;
-- instant justice; and
-- machine-certified award.
+## 8. Opening composition
 
-## 10. Human Decision Surface
+The opening balances a large commercial thesis, concise canonical definition,
+dark problem card, human/protocol role split, lifecycle rail, and explicit
+limitation disclosure. The disclosure is visible without interaction.
 
-The human decision area must require and show:
+## 9. Responsive and print behavior
 
-1. an assessment recorded before protocol proposal;
-2. source and objection review;
-3. calibration-fit review;
-4. explicit independent-judgment confirmation;
-5. adopted, modified, or rejected status;
-6. independent rationale; and
-7. human simulated signature.
+Desktop uses editorial asymmetry and generous whitespace. Mobile stacks roles,
+metadata, profiles, positions, options, and lifecycle steps without losing
+labels. Print suppresses navigation/actions, preserves artifact boundaries, and
+renders the Annex presentation-ready.
 
-There is no one-click “approve AI answer” control.
+## 10. Brand acceptance
 
-## 11. Settlement Surface
-
-Settlement uses a distinct bordered domain labelled **Optional · sealed track**.
-It explains that the activity is not pre-conflict alignment, full mediation, or
-adjudication. Party consents and responses remain visually contained. When the
-track ends, the merits surface shows status only and never repeats proposal terms.
-
-## 12. Accessibility and Responsive Behavior
-
-- Meet WCAG 2.2 AA contrast and keyboard operation.
-- Preserve visible focus and native control semantics.
-- Wrap long hashes and legal text without horizontal page overflow.
-- Announce live, cached, fallback, blocked, and completed states.
-- Collapse two-column comparisons into a complete one-column reading order.
-- Keep human/protocol authority labels visible at every viewport size.
-
-## 13. Acceptance Criteria
-
-The interface is ready when:
-
-- all five views tell one continuous appointment story;
-- the human/protocol distinction is explicit on constitution, appointment, proposal, and award surfaces;
-- behavior-affecting edits visibly invalidate downstream state;
-- validation safeguards and bilateral approvals are inspectable;
-- the hash is complete and readable;
-- settlement content remains sealed;
-- proposed and human decisions cannot be confused;
-- party treatment is symmetrical; and
-- every final-looking state identifies its human owner and prototype status.
-
-## 14. Design Constitution
-
-> **Every consequential output must show what it is, where it came from, which
-> version governed it, whether the parties could challenge it, and whether it is
-> a protocol proposal or an independently owned human act.**
+A viewer must not confuse fixture with execution, live execution with validation,
+simulated appointment with legal appointment, provisional output with an award,
+or fictional human control with a production signature. If a screen permits that
+confusion, the design is not finished.

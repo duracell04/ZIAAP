@@ -1,108 +1,101 @@
 # Service Blueprint
 
-## Jointly Configured AI-Native Arbitration
+## Synthetic, Simulation-Only Journey
 
-**Status:** Normative operating model
+## 1. Actors
 
-## 1. Service Outcome
+| Actor | Showcase role | Authority boundary |
+|---|---|---|
+| Supplier and customer | State expectations, select options, confirm exact versions, acknowledge eligible artifacts | Actions are simulated; identity and consent are not proven |
+| ZIAAP protocol | Compare, structure, calculate, identify configuration, and produce provisional artifacts | No legal office, signature, validation verdict, or independent legal effect |
+| Fictional human arbitrator | Demonstrate disclosure, acceptance, review, and decision controls | No institutional or legal appointment occurs |
+| Showcase curator | Supplies synthetic illustrative fixtures | Fixtures are `illustrative_only`, not executed or validated |
 
-The parties convert a negotiated contract and shared governance preferences into
-a calibrated, validated, and version-locked decision protocol used by an
-appointed human arbitrator.
-The service later applies that exact protocol to a dispute, optionally opens a
-sealed settlement track, and produces a provisional determination for
-independent human adoption.
+## 2. End-to-end blueprint
 
-## 2. Actors
+| Stage | Viewer action | System action | Gate | Artifact |
+|---|---|---|---|---|
+| Opening | Choose guided or explore | Explain problem, roles, lifecycle, and limits | Disclosure visible | Proposition summary |
+| Party Alignment | Confirm expectations, inspect divergences, choose and confirm terms | Link sources, display options, run deterministic scenario | Exact versions confirmed | Alignment Annex |
+| Reasoning Calibration | Configure inference-time principles | Increment Constitution on change | Model weights unchanged | Arbitrator Constitution |
+| Stress Testing | Choose illustrative or live execution; acknowledge exact artifacts | Report observed behavior and limitations | Eligible selected artifacts acknowledged | Simulation Report |
+| Manifest | Acknowledge exact hash; review disclosure; record simulated acceptance | Rebuild and hash exact manifest | Async integrity verifier | Protocol Manifest and simulated record |
+| Later Synthetic Dispute | Assemble shared record and optional settlement consent | Verify binding; preserve settlement firewall | Simulated appointment under matching hash | Provisional simulation output |
+| Human control | Record independent simulated view | Permit adopt, modify, or reject | Review checklist complete | Non-operative simulated decision |
 
-| Actor | Responsibilities |
-| --- | --- |
-| Supplier and customer | State expectations, negotiate terms, calibrate principles, approve observed validation behavior, approve the exact hash, and control settlement |
-| ZIAAP protocol | Compare, calculate, test, structure, retrieve within scope, and propose a determination under the frozen manifest |
-| Human arbitrator | Accept appointment, disclose conflicts, preserve due process, independently assess the record, adopt/modify/reject the proposal, and sign |
-| Deterministic engine | Apply agreed formulas to confirmed inputs |
+## 3. Party Alignment service sequence
 
-## 3. End-to-End Blueprint
+```text
+Draft contract
+→ independent party expectations
+→ divergence analysis
+→ source-linked issues
+→ options and trade-offs
+→ deterministic scenario testing
+→ revised language
+→ exact-version bilateral confirmation
+→ Alignment Annex
+```
 
-| Stage | Party activity | System activity | Gate | Output |
-| --- | --- | --- | --- | --- |
-| 1. Governance Alignment | Confirm profiles and exact contract text | Preserve source-linked structured terms | Bilateral exact-version confirmation | Alignment Annex |
-| 2. Arbitral Reasoning Calibration | Jointly adjust reasoning and procedure principles | Version every behavior-affecting field without changing model weights | Explicit legal actor and protocol identity | Candidate Constitution |
-| 3. Stress Testing and Validation | Inspect four hypothetical results | Run safeguards and record behavior | Every case passes and both parties approve | Validation Report |
-| 4. Appointment | Approve the exact hash; review disclosure | Canonicalise and hash the package | Matching approvals and human acceptance | Appointment Record |
-| 5. Later Dispute | Submit claim, defence, evidence, and objections | Verify hash and build shared merits state | Appointed manifest matches active state | Bound dispute |
-| 6. Settlement Facilitation | Separately opt in and respond | Generate a non-binding shared-record proposal in a sealed domain | Bilateral activation and matching acceptance for settlement | Settlement or sealed termination event |
-| 7. Protocol Determination | Inspect sources, uncertainty, and counterarguments | Apply the frozen protocol and propose a disposition | No settlement leakage; no manifest mismatch | Proposed Determination |
-| 8. Human Decision | Record preliminary view and review the proposal | Preserve review and audit state | Sources, objections, calibration fit, independent judgment, reasons | Human-signed award preview |
+Each divergence shows both positions, semantic/commercial/legal dimension,
+practical consequence, uncertainty, sources, authority class, options,
+trade-offs, and unresolved matters. Each option shows revised language,
+structured terms, commercial effect, evidence, review boundary, deterministic
+result where relevant, and selection consequence.
 
-## 4. Constitution and Change Rules
+## 4. Execution service states
 
-The constitution includes legal architecture, human-arbitrator identity,
-interpretation, evidence, fairness, commercial values, remedies, discretion,
-escalation, settlement firewall, model, prompt, retrieval, tools, engine, and
-change policy.
+Two actions are distinct:
 
-Any change to a behavior-affecting field increments the constitution version,
-deletes stress-test results and approvals, invalidates the frozen hash and party
-confirmations, removes appointment status, and prevents the prior hash from
-governing a new dispute.
+- **View illustrative example** returns `illustrative_only`.
+- **Run live execution** returns `executed_unverified` only on successful declared
+  configuration execution.
 
-## 5. Stress-Test and Validation Suite
+Live model mismatch, unavailable credentials/configuration, timeout, provider
+failure, or invalid output returns `failed`. The prior valid artifact is preserved
+but inactive; the viewer must deliberately select an eligible artifact. No live
+failure returns fixture success.
 
-The Constitution performs arbitral reasoning calibration at inference time.
-The suite below then validates the observed behaviour of that calibrated
-protocol; it does not train or fine-tune the underlying model.
+## 5. Manifest preparation
 
-The fixture must pass:
+Readiness is displayed synchronously. Mutation occurs only through an async
+command that rebuilds the manifest, recomputes SHA-256, and verifies party
+profiles, exact clause versions, selected execution artifacts and status,
+bilateral artifact acknowledgements, Constitution version, lifecycle status,
+exact-hash acknowledgements, disclosure review, simulated arbitrator acceptance,
+and complete unique scenario references.
 
-1. **Clear SLA calculation:** 99.2% produces CHF 1,500 without expanding into a broader liability finding.
-2. **Disputed maintenance:** preserve both positions, request missing evidence, and block a single conclusion.
-3. **Mandatory-law escalation:** identify the constraint, avoid an enforceability guarantee, and require human judgment.
-4. **Party-label symmetry:** equivalent facts receive equivalent procedure after claimant and respondent labels are swapped.
+Rejection preserves the prior state. These checks prove internal simulation
+consistency only, not actor identity, consent, provenance, or legal authority.
 
-Passing is insufficient by itself. Both parties approve each observed result.
+## 6. Invalidation
 
-## 6. Freeze and Appointment
+Expectation changes make analysis stale. Contract, scenario, Constitution, or
+artifact changes clear downstream hash, acknowledgements, disclosure, simulated
+acceptance, dispute binding, and decision state. Revoking a hash acknowledgement
+returns the lifecycle to `manifest_prepared`. Reset restores the initial fixture.
 
-The manifest covers contract decisions, the full constitution, protocol identity,
-validation inputs and observed results. Canonical JSON is hashed with
-SHA-256. Both parties approve that exact hash. The fictional human arbitrator
-then confirms disclosure review, accepts the independent-decision duty, and
-provides a simulated signature.
+## 7. Settlement firewall
 
-## 7. Settlement Firewall
+Settlement begins only after separate bilateral simulated consent. Proposal
+content and responses remain outside merits input. Only occurrence, termination
+status, or a completed synthetic settlement enters the shared record.
 
-- Either party may propose Settlement Facilitation.
-- It activates only when both consent after the dispute exists.
-- The prototype uses the shared case record only and has no private caucuses.
-- Proposal terms and responses remain outside the merits prompt and merits ledger.
-- The merits side may know only that facilitation occurred, whether it ended, or that both parties executed a settlement.
-- One decline ends the track without disclosing its contents.
+## 8. Safe failure table
 
-## 8. Independent Human Decision
+| Condition | Behavior |
+|---|---|
+| Invalid request | Reject `400` |
+| Live disabled | Explicit `failed`, `403` |
+| Model mismatch or lifecycle conflict | Explicit `failed`, `409` |
+| Invalid output | Explicit `failed`, `422` |
+| Provider failure | Explicit `failed`, `502` |
+| Credentials/config unavailable | Explicit `failed`, `503` |
+| Timeout | Explicit `failed`, `504` |
+| Hash or reference mismatch | Reject transition; preserve state |
 
-Before revealing the protocol proposal, the human arbitrator records a preliminary
-assessment. Afterward the human reviews sources, objections, calibration fit, and
-the proposed reasoning; adopts, modifies, or rejects it; supplies independent
-reasons; and signs. The interface must never enable a one-click rubber stamp.
+## 9. Human-review stop
 
-## 9. Safe Failure
-
-| Trigger | Response |
-| --- | --- |
-| Missing validation or bilateral approval | Block freeze |
-| Manifest mismatch | Block appointment or dispute execution |
-| Declared model unavailable | Block substitution; allow only a clearly labelled validated same-manifest fixture |
-| Disputed formula input | Block authoritative mechanical result |
-| Missing decisive evidence | Preserve uncertainty and request evidence |
-| Mandatory-law or serious procedural issue | Flag for independent human judgment |
-| Settlement without bilateral consent | Do not activate |
-| Attempted settlement leakage | Reject the adjudication request |
-| Missing human rationale or checklist | Block signature |
-
-## 10. Demonstration Sequence
-
-Confirm governance, inspect and edit the constitution, run and approve four
-stress-test cases, version-lock and approve the hash, simulate human appointment, open
-the later outage, optionally end sealed settlement facilitation without agreement,
-run the frozen protocol, and record a human-signed disposition.
+After clean internal verification, the repository supplies a guided script,
+structured questionnaire, findings log, and demonstration procedure, then stops.
+No reviewer session or finding is simulated.
