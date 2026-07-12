@@ -10,7 +10,8 @@ It continues through performance, settlement, arbitration, and execution.
 
 ```text
 Contract and governance alignment
-→ protocol constitution and calibration
+→ arbitral reasoning calibration through the protocol Constitution
+→ stress testing and validation
 → freeze, bilateral approval, and human appointment
 → performance evidence and amendments
 → later dispute bound to the active appointment hash
@@ -29,7 +30,7 @@ is the agreed, tested, version-locked decision environment.
 | --- | --- |
 | One seeded Swiss SaaS contract | Controlled contract and jurisdiction packs |
 | One fictional human sole arbitrator | Production appointment and institutional workflows |
-| Four fixed calibration cases | Party-authored, reviewed regression suites |
+| Four fixed stress-test cases | Party-authored, reviewed validation suites |
 | Session-only SHA-256 manifest | Persisted, signed, tamper-evident protocol registry |
 | Shared-record Settlement Facilitation | Separate mediator and separately deployed ZIAAP instance with private caucus controls |
 | One later-dispute preview | Full pleadings, evidence, hearings, interim decisions, and awards |
@@ -42,17 +43,20 @@ is the agreed, tested, version-locked decision environment.
 Parties align commercial, semantic, and legal terms: obligations, formulas,
 remedies, evidence, notices, law, seat, rules, language, and human arbitrator.
 
-### C0: Protocol Constitution
+### C0: Arbitral Reasoning Calibration
 
-The parties configure interpretation, evidence, fairness, commercial values,
-remedy boundaries, discretion, escalation, settlement segregation, model,
-prompt, retrieval, tools, engine, amendments, and replacement.
+The parties configure and adjust the Constitution: interpretation, evidence,
+fairness, commercial values, exemplars, source hierarchy, uncertainty
+thresholds, remedy boundaries, discretion, escalation, settlement segregation,
+model, prompt, retrieval, tools, engine, amendments, and replacement. This
+relationship-specific process operates at inference time and does not modify
+the underlying model weights.
 
-### T0: Calibration
+### T0: Stress Testing and Validation
 
 Hypothetical disputes test the protocol’s behavior. Parties inspect safeguards,
 approve results, add adversarial cases, and repeat until the constitution is fit
-for appointment. Calibration does not waive later due process.
+for appointment. Validation does not waive later due process.
 
 ### A0: Appointment
 
@@ -89,7 +93,26 @@ The appointed human arbitrator independently reviews the record and protocol
 proposal, preserves equality and the right to be heard, supplies reasons, and
 signs any award. The human may adopt, modify, or reject the proposal.
 
+### X0: Controlled Execution
+
+Where the parties have separately adopted reviewed execution code and the asset,
+oracle, custody, and legal conditions permit it, a signed settlement or
+human-authorised award instruction may unlock a determinate smart-contract
+remedy. Contested inputs, suspension orders, unavailable oracles, compromised
+keys, and legal uncertainty produce a pause rather than automatic transfer.
+
+The blockchain is an integrity and execution rail, not the interpreter of the
+contract or the issuer of the award. The non-normative
+[DLT and Smart-Contract Execution Architecture](dlt-execution-architecture.md)
+defines the candidate state model, oracle boundary, privacy rules, security
+controls, and staged adoption gates.
+
 ## 4. Long-Term Control Requirements
+
+The non-normative
+[ZIAAP Sovereign Arbitral Runtime](sovereign-arbitral-runtime.md) expands these
+requirements into a capability map for case isolation, version continuity,
+reliability, auditability, migration, resilience, and sovereign deployment.
 
 - production identity and representative-authority verification;
 - protocol registry with signed manifests and reproducible builds;
