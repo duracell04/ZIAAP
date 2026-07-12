@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight, RefreshCcw, ShieldAlert } from "lucide-react";
 import { GovernanceAlignment } from "@/components/case-upload";
 import { ConstitutionBuilder } from "@/components/case-map";
-import { CalibrationLab } from "@/components/reasoning-card";
+import { ValidationLab } from "@/components/reasoning-card";
 import { AppointmentCeremony } from "@/components/evidence-card";
 import { DisputePreview } from "@/components/decision-panel";
 import { Badge } from "@/components/ui/badge";
@@ -15,8 +15,8 @@ import {
 } from "@/lib/case-model";
 import { buildProtocolManifest, canAppoint, computeProtocolHash, humanDecisionCanSign, invalidateProtocolState } from "@/lib/protocol";
 
-const steps = ["Governance Alignment", "Protocol Constitution", "Calibration Lab", "Freeze & Appoint", "Later Dispute"];
-const stepNotes = ["Align contract", "Configure values", "Stress-test", "Version-lock", "Agent-first process"];
+const steps = ["Party Alignment", "Arbitral Reasoning Calibration", "Stress Testing and Validation", "Version-Locking and Appointment", "Later Dispute"];
+const stepNotes = ["Clarify expectations", "Calibrate protocol", "Validate behavior", "Freeze exact runtime", "Agent-first process"];
 
 function newEvent(actor: string, action: string, objectId: string, detail: string, authorityClass: LedgerEvent["authorityClass"]): LedgerEvent {
   return { id: crypto.randomUUID(), timestamp: new Date().toISOString(), actor, action, objectId, detail, authorityClass };
@@ -59,16 +59,16 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
       if (current.constitution.principles[field] === value) return current;
       const constitution = { ...current.constitution, principles: { ...current.constitution.principles, [field]: value } };
       const invalidated = invalidateProtocolState(current, constitution);
-      return { ...invalidated, ledger: [...invalidated.ledger, newEvent("Parties", "Amended candidate constitution", field, "Version incremented; calibration and appointment approvals cleared.", "advisory")] };
+      return { ...invalidated, ledger: [...invalidated.ledger, newEvent("Parties", "Amended calibrated protocol", field, "Version incremented; validation and appointment approvals cleared.", "advisory")] };
     });
   }
 
-  async function runCalibration(mode: "cached" | "live") {
+  async function runValidation(mode: "cached" | "live") {
     setCalibrating(true); setCalibrationNotice("");
     try {
       const response = await fetch("/api/calibrate", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ mode, constitution: state.constitution, scenarios: state.calibrationScenarios }) });
       const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error ?? "Calibration failed.");
+      if (!response.ok) throw new Error(payload.error ?? "Validation failed.");
       setState((current) => ({
         ...current, constitution: { ...current.constitution, status: "calibrated" },
         calibrationScenarios: current.calibrationScenarios.map((scenario) => {
@@ -76,10 +76,10 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
           return match ? { ...scenario, result: match.result, passed: match.result.passed, approvals: { supplier: false, customer: false } } : scenario;
         }),
         appointment: { ...current.appointment, status: "draft", manifestHash: null, confirmations: { supplier: null, customer: null } },
-        ledger: [...current.ledger, newEvent("System", "Ran protocol calibration", current.constitution.id, payload.metadata.label, "administrative")],
+        ledger: [...current.ledger, newEvent("System", "Ran stress-test validation", current.constitution.id, payload.metadata.label, "administrative")],
       }));
       setCalibrationNotice(payload.metadata.notice ?? `${payload.metadata.label} completed.`);
-    } catch (error) { setCalibrationNotice(error instanceof Error ? error.message : "Calibration failed."); }
+    } catch (error) { setCalibrationNotice(error instanceof Error ? error.message : "Validation failed."); }
     finally { setCalibrating(false); }
   }
 
@@ -88,7 +88,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
       ...current,
       calibrationScenarios: current.calibrationScenarios.map((scenario) => scenario.id === id ? { ...scenario, approvals: { ...scenario.approvals, [party]: !scenario.approvals[party] } } : scenario),
       appointment: { ...current.appointment, status: "draft", manifestHash: null, confirmations: { supplier: null, customer: null } },
-      ledger: [...current.ledger, newEvent(party, "Updated calibration approval", id, "Approval applies to the observed behavior of this exact scenario version.", "advisory")],
+      ledger: [...current.ledger, newEvent(party, "Updated validation approval", id, "Approval applies to the observed behavior of this exact scenario version.", "advisory")],
     }));
   }
 
@@ -198,7 +198,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
       <div className="content">
         {step === 0 && <GovernanceAlignment state={state} editExpectation={editExpectation} confirmProfile={confirmProfile} confirmClause={confirmClause} />}
         {step === 1 && <ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} />}
-        {step === 2 && <CalibrationLab state={state} running={calibrating} notice={calibrationNotice} runCalibration={runCalibration} approveScenario={approveScenario} />}
+        {step === 2 && <ValidationLab state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} approveScenario={approveScenario} />}
         {step === 3 && <AppointmentCeremony state={state} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
         {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} runDetermination={runDetermination} updateDecision={updateDecision} toggleChecklist={toggleChecklist} signDecision={signDecision} />}
       </div>

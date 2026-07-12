@@ -114,7 +114,7 @@ export const arbitratorConstitutionSchema = z.object({
     meritsDisclosure: z.literal("Only occurrence, termination status, or a signed settlement may enter the merits record"),
   }),
   protocolIdentity: protocolIdentitySchema,
-  changePolicy: z.literal("Any behavior-affecting change creates a new version, reruns calibration, and requires fresh bilateral approval."),
+  changePolicy: z.literal("Any behavior-affecting change creates a new version, reruns stress-test validation, and requires fresh bilateral approval."),
 });
 
 export const calibrationResultSchema = z.object({

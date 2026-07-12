@@ -155,7 +155,7 @@
       "meritsDisclosure": "Only occurrence, termination status, or a signed settlement may enter the merits record"
     },
     "protocolIdentity": { "provider": "OpenAI", "model": "gpt-5-mini", "promptVersion": "ziaap-protocol-v1", "retrievalPack": "swiss-saas-demo-v1", "toolPolicy": "Curated legal sources plus deterministic SLA calculator; no open web retrieval during adjudication.", "engineVersion": "1.0.0" },
-    "changePolicy": "Any behavior-affecting change creates a new version, reruns calibration, and requires fresh bilateral approval."
+    "changePolicy": "Any behavior-affecting change creates a new version, reruns stress-test validation, and requires fresh bilateral approval."
   },
   "calibrationScenarios": [
     {
