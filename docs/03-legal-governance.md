@@ -53,7 +53,7 @@ non-consenting person.
 | --- | --- | --- | --- | --- |
 | Contract comparison | Identify divergence and draft options | Select and confirm terms | No required role | Agreed or unresolved contract state |
 | Constitution design | Expose choices and version changes | Jointly configure and approve | Review compatibility with mandate | Candidate protocol |
-| Calibration | Run scenarios and record safeguards | Approve observed behavior separately | Inspect adequacy before acceptance | Calibration Report |
+| Stress testing and validation | Run scenarios and record safeguards | Approve observed behavior separately | Inspect adequacy before acceptance | Validation Report |
 | Freeze | Canonicalise and hash | Approve identical hash | Accept exact package | Appointment Record |
 | Case organisation | Extract and source-link | Correct, object, and submit | Control use where consequential | Contestable case state |
 | Mechanical calculation | Apply accepted formula | Confirm or dispute inputs | Decide disputed premises | Calculation, not automatic entitlement |
@@ -69,7 +69,7 @@ Record as distinct acts:
 - confirmation of a party profile;
 - agreement to contract language;
 - approval of constitution fields;
-- approval of each calibration result;
+- approval of each stress-test result;
 - approval of the exact appointment hash;
 - representative authority to conclude the arbitration agreement;
 - consent to Settlement Facilitation;
@@ -91,7 +91,7 @@ The human arbitrator must not rubber-stamp the protocol. The product requires:
 
 1. a preliminary human issue assessment before revealing the proposal;
 2. access to sources, evidence, submissions, objections, and uncertainty;
-3. review of whether the frozen calibration covers the problem;
+3. review of whether the frozen reasoning calibration covers the problem;
 4. an explicit adopted, modified, or rejected status;
 5. independent reasons; and
 6. human signature.
@@ -100,7 +100,7 @@ The arbitrator remains responsible for jurisdiction, due process, evidence,
 credibility, disputed facts, applicable law, contract meaning, causation,
 liability, damages, remedies, costs, reasons, and the operative award.
 
-## 6. Constitution, Calibration, and Freeze
+## 6. Constitution, Reasoning Calibration, Validation, and Freeze
 
 The constitution must identify:
 
@@ -111,12 +111,20 @@ The constitution must identify:
 - model, provider, prompt, retrieval, tool, and engine versions; and
 - amendment and replacement policy.
 
-Calibration is evidence of tested behavior, not a waiver of later procedural
-rights and not proof that every future dispute was foreseeable. Each scenario
-records inputs, evidence, required safeguards, result, and separate approval.
+**Arbitral reasoning calibration** adjusts how the protocol applies the agreed
+Constitution, instructions, exemplars, source hierarchy, evidentiary standards,
+uncertainty thresholds, escalation rules, and remedy boundaries at inference
+time. It does not modify model weights. **Model fine-tuning** means additional
+training that changes the underlying model’s weights and is a separate model
+development activity.
+
+Stress testing and validation provide evidence of observed behavior, not a
+waiver of later procedural rights and not proof that every future dispute was
+foreseeable. Each scenario records inputs, evidence, required safeguards,
+result, and separate approval.
 
 The frozen SHA-256 manifest includes every behavior-affecting field and the
-approved calibration record. A material change creates a new constitution;
+approved validation record. A material change creates a new constitution;
 clears prior results, approvals, and appointment; and requires recalibration and
 fresh consent. Model availability never authorises silent substitution.
 
@@ -133,7 +141,7 @@ Each party must have an intelligible opportunity to:
 - receive notice of material protocol propositions; and
 - request a ruling by the human arbitrator.
 
-Calibration includes a party-label swap test. Passing that test does not replace
+Validation includes a party-label swap test. Passing that test does not replace
 case-specific equality and hearing rights.
 
 ## 8. Mechanical and Adjudicative Outputs
@@ -193,7 +201,7 @@ gate.
 ## 11. Audit, Confidentiality, and Responsibility
 
 The operational ledger records source, version, hash, actor, authority, notice,
-response, correction, calibration, approval, freeze, appointment, objection,
+response, correction, reasoning calibration, validation, approval, freeze, appointment, objection,
 proposal, human review, and signature. It must not store hidden model reasoning,
 private settlement substance, privileged advice, or irrelevant telemetry.
 

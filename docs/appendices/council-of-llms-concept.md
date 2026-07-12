@@ -60,4 +60,4 @@ Before Council orchestration enters scope, measure:
 - whether added complexity can be explained without suggesting multiple AI judges.
 
 Adoption requires explicit changes to Product and Technical Requirements, new
-calibration cases, a new manifest version, and fresh bilateral approval.
+stress-test validation cases, a new manifest version, and fresh bilateral approval.

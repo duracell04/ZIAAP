@@ -30,7 +30,7 @@ behavior, and evidence architecture so a later matter does not begin from zero.
 ## 2. Genuine Differentiation
 
 - **Pre-conflict protocol design:** the parties configure the process before either knows its future dispute position.
-- **Behavior-level bilateral consent:** parties approve observed calibration results, not only abstract terms.
+- **Behavior-level bilateral consent:** parties approve observed stress-test validation results, not only abstract terms.
 - **Version-locked appointment:** contract state, constitution, model identity, tools, and tests share one hash.
 - **Agent-first operation with human legal authority:** automation is operationally central without misallocating arbitral office.
 - **Settlement/merits separation:** voluntary proposals cannot contaminate later adjudication.
@@ -62,7 +62,7 @@ Position against:
 - Never describe the human as a rubber stamp.
 - Lead with appointment-time alignment and stress testing, not generic document analysis.
 - Keep alignment, Settlement Facilitation, and arbitration distinct.
-- Treat model identity, calibration, amendment, and replacement as governance infrastructure.
+- Treat model identity, reasoning calibration, validation, amendment, and replacement as governance infrastructure.
 - Treat the protocol manifest, validated correction data, institutional integrations, and trusted governance as potential moats.
 
 ## 5. Commercial Hypotheses

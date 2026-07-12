@@ -15,18 +15,18 @@ continuity by applying the exact frozen protocol to one later outage.
 ## 2. Primary Views
 
 1. **Governance Alignment** — independent expectations and exact contract text.
-2. **Protocol Constitution** — legal actor, legal architecture, values, procedure, model, sources, tools, and change policy.
-3. **Calibration Lab** — four safeguarded hypothetical cases and bilateral behavior approval.
+2. **Arbitral Reasoning Calibration** — legal actor, legal architecture, values, procedure, model, sources, tools, and change policy.
+3. **Stress Testing and Validation** — four safeguarded hypothetical cases and bilateral behavior approval.
 4. **Freeze and Appoint** — canonical hash, separate approvals, disclosure review, human acceptance, and simulated signature.
 5. **Later Dispute** — shared record, optional sealed Settlement Facilitation, proposed determination, and independent human decision.
 
 ## 3. Functional Requirements
 
 - Validate one shared state schema at fixture, API, and UI boundaries.
-- Keep contract approval, calibration approval, appointment approval, settlement consent, and human decision separate.
-- Invalidate calibration and appointment after any behavior-affecting amendment.
+- Keep contract approval, validation approval, appointment approval, settlement consent, and human decision separate.
+- Invalidate validation and appointment after any behavior-affecting amendment.
 - Hash the canonical behavior manifest with SHA-256.
-- Require every calibration case to pass and receive separate approval from both parties.
+- Require every stress-test case to pass and receive separate approval from both parties.
 - Require matching hash approvals, disclosure review, and human acceptance before appointment.
 - Bind the later dispute to the appointed hash and reject mismatches.
 - Prevent silent model, prompt, source, tool, or engine substitution.
@@ -45,7 +45,7 @@ The MVP is accepted when:
 1. all five views complete in one coherent session;
 2. the fixture and every route response validate;
 3. edits increment the constitution and clear downstream authority;
-4. all four calibration categories are visible and separately approved;
+4. all four validation categories are visible and separately approved;
 5. identical state produces an identical hash and material changes do not;
 6. stale approvals cannot appoint or govern a dispute;
 7. both parties are treated symmetrically;
@@ -63,6 +63,10 @@ qualified e-signature, institutional case administration, legally operative
 award, private mediation caucus, mediator persona, arbitrary contract ingestion,
 broad jurisdiction coverage, model-weight fine-tuning, or Council-of-LLMs
 orchestration is required.
+
+Relationship-specific configuration must be called **arbitral reasoning
+calibration**, not fine-tuning. It changes the inference-time protocol and
+leaves the underlying model weights unchanged.
 
 ## 6. Document Authority
 

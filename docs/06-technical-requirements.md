@@ -14,6 +14,14 @@
 There is no database, authentication, production signature provider, or legally
 operative award service.
 
+### Terminology boundary
+
+The relationship-specific operation is **inference-time protocol calibration**,
+publicly described as **arbitral reasoning calibration**. Constitution fields,
+prompts, exemplars, sources, thresholds, tools, and remedy boundaries may
+change; model weights do not. **Model fine-tuning** is reserved for a separate
+training process that modifies those weights.
+
 ## 2. Core State
 
 `ContractState` contains the matter, party profiles, contract clauses and
@@ -30,13 +38,13 @@ Every fixture and material route response is schema validated.
 - matter identity;
 - contract decisions without transient confirmation UI state;
 - constitution and human-arbitrator identity without transient lifecycle status; and
-- calibration inputs and observed results without party-approval UI state.
+- stress-test inputs and observed validation results without party-approval UI state.
 
 `canonicalize` sorts object keys recursively without reordering arrays.
 `computeProtocolHash` returns `sha256:<64 lowercase hex characters>`.
 
 Behavior-affecting edits call one invalidation function that increments the
-constitution, clears calibration, clears appointment, unbinds the dispute, and
+constitution, clears validation state, clears appointment, unbinds the dispute, and
 removes any proposed or human decision.
 
 ## 4. Route Handlers
@@ -49,7 +57,9 @@ Compares party contract expectations only. It is not an adjudication endpoint.
 
 Accepts mode, candidate constitution, and exactly four scenarios. It returns a
 schema-constrained result for each scenario plus live, cached, or fallback
-metadata. A different configured model cannot act as the declared model.
+metadata. This route validates the behaviour produced by a candidate calibrated
+protocol; it does not train or fine-tune a model. A different configured model
+cannot act as the declared model.
 
 ### `POST /api/settlement-preview`
 
@@ -93,7 +103,7 @@ Signing requires:
 - non-empty preliminary human assessment;
 - adopted, modified, or rejected status;
 - non-empty independent rationale;
-- confirmation that sources, objections, and calibration were reviewed; and
+- confirmation that sources, objections, and calibration fit were reviewed; and
 - confirmation of independent judgment.
 
 The prototype signature is a timestamped display record and is explicitly not a

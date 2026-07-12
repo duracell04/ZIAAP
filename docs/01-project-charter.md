@@ -27,6 +27,28 @@ reasoning, and signs any award. The ZIAAP protocol performs the process
 agent-first and may produce a proposed determination with no independent legal
 effect.
 
+### 2.1 Canonical Calibration Terminology
+
+> **The parties align with each other, calibrate the AI-native arbitrator’s
+> reasoning, validate it through stress tests, and then version-lock the
+> approved arbitral runtime.**
+
+The four formation concepts are distinct:
+
+1. **Party alignment:** the parties clarify expectations and identify disagreement.
+2. **Arbitral reasoning calibration:** the parties adjust the Constitution,
+   reasoning instructions, exemplars, source hierarchy, evidentiary standards,
+   uncertainty thresholds, escalation rules, and remedy boundaries.
+3. **Stress testing and validation:** hypothetical cases test whether the
+   calibrated runtime behaves as intended and observes every safeguard.
+4. **Version-locking:** the parties approve and freeze the exact validated
+   runtime configuration.
+
+Arbitral reasoning calibration is technically **inference-time protocol
+calibration**. It does not modify the underlying model’s weights. The term
+**model fine-tuning** is reserved for additional training that changes model
+weights and is outside the relationship-specific appointment process.
+
 ## 3. Product Thesis
 
 Future dispute cost is partly a governance-design problem. Parties can reduce
@@ -36,7 +58,7 @@ later uncertainty by agreeing in advance on:
 - law, seat, rules, language, and the human arbitrator;
 - interpretation, evidentiary treatment, fairness, commercial values, and discretion;
 - escalation, amendment, model identity, tools, and retrieval boundaries; and
-- the behavior demonstrated by agreed calibration cases.
+- the behavior demonstrated by agreed stress-test validation cases.
 
 This creates a privately designed procedural constitution without pretending
 that software itself holds arbitral office.
@@ -45,8 +67,8 @@ that software itself holds arbitral office.
 
 ```text
 G0 Governance Alignment
-→ C0 Protocol Constitution
-→ T0 Calibration and Stress Test
+→ C0 Arbitral Reasoning Calibration
+→ T0 Stress Testing and Validation
 → A0 Freeze, Bilateral Approval, and Human Appointment
 → D0 Later Dispute Bound to the Frozen Hash
 → S0 Optional Sealed Settlement Facilitation
@@ -71,7 +93,7 @@ adjudicative and ends only through a human-issued decision or a valid settlement
 
 - Contract Governance Alignment Annex;
 - versioned Arbitrator Constitution;
-- four-case Calibration Report with bilateral behavior approval;
+- four-case Stress-Test Validation Report with bilateral behavior approval;
 - canonical SHA-256 protocol manifest;
 - simulated Appointment Record and human acceptance;
 - hash-bound later dispute record;
@@ -91,7 +113,7 @@ adjudicative and ends only through a human-issued decision or a valid settlement
 ## 8. Scope Lock
 
 The MVP uses one seeded contract, one fictional human arbitrator, one declared
-model identity, four calibration cases, one later outage, one settlement
+model identity, four stress-test cases, one later outage, one settlement
 proposal, and one award preview. It excludes production signatures,
 authentication, persistence, private caucuses, a mediator persona, arbitrary
 contracts, institutional administration, production awards, and multi-model
@@ -103,7 +125,7 @@ The prototype succeeds when a reviewer can see that:
 
 1. parties align contract governance separately from protocol appointment;
 2. every behavior-affecting edit creates a new version and clears approval;
-3. calibration tests mechanical correctness, disputed evidence, mandatory law, and party symmetry;
+3. stress-test validation covers mechanical correctness, disputed evidence, mandatory law, and party symmetry;
 4. the exact package is hashed and separately approved;
 5. the human arbitrator accepts the mandate and disclosure duties;
 6. a later dispute cannot run under a mismatched appointment;

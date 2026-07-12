@@ -41,11 +41,18 @@ agent-first decision environment.
 | ZIAAP-powered arbitrator | Equivalent public term, always defined on first consequential use |
 | Human arbitrator | The legally appointed actor who owns procedure, judgment, and signature |
 | ZIAAP decision protocol | The technical and contractual system jointly configured and version-locked by the parties |
+| Party alignment | The parties clarify expectations and identify disagreement with each other |
+| Arbitral reasoning calibration | Public term for relationship-specific adjustment of the inference-time protocol; model weights remain unchanged |
+| Inference-time protocol calibration | Technical term for arbitral reasoning calibration |
+| Stress testing and validation | Hypothetical cases used to inspect safeguards and approve observed protocol behaviour |
+| Version-locking | Freezing the exact validated runtime configuration and its manifest |
+| Model fine-tuning | Separate additional training that changes the underlying model’s weights |
 | Proposed determination | Protocol reasoning output with no independent legal effect |
 | Final human decision | Human-adopted reasoning and operative disposition |
 
 Never use the unqualified term **AI arbitrator**. Never label protocol output an
-award, verdict, final decision, or binding result.
+award, verdict, final decision, or binding result. Never describe
+relationship-specific arbitral reasoning calibration as fine-tuning.
 
 ## 3. Brand Character
 
@@ -62,8 +69,8 @@ The visual concept remains:
 | View | Emphasis |
 | --- | --- |
 | Governance Alignment | Symmetry, independent assertions, exact versions, and consent separation |
-| Protocol Constitution | Human/protocol distinction, editable principles, model identity, and amendment consequences |
-| Calibration Lab | Hypothetical record, required safeguards, observed behavior, and bilateral approval |
+| Arbitral Reasoning Calibration | Human/protocol distinction, editable principles, model identity, and amendment consequences |
+| Stress Testing and Validation | Hypothetical record, required safeguards, observed behavior, and bilateral approval |
 | Freeze and Appoint | Readiness, hash integrity, disclosure, human acceptance, and simulated execution |
 | Later Dispute | Shared merits record, sealed settlement, provisional proposal, and independent human signature |
 
@@ -104,15 +111,15 @@ monospace only for hashes, versions, IDs, formulas, and timestamps.
 | --- | --- | --- |
 | Party input | `PARTY ASSERTION` | Neutral surface with explicit party name |
 | Contract agreement | `AGREED CONTRACTUAL TEXT` | Green confirmation, exact version nearby |
-| Constitution | `PROTOCOL CONSTITUTION` | Institutional surface with version and human actor |
-| Calibration | `CALIBRATION RESULT` | Reasoning Blue; safeguards before pass state |
+| Reasoning calibration | `ARBITRAL REASONING CALIBRATION` | Institutional surface with version, editable protocol, and human actor |
+| Validation | `VALIDATION RESULT` | Reasoning Blue; safeguards before pass state |
 | Frozen package | `FROZEN MANIFEST HASH` | Dark integrity surface with full monospace hash |
 | Appointment | `APPOINTED · PROTOTYPE` | Human name, disclosure, acceptance, timestamp |
 | Settlement | `SEALED FROM MERITS` | Civic Red boundary; content confined inside |
 | Protocol proposal | `PROPOSED DETERMINATION · NO INDEPENDENT LEGAL EFFECT` | Reasoning Blue, no final-decision styling |
 | Human result | `FINAL HUMAN DECISION · PROTOTYPE` | Double or strong Review Green border, human name and signature |
 
-Passing calibration means safeguards were observed; it does not mean the answer
+Passing validation means safeguards were observed; it does not mean the answer
 is universally correct. Appointment means the prototype gates completed; it does
 not represent production execution.
 
@@ -193,7 +200,7 @@ The interface is ready when:
 - all five views tell one continuous appointment story;
 - the human/protocol distinction is explicit on constitution, appointment, proposal, and award surfaces;
 - behavior-affecting edits visibly invalidate downstream state;
-- calibration safeguards and bilateral approvals are inspectable;
+- validation safeguards and bilateral approvals are inspectable;
 - the hash is complete and readable;
 - settlement content remains sealed;
 - proposed and human decisions cannot be confused;

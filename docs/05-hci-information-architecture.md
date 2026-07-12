@@ -13,9 +13,9 @@ independent judgment.
 
 The workspace has exactly five views:
 
-1. Governance Alignment;
-2. Protocol Constitution;
-3. Calibration Lab;
+1. Party Alignment;
+2. Arbitral Reasoning Calibration;
+3. Stress Testing and Validation;
 4. Freeze and Appoint; and
 5. Later Dispute.
 
@@ -28,16 +28,18 @@ The navigation permits inspection out of sequence but must never imply completio
 - Show exact clause version and separate party actions.
 - Explain that the Alignment Annex feeds the appointment package but is not the appointment.
 
-## 4. Protocol Constitution
+## 4. Arbitral Reasoning Calibration
 
 - Display the canonical definition of a ZIAAP-powered arbitrator prominently.
 - Keep the human legal actor beside the protocol identity.
 - Expose model, prompt, retrieval, tools, and engine without provider-led branding.
 - Make interpretation, evidence, fairness, values, remedies, discretion, and escalation editable.
-- Warn that editing creates a new version and clears calibration and appointment.
+- Warn that editing creates a new version and clears validation and appointment.
 - Show the settlement firewall as a constitutional rule.
+- Explain that these controls calibrate the inference-time protocol and do not
+  alter the underlying model weights.
 
-## 5. Calibration Lab
+## 5. Stress Testing and Validation
 
 - Present the hypothetical record, required safeguards, observed behavior, and outcome separately.
 - Use pass/fail only for safeguard compliance, never for legal correctness.
@@ -46,7 +48,7 @@ The navigation permits inspection out of sequence but must never imply completio
 
 ## 6. Freeze and Appoint
 
-- Show readiness for contract governance and calibration separately.
+- Show readiness for party alignment and stress-test validation separately.
 - Display the full SHA-256 hash in monospace.
 - Require exact-hash approval from each party.
 - Present disclosure review and human acceptance as separate controls.
@@ -68,7 +70,7 @@ Settlement Facilitation must:
 
 Before protocol execution, require a preliminary human assessment. Display the
 protocol result as **Proposed determination · no independent legal effect**.
-Only after source, objection, calibration, and independent-judgment checks plus
+Only after source, objection, calibration-fit, and independent-judgment checks plus
 reasons may the human sign the simulated award.
 
 ## 8. Semantic Grammar
@@ -81,7 +83,7 @@ Required labels include:
 - agreed contractual text;
 - reproducible calculation;
 - protocol constitution;
-- calibration result;
+- validation result;
 - appointment record;
 - sealed settlement;
 - proposed determination; and
@@ -94,13 +96,14 @@ An AI-generated proposal must never visually resemble a signed human decision.
 - Meet WCAG 2.2 AA contrast and keyboard expectations.
 - Use semantic controls, visible focus, and text in addition to color.
 - Keep hashes and long legal text responsive and wrap-safe.
-- Announce async calibration and dispute status.
+- Announce async validation and dispute status.
 - Preserve legal labels in mobile single-column layouts.
 - Provide designed incomplete, blocked, fallback, and sealed states.
 
 ## 10. Demo Narrative
 
-> The parties align governance → write the protocol constitution → test its
-> behavior → freeze and appoint the exact system → a dispute arises → settlement
+> The parties align with each other → calibrate the arbitral reasoning protocol
+> → validate it through stress tests → version-lock and appoint the exact runtime
+> → a dispute arises → settlement
 > remains optional and sealed → the frozen protocol proposes → the human
 > arbitrator independently decides and signs.
