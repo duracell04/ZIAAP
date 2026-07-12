@@ -7,7 +7,10 @@ describe("lawyer-grade contract state", () => {
     const state = contractStateSchema.parse(getDemoState());
     expect(state.analysis.findings).toHaveLength(3);
     expect(state.analysis.findings.every((finding) => finding.materialStatus === "provisional_ai_analysis" && finding.sourceIds.length > 0)).toBe(true);
-    expect(state.residualReviewPacket).toMatchObject({ materialStatus: "reserved_for_human_review", noAutomatedConclusion: true });
+    expect(state.constitution).toMatchObject({ materialStatus: "protocol_constitution", status: "candidate" });
+    expect(state.calibrationScenarios).toHaveLength(4);
+    expect(state.appointment.status).toBe("draft");
+    expect(state.proposedDetermination).toBeNull();
   });
 
   it("requires both parties to confirm the exact clause version", () => {
