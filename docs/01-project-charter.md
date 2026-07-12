@@ -1,134 +1,112 @@
 # Project Charter
 
-## AI-Native Bilateral Contract Alignment Service
+## AI-Native Arbitrator Appointment Service
 
-**Hackathon:** Omnilex Legal AI-Native Services Hackathon  
-**Date:** 11 July 2026  
-**Owner:** Enrique Georg Zbinden  
-**Status:** I0-first hackathon scope locked
+**Status:** Normative hackathon charter
+
+**Date:** 12 July 2026
+
+**Principal scenario:** Swiss supplier and UK customer negotiating a SaaS agreement
 
 ## 1. Purpose
 
-The project demonstrates a narrow AI-native service that helps two commercial
-parties discover and resolve differences in meaning, risk allocation, and legal
-assumptions before signing a contract.
+ZIAAP demonstrates how two commercial parties can jointly design their future
+dispute-resolution environment while their interests remain aligned. They align
+contractual governance, configure an explicit decision constitution, test that
+protocol against hypothetical disputes, approve the observed behavior, and
+freeze the exact package before a dispute exists.
 
-The system does not decide what the parties should agree. It exposes divergence,
-links relevant sources, drafts alternatives, tests scenarios, and records the
-terms each party separately confirms.
+## 2. Canonical Product Characterisation
 
-## 2. Problem
+> **An AI-native, ZIAAP-powered arbitrator is a human arbitrator legally
+> appointed by the parties who conducts proceedings through a jointly
+> configured, tested, and version-locked ZIAAP decision protocol.**
 
-Two parties can sign the same words while expecting different outcomes.
-Ambiguity commonly remains hidden in performance standards, measurements,
-remedies, liability allocation, evidence duties, governing law, and dispute
-procedure. The disagreement becomes visible only after performance fails, when
-lawyers must reconstruct both the contract and the parties’ assumptions.
+The human arbitrator holds legal office, remains independent, owns the final
+reasoning, and signs any award. The ZIAAP protocol performs the process
+agent-first and may produce a proposed determination with no independent legal
+effect.
 
 ## 3. Product Thesis
 
-> **ZIAAP makes the contract itself the beginning of the dispute-resolution system.**
+Future dispute cost is partly a governance-design problem. Parties can reduce
+later uncertainty by agreeing in advance on:
 
-The service creates a persistent, source-linked contract state before signature.
-That state records agreed meaning, obligations, formulas, remedies, evidence
-requirements, authority boundaries, and unresolved caveats so later events do
-not require reconstruction from zero.
+- contract meaning, formulas, evidence, and remedies;
+- law, seat, rules, language, and the human arbitrator;
+- interpretation, evidentiary treatment, fairness, commercial values, and discretion;
+- escalation, amendment, model identity, tools, and retrieval boundaries; and
+- the behavior demonstrated by agreed calibration cases.
 
-## 4. Reference Scenario
+This creates a privately designed procedural constitution without pretending
+that software itself holds arbitral office.
 
-The seeded case is a cross-border SaaS draft between:
-
-- **Helvetia Cloud AG**, a Swiss supplier; and
-- **Northstar Retail Ltd**, a UK customer.
-
-The prototype aligns three topics:
-
-1. 99.5% uptime, evidence hierarchy, and a stepped service-credit formula;
-2. consequential-loss treatment and liability caps; and
-3. governing law, arbitral seat, rules, and proceeding language.
-
-The selected fixture architecture uses Swiss substantive law, Zurich seat,
-Swiss Rules, one arbitrator, and English proceedings, while reserving mandatory
-laws that may apply irrespective of party choice.
-
-## 5. Hackathon Workflow
+## 4. Required Lifecycle
 
 ```text
-Draft contract
-→ independent party profiles
-→ alignment matrix
-→ scenario and consequence test
-→ agreed clause language
-→ separate bilateral confirmation
-→ Alignment Annex and structured contract state
-→ compact future-outage preview
+G0 Governance Alignment
+→ C0 Protocol Constitution
+→ T0 Calibration and Stress Test
+→ A0 Freeze, Bilateral Approval, and Human Appointment
+→ D0 Later Dispute Bound to the Frozen Hash
+→ S0 Optional Sealed Settlement Facilitation
+→ P0 Provisional Protocol Determination
+→ H0 Independent Human Decision and Signature
 ```
 
-The future preview proves only that confirmed state can calculate one mechanical
-service credit and isolate one residual causation question for human review.
+Alignment is not mediation. Settlement Facilitation begins only after a dispute,
+is voluntary and non-binding, and cannot impose an outcome. Arbitration is
+adjudicative and ends only through a human-issued decision or a valid settlement.
 
-## 6. Authority Model
+## 5. Authority Model
 
-| Class | System treatment | Authority |
+| Class | Protocol activity | Legal effect |
 | --- | --- | --- |
-| Administrative | Extract, organise, compare, link, version, and record | System may execute within defined rules |
-| Mechanical | Apply disclosed formula to confirmed inputs | Deterministic code; disputed inputs block execution |
-| Advisory | Explain consequences and draft alternatives | Parties or qualified professionals decide |
-| Adjudicative | Structure competing positions and evidence | Authorised human determines |
+| Administrative | Extract, organise, compare, link, version, hash, and record | No independent legal effect |
+| Mechanical | Apply a disclosed formula to confirmed inputs | Reproducible result; disputed inputs block authority |
+| Advisory | Explain, draft, propose options, and facilitate settlement | Non-binding until adopted by the competent actor |
+| Adjudicative assistance | Structure the record, reason under the frozen constitution, and propose a determination | Provisional only; the human arbitrator independently decides and signs |
 
-Humans intervene at consent and legal-authority points, not after every routine
-AI action.
+## 6. Prototype Outputs
 
-## 7. Required Outputs
+- Contract Governance Alignment Annex;
+- versioned Arbitrator Constitution;
+- four-case Calibration Report with bilateral behavior approval;
+- canonical SHA-256 protocol manifest;
+- simulated Appointment Record and human acceptance;
+- hash-bound later dispute record;
+- optional sealed non-binding settlement proposal;
+- provisional ZIAAP determination; and
+- independently reasoned, simulated human award record.
 
-- independent party intent profiles;
-- source-linked Alignment Matrix;
-- three divergence findings;
-- clause options and scenario consequences;
-- separately confirmed final language;
-- Alignment Annex;
-- structured contract state and ledger;
-- deterministic future service-credit result; and
-- residual human-review packet concerning gross negligence and the liability limitation.
+## 7. Legal and Product Boundaries
 
-## 8. Legal Boundaries
+- Never describe software alone as the appointed arbitrator.
+- Never describe a proposed determination as an award or binding decision.
+- Never let model confidence bypass evidence, mandatory law, objections, or human judgment.
+- Never substitute a different model, prompt, retrieval pack, tool policy, or engine under an existing hash.
+- Settlement content stays sealed from merits reasoning unless the parties execute a settlement or validly agree otherwise.
+- The human arbitrator cannot rubber-stamp the protocol output; assessment, review, reasons, and signature are separate recorded acts.
 
-- ZIAAP compares legal configurations; it does not merge Swiss and English law.
-- Parties select governing law, seat, rules, language, and final terms.
-- AI does not declare a clause enforceable or provide a binding legal conclusion.
-- Unresolved mandatory-law questions are visibly routed to qualified review.
-- Demonstrative confirmations are not production electronic signatures.
-- Adjudicative authority remains human-owned.
+## 8. Scope Lock
 
-## 9. Scope Exclusions
+The MVP uses one seeded contract, one fictional human arbitrator, one declared
+model identity, four calibration cases, one later outage, one settlement
+proposal, and one award preview. It excludes production signatures,
+authentication, persistence, private caucuses, a mediator persona, arbitrary
+contracts, institutional administration, production awards, and multi-model
+Council orchestration.
 
-The MVP excludes general uploads, arbitrary contracts, broad legal research,
-authentication, production signatures, persistent multi-tenant storage,
-performance monitoring, a complete settlement workflow, complete arbitration,
-autonomous adjudication, multiple jurisdictions beyond the seeded comparison,
-and Council-of-LLMs orchestration.
+## 9. Success Criteria
 
-The former full post-dispute workflow is roadmap context. It is not a second live
-product in this hackathon build.
+The prototype succeeds when a reviewer can see that:
 
-## 10. Success Criteria
-
-The prototype succeeds when judges can see that:
-
-1. both parties independently state and confirm expectations;
-2. semantic, commercial, and legal divergence is visibly separated;
-3. every material finding has provenance and uncertainty;
-4. the system never selects the final legal architecture;
-5. exact clause versions require separate confirmation by both parties;
-6. editing confirmed language invalidates prior confirmations;
-7. the Alignment Annex records shared meaning and unresolved caveats;
-8. 99.2% uptime produces a reproducible CHF 1,500 service credit from the accepted state;
-9. the gross-negligence limitation question remains reserved for a human; and
-10. the complete story is demonstrable in three minutes without network access.
-
-## 11. Charter Statement
-
-> ZIAAP reveals where parties expect different outcomes before they sign,
-> supports them in selecting explicit contractual language, and preserves that
-> shared meaning as a source-linked legal state. Automation follows legal effect;
-> consent remains bilateral; adjudication remains human-owned.
+1. parties align contract governance separately from protocol appointment;
+2. every behavior-affecting edit creates a new version and clears approval;
+3. calibration tests mechanical correctness, disputed evidence, mandatory law, and party symmetry;
+4. the exact package is hashed and separately approved;
+5. the human arbitrator accepts the mandate and disclosure duties;
+6. a later dispute cannot run under a mismatched appointment;
+7. settlement activates only by bilateral consent and remains sealed;
+8. the protocol proposal has no independent legal effect; and
+9. only an independently reasoned human decision can be signed.

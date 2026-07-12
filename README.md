@@ -2,56 +2,75 @@
 
 Zero-Instance Algorithmic Arbitration Protocol.
 
-> **ZIAAP makes the contract itself the beginning of the dispute-resolution system.**
+> **The parties design their dispute-resolution system while their interests are still aligned.**
 
-ZIAAP’s company vision is bilateral contract alignment plus a persistent,
-source-linked legal state that continues from drafting through performance and
-any later dispute.
+ZIAAP lets contracting parties jointly configure, calibrate, version-lock, and
+approve the decision protocol that will govern a later dispute.
 
-**Company USP:** ZIAAP is a zero-instance, authority-aware contract-to-resolution
-protocol that aligns party meaning before signature and preserves the agreed
-legal state throughout performance and any later dispute.
+## Canonical definition
 
-**Hackathon USP:** ZIAAP reveals where two parties think the same draft means
-different things, helps them resolve the divergence, and turns the agreed
-meaning into executable and arbitration-ready contract state.
+> **An AI-native, ZIAAP-powered arbitrator is a human arbitrator legally
+> appointed by the parties who conducts proceedings through a jointly
+> configured, tested, and version-locked ZIAAP decision protocol.**
 
-**UVP:** ZIAAP reduces future dispute cost by resolving hidden contractual
-misalignment before signature and carrying the agreed meaning forward, so
-lawyers and arbitrators do not reconstruct the parties’ expectations later.
+The allocation of responsibility is exact:
 
-## Hackathon build compass
+- **Appointed legal actor:** the human arbitrator;
+- **Agreed procedural and reasoning system:** the ZIAAP protocol;
+- **Operational experience:** agent-first and AI-native;
+- **Protocol output:** a provisional proposed determination; and
+- **Final enforceable authority:** the human arbitrator, who independently
+  reviews, adopts or changes the reasoning, and signs the award.
 
-The hackathon proves one narrow I0-first vertical slice:
+Do not shorten this model to “AI arbitrator.” Software does not hold arbitral
+office or sign an award.
 
-> **Draft contract → independent party profiles → alignment matrix → scenario test → agreed clause language → Alignment Annex → compact future-dispute preview**
+## Demonstrated lifecycle
 
-The seeded demo aligns a Swiss SaaS supplier and UK customer on uptime, loss
-allocation, and arbitral architecture. A later outage then proves continuity:
-the agreed state calculates a CHF 1,500 service credit mechanically, while the
-effect of gross negligence on the liability limitation is reserved for human review.
+```text
+Align contractual governance
+→ configure an Arbitrator Constitution
+→ stress-test four hypothetical disputes
+→ approve behavior and freeze the exact manifest
+→ separately approve and simulate appointment
+→ bind a later dispute to that hash
+→ optional sealed Settlement Facilitation
+→ provisional ZIAAP determination
+→ independent human adoption and signature
+```
 
-Run locally:
+The Swiss SaaS fixture demonstrates a CHF 1,500 deterministic service credit,
+blocked conclusions where maintenance evidence is disputed, mandatory-law
+escalation, party-label symmetry, and a human-issued award preview.
+
+Alignment, settlement, and arbitration are deliberately separate:
+
+> **Alignment before conflict → optional sealed settlement facilitation →
+> binding human-issued arbitration award.**
+
+## Run locally
 
 ```powershell
 pnpm.cmd install
 pnpm.cmd dev
 ```
 
-Open `http://localhost:3000`. Cached verified analysis and legal sources are the
-reliable demo default. Live AI and OmniLex retrieval are optional buttons with
-honest fallback labels.
+Open `http://localhost:3000`. Cached, schema-validated paths support the complete
+offline demonstration. Live calls are optional and may act only under the exact
+declared model identity. A different model may not silently substitute itself
+under a frozen appointment.
 
 ## Repository map
 
-- `app/` — Next.js workspace and structured analysis API
-- `components/` — the four-view legal interface and owned UI primitives
-- `lib/` — schemas, authority rules, AI boundary, and deterministic calculation
-- `data/` — one reliable cross-border SaaS fixture
-- `docs/` — seven authoritative documents plus non-normative appendices
-- `tests/` — schema, consent, and deterministic-calculation tests
+- `app/` — Next.js workspace and separate alignment, calibration, settlement,
+  legal-source, and dispute route handlers;
+- `components/` — five-stage appointment and later-dispute interface;
+- `lib/` — schemas, canonical manifest hashing, authority rules, and deterministic calculation;
+- `data/` — one validated cross-border SaaS fixture;
+- `docs/` — seven authoritative documents plus non-normative appendices; and
+- `tests/` — schema, consent, hashing, firewall, appointment, and calculation tests.
 
-## Core documents
+## Document authority
 
 1. [Project Charter](docs/01-project-charter.md)
 2. [Service Blueprint](docs/02-service-blueprint.md)
@@ -61,11 +80,6 @@ honest fallback labels.
 6. [Technical Requirements](docs/06-technical-requirements.md)
 7. [Institutional Brand Book](docs/07-brand-book.md)
 
-## Supporting appendices
-
-- [Competitive Strategy](docs/appendices/competitive-strategy.md)
-- [Council of LLMs Concept](docs/appendices/council-of-llms-concept.md)
-- [Full Contract-to-Resolution Vision](docs/appendices/full-lifecycle-vision.md)
-
-The seven numbered documents govern the prototype. Appendices record strategy
-and future ideas but cannot expand the MVP.
+Appendices preserve future and strategic context but do not expand the MVP.
+All confirmations and signatures in this prototype are simulations, not
+production electronic signatures or a production arbitration service.

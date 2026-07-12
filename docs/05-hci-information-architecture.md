@@ -1,89 +1,106 @@
 # HCI and Information Architecture
 
-## Bilateral Alignment Interface
+## Five-Stage AI-Native Arbitrator Workspace
 
 ## 1. Experience Objective
 
-Each party should understand its own position, see where expectations diverge,
-inspect the basis for proposed alternatives, and retain control over consent.
+Each party must understand what it is approving, which version it applies to,
+what the protocol can do, and where human authority begins. The human arbitrator
+must be able to inspect the complete record, resist automation bias, and record
+independent judgment.
 
-## 2. Navigation
+## 2. Persistent Navigation
 
-One persistent workspace uses four ordered views:
+The workspace has exactly five views:
 
-1. Party Intent Capture;
-2. Alignment Matrix;
-3. Scenario and Clause Resolution; and
-4. Alignment Annex and Continuity.
+1. Governance Alignment;
+2. Protocol Constitution;
+3. Calibration Lab;
+4. Freeze and Appoint; and
+5. Later Dispute.
 
-A visible step rail supports direct navigation without implying that unfinished
-steps are complete.
+The navigation permits inspection out of sequence but must never imply completion.
 
-## 3. Party Intent Capture
+## 3. Governance Alignment
 
-- Present the source draft context before questionnaires.
-- Use equivalent cards for supplier and customer.
-- Label profiles as independent and not yet shared agreement.
-- Make profile confirmation reversible and distinct from clause acceptance.
-- Remove confirmation when answers change.
+- Keep supplier and customer controls symmetrical.
+- Distinguish party-profile confirmation from contract-text confirmation.
+- Show exact clause version and separate party actions.
+- Explain that the Alignment Annex feeds the appointment package but is not the appointment.
 
-## 4. Alignment Matrix
+## 4. Protocol Constitution
 
-- Preserve left/right symmetry between parties.
-- Label divergence as semantic, commercial, or legal.
-- Put consequences and sources before preferred language.
-- Show uncertainty and mandatory-law caveats adjacent to conclusions.
-- Label cached, live, and fallback analysis visibly.
-- Label original text as source, party positions as assertions, model comparison
-  as provisional AI analysis, retrieved rules as legal sources, selected language
-  as draft or agreed contractual text, arithmetic as reproducible calculation,
-  and the remaining legal issue as reserved for human review.
-- Avoid scores that imply legal correctness or a winning party.
+- Display the canonical definition of a ZIAAP-powered arbitrator prominently.
+- Keep the human legal actor beside the protocol identity.
+- Expose model, prompt, retrieval, tools, and engine without provider-led branding.
+- Make interpretation, evidence, fairness, values, remedies, discretion, and escalation editable.
+- Warn that editing creates a new version and clears calibration and appointment.
+- Show the settlement firewall as a constitutional rule.
 
-## 5. Resolution View
+## 5. Calibration Lab
 
-- Present at least two alternatives with plain-language trade-offs.
-- Keep editable final language visible in full.
-- Display the clause version near both confirmation controls.
-- Treat each party’s confirmation as a separate action.
-- Invalidate confirmations visibly after editing.
-- Separate deterministic scenario results from AI explanation.
+- Present the hypothetical record, required safeguards, observed behavior, and outcome separately.
+- Use pass/fail only for safeguard compliance, never for legal correctness.
+- Require a separate approval control for each party on every result.
+- Keep untested, failed, passed, and bilaterally approved states visually distinct.
 
-## 6. Alignment Annex
+## 6. Freeze and Appoint
 
-The annex reads as a formal institutional record: matter identifier, parties,
-clauses, versions, confirmations, evidence requirements, legal architecture,
-caveats, sources, and ledger. It must state that demo confirmations are not
-production signatures.
+- Show readiness for contract governance and calibration separately.
+- Display the full SHA-256 hash in monospace.
+- Require exact-hash approval from each party.
+- Present disclosure review and human acceptance as separate controls.
+- Label the final action and signature as a prototype simulation.
 
-## 7. Continuity Preview
+## 7. Later Dispute
 
-Present two balanced cards:
+Display the shared claim, defence, evidence, objections, and missing evidence
+before any proposal.
 
-- mechanical issue resolved from the contract state; and
-- residual adjudicative issue reserved for a human.
+Settlement Facilitation must:
 
-The preview must say it is not a completed arbitration.
+- appear as an optional sealed track;
+- state that it is not alignment, mediation, or adjudication;
+- require two separate consent controls;
+- label proposals non-binding;
+- keep responses visually and logically inside the sealed surface; and
+- disclose only termination status to the merits view.
 
-## 8. Semantic Status Grammar
+Before protocol execution, require a preliminary human assessment. Display the
+protocol result as **Proposed determination · no independent legal effect**.
+Only after source, objection, calibration, and independent-judgment checks plus
+reasons may the human sign the simulated award.
 
-Use separate visual dimensions for provenance, epistemic type, procedural or
-evidence status, and authority or review status. Do not collapse them into one
-generic confidence badge.
+## 8. Semantic Grammar
+
+Keep provenance, epistemic type, procedural status, and authority separate.
+Required labels include:
+
+- source;
+- party assertion;
+- agreed contractual text;
+- reproducible calculation;
+- protocol constitution;
+- calibration result;
+- appointment record;
+- sealed settlement;
+- proposed determination; and
+- final human decision.
+
+An AI-generated proposal must never visually resemble a signed human decision.
 
 ## 9. Accessibility
 
 - Meet WCAG 2.2 AA contrast and keyboard expectations.
-- Use visible focus indicators and native labels.
-- Do not rely on colour alone for status.
-- Keep confirmation targets large and plainly worded.
-- Support responsive single-column layouts without hiding legal status.
-- Provide designed loading, fallback, blocked, and incomplete states.
+- Use semantic controls, visible focus, and text in addition to color.
+- Keep hashes and long legal text responsive and wrap-safe.
+- Announce async calibration and dispute status.
+- Preserve legal labels in mobile single-column layouts.
+- Provide designed incomplete, blocked, fallback, and sealed states.
 
 ## 10. Demo Narrative
 
-The interface should make this sequence self-evident:
-
-> Two parties think they agree → ZIAAP reveals divergence → they resolve it
-> before signature → shared meaning becomes structured state → a later outage is
-> partly resolved from that state → only the residual question reaches a human.
+> The parties align governance → write the protocol constitution → test its
+> behavior → freeze and appoint the exact system → a dispute arises → settlement
+> remains optional and sealed → the frozen protocol proposes → the human
+> arbitrator independently decides and signs.

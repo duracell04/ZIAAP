@@ -1,247 +1,108 @@
 # Full Contract-to-Resolution Vision
 
-> **Future product vision — not hackathon scope, not a build specification, and not an eighth core document.**
+> **Future product vision — not a build specification and not an eighth core document.**
 
-This appendix records the broader ZIAAP lifecycle from pre-signature contract
-alignment through performance, dispute structuring, settlement, and human
-determination. The current prototype implements a narrow I0 alignment cycle and
-only previews later continuity.
+## 1. Lifecycle Thesis
 
-The authoritative hackathon scope remains the seven numbered documents. In
-particular, the [Product Requirements](../04-product-requirements.md) control the
-live build and explicitly exclude pre-signature alignment and continuous
-contract monitoring.
+The full ZIAAP lifecycle begins before signature, when the parties can still
+jointly design governance without knowing which side a later dispute will favor.
+It continues through performance, settlement, arbitration, and execution.
 
-## 1. Current MVP and Future Vision
+```text
+Contract and governance alignment
+→ protocol constitution and calibration
+→ freeze, bilateral approval, and human appointment
+→ performance evidence and amendments
+→ later dispute bound to the active appointment hash
+→ optional sealed settlement facilitation
+→ frozen-protocol proposed determination
+→ independent human award
+→ correction, challenge, recognition, or enforcement as applicable
+```
 
-| Current I0-first hackathon MVP | Future lifecycle vision |
+The human arbitrator holds legal office and signs the award. The ZIAAP protocol
+is the agreed, tested, version-locked decision environment.
+
+## 2. Current Prototype and Future Product
+
+| Current vertical slice | Future lifecycle |
 | --- | --- |
-| Begins while the parties negotiate one seeded SaaS draft | Supports broader contracts and controlled jurisdiction packs |
-| Aligns three topics and creates an Alignment Annex | Aligns expectations, records performance, and later structures any dispute |
-| Demonstrates I0 plus a compact M/S and I3 preview | Connects I0, P0, I1, M/S, I2, and I3 |
-| Uses one seeded Swiss B2B software dispute | May later support controlled jurisdiction and contract variants |
-| Ends at bilateral settlement or clean human handover | Preserves continuity from drafting through final resolution |
+| One seeded Swiss SaaS contract | Controlled contract and jurisdiction packs |
+| One fictional human sole arbitrator | Production appointment and institutional workflows |
+| Four fixed calibration cases | Party-authored, reviewed regression suites |
+| Session-only SHA-256 manifest | Persisted, signed, tamper-evident protocol registry |
+| Shared-record Settlement Facilitation | Separate mediator and separately deployed ZIAAP instance with private caucus controls |
+| One later-dispute preview | Full pleadings, evidence, hearings, interim decisions, and awards |
+| Simulated human signature | Legally reviewed signature and award process |
 
-### Superseded post-dispute workflow
+## 3. Stage Architecture
 
-The following remains useful roadmap context but is no longer the central live
-hackathon workflow:
+### G0: Governance Alignment
 
-```text
-Existing signed contract + dispute
-        ↓
-Party submissions and evidence
-        ↓
-Source-linked contract map, chronology, claims, defences, and evidence matrix
-        ↓
-Party correction and contestation
-        ↓
-Administrative / Mechanical / Advisory / Adjudicative routing
-        ↓
-Deterministic mechanical calculation
-        ↓
-Non-binding settlement proposal
-        ↓
-Separate acceptance by both parties?
-   ├─ Yes → Settlement agreement
-   └─ No  → Settlement material firewalled
-             ↓
-             Residual-issues memorandum
-             ↓
-             Human lawyer, arbitrator, or tribunal
-```
+Parties align commercial, semantic, and legal terms: obligations, formulas,
+remedies, evidence, notices, law, seat, rules, language, and human arbitrator.
 
-### Future contract-to-resolution workflow
+### C0: Protocol Constitution
 
-```text
-Draft contract and party expectations
-        ↓
-Commercial, legal, and semantic divergence analysis
-        ↓
-Alignment questions, legal consequence comparisons, and scenarios
-        ↓
-Party negotiation and explicit choices
-        ↓
-Revised contract + Structured Contract State + Alignment Annex
-        ↓
-Performance events, notices, evidence, milestones, and deviations
-        ↓
-Disagreement arises
-        ↓
-Structured dispute intake using the existing contract and performance state
-        ↓
-Mechanical resolution / bilateral settlement / residual case formation
-        ↓
-Human determination of reserved adjudicative questions
-```
+The parties configure interpretation, evidence, fairness, commercial values,
+remedy boundaries, discretion, escalation, settlement segregation, model,
+prompt, retrieval, tools, engine, amendments, and replacement.
 
-## 2. Legal-System Boundary
+### T0: Calibration
 
-ZIAAP must never blend two national laws into a new hybrid legal order. It may
-retrieve, compare, and explain possible consequences under identified legal
-frameworks, but the parties or an authorised human choose the contractual and
-procedural architecture.
+Hypothetical disputes test the protocol’s behavior. Parties inspect safeguards,
+approve results, add adversarial cases, and repeat until the constitution is fit
+for appointment. Calibration does not waive later due process.
 
-For example, the system may state:
+### A0: Appointment
 
-> Under Swiss law, this provision may produce consequence A. Under English law,
-> it may produce consequence B. The parties currently appear to expect
-> different results. Select or renegotiate the intended allocation and obtain
-> qualified legal review where required.
-
-The parties may make explicit choices about:
-
-- governing law;
-- arbitral seat and arbitration rules;
-- courts or institutions with supporting roles;
-- contract and proceeding language;
-- mandatory rules that may apply regardless of contractual choice;
-- interpretation standards;
-- liability limitations and remedies;
-- evidence, notice, and record requirements; and
-- likely enforcement locations.
-
-The system exposes divergences and records choices. It does not select governing
-law, reconcile legal systems, waive rights, or create binding terms on behalf of
-the parties.
-
-## 3. Three Alignment Layers
-
-### 3.1 Commercial alignment
-
-Makes visible the outcomes and trade-offs the parties actually want, such as:
-
-- speed versus formal control;
-- price certainty versus flexibility;
-- strict performance versus reasonable efforts;
-- relationship preservation versus strong remedies; and
-- predictable processes versus discretionary escalation.
-
-### 3.2 Legal alignment
-
-Makes the intended legal architecture explicit, including:
-
-- governing law;
-- liability regime;
-- dispute-resolution mechanism;
-- procedural rights;
-- remedies; and
-- mandatory legal constraints.
-
-### 3.3 Semantic alignment
-
-Finds terms and operational concepts that the parties may understand
-differently, including:
-
-- “material breach”;
-- acceptable uptime;
-- completion and acceptance;
-- sufficient evidence of performance;
-- notice effectiveness; and
-- events triggering suspension or termination.
-
-AI may identify and explain divergence. The parties decide whether and how to
-resolve it, with qualified legal review where the decision requires it.
-
-## 4. Lifecycle Architecture
-
-### I0: Contract Alignment
-
-The parties provide a draft contract, commercial assumptions, intended legal
-architecture, and relevant constraints. The system identifies ambiguity,
-compares authorised legal scenarios, generates alignment questions, and records
-the parties’ explicit choices.
+The parties freeze the exact behavior manifest, approve the same hash, establish
+representative authority, and appoint a human arbitrator who accepts the mandate
+and disclosure duties.
 
 ### P0: Performance State
 
-After signature, the service records contract events, notices, milestones,
-evidence, approvals, deviations, and amendments. This creates a traceable record
-without deciding that a breach or legal consequence has occurred.
+After signature, the service records notices, measurements, milestones,
+deviations, evidence, and amendments. Any behavior-affecting protocol amendment
+creates a new version and appointment process.
 
-### I1: Dispute Structuring
+### D0: Dispute State
 
-When disagreement arises, claims, defences, facts, evidence, chronology,
-contractual obligations, and legal issues are assembled into one source-linked,
-contestable case state. The current prototype previews continuity into this stage
-but does not implement full dispute structuring.
+Claims, defences, facts, evidence, objections, and missing material are assembled
+into a shared, contestable record bound to the active appointment hash.
 
-### M/S: Mechanical and Settlement Track
+### S0: Settlement Facilitation
 
-The system applies agreed formulas to confirmed inputs and develops non-binding
-settlement options. Each party retains separate authority to accept or reject
-the complete settlement terms.
+After separate bilateral consent, a sealed system may generate non-binding
+proposals. A future full mediation product uses a separate mediator and separate
+agent instance. Protected content does not enter merits reasoning.
 
-### I2: Residual Case Formation
+### P1: Protocol Determination
 
-If settlement fails, protected negotiation material is removed from the merits
-record, resolved matters are preserved, and only genuinely adjudicative issues
-remain in a balanced, source-linked handover.
+The frozen protocol applies agreed mechanics and produces source-linked,
+contestable proposed reasoning. It flags missing evidence, mandatory law,
+credibility, causation, and exceptional circumstances.
 
-### I3: Human Determination
+### H0: Human Award
 
-A qualified lawyer, arbitrator, or arbitral tribunal receives the residual case
-and exercises legally reserved judgment. The human decision-maker controls any
-determination of disputed liability, credibility, causation, damages, remedies,
-or award.
+The appointed human arbitrator independently reviews the record and protocol
+proposal, preserves equality and the right to be heard, supplies reasons, and
+signs any award. The human may adopt, modify, or reject the proposal.
 
-## 5. Candidate I0 Outputs
+## 4. Long-Term Control Requirements
 
-The following are roadmap artefacts, not current deliverables:
+- production identity and representative-authority verification;
+- protocol registry with signed manifests and reproducible builds;
+- controlled model deprecation, replacement, and reappointment;
+- complete purpose-separated stores for merits, settlement, privilege, and deliberation;
+- case-specific challenge, correction, hearing, and evidence procedures;
+- human-arbitrator conflicts, disclosure, removal, and replacement workflows;
+- institution and court interfaces;
+- privacy, confidentiality, retention, security, and incident controls; and
+- award correction, challenge, recognition, and enforcement support.
 
-| Artefact | Possible purpose |
-| --- | --- |
-| Structured Contract State | Machine-readable parties, obligations, definitions, remedies, procedures, and evidence duties |
-| Alignment Annex | Human-readable record of material assumptions, choices, and confirmed shared meanings |
-| Ambiguity Register | Source-linked terms, clauses, or scenarios for which party expectations diverge |
-| Scenario Results | Non-binding comparison of how selected events may interact with proposed terms |
-| Selected Legal Architecture | Recorded party choices concerning governing law, seat, rules, language, and related provisions |
-| Evidence Requirements | Agreed records, notices, measurements, and proof expected during performance |
+## 5. Adoption Rule
 
-These outputs remain drafts until the parties complete the required approvals
-and legal formalities. Their existence does not prove enforceability or replace
-independent legal advice.
-
-## 6. Authority and Information Rules
-
-- AI may extract, compare, identify divergence, generate questions, and model scenarios.
-- Parties decide commercial preferences and whether to adopt proposed contractual language.
-- Qualified humans address contested legal interpretation and jurisdiction-specific consequences.
-- Mandatory-law constraints remain visible even where the parties select a different governing architecture.
-- No output becomes binding merely because it appears in the structured state.
-- Provenance, corrections, versions, approvals, and unresolved disagreements remain auditable.
-- Confidential negotiation material must have defined access and retention treatment.
-
-## 7. Adoption Criteria
-
-I0 or P0 should enter product scope only after the core documents are explicitly
-revised to define:
-
-1. the supported contract type, jurisdictions, languages, and user roles;
-2. authoritative sources and qualified-human review triggers;
-3. the legal status and approval process for each candidate output;
-4. the structured schemas for contracts, alignment choices, performance events, and amendments;
-5. versioning, correction, signature, evidence, and provenance rules;
-6. privacy, privilege, confidentiality, retention, and access controls;
-7. failure modes for conflicting laws, incomplete information, and unresolved party divergence;
-8. acceptance tests proving that the system does not make party-controlled or adjudicative choices; and
-9. a narrow demonstrable use case that does not compromise the I0-first MVP.
-
-Adoption requires deliberate updates to the Project Charter, Product
-Requirements, Legal Governance, HCI specification, and Technical Requirements.
-An appendix alone cannot authorise implementation.
-
-## 8. Hackathon Boundary
-
-For the current prototype:
-
-- one seeded draft is aligned before signature;
-- exactly three divergence topics are supported;
-- legal comparison is curated and advisory;
-- one Alignment Annex is generated from demonstrative confirmations;
-- no performance-monitoring workflow is built;
-- the later outage is a continuity preview rather than a full dispute product; and
-- no complete settlement or arbitration stage is implemented.
-
-The full lifecycle is retained here so that the prototype can demonstrate a
-credible wedge into the broader vision without pretending to implement that
-vision today.
+A future stage becomes product scope only when the seven numbered documents
+define its authority, data model, controls, interface, failure modes, tests, and
+legal review. This appendix alone cannot authorise implementation.

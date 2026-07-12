@@ -1,122 +1,103 @@
 # Service Blueprint
 
-## I0 Bilateral Contract Alignment and Continuity Preview
+## Jointly Configured AI-Native Arbitration
 
-**Status:** Normative hackathon operating model  
-**Primary scenario:** Swiss supplier and UK customer negotiating a SaaS agreement
+**Status:** Normative operating model
 
 ## 1. Service Outcome
 
-The service turns independent party assumptions and draft clauses into a
-mutually confirmed Alignment Annex and structured contract state. It then uses
-that state in a compact future scenario to demonstrate mechanical resolution
-and residual human escalation.
+The parties convert a negotiated contract and shared governance preferences into
+a tested, version-locked decision protocol used by an appointed human arbitrator.
+The service later applies that exact protocol to a dispute, optionally opens a
+sealed settlement track, and produces a provisional determination for
+independent human adoption.
 
 ## 2. Actors
 
 | Actor | Responsibilities |
 | --- | --- |
-| Supplier | State expectations, correct its profile, select language, confirm exact versions |
-| Customer | Receive equivalent controls and independently perform the same actions |
-| AI system | Extract, compare, retrieve, explain, identify divergence, and draft alternatives |
-| Deterministic engine | Apply the agreed formula to confirmed scenario inputs |
-| Qualified reviewer | Address unresolved mandatory-law questions |
-| Future decision-maker | Determine residual causation or other adjudicative issues |
+| Supplier and customer | State expectations, negotiate terms, configure principles, approve calibration behavior, approve the exact hash, and control settlement |
+| ZIAAP protocol | Compare, calculate, test, structure, retrieve within scope, and propose a determination under the frozen manifest |
+| Human arbitrator | Accept appointment, disclose conflicts, preserve due process, independently assess the record, adopt/modify/reject the proposal, and sign |
+| Deterministic engine | Apply agreed formulas to confirmed inputs |
 
 ## 3. End-to-End Blueprint
 
 | Stage | Party activity | System activity | Gate | Output |
 | --- | --- | --- | --- | --- |
-| 0. Activate fixture | Presenter opens seeded matter | Validate cached contract state | Valid schema | Stable demo matter |
-| 1. Capture intent | Each party edits and confirms its own profile | Structure expectations by topic | Separate profile confirmation | Two independent profiles |
-| 2. Compare | Parties inspect both positions | Classify semantic, commercial, and legal divergence | Sources and uncertainty present | Alignment Matrix |
-| 3. Develop options | Parties inspect trade-offs | Draft alternative language and scenario consequences | Advisory status visible | Clause options |
-| 4. Resolve language | Parties select or edit language | Version every change | Both confirm identical version | Agreed clauses |
-| 5. Form annex | Parties inspect complete terms | Assemble confirmed state, caveats, sources, and ledger | All clauses bilaterally confirmed | Alignment Annex |
-| 6. Preview continuity | Presenter triggers outage scenario | Apply formula; compress residual issue | Confirmed inputs for mechanical result | Credit + human-review packet |
+| 1. Governance Alignment | Confirm profiles and exact contract text | Preserve source-linked structured terms | Bilateral exact-version confirmation | Alignment Annex |
+| 2. Constitution | Jointly edit reasoning and procedure principles | Version every behavior-affecting field | Explicit legal actor and protocol identity | Candidate Constitution |
+| 3. Calibration | Inspect four hypothetical results | Run safeguards and record behavior | Every case passes and both parties approve | Calibration Report |
+| 4. Appointment | Approve the exact hash; review disclosure | Canonicalise and hash the package | Matching approvals and human acceptance | Appointment Record |
+| 5. Later Dispute | Submit claim, defence, evidence, and objections | Verify hash and build shared merits state | Appointed manifest matches active state | Bound dispute |
+| 6. Settlement Facilitation | Separately opt in and respond | Generate a non-binding shared-record proposal in a sealed domain | Bilateral activation and matching acceptance for settlement | Settlement or sealed termination event |
+| 7. Protocol Determination | Inspect sources, uncertainty, and counterarguments | Apply the frozen protocol and propose a disposition | No settlement leakage; no manifest mismatch | Proposed Determination |
+| 8. Human Decision | Record preliminary view and review the proposal | Preserve review and audit state | Sources, objections, calibration, independent judgment, reasons | Human-signed award preview |
 
-## 4. Stage Rules
+## 4. Constitution and Change Rules
 
-### 4.1 Party Intent Capture
+The constitution includes legal architecture, human-arbitrator identity,
+interpretation, evidence, fairness, commercial values, remedies, discretion,
+escalation, settlement firewall, model, prompt, retrieval, tools, engine, and
+change policy.
 
-- Profiles begin from seeded answers and remain editable.
-- Editing a profile removes that party’s prior confirmation.
-- A profile confirmation states only that the displayed expectations represent
-  that party; it is not agreement to contract language.
-- Party controls and information structure remain symmetrical.
+Any change to a behavior-affecting field increments the constitution version,
+deletes calibration results and approvals, invalidates the frozen hash and party
+confirmations, removes appointment status, and prevents the prior hash from
+governing a new dispute.
 
-### 4.2 Alignment Matrix
+## 5. Calibration Suite
 
-- Exactly three findings are produced: uptime, liability, and legal architecture.
-- Each finding shows both positions, divergence dimension, consequence,
-  uncertainty, sources, and authority class.
-- Cached analysis is immediate and authoritative for demo continuity.
-- Live analysis may refresh the findings but must pass the same schema.
-- Failed or invalid live output leaves the last valid analysis intact.
+The fixture must pass:
 
-### 4.3 Scenario and Clause Resolution
+1. **Clear SLA calculation:** 99.2% produces CHF 1,500 without expanding into a broader liability finding.
+2. **Disputed maintenance:** preserve both positions, request missing evidence, and block a single conclusion.
+3. **Mandatory-law escalation:** identify the constraint, avoid an enforceability guarantee, and require human judgment.
+4. **Party-label symmetry:** equivalent facts receive equivalent procedure after claimant and respondent labels are swapped.
 
-- AI alternatives remain advisory.
-- Parties select or edit language themselves.
-- Every language edit increments the version and invalidates confirmations.
-- One party’s confirmation never binds the other.
-- Mandatory-law caveats cannot be removed merely by model confidence.
+Passing is insufficient by itself. Both parties approve each observed result.
 
-### 4.4 Alignment Annex
+## 6. Freeze and Appointment
 
-The annex includes the matter, parties, selected clauses, exact versions,
-separate confirmations, evidence duties, legal architecture, sources, unresolved
-caveats, and ledger. It is a hackathon artefact, not a production signature.
+The manifest covers contract decisions, the full constitution, protocol identity,
+calibration inputs, and calibration results. Canonical JSON is hashed with
+SHA-256. Both parties approve that exact hash. The fictional human arbitrator
+then confirms disclosure review, accepts the independent-decision duty, and
+provides a simulated signature.
 
-### 4.5 Future-Dispute Preview
+## 7. Settlement Firewall
 
-The seeded outage uses:
+- Either party may propose Settlement Facilitation.
+- It activates only when both consent after the dispute exists.
+- The prototype uses the shared case record only and has no private caucuses.
+- Proposal terms and responses remain outside the merits prompt and merits ledger.
+- The merits side may know only that facilitation occurred, whether it ended, or that both parties executed a settlement.
+- One decline ends the track without disclosing its contents.
 
-- measured availability: 99.2%;
-- threshold: 99.5%;
-- monthly fee: CHF 10,000;
-- 5% credit per complete 0.1 percentage-point shortfall; and
-- a cap of 100% of the monthly fee.
+## 8. Independent Human Decision
 
-Three complete shortfall steps produce a 15% credit, or CHF 1,500. Disputed
-inputs block the result. Whether grossly negligent conduct affects the agreed
-liability limitation remains reserved for human authority.
+Before revealing the protocol proposal, the human arbitrator records a preliminary
+assessment. Afterward the human reviews sources, objections, calibration fit, and
+the proposed reasoning; adopts, modifies, or rejects it; supplies independent
+reasons; and signs. The interface must never enable a one-click rubber stamp.
 
-## 5. Legal Comparison Rule
-
-The system may compare Swiss and English configurations and identify relevant
-mandatory constraints. It must never blend the systems into a hybrid order,
-select the final architecture, or state that proposed language is enforceable.
-
-## 6. Exceptions and Escalation
+## 9. Safe Failure
 
 | Trigger | Response |
 | --- | --- |
-| Missing or invalid fixture field | Stop activation and show validation error |
-| Live AI timeout or invalid schema | Restore cached analysis and show fallback notice |
-| Missing source for material finding | Mark unsupported and block adoption as verified |
-| Different clause versions | Block bilateral confirmation |
-| Language changes after confirmation | Increment version and clear both confirmations |
-| Mandatory-law uncertainty | Preserve caveat and route to qualified review |
-| Disputed formula input | Block mechanical calculation |
-| Causation or liability determination | Create residual human-review packet |
+| Missing calibration or bilateral approval | Block freeze |
+| Manifest mismatch | Block appointment or dispute execution |
+| Declared model unavailable | Block substitution; allow only a clearly labelled validated same-manifest fixture |
+| Disputed formula input | Block authoritative mechanical result |
+| Missing decisive evidence | Preserve uncertainty and request evidence |
+| Mandatory-law or serious procedural issue | Flag for independent human judgment |
+| Settlement without bilateral consent | Do not activate |
+| Attempted settlement leakage | Reject the adjudication request |
+| Missing human rationale or checklist | Block signature |
 
-## 7. Case Ledger
+## 10. Demonstration Sequence
 
-Record fixture load, analysis mode, profile confirmation, option selection,
-language version, party confirmation, formula execution, fallback, and handover.
-Each event includes actor, timestamp, object, action, detail, and authority class.
-
-## 8. Three-Minute Demonstration
-
-1. Show the two independent profiles and confirm them.
-2. Reveal the three divergences in the Alignment Matrix.
-3. Select balanced language and confirm the exact versions for both parties.
-4. Run the 99.2% outage test and show the CHF 1,500 result.
-5. Open the state-generated Annex and show the residual gross-negligence packet and ledger.
-
-## 9. Roadmap Boundary
-
-Continuous performance monitoring, complete dispute intake, settlement,
-arbitration administration, and determination remain future lifecycle stages.
-The preview proves continuity but does not implement those products.
+Confirm governance, inspect and edit the constitution, run and approve four
+calibration cases, freeze and approve the hash, simulate human appointment, open
+the later outage, optionally end sealed settlement facilitation without agreement,
+run the frozen protocol, and record a human-signed disposition.

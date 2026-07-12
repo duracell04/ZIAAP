@@ -2,138 +2,78 @@
 
 > **Supporting strategy appendix — not a build specification.**
 
-This appendix preserves the commercial and competitive reasoning behind the
-company vision and its I0-first hackathon wedge. It informs positioning, pitch
-preparation, roadmap discussion, and Q&A. It does not add product requirements.
-
 ## 1. Focused Positioning
 
 ### Company-level USP
 
-> **ZIAAP is a zero-instance, authority-aware contract-to-resolution protocol that aligns party meaning and legal assumptions before signature, preserves a shared and source-linked legal state throughout performance, and escalates only residual adjudicative questions to human authority.**
+> **ZIAAP lets parties jointly design, test, and appoint their future
+> dispute-resolution protocol while their interests are still aligned.**
 
-Or, for the memorable external claim:
+### Canonical product
 
-> **ZIAAP makes the contract itself the beginning of the dispute-resolution system.**
+> **An AI-native, ZIAAP-powered arbitrator is a human arbitrator legally
+> appointed by the parties who conducts proceedings through a jointly
+> configured, tested, and version-locked ZIAAP decision protocol.**
 
-### Hackathon product
+### Customer value
 
-The prototype proves one bilateral alignment cycle and a compact continuity
-preview:
+ZIAAP converts part of uncertain future dispute cost into an upfront governance
+investment. It preserves contract meaning, expected procedure, approved protocol
+behavior, and evidence architecture so a later matter does not begin from zero.
 
-> **ZIAAP reveals where two parties think the same draft means different things, helps them resolve the divergence, and turns the agreed meaning into executable and arbitration-ready contract state.**
+### Demonstration narrative
 
-> **Draft contract → independent party profiles → alignment matrix → scenario test → agreed clause language → Alignment Annex → compact future-dispute preview**
+> **Align governance → configure values and procedure → stress-test hypothetical
+> disputes → freeze and appoint → run the later matter agent-first → human
+> arbitrator independently issues the award.**
 
-### Customer value proposition
+## 2. Genuine Differentiation
 
-> **ZIAAP reduces future dispute cost by resolving hidden contractual misalignment before signature and carrying the agreed meaning forward, so lawyers and arbitrators do not need to reconstruct the parties’ expectations later.**
+- **Pre-conflict protocol design:** the parties configure the process before either knows its future dispute position.
+- **Behavior-level bilateral consent:** parties approve observed calibration results, not only abstract terms.
+- **Version-locked appointment:** contract state, constitution, model identity, tools, and tests share one hash.
+- **Agent-first operation with human legal authority:** automation is operationally central without misallocating arbitral office.
+- **Settlement/merits separation:** voluntary proposals cannot contaminate later adjudication.
+- **Proposition-level contestability:** sources, objections, uncertainty, and human review remain visible.
+- **Persistent contract-to-resolution state:** later reasoning consumes the state the parties approved.
 
-### Operational principle
+Individual features exist elsewhere. The strategic white space is their
+integration into a party-designed, testable, appointable protocol.
 
-> **Humans intervene at consent and legal-authority points, not at every processing step.**
+## 3. Competitive Framing
 
-The system performs routine administrative work autonomously, invokes
-deterministic calculations using confirmed inputs, and lets parties control
-settlement. A lawyer or arbitrator receives the unresolved, pre-structured issue
-rather than reconstructing the entire matter.
+Human-reviewed AI drafting is not itself unique. ZIAAP should not compete on a
+claim that a model can summarize files or draft an award. Its wedge is **joint
+pre-dispute constitutional design and regression-tested appointment**.
 
-### Three-minute narrative
+Position against:
 
-> **Two parties think they agree → ZIAAP reveals divergent outcomes → they resolve the differences before signature → agreed meaning becomes structured state → a later outage is partly resolved without reconstruction → only the residual question reaches a human.**
+- arbitral institutions: potential future administrators and distribution partners;
+- AI-assisted arbitration services: benchmarks for speed, review, and disclosure;
+- mediation products: separate voluntary-resolution category, not a substitute for appointment;
+- contract lifecycle tools: sources of structured contract and performance state; and
+- legal workflow platforms: infrastructure partners rather than the core protocol thesis.
 
-The pitch proves zero-instance alignment without claiming that the hackathon
-implements continuous performance, complete settlement, or arbitration.
+## 4. Strategic Guardrails
 
-## 2. Competitive Landscape
+- Use **AI-native arbitrator** or **ZIAAP-powered arbitrator** only with the canonical human/protocol definition.
+- Avoid the unqualified phrase **AI arbitrator**.
+- Never claim software holds office or issues a legally operative award.
+- Never describe the human as a rubber stamp.
+- Lead with appointment-time alignment and stress testing, not generic document analysis.
+- Keep alignment, Settlement Facilitation, and arbitration distinct.
+- Treat model identity, calibration, amendment, and replacement as governance infrastructure.
+- Treat the protocol manifest, validated correction data, institutional integrations, and trusted governance as potential moats.
 
-### American Arbitration Association
+## 5. Commercial Hypotheses
 
-AAA is the most important benchmark because its AI Arbitrator service already
-uses AI to structure and analyse documents and draft a proposed award, while a
-human arbitrator decides the dispute and issues the award. AAA describes a
-two-party, documents-only construction procedure and reports faster resolution
-and lower cost. Parties can validate summaries but do not receive the internal
-key-issue analysis or draft award. ZIAAP therefore must not claim that
-human-reviewed AI arbitration alone is unique. ([AAA AI Arbitrator](https://www.adr.org/ai-arbitrator/))
+The economics are strongest for valuable, long-term, repeat, or operationally
+measurable relationships. Candidate models include protocol-design fees,
+appointment packages, monitored matter fees, institutional licensing,
+jurisdiction packs, certification, audits, and reviewer training. These remain
+hypotheses outside the prototype.
 
-### Resolutiion
+## 6. Relationship to Core Documents
 
-Resolutiion is the closest benchmark for the broader prevention vision because
-it monitors commercial relationships, identifies delivery risk, and supports
-early issue resolution. That lifecycle vision belongs to the roadmap, not the
-hackathon build. ([Resolutiion](https://www.resolutiion.com/))
-
-### Dyspute
-
-Dyspute demonstrates a low-cost, proposal-led AI mediation category and
-publishes an offer of USD 299 for 15 proposals over seven days. ZIAAP’s wedge is
-not merely generating settlement proposals; it is maintaining a source-linked,
-authority-aware case state before and after negotiation. ([Dyspute mediation pricing](https://dyspute.ai/mediation))
-
-### Opus 2
-
-Opus 2 is the strongest institutional-infrastructure incumbent and provides
-technology used by arbitral institutions including ICC, SIAC, and DIAC. ZIAAP
-should treat institutional workflow and integration as a future partnership or
-platform question, not as a hackathon requirement. ([Opus 2 for arbitral institutions](https://www.opus2.com/solutions/arbitral-institutions/))
-
-## 3. Genuine Differentiation
-
-ZIAAP’s defensible product thesis is the combination of:
-
-- **Zero-instance bilateral alignment:** the parties expose semantic, commercial, and legal divergence before contractual commitment.
-- **Persistent contract-to-resolution state:** agreed meaning, formulas, evidence duties, and authority boundaries continue beyond the PDF.
-- **Authority-based routing:** automation depends on legal effect and reserved authority, not confidence alone.
-- **Administrative and mechanical processing:** routine work and reproducible calculations do not require blanket human approval.
-- **Party-controlled settlement:** identical complete terms require separate affirmative acceptance.
-- **Settlement/merits firewall:** protected negotiation content stays outside the human decision-maker’s merits record.
-- **Proposition-level contestability:** users can inspect sources, correct extractions, challenge inferences, and add evidence.
-- **Residual-issue escalation:** the human receives only the genuinely adjudicative question in a balanced review packet.
-- **Record continuity:** contract, facts, evidence, calculation, settlement process, handover, and audit ledger remain connected.
-
-Individual capabilities exist elsewhere. The strategic white space is their
-integration into a transparent, authority-aware legal process.
-
-## 4. Compact SWOT
-
-| Strengths | Weaknesses |
-| --- | --- |
-| Distinct authority-routing model | Broader vision can become several products |
-| Source traceability and contestability | Adoption may require trust from both parties |
-| Deterministic processing with selective human control | Limited proprietary data and institutional distribution |
-| Settlement firewall and clean handover | Jurisdictional, confidentiality, and enforceability complexity |
-
-| Opportunities | Threats |
-| --- | --- |
-| Fixed-fee AI-native legal production | Trusted incumbents such as AAA and Opus 2 |
-| Structured B2B disputes in SaaS and similar verticals | CLM and legal-workflow vendors expanding into disputes |
-| Law-firm, insurer, and institutional partnerships | Commoditisation of extraction and generation |
-| Authority Matrix and case-state standards | A procedural, security, or hallucination incident damaging trust |
-
-## 5. Strategic Guardrails
-
-- Do not describe ZIAAP as an AI judge, autonomous arbitrator, or autonomous award system.
-- Do not claim human-reviewed AI arbitration as the unique innovation.
-- Lead with the I0 alignment cycle and show later dispute handling only as continuity proof.
-- Show evidence and legal effect before recommendations.
-- Treat human attention as reserved authority and exception capacity, not a review step after every model action.
-- Keep confidential settlement reasoning outside the clean merits handover.
-
-## 6. Post-Hackathon Strategy
-
-The broader strategy may explore an open-core protocol, hosted matter fees,
-separately priced legal review, team subscriptions, enterprise or institutional
-licensing, certification, audits, jurisdiction packs, and reviewer training.
-These are commercial hypotheses for validation, not features of the prototype.
-
-Potential long-term moats include adoption of the case-state protocol and
-Authority Matrix, validated correction and override data, procedural templates,
-institutional integrations, and trusted governance. Model access and source code
-alone should not be treated as durable differentiation.
-
-## 7. Relationship to the Core Documents
-
-The seven numbered documents remain authoritative. The Product Requirements
-document controls the demo scope. If this appendix conflicts with a core
-document, the core document prevails.
+The seven numbered documents govern. Product Requirements control the live demo.
+This appendix cannot expand authority or implementation scope.

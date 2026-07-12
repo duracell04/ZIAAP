@@ -1,100 +1,117 @@
 # Technical Requirements
 
-## I0-First Prototype Architecture
+## Version-Locked Appointment Prototype
 
 ## 1. Stack
 
 - Next.js 16 App Router, React 19, and TypeScript;
-- Tailwind CSS with owned shadcn-style primitives;
-- Zod schemas shared by fixture, API, and application;
-- AI SDK v6 structured output with direct OpenAI provider access;
-- Vitest for domain and schema tests; and
-- no database, authentication, or production signature provider.
+- Zod schemas shared across fixture, routes, UI, and tests;
+- AI SDK structured output with direct OpenAI access inside route handlers;
+- Web Crypto SHA-256 over canonical JSON;
+- deterministic TypeScript calculation for mechanical remedies; and
+- Vitest for domain and invariant tests.
 
-## 2. Application Architecture
+There is no database, authentication, production signature provider, or legally
+operative award service.
 
-The root Server Component validates the cached fixture and passes it to one
-interactive client workspace. The workspace owns four visual steps and a single
-session-scoped `ContractState`. A reset restores the validated fixture.
+## 2. Core State
 
-## 3. Core State
+`ContractState` contains the matter, party profiles, contract clauses and
+decisions, legal sources, `ArbitratorConstitution`, four
+`CalibrationScenario` records, `AppointmentRecord`, `DisputeSession`, sealed
+`SettlementTrack`, optional `ProposedDetermination`, `HumanDecision`, and ledger.
 
-`ContractState` contains matter metadata, two `PartyProfile` objects, three
-`Clause` objects, `AlignmentAnalysis`, three `AlignmentDecision` objects,
-`LegalConstraint`, the future event, `ResidualReviewPacket`, and ledger entries.
+Every fixture and material route response is schema validated.
 
-Material types are Zod-backed. Cached and live paths use identical schemas.
+## 3. Manifest and Hashing
 
-## 4. Analysis API
+`buildProtocolManifest` includes:
 
-`POST /api/analyze`
+- matter identity;
+- contract decisions without transient confirmation UI state;
+- constitution and human-arbitrator identity without transient lifecycle status; and
+- calibration inputs and observed results without party-approval UI state.
 
-Request:
+`canonicalize` sorts object keys recursively without reordering arrays.
+`computeProtocolHash` returns `sha256:<64 lowercase hex characters>`.
 
-```json
-{ "mode": "cached | live", "parties": ["two validated PartyProfile objects"] }
-```
+Behavior-affecting edits call one invalidation function that increments the
+constitution, clears calibration, clears appointment, unbinds the dispute, and
+removes any proposed or human decision.
 
-Response is `AlignmentAnalysis` with exactly three findings, legal sources, and
-metadata identifying cached, live, or fallback mode.
+## 4. Route Handlers
 
-Live mode uses `generateText` with `Output.object`, a 12-second abort signal,
-and a server-only API key. Failure or invalid output returns validated cached
-analysis with a visible notice. Provider clients are invoked only inside the
-request path; secrets never enter client bundles.
+### `POST /api/analyze`
 
-## 5. Legal Sources
+Compares party contract expectations only. It is not an adjudication endpoint.
 
-The prototype limits analysis to three bounded questions. `POST /api/legal-source`
-returns the cached verified Article 100 constraint by default or optionally uses
-OmniLex OAuth client credentials and MCP `get_article` for `ch-fedlex--220--100`.
-Live and cached modes are labelled independently; the demo does not depend on
-network availability.
+### `POST /api/calibrate`
 
-## 6. Deterministic Engine
+Accepts mode, candidate constitution, and exactly four scenarios. It returns a
+schema-constrained result for each scenario plus live, cached, or fallback
+metadata. A different configured model cannot act as the declared model.
 
-`calculateServiceCredit` consumes a `ServiceCreditRule`, actual uptime in integer
-basis points, and input-confirmation state. The fixture computes three complete
-10-basis-point steps × 5% × CHF 10,000 = CHF 1,500, capped at 100%. Missing or
-disputed inputs return a blocked result.
+### `POST /api/settlement-preview`
 
-## 7. Consent and Versioning
+Accepts validated state, requires an appointed matching manifest and bilateral
+consent, and returns one sealed, non-binding proposal based on the shared record.
 
-Each `AlignmentDecision` stores language, version, selected option, and separate
-supplier/customer version confirmations. Editing language increments the version
-and resets both confirmations. Annex readiness requires all decisions to pass
-the bilateral-version predicate.
+### `POST /api/dispute-preview`
 
-## 8. Ledger
+Accepts mode and validated state. It requires appointed status, recomputes the
+manifest hash, verifies the dispute binding, and returns a provisional
+determination. Its prompt payload excludes the settlement track entirely.
 
-The session ledger records actor, timestamp, action, object, detail, and authority
-class. It is demonstrative and in-memory; refreshing the page restores fixture
-state.
+### `POST /api/legal-source`
 
-## 9. Security and Privacy
+Preserves the bounded Article 100 legal-source retrieval and cached fallback.
 
-- Keep all credentials server-only and Git-ignored.
-- Send only seeded party profiles to the analysis route.
-- Do not persist confidential party data.
-- Treat generated legal comparison as advisory and schema constrained.
-- Use explicit external links and verification status for legal sources.
+## 5. Protocol Identity and Failure
 
-## 10. Deployment and Failure Behaviour
+The fixture pins provider, model, prompt version, retrieval pack, tool policy,
+and engine. Live execution compares the configured model to that identity. A
+mismatch blocks live authority; it does not silently update the appointment.
 
-The application must build as a standard Node.js Next.js deployment. Cached mode
-works without AI or MCP network access. Live failure preserves the last valid
-state and announces fallback rather than blanking or partially replacing the
-matrix.
+Cached fixtures represent validated output for the same declared manifest and
+must be labelled as cached or fallback. They do not claim that a substitute live
+model acted under the appointment.
 
-## 11. Test Requirements
+## 6. Settlement Segregation
 
-- fixture schema validation;
-- required source linkage;
-- bilateral exact-version confirmation;
-- confirmation invalidation after edits;
-- CHF 1,500 deterministic result, complete-step rounding, and cap enforcement;
-- selected-option propagation into the Annex and future preview;
-- cached/live AI and OmniLex mode labels;
-- blocked result for disputed inputs;
-- type, lint, test, and production-build checks; and
-- responsive browser verification of the complete cached path.
+Settlement proposal content and responses exist only in `SettlementTrack`.
+Adjudication requests are constructed explicitly from constitution, appointment
+hash, contract decisions, shared dispute record, and legal sources. They must not
+spread or serialize the settlement object into the merits prompt.
+
+The operational merits record stores only occurrence or final outcome status.
+
+## 7. Human Decision Gate
+
+Signing requires:
+
+- a proposed determination;
+- non-empty preliminary human assessment;
+- adopted, modified, or rejected status;
+- non-empty independent rationale;
+- confirmation that sources, objections, and calibration were reviewed; and
+- confirmation of independent judgment.
+
+The prototype signature is a timestamped display record and is explicitly not a
+qualified or production electronic signature.
+
+## 8. Test Requirements
+
+- complete fixture validation;
+- exact-version contract confirmation;
+- deterministic CHF 1,500 result and disputed-input blocking;
+- canonical hash stability and behavior-change sensitivity;
+- full downstream invalidation after amendment;
+- four-case pass and bilateral approval gating;
+- exact-hash appointment and human-acceptance gating;
+- mismatch and unavailable-model blocking;
+- bilateral settlement activation and merits non-leakage;
+- provisional determination status and no independent legal effect; and
+- independent human signature gate.
+
+Run type checking, lint, tests, production build, and responsive browser
+verification of the complete cached path.
