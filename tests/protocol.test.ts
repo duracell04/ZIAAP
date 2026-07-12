@@ -8,13 +8,14 @@ import {
 } from "@/lib/protocol";
 
 function artifact(id: string, executionStatus: ExecutionStatus = "illustrative_only") {
-  return { summary: "Observed behavior", behavior: "Preserved safeguards", safeguardsObserved: ["notice"], outcome: "Illustrative outcome", limitations: ["Not independently evaluated"], artifactId: id, executionStatus, materialStatus: "calibration_result" as const };
+  return { summary: "Observed behavior", behavior: "Preserved safeguards", safeguardsObserved: ["notice"], outcome: "Illustrative outcome", limitations: ["Not independently evaluated"], artifactId: id, executionStatus, materialStatus: "calibration_result" as const, actor: "Showcase curator", version: "1.0", provenance: "Synthetic test fixture", consequence: "Simulation acknowledgement only", legalEffect: false as const };
 }
 
 function readyState() {
   const state = getDemoState();
   state.parties.forEach((party) => { party.confirmed = true; });
   state.decisions.forEach((decision) => { decision.confirmations = { supplier: decision.version, customer: decision.version }; decision.materialStatus = "agreed_contractual_text"; });
+  state.constitution.simulatedAcknowledgements = { supplier: state.constitution.version, customer: state.constitution.version };
   state.calibrationScenarios.forEach((scenario) => {
     const result = artifact(`${scenario.id}-fixture`);
     scenario.result = result; scenario.selectedArtifactId = result.artifactId;

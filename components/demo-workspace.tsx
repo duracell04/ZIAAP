@@ -7,6 +7,7 @@ import { ConstitutionBuilder } from "@/components/case-map";
 import { ValidationLab } from "@/components/reasoning-card";
 import { AppointmentCeremony } from "@/components/evidence-card";
 import { DisputePreview } from "@/components/decision-panel";
+import { DossierView } from "@/components/dossier-view";
 import { OpeningExperience } from "@/components/opening-experience";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -16,8 +17,8 @@ import {
 } from "@/lib/case-model";
 import { humanDecisionCanSign, invalidatePreparedManifest, invalidateProtocolState, prepareProtocolManifest, simulateAppointmentTransition } from "@/lib/protocol";
 
-const steps = ["Party Alignment", "Arbitral Reasoning Calibration", "Stress Testing", "Protocol Manifest and Simulated Appointment", "Later Synthetic Dispute"];
-const stepNotes = ["Clarify expectations", "Calibrate protocol", "Inspect behavior", "Acknowledge exact manifest", "Human-controlled simulation"];
+const steps = ["Party Alignment", "Arbitral Reasoning Calibration", "Stress Testing", "Protocol Manifest and Simulated Appointment", "Later Synthetic Dispute", "Demonstration Dossier"];
+const stepNotes = ["Clarify expectations", "Calibrate protocol", "Inspect behavior", "Acknowledge exact manifest", "Human-controlled simulation", "Inspect twelve artifacts"];
 
 function newEvent(actor: string, action: string, objectId: string, detail: string, authorityClass: LedgerEvent["authorityClass"]): LedgerEvent {
   return { id: crypto.randomUUID(), timestamp: new Date().toISOString(), actor, action, objectId, detail, authorityClass };
@@ -32,11 +33,13 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   const [analysisActive, setAnalysisActive] = useState(true);
   const [calibrating, setCalibrating] = useState(false);
   const [calibrationNotice, setCalibrationNotice] = useState("");
+  const [appointmentBusy, setAppointmentBusy] = useState(false);
+  const [appointmentNotice, setAppointmentNotice] = useState("");
   const [disputeBusy, setDisputeBusy] = useState(false);
   const [disputeNotice, setDisputeNotice] = useState("");
 
   function reset() {
-    setState(structuredClone(initialState)); setStep(0); setAnalysisActive(true); setAlignmentNotice(""); setCalibrationNotice(""); setDisputeNotice("");
+    setState(structuredClone(initialState)); setStep(0); setAnalysisActive(true); setAlignmentNotice(""); setCalibrationNotice(""); setAppointmentNotice(""); setDisputeNotice("");
   }
 
   function editExpectation(partyId: string, topic: Topic, value: string) {
@@ -102,6 +105,18 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
     });
   }
 
+  function acknowledgeConstitution(party: "supplier" | "customer") {
+    setState((current) => {
+      const base = invalidatePreparedManifest(current);
+      const version = base.constitution.version;
+      const simulatedAcknowledgements = {
+        ...base.constitution.simulatedAcknowledgements,
+        [party]: base.constitution.simulatedAcknowledgements[party] === version ? null : version,
+      };
+      return { ...base, constitution: { ...base.constitution, simulatedAcknowledgements }, ledger: [...base.ledger, newEvent(party, "Updated exact Constitution acknowledgement", base.constitution.id, `Constitution v${version} · simulated ceremony only · no legal effect`, "advisory")] };
+    });
+  }
+
   async function runValidation(executionMode: "illustrative" | "live") {
     setCalibrating(true); setCalibrationNotice("");
     try {
@@ -135,7 +150,12 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   }
 
   async function freezePackage() {
-    setState(await prepareProtocolManifest(state));
+    setAppointmentBusy(true); setAppointmentNotice("");
+    try {
+      const next = await prepareProtocolManifest(state);
+      setState(next);
+      setAppointmentNotice(next.appointment.manifestHash ? "Exact protocol manifest prepared. Both parties must acknowledge this exact hash before the simulated ceremony." : "Manifest preparation remains blocked by an incomplete prior gate.");
+    } finally { setAppointmentBusy(false); }
   }
 
   function confirmHash(party: "supplier" | "customer") {
@@ -153,9 +173,11 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   }
 
   async function appoint() {
+    setAppointmentBusy(true); setAppointmentNotice("");
     const result = await simulateAppointmentTransition(state);
-    if (result.ok) setState(result.state);
-    else setCalibrationNotice(result.reason);
+    if (result.ok) { setState(result.state); setAppointmentNotice("Integrity verification passed. Simulated appointment recorded with no legal effect."); }
+    else setAppointmentNotice(result.reason);
+    setAppointmentBusy(false);
   }
 
   function toggleSettlementConsent(party: "supplier" | "customer") {
@@ -226,15 +248,16 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
 
   return <main className="app-shell">
     <aside className="sidebar"><div className="wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>Dispute governance protocol</small></div></div><nav aria-label="Showcase workflow">{steps.map((label, index) => <button key={label} className={index === step ? "nav-step active" : "nav-step"} onClick={() => setStep(index)} aria-current={index === step ? "step" : undefined}><span>{index + 1}</span><div>{label}<small>{stepNotes[index]}</small></div></button>)}</nav><div className="sidebar-note"><ShieldAlert size={16} /><p>Synthetic data · simulation only · no legal effect. The fictional human arbitrator and protocol remain distinct.</p></div><Button variant="ghost" onClick={() => setExperience("opening")}><ArrowLeft size={15} /> Return to introduction</Button><Button variant="ghost" onClick={reset}><RefreshCcw size={15} /> Reset demo</Button></aside>
-    <section className="workspace"><header className="topbar"><div><Badge tone="red">{state.lifecycleMode}</Badge><span className="matter-id">{state.matter.id}</span></div><div className="topbar-status"><span><i className={state.appointment.manifestHash ? "dot done" : "dot"} />Exact manifest</span><span><i className={state.lifecycleStatus === "appointment_simulated" ? "dot done" : "dot"} />{state.lifecycleStatus}</span></div></header>
+    <section className="workspace"><header className="topbar"><div><Badge tone="red">{state.lifecycleMode}</Badge><span className="matter-id">{state.matter.id}</span></div><div className="topbar-status"><span><i className={state.appointment.manifestHash ? "dot done" : "dot"} />Exact manifest</span><span><i className={["appointment_simulated", "dispute_simulated", "closed"].includes(state.lifecycleStatus) ? "dot done" : "dot"} />{state.lifecycleStatus}</span></div></header>
       <div className="content">
         {step === 0 && <GovernanceAlignment state={state} busy={alignmentBusy} notice={alignmentNotice} analysisActive={analysisActive} runAlignment={runAlignment} editExpectation={editExpectation} confirmProfile={confirmProfile} selectOption={selectOption} editDecision={editDecision} updateAlignmentScenario={updateAlignmentScenario} confirmClause={confirmClause} />}
-        {step === 1 && <ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} />}
+        {step === 1 && <ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} acknowledgeConstitution={acknowledgeConstitution} />}
         {step === 2 && <ValidationLab state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} acknowledgeScenario={acknowledgeScenario} />}
-        {step === 3 && <AppointmentCeremony state={state} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
+        {step === 3 && <AppointmentCeremony state={state} busy={appointmentBusy} notice={appointmentNotice} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
         {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} runDetermination={runDetermination} updateDecision={updateDecision} toggleChecklist={toggleChecklist} signDecision={signDecision} />}
+        {step === 5 && <DossierView state={state} />}
       </div>
-      <footer className="step-footer"><Button variant="secondary" disabled={step === 0} onClick={() => setStep((value) => value - 1)}><ArrowLeft size={16} /> Previous</Button><span>Stage {step + 1} of 5</span><Button disabled={step === 4} onClick={() => setStep((value) => value + 1)}>Continue <ArrowRight size={16} /></Button></footer>
+      <footer className="step-footer"><Button variant="secondary" disabled={step === 0} onClick={() => setStep((value) => value - 1)}><ArrowLeft size={16} /> Previous</Button><span>{step === 5 ? "Dossier" : `Stage ${step + 1} of 5`}</span><Button disabled={step === 5} onClick={() => setStep((value) => value + 1)}>{step === 4 ? "Open dossier" : "Continue"} <ArrowRight size={16} /></Button></footer>
     </section>
   </main>;
 }

@@ -58,6 +58,7 @@ describe("lawyer-grade contract state", () => {
     failed.calibrationScenarios[0].result = {
       summary: "Failed", behavior: "No usable output", safeguardsObserved: ["none"], outcome: "Failure",
       limitations: ["Provider failed"], artifactId: "failed", executionStatus: "failed", materialStatus: "calibration_result",
+      actor: "Provider", version: "1.0", provenance: "Failed synthetic attempt", consequence: "Acknowledgement blocked", legalEffect: false,
     };
     failed.calibrationScenarios[0].selectedArtifactId = null;
     expect(contractStateSchema.safeParse(failed).success).toBe(true);

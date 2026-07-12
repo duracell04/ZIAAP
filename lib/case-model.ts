@@ -124,21 +124,24 @@ export const arbitratorConstitutionSchema = z.object({
   humanArbitrator: humanArbitratorSchema,
   principles: z.object({
     interpretation: z.string(), evidence: z.string(), fairness: z.string(), commercialValues: z.string(),
-    remedyBoundaries: z.string(), discretion: z.string(), escalation: z.string(),
+    remedyBoundaries: z.string(), discretion: z.string(), uncertainty: z.string(), escalation: z.string(),
+    modelAndToolPolicy: z.string(), sourceHierarchy: z.string(),
   }),
   settlementPolicy: z.object({
     activation: z.literal("Separate bilateral consent after a dispute exists"),
     firewall: z.literal("Settlement content is sealed from merits reasoning"),
-    meritsDisclosure: z.literal("Only occurrence, termination status, or a signed settlement may enter the merits record"),
+    meritsDisclosure: z.literal("Only occurrence, termination status, or a completed synthetic settlement record may enter the merits record"),
   }),
   protocolIdentity: protocolIdentitySchema,
-  changePolicy: z.literal("Any behavior-affecting change creates a new version, reruns stress-test validation, and requires fresh bilateral approval."),
+  simulatedAcknowledgements: z.object({ supplier: z.number().int().nullable(), customer: z.number().int().nullable() }),
+  changePolicy: z.literal("Any behavior-affecting change creates a new version, reruns stress testing, and requires fresh bilateral simulated acknowledgement."),
 }).strict();
 
 export const calibrationResultSchema = z.object({
   summary: z.string(), behavior: z.string(), safeguardsObserved: z.array(z.string()).min(1),
   outcome: z.string(), limitations: z.array(z.string()).min(1), artifactId: z.string(),
   executionStatus: executionStatusSchema, materialStatus: z.literal("calibration_result"),
+  actor: z.string(), version: z.string(), provenance: z.string(), consequence: z.string(), legalEffect: z.literal(false),
 });
 
 export const calibrationScenarioSchema = z.object({

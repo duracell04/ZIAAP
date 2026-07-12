@@ -59,15 +59,22 @@ export function partyAlignmentReady(state: ContractState) {
     && isSimulationEligible(state.analysis.metadata.executionStatus);
 }
 
+export function constitutionAcknowledged(state: ContractState) {
+  const version = state.constitution.version;
+  return state.constitution.simulatedAcknowledgements.supplier === version
+    && state.constitution.simulatedAcknowledgements.customer === version;
+}
+
 export function canPrepareManifest(state: ContractState) {
   return state.lifecycleMode === "simulation_only" && state.lifecycleStatus === "draft"
-    && partyAlignmentReady(state) && allStressTestsAcknowledged(state.calibrationScenarios);
+    && partyAlignmentReady(state) && constitutionAcknowledged(state)
+    && allStressTestsAcknowledged(state.calibrationScenarios);
 }
 
 export function invalidateProtocolState(state: ContractState, constitution: ContractState["constitution"]): ContractState {
   return {
     ...state,
-    lifecycleStatus: "draft", constitution: { ...constitution, version: state.constitution.version + 1 },
+    lifecycleStatus: "draft", constitution: { ...constitution, version: state.constitution.version + 1, simulatedAcknowledgements: { supplier: null, customer: null } },
     calibrationScenarios: state.calibrationScenarios.map((scenario) => ({
       ...scenario, result: null, selectedArtifactId: null, simulatedAcknowledgements: { supplier: null, customer: null },
     })),
@@ -117,6 +124,7 @@ export async function simulateAppointmentTransition(state: ContractState): Promi
   const reject = (reason: string): TransitionResult => ({ ok: false, state, reason });
   if (state.lifecycleMode !== "simulation_only" || state.legalEffect !== false) return reject("The showcase permits simulation-only, no-legal-effect transitions.");
   if (!partyAlignmentReady(state)) return reject("Party profiles and exact clause versions must be confirmed.");
+  if (!constitutionAcknowledged(state)) return reject("Both parties must acknowledge the exact Constitution version for the simulated ceremony.");
   if (!allStressTestsAcknowledged(state.calibrationScenarios)) return reject("Every selected stress-test artifact must be eligible and bilaterally acknowledged.");
   if (new Set(state.appointment.calibrationIds).size !== state.appointment.calibrationIds.length) return reject("Scenario references must be unique.");
   if (state.appointment.calibrationIds.length !== state.calibrationScenarios.length || state.appointment.calibrationIds.some((id) => !state.calibrationScenarios.some((scenario) => scenario.id === id))) return reject("Scenario references are missing or inconsistent.");

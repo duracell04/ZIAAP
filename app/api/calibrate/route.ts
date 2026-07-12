@@ -11,7 +11,7 @@ const requestSchema = z.object({
   scenarios: z.array(calibrationScenarioSchema).length(4),
 });
 
-const generatedResultSchema = calibrationResultSchema.omit({ artifactId: true, executionStatus: true });
+const generatedResultSchema = calibrationResultSchema.omit({ artifactId: true, executionStatus: true, actor: true, version: true, provenance: true, consequence: true, legalEffect: true });
 const outputSchema = z.object({
   results: z.array(z.object({ scenarioId: z.string(), result: generatedResultSchema })).length(4),
 });
@@ -42,14 +42,14 @@ function cachedResults(scenarios: z.infer<typeof calibrationScenarioSchema>[]) {
     }[scenario.category];
     return {
       scenarioId: scenario.id,
-      result: { ...content, safeguardsObserved: scenario.requiredSafeguards, limitations: ["Curated synthetic fixture; not independently evaluated."], artifactId: `${scenario.id}-illustrative-v1`, executionStatus: "illustrative_only" as const, materialStatus: "calibration_result" as const },
+      result: { ...content, safeguardsObserved: scenario.requiredSafeguards, limitations: ["Curated synthetic fixture; not independently evaluated."], artifactId: `${scenario.id}-illustrative-v1`, executionStatus: "illustrative_only" as const, materialStatus: "calibration_result" as const, actor: "Showcase curator", version: "1.0", provenance: "Curated offline synthetic stress-test fixture", consequence: "Eligible for simulated acknowledgement only", legalEffect: false as const },
     };
   });
 }
 
 export async function POST(request: Request) {
   const parsed = requestSchema.safeParse(await request.json());
-  if (!parsed.success) return Response.json({ error: "Invalid validation request." }, { status: 400 });
+  if (!parsed.success) return Response.json({ error: "Invalid stress-test request." }, { status: 400 });
   const illustrative = () => ({ results: cachedResults(parsed.data.scenarios), metadata: { executionMode: "illustrative", executionStatus: "illustrative_only", label: "Illustrative stress-test fixture", provenance: "Curated offline synthetic fixture" } });
   if (parsed.data.executionMode === "illustrative") return Response.json(illustrative());
 
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
       system: "Exercise a candidate ZIAAP decision protocol against supplied hypothetical scenarios. Report observed behavior and limitations without assigning a validation or authoritative pass verdict. Do not decide a real dispute or modify model weights.",
       prompt: JSON.stringify({ constitution: parsed.data.constitution, scenarios: parsed.data.scenarios }),
     });
-    return Response.json({ results: output.results.map((item) => ({ ...item, result: { ...item.result, artifactId: `${item.scenarioId}-live-${crypto.randomUUID()}`, executionStatus: "executed_unverified" } })), metadata: { executionMode: "live", executionStatus: "executed_unverified", label: "Live stress-test execution", provenance: `Live OpenAI execution using ${configuredModel}` } });
+    return Response.json({ results: output.results.map((item) => ({ ...item, result: { ...item.result, artifactId: `${item.scenarioId}-live-${crypto.randomUUID()}`, executionStatus: "executed_unverified", actor: "Declared live model", version: parsed.data.constitution.protocolIdentity.engineVersion, provenance: `Live OpenAI execution using ${configuredModel}`, consequence: "Eligible for simulated acknowledgement; not independently evaluated", legalEffect: false } })), metadata: { executionMode: "live", executionStatus: "executed_unverified", label: "Live stress-test execution", provenance: `Live OpenAI execution using ${configuredModel}` } });
   } catch (error) {
     const timedOut = error instanceof Error && (error.name === "AbortError" || error.message.toLowerCase().includes("timeout"));
     return failureResponse(executionFailure(timedOut ? "timeout" : "provider_failure", timedOut ? "Live stress-test execution timed out." : "The live provider failed or returned unusable output.", true), timedOut ? 504 : 502);

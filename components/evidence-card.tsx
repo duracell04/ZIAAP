@@ -1,27 +1,42 @@
-import { Check, Fingerprint, LockKeyhole, PenLine } from "lucide-react";
+import { Check, FileKey2, Fingerprint, LockKeyhole, PenLine, ShieldAlert } from "lucide-react";
+import { AuthorityStrip } from "@/components/authority-strip";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { allStressTestsAcknowledged, canSimulateAppointment, partyAlignmentReady } from "@/lib/protocol";
+import { allStressTestsAcknowledged, buildProtocolManifest, canSimulateAppointment, constitutionAcknowledged, partyAlignmentReady } from "@/lib/protocol";
 import type { ContractState } from "@/lib/case-model";
 
 type Props = {
-  state: ContractState; freezePackage: () => void; confirmHash: (party: "supplier" | "customer") => void;
-  setReviewFlag: (field: "disclosuresReviewed" | "simulatedArbitratorAccepted", value: boolean) => void; appoint: () => void;
+  state: ContractState; busy: boolean; notice: string;
+  freezePackage: () => void; confirmHash: (party: "supplier" | "customer") => void;
+  setReviewFlag: (field: "disclosuresReviewed" | "simulatedArbitratorAccepted", value: boolean) => void;
+  appoint: () => void;
 };
 
-export function AppointmentCeremony({ state, freezePackage, confirmHash, setReviewFlag, appoint }: Props) {
+export function AppointmentCeremony({ state, busy, notice, freezePackage, confirmHash, setReviewFlag, appoint }: Props) {
   const hash = state.appointment.manifestHash;
   const alignmentReady = partyAlignmentReady(state);
+  const calibrationReady = constitutionAcknowledged(state);
+  const stressReady = allStressTestsAcknowledged(state.calibrationScenarios);
+  const manifest = buildProtocolManifest(state);
+  const manifestAcknowledged = Boolean(hash && state.appointment.simulatedAcknowledgements.supplier === hash && state.appointment.simulatedAcknowledgements.customer === hash);
+
   return <>
-    <div className="page-intro"><span>Stage 4 · exact protocol manifest</span><h1>Prepare the simulation manifest.</h1><p>The digest identifies selected configuration and eligible simulation artifacts. It is not runtime attestation, provider-side proof, or a production signature.</p></div>
-    <div className="readiness-grid"><Card><Badge tone={alignmentReady ? "green" : "amber"}>{alignmentReady ? "Ready" : "Incomplete"}</Badge><h2>Party alignment</h2><p>Both party profiles and every exact clause version confirmed.</p></Card><Card><Badge tone={allStressTestsAcknowledged(state.calibrationScenarios) ? "green" : "amber"}>{allStressTestsAcknowledged(state.calibrationScenarios) ? "Ready" : "Incomplete"}</Badge><h2>Stress-test artifacts</h2><p>All selected artifacts are eligible and acknowledged for the simulated ceremony.</p></Card></div>
-    <Card className="freeze-card"><div className="freeze-heading"><div className="icon-box"><Fingerprint size={21} /></div><div><span>Arbitrator Constitution and Appointment Record</span><h2>Constitution version {state.constitution.version}</h2></div></div>
-      {hash ? <div className="hash-box"><LockKeyhole size={17} /><div><small>EXACT PROTOCOL MANIFEST · SHA-256</small><code>{hash}</code></div></div> : <Button disabled={!alignmentReady || !allStressTestsAcknowledged(state.calibrationScenarios)} onClick={freezePackage}><LockKeyhole size={15} /> Prepare exact protocol manifest</Button>}
+    <div className="page-intro"><span>Stage 4 · Exact protocol manifest and simulated appointment</span><h1>Identify the selected protocol, acknowledge its exact hash, then simulate the ceremony.</h1><p>The digest binds selected configuration and eligible synthetic artifacts. It supports internal change detection only—not actor identity, provider execution, runtime attestation, signature, or legal appointment.</p></div>
+    <AuthorityStrip executionStatus="not_executed" actor="Showcase transition verifier" version={`Manifest v${state.appointment.manifestVersion}`} consequence={hash ? "Exact configuration prepared for simulated acknowledgement" : "Preparation blocked until all prior gates pass"} provenance="Canonical JSON and browser-side SHA-256 for internal simulation consistency" />
+
+    <div className="readiness-grid triple"><Card><Badge tone={alignmentReady ? "green" : "amber"}>{alignmentReady ? "Ready" : "Incomplete"}</Badge><h2>Party Alignment</h2><p>Both profiles and every exact clause version confirmed.</p></Card><Card><Badge tone={calibrationReady ? "green" : "amber"}>{calibrationReady ? "Ready" : "Incomplete"}</Badge><h2>Constitution</h2><p>Exact version {state.constitution.version} acknowledged by both parties.</p></Card><Card><Badge tone={stressReady ? "green" : "amber"}>{stressReady ? "Ready" : "Incomplete"}</Badge><h2>Stress artifacts</h2><p>Four eligible exact artifacts acknowledged for simulation.</p></Card></div>
+
+    <Card className="manifest-card"><div className="manifest-heading"><div><FileKey2 size={21} /><span>Exact protocol manifest</span><h2>Manifest version {state.appointment.manifestVersion}</h2></div><Badge tone={hash ? "green" : "amber"}>{hash ? state.lifecycleStatus : "not prepared"}</Badge></div><div className="manifest-scope"><div><small>Identifies</small><p>Contract decisions · legal architecture · Constitution · declared model/prompt/retrieval/tool/engine · stress artifacts · fictional human record · change policy</p></div><div><small>Does not establish</small><p>Build or dependency attestation · provider-side proof · deployed environment · runtime attestation · actor identity · production signature</p></div></div><details className="manifest-details" open><summary>Inspect full canonical manifest contents</summary><pre>{JSON.stringify(manifest, null, 2)}</pre></details></Card>
+
+    <Card className="freeze-card"><div className="freeze-heading"><div className="icon-box"><Fingerprint size={21} /></div><div><span>Digest and simulated ceremony</span><h2>Constitution version {state.constitution.version}</h2></div></div>
+      {hash ? <div className="hash-box"><LockKeyhole size={17} /><div><small>EXACT PROTOCOL MANIFEST · SHA-256</small><code>{hash}</code></div></div> : <Button disabled={busy || !alignmentReady || !calibrationReady || !stressReady} onClick={freezePackage}><LockKeyhole size={15} /> {busy ? "Preparing manifest…" : "Prepare exact protocol manifest"}</Button>}
       {hash && <><div className="confirm-row hash-confirm"><span>Acknowledge exact hash for simulated ceremony · no legal effect</span><div>{(["supplier", "customer"] as const).map((party) => <Button key={party} variant={state.appointment.simulatedAcknowledgements[party] === hash ? "secondary" : "ghost"} onClick={() => confirmHash(party)}>{state.appointment.simulatedAcknowledgements[party] === hash && <Check size={14} />} {party}</Button>)}</div></div>
-      <div className="appointment-checks"><label className="checkline"><input type="checkbox" checked={state.appointment.disclosuresReviewed} onChange={(event) => setReviewFlag("disclosuresReviewed", event.target.checked)} /> Parties reviewed the fictional human arbitrator disclosure</label><p>{state.constitution.humanArbitrator.disclosure}</p><label className="checkline"><input type="checkbox" checked={state.appointment.simulatedArbitratorAccepted} onChange={(event) => setReviewFlag("simulatedArbitratorAccepted", event.target.checked)} /> Record simulated arbitrator acceptance</label></div>
-      <Button disabled={!canSimulateAppointment(state)} onClick={appoint}><PenLine size={15} /> Simulate appointment under acknowledged manifest</Button></>}
+      <div className="appointment-checks"><label className="checkline"><input type="checkbox" checked={state.appointment.disclosuresReviewed} onChange={(event) => setReviewFlag("disclosuresReviewed", event.target.checked)} /> Parties reviewed the fictional human-arbitrator disclosure</label><p>{state.constitution.humanArbitrator.disclosure}</p><label className="checkline"><input type="checkbox" checked={state.appointment.simulatedArbitratorAccepted} onChange={(event) => setReviewFlag("simulatedArbitratorAccepted", event.target.checked)} /> Record fictional arbitrator acceptance for this simulation</label></div>
+      <div className="ceremony-status"><span><i className={manifestAcknowledged ? "dot done" : "dot"} /> Exact hash acknowledged</span><span><i className={state.appointment.disclosuresReviewed ? "dot done" : "dot"} /> Disclosure reviewed</span><span><i className={state.appointment.simulatedArbitratorAccepted ? "dot done" : "dot"} /> Simulated acceptance</span></div>
+      <Button disabled={busy || !canSimulateAppointment(state)} onClick={appoint}><PenLine size={15} /> {busy ? "Verifying exact state…" : "Simulate appointment under acknowledged manifest"}</Button></>}
+      {notice && <div className={state.lifecycleStatus === "appointment_simulated" ? "notice" : "warning"} role="status">{state.lifecycleStatus !== "appointment_simulated" && <ShieldAlert size={16} />}<span>{notice}</span></div>}
     </Card>
-    {state.lifecycleStatus === "appointment_simulated" && <div className="result success appointment-success"><Badge tone="green">Simulation only</Badge><strong>Simulated appointment under the acknowledged protocol manifest</strong><span>{state.appointment.simulatedAcceptanceRecord}</span><p>No institutional appointment, production identity verification, production signature, legal effect, or operative award.</p></div>}
+    {state.lifecycleStatus === "appointment_simulated" || state.lifecycleStatus === "dispute_simulated" || state.lifecycleStatus === "closed" ? <div className="result success appointment-success"><Badge tone="green">Simulation only</Badge><strong>Simulated appointment under the acknowledged protocol manifest</strong><span>{state.appointment.simulatedAcceptanceRecord}</span><p>No institutional appointment, production identity verification, production signature, legal effect, or operative award.</p></div> : null}
   </>;
 }
