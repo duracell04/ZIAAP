@@ -80,6 +80,13 @@ under a frozen appointment.
 6. [Technical Requirements](docs/06-technical-requirements.md)
 7. [Institutional Brand Book](docs/07-brand-book.md)
 
-Appendices preserve future and strategic context but do not expand the MVP.
-All confirmations and signatures in this prototype are simulations, not
-production electronic signatures or a production arbitration service.
+## Supporting appendices
+
+- [Full Contract-to-Resolution Vision](docs/appendices/full-lifecycle-vision.md)
+- [Competitive Strategy](docs/appendices/competitive-strategy.md)
+- [Intellectual Foundations of Contract Alignment](docs/appendices/intellectual-foundations-of-alignment.md)
+- [Council of LLMs Concept](docs/appendices/council-of-llms-concept.md)
+
+Appendices preserve strategy, theory, and future architecture but do not expand
+the MVP. All confirmations and signatures in this prototype are simulations,
+not production electronic signatures or a production arbitration service.
