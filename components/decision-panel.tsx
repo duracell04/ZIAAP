@@ -1,1 +1,36 @@
-// Placeholder for the decision panel component.
+import { CheckCircle2, FileSignature, Scale, ShieldAlert } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { humanDecisionCanSign } from "@/lib/protocol";
+import type { ContractState } from "@/lib/case-model";
+
+type Checklist = keyof ContractState["humanDecision"]["checklist"];
+type Props = {
+  state: ContractState; busy: boolean; notice: string;
+  toggleSettlementConsent: (party: "supplier" | "customer") => void; requestSettlement: () => void;
+  respondSettlement: (party: "supplier" | "customer", response: "accept" | "decline") => void;
+  updatePreliminary: (value: string) => void; runDetermination: (mode: "cached" | "live") => void;
+  updateDecision: (field: "status" | "rationale", value: string) => void;
+  toggleChecklist: (field: Checklist) => void; signDecision: () => void;
+};
+
+export function DisputePreview({ state, busy, notice, toggleSettlementConsent, requestSettlement, respondSettlement, updatePreliminary, runDetermination, updateDecision, toggleChecklist, signDecision }: Props) {
+  const appointed = state.appointment.status === "appointed";
+  const proposal = state.settlement.proposal;
+  return <>
+    <div className="page-intro"><span>Stage 5 · later dispute</span><h1>Run the frozen protocol, then preserve human judgment.</h1><p>The dispute is bound to the exact appointed hash. Settlement is optional and sealed. The protocol’s determination remains provisional until independently reviewed and signed.</p></div>
+    {!appointed && <div className="warning"><ShieldAlert size={18} /><div><strong>No appointed protocol</strong><p>Complete the freeze and appointment ceremony before opening this dispute.</p></div></div>}
+    <div className={!appointed ? "stage-disabled" : ""}>
+      <Card className="dispute-record"><div className="finding-top"><div><Badge tone="red">Shared merits record</Badge><h2>Later SaaS outage</h2></div><span className="version">{state.dispute.id}</span></div><div className="position-grid"><div><small>Customer claim</small><p>{state.dispute.claim}</p></div><div><small>Supplier defence</small><p>{state.dispute.defence}</p></div></div><div className="calibration-columns"><div><small>Shared evidence</small><ul>{state.dispute.sharedEvidence.map((item) => <li key={item}>{item}</li>)}</ul></div><div><small>Objections and missing evidence</small><ul>{[...state.dispute.objections, ...state.dispute.missingEvidence].map((item) => <li key={item}>{item}</li>)}</ul></div></div></Card>
+      <Card className="settlement-card"><Badge tone="blue">Optional · sealed track</Badge><h2>Settlement Facilitation</h2><p>This is not alignment, mediation, or adjudication. It activates only with separate consent and uses the shared record only.</p><div className="confirm-row"><span>Bilateral activation</span><div>{(["supplier", "customer"] as const).map((party) => <Button key={party} disabled={!appointed} variant={state.settlement.consents[party] ? "secondary" : "ghost"} onClick={() => toggleSettlementConsent(party)}>{state.settlement.consents[party] && <CheckCircle2 size={14} />} {party}</Button>)}</div></div><Button disabled={!state.settlement.consents.supplier || !state.settlement.consents.customer || Boolean(proposal)} onClick={requestSettlement}>Generate non-binding proposal</Button>
+        {proposal && <div className="sealed-proposal"><Badge tone="red">Sealed from merits</Badge><h3>{proposal.label}</h3><ul>{proposal.terms.map((term) => <li key={term}>{term}</li>)}</ul><p>{proposal.basis}</p><div className="response-grid">{(["supplier", "customer"] as const).map((party) => <div key={party}><strong>{party}</strong><Button variant="secondary" onClick={() => respondSettlement(party, "accept")}>Accept</Button><Button variant="ghost" onClick={() => respondSettlement(party, "decline")}>Decline</Button><small>{state.settlement.responses[party]}</small></div>)}</div></div>}
+        {state.settlement.status === "not_settled" && <p className="notice">Settlement facilitation ended without settlement. Proposal content remains outside the merits record.</p>}
+      </Card>
+      <Card className="human-preassessment"><Badge>Independent human assessment</Badge><h2>Record an initial view before revealing the protocol proposal.</h2><textarea disabled={!appointed} value={state.humanDecision.preliminaryAssessment} onChange={(event) => updatePreliminary(event.target.value)} placeholder="Human arbitrator’s preliminary issue assessment…" /><div className="action-row"><Button variant="secondary" disabled={!appointed || state.settlement.status === "settled" || busy || !state.humanDecision.preliminaryAssessment.trim()} onClick={() => runDetermination("cached")}>Run validated frozen protocol</Button><Button disabled={!appointed || state.settlement.status === "settled" || busy || !state.humanDecision.preliminaryAssessment.trim()} onClick={() => runDetermination("live")}>{busy ? "Running…" : "Run live frozen protocol"}</Button></div>{notice && <p className="notice" role="status">{notice}</p>}</Card>
+      {state.proposedDetermination && <Card className="determination-card"><Badge tone="blue">Proposed determination · no independent legal effect</Badge><h2>{state.proposedDetermination.proposedDisposition}</h2><p>{state.proposedDetermination.reasoningSummary}</p><div className="calibration-columns"><div><small>Findings</small><ul>{state.proposedDetermination.findings.map((item) => <li key={item}>{item}</li>)}</ul></div><div><small>Uncertainty and escalation</small><ul>{[...state.proposedDetermination.uncertainty, ...state.proposedDetermination.escalationFlags].map((item) => <li key={item}>{item}</li>)}</ul></div></div><span className="version">Bound to {state.proposedDetermination.appointmentHash}</span></Card>}
+      {state.proposedDetermination && <Card className="human-decision"><Badge tone="red">Human decision control</Badge><h2>Adopt, modify, or reject independently.</h2><div className="option-row">{(["adopted", "modified", "rejected"] as const).map((status) => <button key={status} className={state.humanDecision.status === status ? "option selected" : "option"} onClick={() => updateDecision("status", status)}><span>{status}</span><small>The human arbitrator remains responsible for the final rationale.</small></button>)}</div><label className="clause-editor"><span>Independent rationale</span><textarea value={state.humanDecision.rationale} onChange={(event) => updateDecision("rationale", event.target.value)} /></label><div className="review-checklist">{(Object.keys(state.humanDecision.checklist) as Checklist[]).map((field) => <label key={field} className="checkline"><input type="checkbox" checked={state.humanDecision.checklist[field]} onChange={() => toggleChecklist(field)} /> {field.replace(/([A-Z])/g, " $1")}</label>)}</div><Button disabled={!humanDecisionCanSign(state)} onClick={signDecision}><FileSignature size={15} /> Sign simulated human award</Button></Card>}
+      {state.humanDecision.simulatedSignature && <div className="result success final-award"><Badge tone="green">Final human decision · prototype</Badge><strong>{state.humanDecision.status}</strong><span>{state.humanDecision.simulatedSignature}</span><p><Scale size={14} /> Independently reviewed and signed by the appointed human arbitrator.</p></div>}
+    </div>
+  </>;
+}
