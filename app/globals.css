@@ -273,8 +273,8 @@ dd { margin: 0; font-size: 11px; }
 .human-decision { border-top: 3px solid var(--red); }
 .human-decision .option-row { grid-template-columns: repeat(3, 1fr); }
 .review-checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; margin: 14px 0; }
-.final-award { margin-top: 14px; border: 2px double var(--green); }
-.final-award p { display: flex; align-items: center; gap: 6px; }
+.final-decision { margin-top: 14px; border: 2px double var(--green); }
+.final-decision p { display: flex; align-items: center; gap: 6px; }
 .manifest-binding { padding: 20px; margin-bottom: 14px; border-left: 4px solid var(--green); }
 .manifest-binding > div:first-child { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 10px; }
 .manifest-binding span { color: var(--red); text-transform: uppercase; font-size: 9px; font-weight: 750; letter-spacing: .1em; }
@@ -359,7 +359,7 @@ dd { margin: 0; font-size: 11px; }
 .artifact-metadata { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; margin: 18px 0; background: var(--border); border: 1px solid var(--border); }
 .artifact-metadata span { min-width: 0; padding: 10px; background: var(--surface-strong); overflow-wrap: anywhere; font-size: 9px; }
 .artifact-metadata small { display: block; margin-bottom: 5px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
-.artifact-summary { font-family: Georgia, serif; font-size: 17px; line-height: 1.5; }
+.artifact-summary { min-width: 0; overflow-wrap: anywhere; font-family: Georgia, serif; font-size: 17px; line-height: 1.5; }
 .artifact-boundary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
 .artifact-boundary > div { padding: 12px; background: #ede8de; }
 .artifact-boundary small { color: var(--red); text-transform: uppercase; font-size: 8px; letter-spacing: .08em; }
@@ -392,6 +392,8 @@ dd { margin: 0; font-size: 11px; }
 }
 
 @media (max-width: 560px) {
+  .sidebar nav { grid-template-columns: repeat(2, minmax(0, 1fr)); overflow-x: visible; }
+  .nav-step { min-width: 0; }
   .topbar-status, .matter-id { display: none; }
   .position-grid, .option-row, .principle-grid, .calibration-columns, .response-grid, .review-checklist, .human-decision .option-row { grid-template-columns: 1fr; }
   .scenario-inputs { grid-template-columns: 1fr 1fr; }

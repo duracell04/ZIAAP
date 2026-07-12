@@ -89,7 +89,7 @@ export function invalidateProtocolState(state: ContractState, constitution: Cont
     humanDecision: {
       preliminaryAssessment: "", status: "pending", rationale: "",
       checklist: { sourcesReviewed: false, objectionsReviewed: false, calibrationChecked: false, independentJudgment: false },
-      simulatedSignature: null, materialStatus: "human_decision",
+      simulatedDecisionRecord: null, materialStatus: "human_decision",
     },
   };
 }
@@ -155,7 +155,7 @@ export function buildAdjudicationInput(state: ContractState, appointmentHash: st
   };
 }
 
-export function humanDecisionCanSign(state: ContractState) {
+export function humanDecisionCanRecord(state: ContractState) {
   const decision = state.humanDecision;
   return Boolean(
     state.proposedDetermination && decision.preliminaryAssessment.trim() && decision.rationale.trim()

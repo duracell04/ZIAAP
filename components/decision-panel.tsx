@@ -3,7 +3,7 @@ import { AuthorityStrip } from "@/components/authority-strip";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { humanDecisionCanSign } from "@/lib/protocol";
+import { humanDecisionCanRecord } from "@/lib/protocol";
 import type { ContractState } from "@/lib/case-model";
 
 type Checklist = keyof ContractState["humanDecision"]["checklist"];
@@ -13,10 +13,10 @@ type Props = {
   respondSettlement: (party: "supplier" | "customer", response: "accept" | "decline") => void;
   updatePreliminary: (value: string) => void; runDetermination: (mode: "illustrative" | "live") => void;
   updateDecision: (field: "status" | "rationale", value: string) => void;
-  toggleChecklist: (field: Checklist) => void; signDecision: () => void;
+  toggleChecklist: (field: Checklist) => void; recordDecision: () => void;
 };
 
-export function DisputePreview({ state, busy, notice, toggleSettlementConsent, requestSettlement, respondSettlement, updatePreliminary, runDetermination, updateDecision, toggleChecklist, signDecision }: Props) {
+export function DisputePreview({ state, busy, notice, toggleSettlementConsent, requestSettlement, respondSettlement, updatePreliminary, runDetermination, updateDecision, toggleChecklist, recordDecision }: Props) {
   const simulationAvailable = ["appointment_simulated", "dispute_simulated", "closed"].includes(state.lifecycleStatus);
   const disputeOpen = state.lifecycleStatus === "appointment_simulated";
   const proposal = state.settlement.proposal;
@@ -41,9 +41,9 @@ export function DisputePreview({ state, busy, notice, toggleSettlementConsent, r
 
       {determination && <Card className="determination-card"><Badge tone="blue">05 · Provisional simulation-only determination</Badge><h2>{determination.proposedDisposition}</h2><AuthorityStrip executionStatus={determination.metadata.executionStatus} actor={determination.metadata.executionMode === "live" ? "Declared live model" : "Showcase curator"} version={determination.metadata.artifactId} consequence="Supports fictional human review only; cannot operate as an award" provenance={determination.metadata.provenance} /><p>{determination.reasoningSummary}</p><div className="stress-input-grid"><div><small>Findings</small><ul>{determination.findings.map((item) => <li key={item}>{item}</li>)}</ul></div><div><small>Counterarguments</small><ul>{determination.counterarguments.map((item) => <li key={item}>{item}</li>)}</ul></div><div><small>Uncertainty and escalation</small><ul>{[...determination.uncertainty, ...determination.escalationFlags].map((item) => <li key={item}>{item}</li>)}</ul></div></div><span className="version">Bound to {determination.appointmentHash}</span></Card>}
 
-      {determination && <Card className="human-decision"><Badge tone="red">06 · Fictional human control · no legal effect</Badge><h2>Adopt, modify, or reject the provisional artifact independently.</h2><div className="option-row">{(["adopted", "modified", "rejected"] as const).map((status) => <button key={status} className={state.humanDecision.status === status ? "option selected" : "option"} onClick={() => updateDecision("status", status)}><span>{status}</span><small>The fictional record preserves a distinct human rationale.</small></button>)}</div><label className="clause-editor"><span>Independent simulated rationale</span><textarea value={state.humanDecision.rationale} onChange={(event) => updateDecision("rationale", event.target.value)} /></label><div className="review-checklist">{(Object.keys(state.humanDecision.checklist) as Checklist[]).map((field) => <label key={field} className="checkline"><input type="checkbox" checked={state.humanDecision.checklist[field]} onChange={() => toggleChecklist(field)} /> {field.replace(/([A-Z])/g, " $1")}</label>)}</div><Button disabled={!humanDecisionCanSign(state)} onClick={signDecision}><FileSignature size={15} /> Record simulated human decision</Button></Card>}
+      {determination && <Card className="human-decision"><Badge tone="red">06 · Fictional human control · no legal effect</Badge><h2>Adopt, modify, or reject the provisional artifact independently.</h2><div className="option-row">{(["adopted", "modified", "rejected"] as const).map((status) => <button key={status} className={state.humanDecision.status === status ? "option selected" : "option"} onClick={() => updateDecision("status", status)}><span>{status}</span><small>The fictional record preserves a distinct human rationale.</small></button>)}</div><label className="clause-editor"><span>Independent simulated rationale</span><textarea value={state.humanDecision.rationale} onChange={(event) => updateDecision("rationale", event.target.value)} /></label><div className="review-checklist">{(Object.keys(state.humanDecision.checklist) as Checklist[]).map((field) => <label key={field} className="checkline"><input type="checkbox" checked={state.humanDecision.checklist[field]} onChange={() => toggleChecklist(field)} /> {field.replace(/([A-Z])/g, " $1")}</label>)}</div><Button disabled={!humanDecisionCanRecord(state)} onClick={recordDecision}><FileSignature size={15} /> Record simulated human decision</Button></Card>}
 
-      {state.humanDecision.simulatedSignature && <div className="result success final-award"><Badge tone="green">Simulated human decision · non-operative</Badge><strong>{state.humanDecision.status}</strong><span>{state.humanDecision.simulatedSignature}</span><p><Scale size={14} /> Fictional review record only · no production signature, award, or legal effect.</p></div>}
+      {state.humanDecision.simulatedDecisionRecord && <div className="result success final-decision"><Badge tone="green">Simulated human decision · non-operative</Badge><strong>{state.humanDecision.status}</strong><span>{state.humanDecision.simulatedDecisionRecord}</span><p><Scale size={14} /> Fictional review record only · no production signature, award, or legal effect.</p></div>}
     </div>
   </>;
 }

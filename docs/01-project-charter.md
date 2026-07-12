@@ -24,20 +24,23 @@ may produce a provisional simulation output. Only a properly appointed human in 
 future production setting could exercise arbitral authority. This showcase
 appoints nobody and creates no award.
 
-## 3. Scope through the human-review gate
+## 3. Scope of the review candidate
 
-The alpha must provide:
+The present prototype must provide:
 
 1. an opening experience understandable without a presenter;
 2. complete Party Alignment from draft and expectations to Alignment Annex;
-3. the locked authority and lifecycle model;
-4. separate illustrative and live-unverified execution actions;
-5. fail-closed API and UI behavior;
-6. integrity-enforcing simulated transition verification;
-7. attack-oriented tests and canonical documentation; and
-8. a real-reviewer package.
+3. complete Arbitral Reasoning Calibration and Stress Testing;
+4. the Exact protocol manifest and integrity-verified simulated appointment;
+5. Later Synthetic Dispute, settlement firewall, provisional determination, and
+   fictional human decision control;
+6. a complete twelve-artifact demonstration dossier;
+7. the locked authority/lifecycle model and fail-closed execution behavior;
+8. attack-oriented tests and synchronized canonical documentation; and
+9. a complete external-review package.
 
-Stages 2–5 are revised to completion only after real reviewer feedback.
+External reviewer sessions and feedback-driven revisions follow the frozen review
+candidate and are not prerequisites for the present goal.
 
 ## 4. Authority constitution
 
@@ -77,7 +80,7 @@ authority remain separate concepts.
 
 ## 6. Outputs
 
-Before human review:
+The review candidate includes:
 
 - opening proposition and lifecycle explanation;
 - source-linked Divergence and Resolution Report;
@@ -85,9 +88,11 @@ Before human review:
 - exact-version Contract Governance Alignment Annex;
 - authority-labelled illustrative/live artifacts;
 - attack-test and verification evidence; and
-- guided reviewer script, questionnaire, findings template, and demo procedure.
-
-The later final dossier is outside the alpha reviewer gate.
+- complete Calibration, Stress Testing, Manifest, Simulated Appointment, Later
+  Dispute, provisional determination, and fictional human-decision records;
+- the twelve-artifact state-derived demonstration dossier; and
+- guided reviewer script, questionnaire, findings template, expert instructions,
+  invitation text, and demo procedure.
 
 ## 7. Exact protocol manifest boundary
 
@@ -109,9 +114,12 @@ No production dispute processing, confidential matter intake, identity proof,
 legal appointment, signature, operative award, sovereign runtime, institutional
 integration, Council of LLMs, DLT execution, or smart-contract enforcement.
 
-## 10. Alpha success criteria
+## 10. Review-candidate success criteria
 
 A first-time viewer can accurately explain the commercial problem, pre-conflict
 timing, Party Alignment, AI contribution, human control, illustrative versus live
 execution, genuine validation boundary, manifest scope, and commercially useful
-output. Automated and browser gates pass. The team then stops for real feedback.
+output. Automated, production-build, dossier, print, and desktop/mobile browser
+gates pass. The repository is frozen as
+`prototype-showcase-v1.0-review-candidate`, with external validation explicitly
+pending for the next cycle.

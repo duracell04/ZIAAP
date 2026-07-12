@@ -55,7 +55,8 @@ and preserves the exact input state on rejection.
 
 Expectation, decision, scenario, Constitution, or artifact changes reset
 downstream lifecycle and clear hash, acknowledgements, disclosure, simulated
-acceptance, dispute binding, and later decisions as specified by the alpha plan.
+acceptance, dispute binding, and later decisions as specified by the governing
+review-candidate objective.
 Live failure preserves prior artifacts but clears selected eligibility. Reset
 clones the original fixture.
 
@@ -97,9 +98,17 @@ references.
 
 Internal verification additionally requires frozen install, type-check, lint,
 tests, build, desktop/mobile browser paths, loading/blocked/failure/reset states,
-opening navigation, complete Party Alignment, and Annex generation.
+opening navigation, complete Stages 1–5, dossier generation, and print layout.
 
-## 10. Security and legal limits
+## 10. State-derived dossier
+
+`buildDemonstrationDossier` projects twelve artifacts from the canonical
+`ContractState`. It marks missing lifecycle evidence pending rather than inventing
+completion and excludes sealed settlement proposal content. Every artifact carries
+actor, authority status, lifecycle mode, execution status, version, provenance,
+consequence, and `legalEffect: false`.
+
+## 11. Security and legal limits
 
 Client-side hashing and transitions provide only internal showcase consistency.
 They do not authenticate actors, prove consent or provenance, secure confidential

@@ -1,4 +1,4 @@
-# ZIAAP Alpha Findings Log
+# ZIAAP Review-Candidate Findings Log
 
 Create one copy per reviewer. Never infer or fabricate entries.
 

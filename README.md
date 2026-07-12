@@ -75,9 +75,13 @@ Opening explanation
 → simulated human decision
 ```
 
-The current human-review alpha focuses on the opening and complete Party
-Alignment journey. Stages 2–5 retain truthful authority boundaries and are
-completed only after real reviewer feedback.
+The review candidate implements the complete synthetic journey: opening, Party
+Alignment, Arbitral Reasoning Calibration, Stress Testing, Exact protocol
+manifest and simulated appointment, Later Synthetic Dispute, fictional human
+review, and the twelve-artifact demonstration dossier.
+
+External expert comprehension, usability, and independent validation remain
+pending for the next cycle. The review candidate does not claim reviewer results.
 
 ## Exact protocol manifest
 
@@ -122,7 +126,8 @@ pnpm.cmd build
 
 - `app/` — App Router UI, styles, and fail-closed route handlers;
 - `components/` — opening, Party Alignment, and lifecycle views;
-- `lib/` — schemas, eligibility, hashing, transition verification, and calculator;
+- `lib/` — schemas, eligibility, hashing, transition verification, calculator,
+  and state-derived dossier projection;
 - `data/` — curated synthetic fixture;
 - `tests/` — schema, route, attack, firewall, and calculation tests; and
 - `docs/` — implementation plan, seven canonical documents, and appendices.
@@ -139,3 +144,14 @@ pnpm.cmd build
 
 Appendices are future-facing and non-normative. They do not expand the current
 showcase boundary.
+
+## Review-candidate package
+
+The complete deterministic path and reviewer materials are documented under
+`docs/review/`. The intended freeze is
+`prototype-showcase-v1.0-review-candidate`. External sessions begin after that
+freeze and feed the next revision cycle.
+
+The package includes the guided script, questionnaire, findings log, local
+procedure, expert instructions, invitation text, internal verification report,
+and review-candidate freeze record.

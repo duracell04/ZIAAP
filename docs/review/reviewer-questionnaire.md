@@ -1,4 +1,4 @@
-# ZIAAP Alpha Reviewer Questionnaire
+# ZIAAP Review-Candidate Questionnaire
 
 ## Session metadata
 
@@ -37,6 +37,18 @@ Ask the reviewer to classify each statement as true, false, or future-only:
 - The deterministic calculator decides broader liability.
 - A future human arbitrator could modify or reject protocol output.
 
+## Lifecycle comprehension
+
+11. How is Arbitral Reasoning Calibration different from Stress Testing?
+12. Which twelve categories are configured in the Constitution?
+13. What must be true before the Exact protocol manifest can be prepared?
+14. What does the simulated appointment transition verify internally?
+15. How is settlement information kept separate from merits reasoning?
+16. Why must the fictional human pre-assessment be recorded before revealing the
+    protocol determination?
+17. Which dossier artifacts depend on completing the later-dispute route?
+18. What remains pending for the external-validation cycle?
+
 ## Usability ratings
 
 Rate 1 (strongly disagree) to 5 (strongly agree):
@@ -47,6 +59,12 @@ Rate 1 (strongly disagree) to 5 (strongly agree):
 - I could distinguish illustration, execution, failure, and validation.
 - I understood why an edit invalidates later state.
 - I understood where the Alignment Annex came from.
+- I could distinguish calibration, stress testing, and genuine validation.
+- I understood what the full manifest contains and excludes.
+- I could trace the later-dispute sequence without presenter intervention.
+- I understood how settlement remains separated from merits.
+- I could identify human control over the provisional protocol artifact.
+- I could use the dossier to reconstruct the complete synthetic journey.
 - The interface made legal and technical limitations visible without dominating.
 - I would know what to do next after a failed live execution.
 - The visual quality is credible for an expert/investor showcase.

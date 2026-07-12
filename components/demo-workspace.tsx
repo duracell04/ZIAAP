@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, RefreshCcw, ShieldAlert } from "lucide-react";
 import { GovernanceAlignment } from "@/components/case-upload";
 import { ConstitutionBuilder } from "@/components/case-map";
@@ -15,7 +15,7 @@ import {
   alignmentAnalysisSchema, applyOption, normalizeDecisionStatus, proposedDeterminationSchema, settlementProposalSchema, updateDecisionLanguage,
   type ArbitratorConstitution, type ContractState, type LedgerEvent, type Topic,
 } from "@/lib/case-model";
-import { humanDecisionCanSign, invalidatePreparedManifest, invalidateProtocolState, prepareProtocolManifest, simulateAppointmentTransition } from "@/lib/protocol";
+import { humanDecisionCanRecord, invalidatePreparedManifest, invalidateProtocolState, prepareProtocolManifest, simulateAppointmentTransition } from "@/lib/protocol";
 
 const steps = ["Party Alignment", "Arbitral Reasoning Calibration", "Stress Testing", "Protocol Manifest and Simulated Appointment", "Later Synthetic Dispute", "Demonstration Dossier"];
 const stepNotes = ["Clarify expectations", "Calibrate protocol", "Inspect behavior", "Acknowledge exact manifest", "Human-controlled simulation", "Inspect twelve artifacts"];
@@ -33,6 +33,10 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   const [analysisActive, setAnalysisActive] = useState(true);
   const [calibrating, setCalibrating] = useState(false);
   const [calibrationNotice, setCalibrationNotice] = useState("");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [experience, step]);
   const [appointmentBusy, setAppointmentBusy] = useState(false);
   const [appointmentNotice, setAppointmentNotice] = useState("");
   const [disputeBusy, setDisputeBusy] = useState(false);
@@ -130,7 +134,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
           return match ? { ...scenario, result: match.result, selectedArtifactId: match.result.artifactId, simulatedAcknowledgements: { supplier: null, customer: null } } : scenario;
         }),
         lifecycleStatus: "draft", appointment: { ...current.appointment, manifestHash: null, simulatedAcknowledgements: { supplier: null, customer: null } },
-        ledger: [...current.ledger, newEvent("System", "Ran stress-test validation", current.constitution.id, payload.metadata.label, "administrative")],
+        ledger: [...current.ledger, newEvent("System", "Ran stress-test execution", current.constitution.id, payload.metadata.label, "administrative")],
       }));
       setCalibrationNotice(payload.metadata.notice ?? `${payload.metadata.label} completed.`);
     } catch (error) {
@@ -229,18 +233,18 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   }
 
   function updateDecision(field: "status" | "rationale", value: string) {
-    setState((current) => ({ ...current, humanDecision: { ...current.humanDecision, [field]: value, simulatedSignature: null } }));
+    setState((current) => ({ ...current, humanDecision: { ...current.humanDecision, [field]: value, simulatedDecisionRecord: null } }));
   }
 
   function toggleChecklist(field: keyof ContractState["humanDecision"]["checklist"]) {
-    setState((current) => ({ ...current, humanDecision: { ...current.humanDecision, checklist: { ...current.humanDecision.checklist, [field]: !current.humanDecision.checklist[field] }, simulatedSignature: null } }));
+    setState((current) => ({ ...current, humanDecision: { ...current.humanDecision, checklist: { ...current.humanDecision.checklist, [field]: !current.humanDecision.checklist[field] }, simulatedDecisionRecord: null } }));
   }
 
-  function signDecision() {
+  function recordDecision() {
     setState((current) => {
-      if (!humanDecisionCanSign(current)) return current;
-      const signature = `${current.constitution.humanArbitrator.name} · simulated decision record ${new Date().toISOString()} · no legal effect`;
-      return { ...current, lifecycleStatus: "closed", humanDecision: { ...current.humanDecision, simulatedSignature: signature }, dispute: { ...current.dispute, stage: "closed" }, matter: { ...current.matter, stage: "H0_SIMULATED_HUMAN_DECISION" }, ledger: [...current.ledger, newEvent(current.constitution.humanArbitrator.name, "Recorded simulated human decision", current.dispute.id, current.humanDecision.status, "advisory")] };
+      if (!humanDecisionCanRecord(current)) return current;
+      const decisionRecord = `${current.constitution.humanArbitrator.name} · simulated decision record ${new Date().toISOString()} · no legal effect`;
+      return { ...current, lifecycleStatus: "closed", humanDecision: { ...current.humanDecision, simulatedDecisionRecord: decisionRecord }, dispute: { ...current.dispute, stage: "closed" }, matter: { ...current.matter, stage: "H0_SIMULATED_HUMAN_DECISION" }, ledger: [...current.ledger, newEvent(current.constitution.humanArbitrator.name, "Recorded simulated human decision", current.dispute.id, current.humanDecision.status, "advisory")] };
     });
   }
 
@@ -254,7 +258,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
         {step === 1 && <ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} acknowledgeConstitution={acknowledgeConstitution} />}
         {step === 2 && <ValidationLab state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} acknowledgeScenario={acknowledgeScenario} />}
         {step === 3 && <AppointmentCeremony state={state} busy={appointmentBusy} notice={appointmentNotice} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
-        {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} runDetermination={runDetermination} updateDecision={updateDecision} toggleChecklist={toggleChecklist} signDecision={signDecision} />}
+        {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} runDetermination={runDetermination} updateDecision={updateDecision} toggleChecklist={toggleChecklist} recordDecision={recordDecision} />}
         {step === 5 && <DossierView state={state} />}
       </div>
       <footer className="step-footer"><Button variant="secondary" disabled={step === 0} onClick={() => setStep((value) => value - 1)}><ArrowLeft size={16} /> Previous</Button><span>{step === 5 ? "Dossier" : `Stage ${step + 1} of 5`}</span><Button disabled={step === 5} onClick={() => setStep((value) => value + 1)}>{step === 4 ? "Open dossier" : "Continue"} <ArrowRight size={16} /></Button></footer>

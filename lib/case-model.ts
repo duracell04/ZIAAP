@@ -197,7 +197,7 @@ export const proposedDeterminationSchema = z.object({
 export const humanDecisionSchema = z.object({
   preliminaryAssessment: z.string(), status: z.enum(["pending", "adopted", "modified", "rejected"]), rationale: z.string(),
   checklist: z.object({ sourcesReviewed: z.boolean(), objectionsReviewed: z.boolean(), calibrationChecked: z.boolean(), independentJudgment: z.boolean() }),
-  simulatedSignature: z.string().nullable(), materialStatus: z.literal("human_decision"),
+  simulatedDecisionRecord: z.string().nullable(), materialStatus: z.literal("human_decision"),
 });
 
 export const ledgerEventSchema = z.object({

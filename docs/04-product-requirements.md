@@ -1,6 +1,6 @@
 # Product Requirements
 
-## Opening and Party Alignment Human-Review Alpha
+## Complete Synthetic Review Candidate
 
 ## 1. Objective
 
@@ -12,13 +12,12 @@ for a human award.
 ## 2. Primary views
 
 1. Opening experience;
-2. Party Alignment alpha;
-3. Arbitral Reasoning Calibration preview;
-4. Stress Testing preview;
-5. Exact Protocol Manifest and Simulated Appointment preview; and
-6. Later Synthetic Dispute preview.
-
-Stages 2–5 are completed after the real reviewer gate.
+2. Party Alignment;
+3. Arbitral Reasoning Calibration;
+4. Stress Testing;
+5. Exact Protocol Manifest and Simulated Appointment;
+6. Later Synthetic Dispute; and
+7. Demonstration Dossier.
 
 ## 3. Opening requirements
 
@@ -74,10 +73,11 @@ blocked, partial-confirmation, locked-Annex, and reset states are designed.
 
 ## 9. Acceptance criteria
 
-The alpha is reviewable only when type-check, lint, tests, production build,
-desktop and mobile critical paths, failure and reset flows, opening navigation,
-full Party Alignment, and Annex generation pass. Canonical documentation matches
-schemas, fixture, API metadata, UI copy, and tests. Reviewer materials are ready.
+The review candidate is ready only when type-check, lint, tests, production build,
+desktop and mobile critical paths, loading/blocked/failure/reset/invalid-transition
+flows, opening navigation, complete Stages 1–5, twelve-artifact dossier, and print
+layout pass. Canonical documentation matches schemas, fixture, API metadata, UI
+copy, tests, and reviewer materials. External validation remains pending.
 
 ## 10. Non-goals
 

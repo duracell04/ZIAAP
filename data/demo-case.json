@@ -220,7 +220,7 @@
   "humanDecision": {
     "preliminaryAssessment": "", "status": "pending", "rationale": "",
     "checklist": { "sourcesReviewed": false, "objectionsReviewed": false, "calibrationChecked": false, "independentJudgment": false },
-    "simulatedSignature": null, "materialStatus": "human_decision"
+    "simulatedDecisionRecord": null, "materialStatus": "human_decision"
   },
   "ledger": [
     { "id": "event-1", "timestamp": "2026-07-11T09:00:00.000Z", "actor": "System", "action": "Seeded governance matter loaded", "objectId": "ZIAAP-AI-001", "authorityClass": "administrative", "detail": "Candidate constitution loaded; no appointment or award implied." }

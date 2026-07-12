@@ -11,8 +11,8 @@ It continues through performance, settlement, arbitration, and execution.
 ```text
 Contract and governance alignment
 → arbitral reasoning calibration through the protocol Constitution
-→ stress testing and validation
-→ freeze, bilateral approval, and human appointment
+→ stress testing and independent evaluation where available
+→ exact protocol manifest and legally reviewed future appointment
 → performance evidence and amendments
 → later dispute bound to the active appointment hash
 → optional sealed settlement facilitation
@@ -30,11 +30,12 @@ is the agreed, tested, version-locked decision environment.
 | --- | --- |
 | One seeded Swiss SaaS contract | Controlled contract and jurisdiction packs |
 | One fictional human sole arbitrator | Production appointment and institutional workflows |
-| Four fixed stress-test cases | Party-authored, reviewed validation suites |
+| Four fixed illustrative stress-test cases | Party-authored, independently evaluated suites |
 | Session-only SHA-256 manifest | Persisted, signed, tamper-evident protocol registry |
 | Shared-record Settlement Facilitation | Separate mediator and separately deployed ZIAAP instance with private caucus controls |
-| One later-dispute preview | Full pleadings, evidence, hearings, interim decisions, and awards |
-| Simulated human signature | Legally reviewed signature and award process |
+| Complete synthetic later-dispute simulation | Full pleadings, evidence, hearings, interim decisions, and awards |
+| Non-operative simulated human decision record | Legally reviewed signature and award process |
+| Twelve-artifact demonstration dossier | Production case record, audit, and institutional export |
 
 ## 3. Stage Architecture
 
@@ -52,11 +53,11 @@ model, prompt, retrieval, tools, engine, amendments, and replacement. This
 relationship-specific process operates at inference time and does not modify
 the underlying model weights.
 
-### T0: Stress Testing and Validation
+### T0: Stress Testing and Independent Evaluation
 
 Hypothetical disputes test the protocol’s behavior. Parties inspect safeguards,
-approve results, add adversarial cases, and repeat until the constitution is fit
-for appointment. Validation does not waive later due process.
+acknowledge exact artifacts, add adversarial cases, and repeat. Genuine validation
+requires future independent evaluation and does not waive later due process.
 
 ### A0: Appointment
 

@@ -94,8 +94,12 @@ status, or a completed synthetic settlement enters the shared record.
 | Timeout | Explicit `failed`, `504` |
 | Hash or reference mismatch | Reject transition; preserve state |
 
-## 9. Human-review stop
+## 9. Review-candidate handoff
 
-After clean internal verification, the repository supplies a guided script,
-structured questionnaire, findings log, and demonstration procedure, then stops.
-No reviewer session or finding is simulated.
+After clean internal verification, the repository supplies the complete Stages
+1–5 journey, twelve-artifact dossier, guided script, questionnaire, findings log,
+expert-feedback instructions, invitation text, and demonstration procedure. It is
+then frozen as `prototype-showcase-v1.0-review-candidate`.
+
+External reviewer sessions begin in the next cycle. No participation, finding,
+comprehension result, usability result, or independent validation is simulated.

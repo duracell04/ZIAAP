@@ -28,8 +28,9 @@ opening.
 1. Party Alignment;
 2. Arbitral Reasoning Calibration;
 3. Stress Testing;
-4. Protocol Manifest and Simulated Appointment; and
-5. Later Synthetic Dispute.
+4. Protocol Manifest and Simulated Appointment;
+5. Later Synthetic Dispute; and
+6. Demonstration Dossier.
 
 Navigation labels describe simulation, not legal completion. The global header
 shows lifecycle mode, exact-manifest readiness, and lifecycle status.
@@ -86,20 +87,38 @@ The UI readiness predicate may enable a button but is not an integrity proof. Th
 async transition exposes pending, accepted, and rejected states. The digest is
 called **Exact protocol manifest** and its exclusions are visible near the hash.
 
-## 8. Accessibility and responsive behavior
+The manifest view exposes the full canonical contents, version, selected artifact
+references, readiness gates, digest, bilateral hash acknowledgements, disclosure,
+simulated acceptance, and transition result.
+
+## 8. Later dispute and dossier
+
+The later-dispute view orders manifest identification, shared merits record,
+purpose-separated settlement, fictional human pre-assessment, provisional
+protocol output, and fictional human decision. The view remains usable after the
+lifecycle advances to `dispute_simulated` or `closed`.
+
+The dossier is a sixth workspace destination with cover, presentation summary,
+twelve-artifact index, artifact metadata, state-derived contents, pending states,
+external-validation note, and print action. Missing evidence remains pending
+rather than being filled with illustrative completion.
+
+## 9. Accessibility and responsive behavior
 
 All controls are keyboard operable, focus-visible, and labelled. Headings follow
 document order. Status does not rely on color. At narrow widths, two-column roles,
 profiles, positions, options, metadata, and lifecycle elements stack. Horizontal
 scroll is limited to intentional local navigation, never the page.
 
-## 9. Print
+## 10. Print
 
 Print hides navigation and controls, preserves authority metadata, and prints the
-Alignment Annex as a presentation artifact with its synthetic/no-effect boundary.
+complete dossier and Alignment Annex with synthetic/no-effect boundaries.
 
-## 10. Reviewer comprehension targets
+## 11. Reviewer comprehension targets
 
 The reviewer should explain the problem, pre-conflict timing, Party Alignment,
 AI contribution, human control, illustrative versus live execution, genuine
-validation boundary, manifest meaning, and most valuable output without coaching.
+validation boundary, calibration-versus-stress distinction, manifest meaning,
+settlement firewall, fictional human control, dossier provenance, and most
+valuable output without coaching. Results remain pending until external sessions.

@@ -1,9 +1,11 @@
-# Alpha Implementation Plan
+# Review-Candidate Implementation Plan
 
 ## Decision-Complete Foundation Before Implementation
 
-This plan governs the work from the current prototype through the human-reviewer
-gate. It is intentionally limited to a synthetic, simulation-only showcase. It
+This plan originally governed the authority foundation and Party Alignment alpha.
+The sequencing amendment in `goal-objective.md` now extends the same decisions
+through the complete review candidate before external evaluation. It remains
+limited to a synthetic, simulation-only showcase. It
 does not design production arbitration infrastructure, identity, signatures,
 institutional appointment, operative awards, sovereign runtime deployment,
 Council-of-LLMs orchestration, DLT execution, or smart-contract enforcement.
@@ -343,7 +345,7 @@ provenance, and legal-effect boundary.
 
 ## 9. File-Level Change Set
 
-| File | Planned change before human gate |
+| File | Planned review-candidate change |
 |---|---|
 | `docs/00-alpha-implementation-plan.md` | Freeze these implementation decisions and record verification outcomes. |
 | `lib/case-model.ts` | Add canonical authority/lifecycle schemas, artifact envelopes, Party Alignment fields, refinements, and remove overlapping statuses/verdicts. |
@@ -362,7 +364,8 @@ provenance, and legal-effect boundary.
 | `components/case-upload.tsx` | Expand Party Alignment into the complete alpha journey and state set. |
 | `components/evidence-card.tsx` | Use exact-manifest and simulated-acknowledgement language plus verified async transition errors. |
 | `components/reasoning-card.tsx` | Present illustrative/executed-unverified artifacts without validation claims. |
-| `components/case-map.tsx`, `components/decision-panel.tsx` | Apply truthful authority boundary copy pending post-review Stage 2–5 completion. |
+| `components/case-map.tsx`, `components/reasoning-card.tsx`, `components/evidence-card.tsx`, `components/decision-panel.tsx` | Complete distinct Calibration, Stress Testing, Manifest/Simulated Appointment, and Later Synthetic Dispute experiences. |
+| `components/dossier-view.tsx`, `lib/dossier.ts` | Generate and present the twelve-artifact state-derived dossier with print layout. |
 | `components/authority-strip.tsx` (new) | Reuse visible artifact authority and limitation metadata. |
 | `app/globals.css` | Add opening, lifecycle, semantic-material, responsive, failure, and print styles. |
 | `tests/case-model.test.ts` | Test schema combinations, reserved states, artifact references, and Annex generation. |
@@ -386,7 +389,7 @@ showcase as having a production capability.
 
 ## 11. Attack-Oriented Test Matrix
 
-Before internal alpha verification, automated tests will cover:
+Before review-candidate verification, automated tests will cover:
 
 - illustrative output attempting authoritative approval;
 - illustrative output attempting authoritative appointment;
@@ -413,9 +416,9 @@ Route tests will inject model/configuration failures without making network call
 Browser verification will cover loading, blocked, failure, deliberate fixture
 selection, reset, opening navigation, full Party Alignment, and Annex generation.
 
-## 12. Alpha Acceptance Criteria
+## 12. Review-Candidate Acceptance Criteria
 
-The human-review package is prepared only when:
+The review candidate is frozen only when:
 
 1. a first-time viewer can explain the problem, pre-conflict timing,
    human/protocol split, full lifecycle, and simulation boundary from the opening;
@@ -433,18 +436,21 @@ The human-review package is prepared only when:
 11. clean install, type-check, lint, unit/route tests, production build, desktop
     path, mobile path, loading/blocked/failure/reset paths, authority labels,
     opening navigation, and Alignment Annex all pass; and
-12. the reviewer script, questionnaire, findings template, and local demo
-    procedure are complete.
+12. complete Stages 2–5 and the twelve-artifact dossier pass desktop/mobile and
+    print checks; and
+13. the reviewer script, questionnaire, findings template, expert instructions,
+    invitation text, and local demo procedure are complete.
 
-The process then stops for real human feedback. No reviewer result is inferred or
-fabricated, and Stages 2–5 are not revised to completion before that feedback.
+The repository is then frozen as `prototype-showcase-v1.0-review-candidate`.
+External reviewer sessions begin in the next cycle. No reviewer result is inferred
+or fabricated.
 
 ## 13. Dependencies and Risks
 
 Dependencies remain Next.js, React, Zod, Vitest, Tailwind, the AI SDK, and the
 existing OpenAI provider adapter. No database, authentication system, signing
 service, institution integration, DLT layer, or new production dependency is
-needed for the alpha.
+needed for the review candidate.
 
 Principal risks and controls:
 
@@ -452,8 +458,9 @@ Principal risks and controls:
   consistency only; UI copy must never imply identity or consent proof.
 - **Status migration is broad:** migrate schema, fixture, routes, UI, and tests in
   one reviewable foundation commit before visual expansion.
-- **Current Stage 2–5 copy overclaims:** harden authority wording now, defer full
-  experience completion until real feedback.
+- **Stage 2–5 conceptual density:** preserve the distinction between
+  configuration, observed behavior, manifest identity, provisional output, and
+  fictional human control through progressive disclosure.
 - **Live-provider nondeterminism:** tests inject provider outcomes; the public
   showcase remains illustrative-only and deterministic.
 - **Manifest scope can be overstated:** display the explicit inclusion and
@@ -471,7 +478,10 @@ Principal risks and controls:
    invalidation, and attack tests;
 2. synchronize canonical documentation checkpoint A;
 3. build the opening experience;
-4. build and polish the expanded Party Alignment alpha;
-5. run automated, production-build, browser, responsive, and print checks;
-6. prepare the four reviewer artifacts; and
-7. stop and request feedback from real representative reviewers.
+4. build and polish the expanded Party Alignment experience;
+5. complete Calibration, Stress Testing, Manifest/Simulated Appointment, Later
+   Synthetic Dispute, and the twelve-artifact dossier;
+6. synchronize canonical documentation and reviewer materials;
+7. run automated, production-build, browser, responsive, dossier, and print
+   checks; and
+8. freeze `prototype-showcase-v1.0-review-candidate` before external evaluation.

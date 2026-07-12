@@ -79,6 +79,9 @@ Approved primary labels:
 - `Acknowledge for simulated ceremony`
 - `Prepare exact protocol manifest`
 - `Simulate appointment under acknowledged manifest`
+- `Record simulated human decision`
+- `Open dossier`
+- `Print presentation dossier`
 - `Return to introduction`
 
 Failures name the cause and recovery. Never say that an illustrative fixture was
@@ -95,7 +98,11 @@ limitation disclosure. The disclosure is visible without interaction.
 Desktop uses editorial asymmetry and generous whitespace. Mobile stacks roles,
 metadata, profiles, positions, options, and lifecycle steps without losing
 labels. Print suppresses navigation/actions, preserves artifact boundaries, and
-renders the Annex presentation-ready.
+renders the complete dossier and Annex presentation-ready.
+
+The dossier uses a charcoal cover, three-part commercial/protocol/authority
+summary, numbered artifact index, six-field metadata rail, provenance/consequence/
+boundary triptych, and explicit external-validation-pending closing note.
 
 ## 10. Brand acceptance
 
