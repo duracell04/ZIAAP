@@ -40,7 +40,7 @@ export async function POST(request: Request) {
   if (executionMode === "illustrative") return Response.json(cached);
 
   const configuredModel = process.env.OPENAI_MODEL ?? "gpt-5-mini";
-  if (process.env.ZIAAP_LIVE_EXECUTION_ENABLED !== "true") return failureResponse(executionFailure("live_execution_disabled", "Live execution is disabled in this showcase environment.", false), 403);
+  if (process.env.ZIAAP_LIVE_EXECUTION_ENABLED !== "true") return failureResponse(executionFailure("live_execution_disabled", "Live execution is disabled in this concept environment.", false), 403);
   if (!process.env.OPENAI_API_KEY) return failureResponse(executionFailure("credentials_unavailable", "Live execution credentials are unavailable.", false), 503);
   if (configuredModel !== state.constitution.protocolIdentity.model) return failureResponse(executionFailure("model_mismatch", "The available model does not match the declared protocol manifest.", false), 409);
 

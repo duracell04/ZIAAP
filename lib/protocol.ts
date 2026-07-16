@@ -11,7 +11,7 @@ export function canonicalize(value: unknown): string {
 
 export function buildProtocolManifest(state: Pick<ContractState, "lifecycleMode" | "legalEffect" | "syntheticData" | "matter" | "parties" | "decisions" | "alignmentScenario" | "constitution" | "calibrationScenarios">) {
   return {
-    manifestKind: "Exact protocol manifest", manifestVersion: 1,
+    manifestKind: "Configuration Manifest", manifestVersion: 1,
     lifecycleMode: state.lifecycleMode, legalEffect: state.legalEffect, syntheticData: state.syntheticData,
     matterId: state.matter.id,
     partyProfiles: state.parties.map((party) => ({ id: party.id, confirmed: party.confirmed })),
@@ -122,16 +122,16 @@ export type TransitionResult = { ok: true; state: ContractState } | { ok: false;
 
 export async function simulateAppointmentTransition(state: ContractState): Promise<TransitionResult> {
   const reject = (reason: string): TransitionResult => ({ ok: false, state, reason });
-  if (state.lifecycleMode !== "simulation_only" || state.legalEffect !== false) return reject("The showcase permits simulation-only, no-legal-effect transitions.");
+  if (state.lifecycleMode !== "simulation_only" || state.legalEffect !== false) return reject("The concept environment permits simulation-only, no-legal-effect transitions.");
   if (!partyAlignmentReady(state)) return reject("Party profiles and exact clause versions must be confirmed.");
   if (!constitutionAcknowledged(state)) return reject("Both parties must acknowledge the exact Constitution version for the simulated ceremony.");
   if (!allStressTestsAcknowledged(state.calibrationScenarios)) return reject("Every selected stress-test artifact must be eligible and bilaterally acknowledged.");
   if (new Set(state.appointment.calibrationIds).size !== state.appointment.calibrationIds.length) return reject("Scenario references must be unique.");
   if (state.appointment.calibrationIds.length !== state.calibrationScenarios.length || state.appointment.calibrationIds.some((id) => !state.calibrationScenarios.some((scenario) => scenario.id === id))) return reject("Scenario references are missing or inconsistent.");
   if (state.appointment.constitutionVersion !== state.constitution.version) return reject("The Constitution version is stale.");
-  if (state.lifecycleStatus !== "manifest_acknowledged") return reject("The exact protocol manifest has not been acknowledged.");
+  if (state.lifecycleStatus !== "manifest_acknowledged") return reject("The Configuration Manifest has not been acknowledged.");
   const storedHash = state.appointment.manifestHash;
-  if (!storedHash) return reject("The exact protocol manifest has not been prepared.");
+  if (!storedHash) return reject("The Configuration Manifest has not been prepared.");
   const recomputedHash = await computeProtocolHash(buildProtocolManifest(state));
   if (storedHash !== recomputedHash) return reject("The stored manifest hash does not match the current protocol manifest.");
   if (state.appointment.simulatedAcknowledgements.supplier !== recomputedHash || state.appointment.simulatedAcknowledgements.customer !== recomputedHash) return reject("Both parties must acknowledge the exact current manifest hash.");

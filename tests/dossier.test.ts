@@ -10,7 +10,7 @@ async function completeSyntheticJourney() {
   state.constitution.simulatedAcknowledgements = { supplier: state.constitution.version, customer: state.constitution.version };
   state.calibrationScenarios.forEach((scenario) => {
     const artifactId = `${scenario.id}-illustrative-v1`;
-    scenario.result = { summary: "Observed behavior", behavior: "Safeguards preserved", safeguardsObserved: scenario.requiredSafeguards, outcome: scenario.acceptableBehavior, limitations: ["Not independently evaluated"], artifactId, executionStatus: "illustrative_only", materialStatus: "calibration_result", actor: "Showcase curator", version: "1.0", provenance: "Curated offline synthetic stress-test fixture", consequence: "Eligible for simulated acknowledgement only", legalEffect: false };
+    scenario.result = { summary: "Observed behavior", behavior: "Safeguards preserved", safeguardsObserved: scenario.requiredSafeguards, outcome: scenario.acceptableBehavior, limitations: ["Not independently evaluated"], artifactId, executionStatus: "illustrative_only", materialStatus: "calibration_result", actor: "Concept curator", version: "1.0", provenance: "Curated offline synthetic scenario fixture", consequence: "Eligible for simulated acknowledgement only", legalEffect: false };
     scenario.selectedArtifactId = artifactId;
     scenario.simulatedAcknowledgements = { supplier: artifactId, customer: artifactId };
   });

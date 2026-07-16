@@ -42,7 +42,7 @@ function cachedResults(scenarios: z.infer<typeof calibrationScenarioSchema>[]) {
     }[scenario.category];
     return {
       scenarioId: scenario.id,
-      result: { ...content, safeguardsObserved: scenario.requiredSafeguards, limitations: ["Curated synthetic fixture; not independently evaluated."], artifactId: `${scenario.id}-illustrative-v1`, executionStatus: "illustrative_only" as const, materialStatus: "calibration_result" as const, actor: "Showcase curator", version: "1.0", provenance: "Curated offline synthetic stress-test fixture", consequence: "Eligible for simulated acknowledgement only", legalEffect: false as const },
+      result: { ...content, safeguardsObserved: scenario.requiredSafeguards, limitations: ["Curated synthetic fixture; not independently evaluated."], artifactId: `${scenario.id}-illustrative-v1`, executionStatus: "illustrative_only" as const, materialStatus: "calibration_result" as const, actor: "Concept curator", version: "1.0", provenance: "Curated offline synthetic stress-test fixture", consequence: "Eligible for simulated acknowledgement only", legalEffect: false as const },
     };
   });
 }
@@ -54,7 +54,7 @@ export async function POST(request: Request) {
   if (parsed.data.executionMode === "illustrative") return Response.json(illustrative());
 
   const configuredModel = process.env.OPENAI_MODEL ?? "gpt-5-mini";
-  if (process.env.ZIAAP_LIVE_EXECUTION_ENABLED !== "true") return failureResponse(executionFailure("live_execution_disabled", "Live execution is disabled in this showcase environment.", false), 403);
+  if (process.env.ZIAAP_LIVE_EXECUTION_ENABLED !== "true") return failureResponse(executionFailure("live_execution_disabled", "Live execution is disabled in this concept environment.", false), 403);
   if (!process.env.OPENAI_API_KEY) return failureResponse(executionFailure("credentials_unavailable", "Live execution credentials are unavailable.", false), 503);
   if (configuredModel !== parsed.data.constitution.protocolIdentity.model) return failureResponse(executionFailure("model_mismatch", "The available model does not match the declared protocol configuration.", false), 409);
 

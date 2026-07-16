@@ -28,7 +28,7 @@ export function GovernanceAlignment({ state, busy, notice, analysisActive, runAl
 
   return <>
     <div className="page-intro"><span>Stage 1 · before conflict</span><h1>Turn hidden expectations into agreed governance.</h1><p>Independent party positions are compared against the draft, sources, and commercial consequences. AI supports analysis; the parties alone select and confirm contractual text.</p></div>
-    <AuthorityStrip executionStatus={analysisActive ? state.analysis.metadata.executionStatus : "failed"} actor={state.analysis.metadata.executionMode === "live" ? "Live model execution" : "Showcase curator"} version={state.analysis.metadata.artifactId} consequence={analysisActive ? "May support simulated alignment" : "Acknowledgement and manifest preparation blocked"} provenance={state.analysis.metadata.provenance} />
+    <AuthorityStrip executionStatus={analysisActive ? state.analysis.metadata.executionStatus : "failed"} actor={state.analysis.metadata.executionMode === "live" ? "Live model execution" : "Concept curator"} version={state.analysis.metadata.artifactId} consequence={analysisActive ? "May support simulated alignment" : "Acknowledgement and manifest preparation blocked"} provenance={state.analysis.metadata.provenance} />
 
     <Card className="draft-card"><div><BookOpen size={18} /><div><strong>Draft SaaS Agreement</strong><small>Shared source text · three clauses · synthetic matter</small></div></div><Badge>Source text</Badge></Card>
     <div className="party-grid">{state.parties.map((party) => <Card key={party.id} className="party-card">

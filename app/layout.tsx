@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { CANONICAL_PRODUCT_DEFINITION, CURRENT_MATURITY_LEVEL } from "@/lib/product-language";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ZIAAP · AI-native dispute governance",
-  description: "A synthetic, simulation-only showcase of dispute governance configured before conflict and applied under independent human review.",
+  title: `ZIAAP · ${CURRENT_MATURITY_LEVEL} concept demonstrator`,
+  description: CANONICAL_PRODUCT_DEFINITION,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

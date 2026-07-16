@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     return Response.json(illustrativeResponse());
   }
 
-  if (process.env.ZIAAP_LIVE_EXECUTION_ENABLED !== "true") return failureResponse(executionFailure("live_execution_disabled", "Live execution is disabled in this showcase environment.", false), 403);
+  if (process.env.ZIAAP_LIVE_EXECUTION_ENABLED !== "true") return failureResponse(executionFailure("live_execution_disabled", "Live execution is disabled in this concept environment.", false), 403);
   if (!process.env.OPENAI_API_KEY) return failureResponse(executionFailure("credentials_unavailable", "Live analysis credentials are unavailable.", false), 503);
 
   try {

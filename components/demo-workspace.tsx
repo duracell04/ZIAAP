@@ -17,8 +17,8 @@ import {
 } from "@/lib/case-model";
 import { humanDecisionCanRecord, invalidatePreparedManifest, invalidateProtocolState, prepareProtocolManifest, simulateAppointmentTransition } from "@/lib/protocol";
 
-const steps = ["Party Alignment", "Arbitral Reasoning Calibration", "Stress Testing", "Protocol Manifest and Simulated Appointment", "Later Synthetic Dispute", "Demonstration Dossier"];
-const stepNotes = ["Clarify expectations", "Calibrate protocol", "Inspect behavior", "Acknowledge exact manifest", "Human-controlled simulation", "Inspect twelve artifacts"];
+const steps = ["Party Alignment", "Protocol Constitution", "Scenario Laboratory", "Configuration Manifest", "Later Dispute", "Audit Dossier"];
+const stepNotes = ["Clarify expectations", "Configure protocol", "Inspect behaviour", "Acknowledge exact manifest", "Human-controlled simulation", "Inspect twelve artifacts"];
 
 function newEvent(actor: string, action: string, objectId: string, detail: string, authorityClass: LedgerEvent["authorityClass"]): LedgerEvent {
   return { id: crypto.randomUUID(), timestamp: new Date().toISOString(), actor, action, objectId, detail, authorityClass };
@@ -158,7 +158,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
     try {
       const next = await prepareProtocolManifest(state);
       setState(next);
-      setAppointmentNotice(next.appointment.manifestHash ? "Exact protocol manifest prepared. Both parties must acknowledge this exact hash before the simulated ceremony." : "Manifest preparation remains blocked by an incomplete prior gate.");
+      setAppointmentNotice(next.appointment.manifestHash ? "Configuration Manifest prepared. Both parties must acknowledge this exact digest before the fictional ceremony." : "Manifest preparation remains blocked by an incomplete prior gate.");
     } finally { setAppointmentBusy(false); }
   }
 
@@ -251,7 +251,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   if (experience === "opening") return <OpeningExperience beginGuided={() => { setExperience("guided"); setStep(0); }} explore={() => { setExperience("explore"); setStep(0); }} />;
 
   return <main className="app-shell">
-    <aside className="sidebar"><div className="wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>Dispute governance protocol</small></div></div><nav aria-label="Showcase workflow">{steps.map((label, index) => <button key={label} className={index === step ? "nav-step active" : "nav-step"} onClick={() => setStep(index)} aria-current={index === step ? "step" : undefined}><span>{index + 1}</span><div>{label}<small>{stepNotes[index]}</small></div></button>)}</nav><div className="sidebar-note"><ShieldAlert size={16} /><p>Synthetic data · simulation only · no legal effect. The fictional human arbitrator and protocol remain distinct.</p></div><Button variant="ghost" onClick={() => setExperience("opening")}><ArrowLeft size={15} /> Return to introduction</Button><Button variant="ghost" onClick={reset}><RefreshCcw size={15} /> Reset demo</Button></aside>
+    <aside className="sidebar"><div className="wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>C0 concept demonstrator</small></div></div><nav aria-label="Concept workflow">{steps.map((label, index) => <button key={label} className={index === step ? "nav-step active" : "nav-step"} onClick={() => setStep(index)} aria-current={index === step ? "step" : undefined}><span>{index + 1}</span><div>{label}<small>{stepNotes[index]}</small></div></button>)}</nav><div className="sidebar-note"><ShieldAlert size={16} /><p>Synthetic data · simulation only · no legal effect. The AI Resolution Officer is software; human legal authority remains external.</p></div><Button variant="ghost" onClick={() => setExperience("opening")}><ArrowLeft size={15} /> Return to introduction</Button><Button variant="ghost" onClick={reset}><RefreshCcw size={15} /> Reset demo</Button></aside>
     <section className="workspace"><header className="topbar"><div><Badge tone="red">{state.lifecycleMode}</Badge><span className="matter-id">{state.matter.id}</span></div><div className="topbar-status"><span><i className={state.appointment.manifestHash ? "dot done" : "dot"} />Exact manifest</span><span><i className={["appointment_simulated", "dispute_simulated", "closed"].includes(state.lifecycleStatus) ? "dot done" : "dot"} />{state.lifecycleStatus}</span></div></header>
       <div className="content">
         {step === 0 && <GovernanceAlignment state={state} busy={alignmentBusy} notice={alignmentNotice} analysisActive={analysisActive} runAlignment={runAlignment} editExpectation={editExpectation} confirmProfile={confirmProfile} selectOption={selectOption} editDecision={editDecision} updateAlignmentScenario={updateAlignmentScenario} confirmClause={confirmClause} />}
@@ -261,7 +261,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
         {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} runDetermination={runDetermination} updateDecision={updateDecision} toggleChecklist={toggleChecklist} recordDecision={recordDecision} />}
         {step === 5 && <DossierView state={state} />}
       </div>
-      <footer className="step-footer"><Button variant="secondary" disabled={step === 0} onClick={() => setStep((value) => value - 1)}><ArrowLeft size={16} /> Previous</Button><span>{step === 5 ? "Dossier" : `Stage ${step + 1} of 5`}</span><Button disabled={step === 5} onClick={() => setStep((value) => value + 1)}>{step === 4 ? "Open dossier" : "Continue"} <ArrowRight size={16} /></Button></footer>
+      <footer className="step-footer"><Button variant="secondary" disabled={step === 0} onClick={() => setStep((value) => value - 1)}><ArrowLeft size={16} /> Previous</Button><span>Stage {step + 1} of 6</span><Button disabled={step === 5} onClick={() => setStep((value) => value + 1)}>{step === 4 ? "Open Audit Dossier" : "Continue"} <ArrowRight size={16} /></Button></footer>
     </section>
   </main>;
 }

@@ -217,9 +217,9 @@ export const contractStateSchema = z.object({
   proposedDetermination: proposedDeterminationSchema.nullable(), humanDecision: humanDecisionSchema,
   ledger: z.array(ledgerEventSchema),
 }).superRefine((state, context) => {
-  if (state.analysis.metadata.executionStatus === "validated") context.addIssue({ code: "custom", path: ["analysis", "metadata", "executionStatus"], message: "Validated is unreachable in this showcase." });
+  if (state.analysis.metadata.executionStatus === "validated") context.addIssue({ code: "custom", path: ["analysis", "metadata", "executionStatus"], message: "Validated is unreachable in this concept environment." });
   for (const [index, scenario] of state.calibrationScenarios.entries()) {
-    if (scenario.result?.executionStatus === "validated") context.addIssue({ code: "custom", path: ["calibrationScenarios", index, "result", "executionStatus"], message: "Validated is unreachable in this showcase." });
+    if (scenario.result?.executionStatus === "validated") context.addIssue({ code: "custom", path: ["calibrationScenarios", index, "result", "executionStatus"], message: "Validated is unreachable in this concept environment." });
     if (scenario.selectedArtifactId && (!scenario.result || scenario.selectedArtifactId !== scenario.result.artifactId || !["illustrative_only", "executed_unverified"].includes(scenario.result.executionStatus))) {
       context.addIssue({ code: "custom", path: ["calibrationScenarios", index, "selectedArtifactId"], message: "Only an eligible exact artifact may be selected." });
     }

@@ -8,7 +8,7 @@ import {
 } from "@/lib/protocol";
 
 function artifact(id: string, executionStatus: ExecutionStatus = "illustrative_only") {
-  return { summary: "Observed behavior", behavior: "Preserved safeguards", safeguardsObserved: ["notice"], outcome: "Illustrative outcome", limitations: ["Not independently evaluated"], artifactId: id, executionStatus, materialStatus: "calibration_result" as const, actor: "Showcase curator", version: "1.0", provenance: "Synthetic test fixture", consequence: "Simulation acknowledgement only", legalEffect: false as const };
+  return { summary: "Observed behavior", behavior: "Preserved safeguards", safeguardsObserved: ["notice"], outcome: "Illustrative outcome", limitations: ["Not independently evaluated"], artifactId: id, executionStatus, materialStatus: "calibration_result" as const, actor: "Concept curator", version: "1.0", provenance: "Synthetic test fixture", consequence: "Simulation acknowledgement only", legalEffect: false as const };
 }
 
 function readyState() {

@@ -159,7 +159,7 @@
       "discretion": "Use controlled discretion only where the contract and applicable procedure leave a genuine choice; explain the alternatives and sensitivity.",
       "uncertainty": "State confidence limits, distinguish missing evidence from ambiguity, and block a single conclusion where uncertainty is outcome-material.",
       "escalation": "Flag credibility, mandatory law, serious procedural objection, missing decisive evidence, and exceptional circumstances for independent human judgment.",
-      "modelAndToolPolicy": "Use only the declared model, prompt, retrieval pack, and deterministic tools identified in the Exact protocol manifest; fail closed on mismatch.",
+      "modelAndToolPolicy": "Use only the declared model, prompt, retrieval pack, and deterministic tools identified in the Configuration Manifest; fail closed on mismatch.",
       "sourceHierarchy": "Agreed contract text first; applicable mandatory law and verified legal sources second; shared evidence third; party assertions remain contestable."
     },
     "settlementPolicy": {
