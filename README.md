@@ -1,32 +1,48 @@
 # ZIAAP
 
-Zero-Instance Algorithmic Arbitration Protocol.
+> **Test your dispute-resolution system before you sign the contract.**
 
-> ZIAAP is an AI-native dispute-governance and arbitration protocol that parties
-> configure, test, and acknowledge before conflict, then simulate applying under
-> a human arbitrator when a later dispute arises.
+ZIAAP helps parties align contractual meaning and test the observable behaviour
+of an agreed dispute-resolution process before signing, using a governed AI
+Resolution Officer to augment a properly appointed human arbitrator who retains
+legal authority.
 
-This repository is a frozen-showcase workstream built from synthetic data. It is
-designed to explain why dispute governance should be configured while commercial
-interests are still aligned.
+## Current status
 
-## What the showcase distinguishes
+This repository is a **C0 high-fidelity interactive concept demonstrator**, with
+high fidelity limited to workflow and interaction fidelity. It uses synthetic
+data, client-local resettable state, curated simulation fixtures, and optional
+live-unverified execution.
 
-- The **human arbitrator** is the legal decision-maker in the future product
-  concept. The showcase uses only a fictional record and makes no appointment.
-- The **ZIAAP protocol** identifies selected contractual, procedural, reasoning,
-  evidence, model, tool, and change-policy configuration.
-- **Party Alignment** resolves contractual expectations before reasoning
-  calibration begins.
-- **Arbitral reasoning calibration** changes inference-time instructions and
-  safeguards. Model weights remain unchanged.
-- **Stress testing** displays observed illustrative or live-unverified behavior.
-  It is not independent validation.
-- A protocol output is provisional. The showcase creates no award.
+It is not an externally validated system, legal appointment, operative award
+process, production arbitration service, identity system, confidential matter
+store, or predictor of a future dispute result.
 
-## Authority and status model
+The target concept is a **digital twin of the agreed dispute-resolution process
+and its observable behaviour, not a predictor of the future result**.
 
-The dimensions are orthogonal:
+## AI Resolution Officer
+
+The AI Resolution Officer is a governed software capability. It is not a legal
+office, arbitral institution, arbitrator, or autonomous decision-maker. It may
+structure, compare, retrieve, calculate, test, challenge, explain, and prepare
+reviewable analysis. A properly appointed human arbitrator retains procedural
+authority, independent judgment, and responsibility for any legally operative
+decision.
+
+## Six-stage lifecycle
+
+1. **Party Alignment**
+2. **Protocol Constitution**
+3. **Scenario Laboratory**
+4. **Configuration Manifest**
+5. **Later Dispute**
+6. **Audit Dossier**
+
+These names are canonical across the current public surfaces. Sprint 4 will
+complete the broader guided/explore, funding-roadmap, and review-session rebuild.
+
+## Authority and execution model
 
 ```ts
 lifecycleMode: "simulation_only" | "authoritative"
@@ -36,71 +52,18 @@ executionStatus:
   | "executed_unverified"
   | "validated"
   | "failed"
-lifecycleStatus:
-  | "draft"
-  | "manifest_prepared"
-  | "manifest_acknowledged"
-  | "appointment_simulated"
-  | "dispute_simulated"
-  | "closed"
 legalEffect: false
 ```
 
-Only `simulation_only` is available. `authoritative` and `validated` are reserved
-and unreachable. Every artifact is synthetic and has `legalEffect: false`.
+Only `simulation_only` is available. `authoritative` and `validated` are
+reserved and unreachable in the current concept. A curated fixture is
+`illustrative_only`; a successful declared live call is
+`executed_unverified`; a live failure returns `failed` and never silently
+substitutes an illustrative success.
 
-| Execution status | Display | Simulated acknowledgement | Simulated ceremony | Authoritative approval |
-|---|---:|---:|---:|---:|
-| `not_executed` | yes | no | no | no |
-| `illustrative_only` | yes | yes | yes | no |
-| `executed_unverified` | yes | yes | yes | no |
-| `failed` | yes | no | no | no |
-| `validated` | future only | future only | future only | future only |
-
-The party action is **Acknowledge for simulated ceremony**. It has no legal or
-authoritative effect.
-
-## Demonstrated lifecycle
-
-```text
-Opening explanation
-→ Party Alignment
-→ arbitral reasoning calibration
-→ stress testing
-→ Exact protocol manifest
-→ simulated appointment under the acknowledged protocol manifest
-→ later synthetic dispute
-→ optional sealed settlement facilitation
-→ provisional simulation-only determination
-→ simulated human decision
-```
-
-The review candidate implements the complete synthetic journey: opening, Party
-Alignment, Arbitral Reasoning Calibration, Stress Testing, Exact protocol
-manifest and simulated appointment, Later Synthetic Dispute, fictional human
-review, and the twelve-artifact demonstration dossier.
-
-External expert comprehension, usability, and independent validation remain
-pending for the next cycle. The review candidate does not claim reviewer results.
-
-## Exact protocol manifest
-
-The manifest identifies selected contractual decisions, legal architecture,
-Constitution, declared model identity, prompt/retrieval/tool/engine versions,
-stress-test artifacts, fictional human-arbitrator record, and change policy.
-
-It is not a complete build attestation, dependency digest, provider-side proof,
-deployed-environment or runtime attestation, or production cryptographic
-signature.
-
-## Failure behavior
-
-Illustrative and live actions are separate. A curated fixture returns
-`illustrative_only`; a successful live call returns `executed_unverified`. Missing
-credentials, disabled live policy, model mismatch, timeout, provider failure, or
-invalid output returns `failed`. A failed live call never returns an illustrative
-success as fallback. The last valid artifact is preserved but must be deliberately
-reselected before simulated acknowledgement.
+Every consequential artifact remains synthetic and without legal effect. No
+checkbox proves identity, authority, informed consent, provenance, signature,
+appointment, or enforceability.
 
 ## Run locally
 
@@ -109,9 +72,8 @@ pnpm.cmd install --frozen-lockfile
 pnpm.cmd dev
 ```
 
-Open `http://localhost:3000`. Live execution and retrieval are disabled unless
-server-only policy flags explicitly enable them. The public showcase is
-illustrative-only, deterministic, synthetic, and simulation-only.
+Open `http://localhost:3000`. Live execution and retrieval remain disabled
+unless server-only policy flags explicitly enable them.
 
 ## Verification
 
@@ -124,34 +86,34 @@ pnpm.cmd build
 
 ## Repository map
 
-- `app/` — App Router UI, styles, and fail-closed route handlers;
-- `components/` — opening, Party Alignment, and lifecycle views;
-- `lib/` — schemas, eligibility, hashing, transition verification, calculator,
-  and state-derived dossier projection;
-- `data/` — curated synthetic fixture;
-- `tests/` — schema, route, attack, firewall, and calculation tests; and
-- `docs/` — implementation plan, seven canonical documents, and appendices.
+- `app/` — App Router page, styles, and fail-closed route handlers
+- `components/` — opening, alignment, protocol, dispute, and dossier views
+- `lib/` — schemas, language, eligibility, hashing, transitions, and calculations
+- `data/` — curated synthetic fixture
+- `tests/` — schema, route, transition, firewall, calculation, and terminology tests
+- `docs/` — roadmap-era canonical documents, reference material, and review protocols
 
 ## Canonical documents
 
-1. [Project Charter](docs/01-project-charter.md)
-2. [Service Blueprint](docs/02-service-blueprint.md)
-3. [Legal Governance](docs/03-legal-governance.md)
-4. [Product Requirements](docs/04-product-requirements.md)
-5. [HCI and Information Architecture](docs/05-hci-information-architecture.md)
-6. [Technical Requirements](docs/06-technical-requirements.md)
-7. [Institutional Brand Book](docs/07-brand-book.md)
+1. [Product charter](docs/00-product-charter.md)
+2. [Maturity model](docs/product/maturity-model.md)
+3. [Canonical glossary](docs/product/glossary.md)
+4. [Claims register](docs/product/claims-register.md)
+5. [Release scorecard](docs/product/release-scorecard.md)
+6. [Technical roadmap v1.1](docs/roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
 
-Appendices are future-facing and non-normative. They do not expand the current
-showcase boundary.
+The older numbered documents have moved to `docs/reference/`. The Git tag
+`prototype-showcase-v1.0-review-candidate` preserves the frozen historical
+candidate; its name does not classify the current roadmap-era working tree.
 
-## Review-candidate package
+## Stage gate
 
-The complete deterministic path and reviewer materials are documented under
-`docs/review/`. The intended freeze is
-`prototype-showcase-v1.0-review-candidate`. External sessions begin after that
-freeze and feed the next revision cycle.
+Sprints 0–4 form the Concept Integrity Release. Work stops after Sprint 4 for
+Gate C1: audit the concept, collect real reviewer and commercial evidence,
+re-estimate Sprints 5–34, and record a **go, refine, narrow, or hold** decision.
+Later estimates are provisional, and the 70-week sequential total is arithmetic
+planning only—not an upfront funding or delivery commitment.
 
-The package includes the guided script, questionnaire, findings log, local
-procedure, expert instructions, invitation text, internal verification report,
-and review-candidate freeze record.
+No reviewer participation, comprehension result, usability result, independent
+validation, product approval, or legal approval may be inferred from repository
+artifacts. Pending human evidence is recorded explicitly in the scorecard.

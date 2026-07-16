@@ -341,11 +341,11 @@ It also imposes guardrails:
 
 This appendix interprets and supports the following governing documents:
 
-- [Project Charter](../01-project-charter.md): bilateral expectation alignment and persistent contract state;
-- [Service Blueprint](../02-service-blueprint.md): I0 classification, clarification, confirmation, and escalation;
-- [Legal Governance](../03-legal-governance.md): authority allocation, contestability, and human-owned adjudication;
-- [Product Requirements](../04-product-requirements.md): alignment matrix, scenario testing, and confirmation controls; and
-- [HCI and Information Architecture](../05-hci-information-architecture.md): inspectability, common understanding, and visible disagreement.
+- [Product Charter](../00-product-charter.md): bilateral expectation alignment and the current concept boundary;
+- [Service Blueprint](../reference/current-service-blueprint.md): classification, clarification, confirmation, and escalation;
+- [Legal Governance](../reference/current-legal-governance.md): authority allocation, contestability, and human-owned adjudication;
+- [Product Requirements](../reference/current-product-requirements.md): alignment, scenario, and confirmation controls; and
+- [HCI and Information Architecture](../reference/hci-information-architecture.md): inspectability, common understanding, and visible disagreement.
 
 Where this appendix conflicts with a numbered governing document, the numbered
 document controls the hackathon prototype.
