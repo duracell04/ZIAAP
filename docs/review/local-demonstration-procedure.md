@@ -1,107 +1,48 @@
-# ZIAAP Review-Candidate Local Demonstration Procedure
+# ZIAAP Concept Integrity Local Demonstration Procedure
 
-## Prerequisites
+## Preconditions
 
-- Node.js 20.9 or later;
-- pnpm 9;
-- checkout of `prototype-showcase-v1.0-review-candidate`; and
-- no confidential or real dispute data.
+- Use the reviewed Concept Integrity Release commit.
+- Record the commit, date, device, viewport, and facilitator.
+- Use no confidential or real-dispute information.
+- Keep public live execution and retrieval disabled.
 
-The deterministic review path needs no provider credentials.
-
-## Clean setup and verification
+## Start
 
 ```powershell
-git status --short
 pnpm.cmd install --frozen-lockfile
-pnpm.cmd typecheck
-pnpm.cmd lint
-pnpm.cmd test
-pnpm.cmd build
 pnpm.cmd dev
 ```
 
-Open `http://localhost:3000`.
+Open `http://localhost:3000`, verify the C0 concept label and synthetic boundary,
+then reset before the reviewer begins.
 
-## Public-review policy
+## Critical path
 
-Leave `ZIAAP_LIVE_EXECUTION_ENABLED` and `ZIAAP_LIVE_RETRIEVAL_ENABLED`
-unset or false. Do not expose `OPENAI_API_KEY` to the browser or recording.
-**Run live execution** should demonstrate an explicit fail-closed state.
+1. Opening and unassisted proposition
+2. Party Alignment and exact-version confirmation
+3. Protocol Constitution and exact-version acknowledgement
+4. Scenario Laboratory using curated simulations
+5. Configuration Manifest and fictional ceremony
+6. Later Dispute, settlement firewall, AI Resolution Officer analysis, and
+   fictional human control
+7. Audit Dossier
+8. Disabled live execution and deliberate recovery
+9. Reset
 
-## Complete deterministic path
+## Required checks
 
-### 1. Party Alignment
+- No page-level horizontal overflow at the recorded viewport.
+- Keyboard focus remains visible and controls remain operable.
+- Authority, execution status, provenance, and legal-effect boundaries remain
+  visible on consequential artifacts.
+- No settlement proposal content appears in merits-facing analysis or dossier.
+- The reviewer is not coached on maturity, process-twin, software-role, or human
+  authority questions before answering.
 
-1. Begin guided demonstration.
-2. Confirm both profiles.
-3. Select **View illustrative example**.
-4. Inspect sources, options, consequences, and legal boundary.
-5. Verify the CHF 1,500 deterministic calculation.
-6. Confirm supplier and customer on all three exact versions.
-7. Verify the Alignment Annex changes from pending to generated.
+## Close
 
-### 2. Arbitral Reasoning Calibration
-
-1. Inspect all ten editable inference controls.
-2. Inspect settlement firewall and change policy.
-3. Confirm model weights remain unchanged.
-4. Acknowledge Constitution v1 as supplier and customer.
-
-### 3. Stress Testing
-
-1. Select **View illustrative example**.
-2. Inspect facts, evidence, safeguards, observed behavior, limitations, status,
-   provenance, and consequence.
-3. Acknowledge all four artifacts as supplier and customer.
-
-### 4. Exact Manifest and Simulated Appointment
-
-1. Confirm all three readiness cards are ready.
-2. Inspect full canonical manifest contents and exclusions.
-3. Prepare the Exact protocol manifest.
-4. Acknowledge the exact hash as both parties.
-5. Review fictional disclosure and record fictional acceptance.
-6. Simulate appointment under the acknowledged manifest.
-
-### 5. Later Synthetic Dispute
-
-1. Verify manifest binding and shared merits record.
-2. Activate settlement as both parties and generate the sealed proposal.
-3. Decline as one party so adjudication can continue.
-4. Record a fictional preliminary assessment.
-5. Select **View illustrative example** for the provisional determination.
-6. Select modified, enter an independent rationale, complete all four review
-   checks, and record the simulated human decision.
-
-### 6. Dossier
-
-1. Open dossier.
-2. Confirm `12 of 12 artifacts available`.
-3. Inspect metadata and contents for each artifact.
-4. Confirm sealed proposal terms are absent from merits-facing artifacts.
-5. Confirm external validation is pending.
-6. Use **Print presentation dossier** and inspect print preview.
-
-## Failure and reset path
-
-1. Reset.
-2. Select **Run live execution** on Party Alignment.
-3. Confirm an explicit failed state, preserved but inactive findings, and no
-   fallback success.
-4. Deliberately select **View illustrative example** to recover.
-5. Reset and confirm the initial state.
-
-## Troubleshooting
-
-- Install failure: record it as an environment failure, separately from source.
-- Live succeeds unexpectedly: stop and disable live policy before expert review.
-- Fixture/schema/build failure: record the source failure and do not conduct a
-  session against that checkout.
-- Dossier count below 12: complete the declined-settlement adjudication path.
-
-## Handoff
-
-Use the guided script, questionnaire, and a new findings-log copy. External
-sessions and feedback analysis belong to the next cycle; no result is claimed by
-the review candidate itself.
+Save a de-identified findings log, record any authority-category error, and mark
+all unperformed human evidence as pending. A successful technical demonstration
+does not establish comprehension, usability, legal validity, or independent
+validation.

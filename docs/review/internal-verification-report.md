@@ -1,5 +1,8 @@
 # ZIAAP Review-Candidate Internal Verification Report
 
+> Historical verification evidence for the frozen review-candidate tag. Current
+> maturity and claims are controlled by the v1.1 product charter and scorecard.
+
 - **Verification date:** 2026-07-12 (Europe/Zurich)
 - **Candidate:** `prototype-showcase-v1.0-review-candidate`
 - **Lifecycle:** `simulation_only`

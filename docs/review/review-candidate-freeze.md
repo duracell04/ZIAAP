@@ -1,5 +1,8 @@
 # Review-Candidate Freeze Record
 
+> Historical evidence for the frozen `prototype-showcase-v1.0-review-candidate`
+> tag. It does not classify or approve the current roadmap-era working tree.
+
 ## Candidate identity
 
 - Tag: `prototype-showcase-v1.0-review-candidate`

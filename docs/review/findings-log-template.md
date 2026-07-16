@@ -1,6 +1,6 @@
-# ZIAAP Review-Candidate Findings Log
+# ZIAAP Concept Integrity Findings Log
 
-Create one copy per reviewer. Never infer or fabricate entries.
+Create one de-identified copy per reviewer. Never infer or fabricate entries.
 
 ## Session record
 
@@ -13,63 +13,41 @@ Create one copy per reviewer. Never infer or fabricate entries.
 | Commit/build | |
 | Device/viewport | |
 | Duration | |
-| Completion status | complete / partial / abandoned |
+| Completion | complete / partial / abandoned |
 
 ## Unassisted comprehension
 
 | Topic | Verbatim answer | Confidence 1–5 | Accurate? | Evidence/time |
 |---|---|---:|---|---|
-| Commercial problem | | | | |
-| Why before conflict | | | | |
+| Before-signing proposition | | | | |
+| C0 classification | | | | |
+| Fidelity qualification | | | | |
 | Party Alignment | | | | |
-| AI contribution | | | | |
-| Human control | | | | |
-| Illustrative status | | | | |
-| Executed status | | | | |
-| Genuine validation | | | | |
+| Process twin boundary | | | | |
+| AI Resolution Officer | | | | |
+| Human legal authority | | | | |
+| Execution/validation boundary | | | | |
 | Manifest scope | | | | |
 | Commercial value | | | | |
 
-## Observed usability findings
+## Findings
 
-| ID | Screen/task | Observation or quote | Severity | Frequency | Authority risk? | Proposed response |
-|---|---|---|---|---|---|---|
-| F-01 | | | blocker / high / medium / low | first / recurring | yes / no | |
+| ID | Stage/task | Observation or quote | Severity | Authority risk? | Proposed response |
+|---|---|---|---|---|---|
+| F-01 | | | blocker / high / medium / low | yes / no | |
 
-Severity definitions:
-
-- **Blocker:** prevents task completion or creates a material authority error.
-- **High:** likely causes recurring misunderstanding or abandonment.
-- **Medium:** recoverable confusion or avoidable friction.
-- **Low:** polish, preference, or minor clarity issue.
-
-## Failure-state observations
-
-- Did the reviewer understand that live execution failed?
-- Did they mistake preserved content for fallback success?
-- Did they understand why acknowledgement was blocked?
-- Did they deliberately select the illustrative example to recover?
-- Verbatim comments:
+An authority-category error is always blocking until corrected and retested.
 
 ## Quantitative summary
 
 - Required questions accurately answered: /10
 - Mean confidence: /5
 - Task completion: complete / partial / failed
-- Presenter interventions required:
+- Presenter interventions:
 - Authority-category errors:
-- Time to first coherent proposition:
-- Time to generated Annex:
+- Time to coherent proposition:
 
-## Reviewer recommendations
-
-- Keep:
-- Change:
-- Remove:
-- Add:
-- Most commercially valuable artifact:
-
-## Triage decision
+## Triage
 
 - Owner:
 - Decision: accept / revise / investigate / defer
@@ -77,7 +55,5 @@ Severity definitions:
 - Target commit:
 - Verification needed:
 
-## Cross-session note
-
-Leave blank until real sessions are compared. A recurring finding requires direct
-evidence from more than one reviewer; it may not be inferred from this template.
+Leave cross-session conclusions blank until real sessions are compared under the
+approved Gate C1 protocol.

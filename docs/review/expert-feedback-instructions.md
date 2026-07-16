@@ -1,48 +1,23 @@
 # Expert Feedback Instructions
 
-Thank you for reviewing the ZIAAP synthetic review candidate.
+Thank you for reviewing the ZIAAP C0 concept demonstrator.
 
-## What you are evaluating
+Please assess whether the concept clearly communicates a credible approach to
+pre-signing dispute governance while staying within its synthetic,
+simulation-only boundary. It is not a legal service, arbitral institution,
+production system, validation study, or prediction tool.
 
-Please evaluate whether the prototype clearly communicates a plausible approach
-to AI-native dispute governance and arbitration while remaining honest about its
-simulation-only boundary. The prototype is not a legal service, arbitral
-institution, validated AI system, appointment mechanism, signature platform, or
-award generator.
+Focus on:
 
-## Focus areas
+1. The before-signing commercial value.
+2. The six-stage lifecycle and contract-to-process continuity.
+3. The distinction between Protocol Constitution, Scenario Laboratory,
+   conformance, and independent validation.
+4. The governed-software definition of the AI Resolution Officer.
+5. Retained authority and independent judgment of a properly appointed human.
+6. Claims or interactions that overstate current legal, technical, evidentiary,
+   security, institutional, or production capability.
+7. Evidence required before C1, P1, or any later maturity claim.
 
-1. Commercial problem and pre-conflict value.
-2. Party Alignment and contract-governance value.
-3. Distinction between calibration, stress testing, and validation.
-4. Exact protocol manifest scope and limitations.
-5. Human authority and independent judgment.
-6. Settlement/merits separation.
-7. Dossier usefulness for counsel, institutions, design partners, and investors.
-8. Any wording or interaction that overstates legal, technical, institutional,
-   security, or validation properties.
-
-## Evidence discipline
-
-Base comments on what you observed. Quote confusing language where possible.
-Separate:
-
-- comprehension failure;
-- usability friction;
-- legal/governance objection;
-- technical-integrity concern;
-- missing evidence;
-- commercial preference; and
-- future product suggestion.
-
-Do not submit real case facts, confidential client information, privileged
-material, personal data, credentials, or provider keys.
-
-## How to respond
-
-Complete the structured questionnaire and findings log. Mark confidence and note
-where presenter intervention was required. A critical finding should identify the
-screen, observed consequence, and why it matters.
-
-External evaluation is pending until actual sessions occur. Participation does
-not by itself independently validate the system or any artifact.
+Do not provide confidential matter information. Comments will be recorded
+de-identifiably and will not be generalized beyond the evidence collected.
