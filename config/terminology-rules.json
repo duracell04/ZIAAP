@@ -1,0 +1,24 @@
+{
+  "requiredPhrases": [
+    "Test your dispute-resolution system before you sign the contract.",
+    "high-fidelity interactive concept demonstrator",
+    "workflow and interaction fidelity",
+    "AI Resolution Officer",
+    "not a predictor of the future result"
+  ],
+  "forbiddenPhrases": [
+    "review-ready prototype",
+    "complete review-ready prototype",
+    "This prototype demonstrates",
+    "current prototype",
+    "AI arbitrator",
+    "validated release",
+    "digital twin of the future result",
+    "Showcase curator",
+    "this showcase",
+    "current showcase",
+    "Exact protocol manifest",
+    "Demonstration Dossier",
+    "Later Synthetic Dispute"
+  ]
+}
