@@ -39,14 +39,14 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
     window.scrollTo(0, 0);
   }, [experience, step]);
   const [appointmentBusy, setAppointmentBusy] = useState(false);
-  const [appointmentNotice, setAppointmentNotice] = useState("");
+  const [appointmentError, setAppointmentError] = useState("");
   const [disputeBusy, setDisputeBusy] = useState(false);
   const [disputeNotice, setDisputeNotice] = useState("");
   const alignmentReady = partyAlignmentReady(state);
   const visiblePendingStep = alignmentReady ? null : pendingStep;
 
   function reset() {
-    setState(structuredClone(initialState)); setStep(0); setPendingStep(null); setAnalysisActive(true); setAlignmentNotice(""); setCalibrationNotice(""); setAppointmentNotice(""); setDisputeNotice("");
+    setState(structuredClone(initialState)); setStep(0); setPendingStep(null); setAnalysisActive(true); setAlignmentNotice(""); setCalibrationNotice(""); setAppointmentError(""); setDisputeNotice("");
   }
 
   function requestStep(target: number) {
@@ -172,15 +172,18 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   }
 
   async function freezePackage() {
-    setAppointmentBusy(true); setAppointmentNotice("");
+    setAppointmentBusy(true); setAppointmentError("");
     try {
       const next = await prepareProtocolManifest(state);
       setState(next);
-      setAppointmentNotice(next.appointment.manifestHash ? "Configuration Manifest prepared. Both parties must acknowledge this exact digest before the fictional ceremony." : "Manifest preparation remains blocked by an incomplete prior gate.");
+      if (!next.appointment.manifestHash) setAppointmentError("Manifest preparation remains blocked by an incomplete prior gate.");
+    } catch (error) {
+      setAppointmentError(error instanceof Error ? error.message : "Manifest preparation failed.");
     } finally { setAppointmentBusy(false); }
   }
 
   function confirmHash(party: "supplier" | "customer") {
+    setAppointmentError("");
     setState((current) => {
       const hash = current.appointment.manifestHash;
       if (!hash) return current;
@@ -191,14 +194,15 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   }
 
   function setReviewFlag(field: "disclosuresReviewed" | "simulatedArbitratorAccepted", value: boolean) {
+    setAppointmentError("");
     setState((current) => ({ ...current, appointment: { ...current.appointment, [field]: value } }));
   }
 
   async function appoint() {
-    setAppointmentBusy(true); setAppointmentNotice("");
+    setAppointmentBusy(true); setAppointmentError("");
     const result = await simulateAppointmentTransition(state);
-    if (result.ok) { setState(result.state); setAppointmentNotice("Integrity verification passed. Simulated appointment recorded with no legal effect."); }
-    else setAppointmentNotice(result.reason);
+    if (result.ok) setState(result.state);
+    else setAppointmentError(result.reason);
     setAppointmentBusy(false);
   }
 
@@ -276,7 +280,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
         {step === 0 && <GovernanceAlignment state={state} busy={alignmentBusy} notice={alignmentNotice} analysisActive={analysisActive} runAlignment={runAlignment} editExpectation={editExpectation} confirmProfile={confirmProfile} selectOption={selectOption} editDecision={editDecision} updateAlignmentScenario={updateAlignmentScenario} confirmClause={confirmClause} navigationNotice={visiblePendingStep === null ? "" : experience === "guided" ? "Complete all seven readiness conditions before continuing in the guided demonstration." : `Acknowledge this warning before opening ${steps[visiblePendingStep]} without completing the simulated alignment gate.`} explorationTargetLabel={experience === "explore" && visiblePendingStep !== null ? steps[visiblePendingStep] : null} continueForExploration={continueForExploration} />}
         {step === 1 && <ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} acknowledgeConstitution={acknowledgeConstitution} />}
         {step === 2 && <ValidationLab state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} acknowledgeScenario={acknowledgeScenario} />}
-        {step === 3 && <AppointmentCeremony state={state} busy={appointmentBusy} notice={appointmentNotice} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
+        {step === 3 && <AppointmentCeremony state={state} busy={appointmentBusy} errorNotice={appointmentError} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
         {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} runDetermination={runDetermination} updateDecision={updateDecision} toggleChecklist={toggleChecklist} recordDecision={recordDecision} />}
         {step === 5 && <DossierView state={state} />}
       </div>

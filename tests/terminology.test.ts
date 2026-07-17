@@ -81,6 +81,7 @@ describe("Sprint 0 product language", () => {
     for (const phrase of rules.forbiddenPhrases) {
       expect(narratives, `prohibited phrase: ${phrase}`).not.toContain(phrase.toLowerCase());
     }
+    expect(read("data/demo-case.json")).toContain("fictional identity used only in this simulation-only concept demonstrator");
   });
 
   it("publishes every required phrase in canonical product materials", () => {

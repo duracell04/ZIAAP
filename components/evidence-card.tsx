@@ -7,19 +7,37 @@ import { allStressTestsAcknowledged, buildProtocolManifest, canSimulateAppointme
 import type { ContractState } from "@/lib/case-model";
 
 type Props = {
-  state: ContractState; busy: boolean; notice: string;
+  state: ContractState; busy: boolean; errorNotice: string;
   freezePackage: () => void; confirmHash: (party: "supplier" | "customer") => void;
   setReviewFlag: (field: "disclosuresReviewed" | "simulatedArbitratorAccepted", value: boolean) => void;
   appoint: () => void;
 };
 
-export function AppointmentCeremony({ state, busy, notice, freezePackage, confirmHash, setReviewFlag, appoint }: Props) {
+export type CeremonyNotice = {
+  tone: "success" | "confirmation" | "instruction" | "error";
+  text: string;
+} | null;
+
+export function deriveCeremonyNotice(state: ContractState, errorNotice: string): CeremonyNotice {
+  const hash = state.appointment.manifestHash;
+  const completed = ["appointment_simulated", "dispute_simulated", "closed"].includes(state.lifecycleStatus);
+  const acknowledged = Boolean(hash && state.appointment.simulatedAcknowledgements.supplier === hash && state.appointment.simulatedAcknowledgements.customer === hash);
+
+  if (completed) return { tone: "success", text: "Integrity verification passed. Simulated appointment recorded with no legal effect." };
+  if (acknowledged) return { tone: "confirmation", text: "Both parties have acknowledged the current Protocol Configuration Manifest. Complete the remaining simulated ceremony checks to continue." };
+  if (hash) return { tone: "instruction", text: "Configuration Manifest prepared. Both parties must acknowledge this exact digest before the fictional ceremony." };
+  if (errorNotice) return { tone: "error", text: errorNotice };
+  return null;
+}
+
+export function AppointmentCeremony({ state, busy, errorNotice, freezePackage, confirmHash, setReviewFlag, appoint }: Props) {
   const hash = state.appointment.manifestHash;
   const alignmentReady = partyAlignmentReady(state);
   const calibrationReady = constitutionAcknowledged(state);
   const stressReady = allStressTestsAcknowledged(state.calibrationScenarios);
   const manifest = buildProtocolManifest(state);
   const manifestAcknowledged = Boolean(hash && state.appointment.simulatedAcknowledgements.supplier === hash && state.appointment.simulatedAcknowledgements.customer === hash);
+  const ceremonyNotice = deriveCeremonyNotice(state, errorNotice);
 
   return <>
     <div className="page-intro"><span>Stage 4 · Configuration Manifest</span><h1>Identify the selected protocol and acknowledge its exact digest.</h1><p>The digest binds selected configuration and eligible synthetic artifacts. It supports internal change detection only—not actor identity, provider execution, runtime attestation, signature, or legal appointment. This C0 layout also contains a fictional ceremony; the canonical lifecycle places that first in Later Dispute.</p></div>
@@ -35,7 +53,7 @@ export function AppointmentCeremony({ state, busy, notice, freezePackage, confir
       <div className="appointment-checks"><label className="checkline"><input type="checkbox" checked={state.appointment.disclosuresReviewed} onChange={(event) => setReviewFlag("disclosuresReviewed", event.target.checked)} /> Parties reviewed the fictional human-arbitrator disclosure</label><p>{state.constitution.humanArbitrator.disclosure}</p><label className="checkline"><input type="checkbox" checked={state.appointment.simulatedArbitratorAccepted} onChange={(event) => setReviewFlag("simulatedArbitratorAccepted", event.target.checked)} /> Record fictional arbitrator acceptance for this simulation</label></div>
       <div className="ceremony-status"><span><i className={manifestAcknowledged ? "dot done" : "dot"} /> Exact hash acknowledged</span><span><i className={state.appointment.disclosuresReviewed ? "dot done" : "dot"} /> Disclosure reviewed</span><span><i className={state.appointment.simulatedArbitratorAccepted ? "dot done" : "dot"} /> Simulated acceptance</span></div>
       <Button disabled={busy || !canSimulateAppointment(state)} onClick={appoint}><PenLine size={15} /> {busy ? "Verifying exact state…" : "Simulate appointment under acknowledged manifest"}</Button></>}
-      {notice && <div className={state.lifecycleStatus === "appointment_simulated" ? "notice" : "warning"} role="status">{state.lifecycleStatus !== "appointment_simulated" && <ShieldAlert size={16} />}<span>{notice}</span></div>}
+      {ceremonyNotice && <div className={ceremonyNotice.tone === "success" || ceremonyNotice.tone === "confirmation" ? "notice" : "warning"} role={ceremonyNotice.tone === "error" ? "alert" : "status"}>{ceremonyNotice.tone === "instruction" || ceremonyNotice.tone === "error" ? <ShieldAlert size={16} /> : null}<span>{ceremonyNotice.text}</span></div>}
     </Card>
     {state.lifecycleStatus === "appointment_simulated" || state.lifecycleStatus === "dispute_simulated" || state.lifecycleStatus === "closed" ? <div className="result success appointment-success"><Badge tone="green">Simulation only</Badge><strong>Simulated appointment under the acknowledged protocol manifest</strong><span>{state.appointment.simulatedAcceptanceRecord}</span><p>No institutional appointment, production identity verification, production signature, legal effect, or operative award.</p></div> : null}
   </>;

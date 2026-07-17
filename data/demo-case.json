@@ -149,7 +149,7 @@
   "constitution": {
     "id": "constitution-ziaap-001", "version": 1, "materialStatus": "protocol_constitution",
     "legalArchitecture": { "substantiveLaw": "Swiss substantive law", "seat": "Zurich, Switzerland", "rules": "Swiss Rules of International Arbitration", "language": "English", "arbitrators": 1 },
-    "humanArbitrator": { "id": "arb-demo-keller", "name": "Dr. Mira Keller (fictional)", "role": "Sole human arbitrator", "fictional": true, "disclosure": "No relationship with either party; fictional identity used only for the prototype." },
+    "humanArbitrator": { "id": "arb-demo-keller", "name": "Dr. Mira Keller (fictional)", "role": "Sole human arbitrator", "fictional": true, "disclosure": "No relationship with either party; fictional identity used only in this simulation-only concept demonstrator." },
     "principles": {
       "interpretation": "Begin with the agreed text and structured contract state; expose ambiguity and competing readings before proposing a conclusion.",
       "evidence": "Use source-linked shared evidence only; distinguish assertions, agreed facts, disputed facts, missing evidence, and inference.",
