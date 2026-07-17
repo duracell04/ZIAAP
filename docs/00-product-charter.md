@@ -4,7 +4,7 @@
 
 **Current maturity:** C0 — interactive concept demonstrator
 
-**Status:** Product/founder and legal-lead approval pending
+**Status:** Product/founder approval and legal-framing review pending
 
 ## Product promise
 
@@ -81,14 +81,14 @@ decision.
 
 ## Current release objective
 
-Sprints 0–4 form the **Concept Integrity Release** and target C1, a review-grade
-concept demonstrator. They establish product truth, canonical state, artifact
-eligibility, deterministic contract compilation, and a six-stage externally
-reviewable experience.
+The current objective is to accept and merge a technically clean,
+terminologically disciplined, legally responsible, and externally
+comprehensible concept baseline. The existing later-stage interface remains a
+design reference, not completed roadmap capability.
 
-After Sprint 4, work stops at Gate C1. Reviewer and commercial evidence must be
-audited, Sprints 5–34 must be re-estimated, and a go, refine, narrow, or hold
-decision must be recorded before further implementation.
+Sprints 1–34 are provisional, funding-dependent future development. Prototype
+planning, including any canonical domain model or Sprint 4 rebuild, begins only
+after an angel-financing decision and a new prototype charter.
 
 ## Canonical references
 
@@ -98,11 +98,15 @@ decision must be recorded before further implementation.
 - [Release scorecard](product/release-scorecard.md)
 - [Technical roadmap v1.1](roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
 
-## Approval record
+## Human review record
 
 | Role | Status | Name/date | Evidence |
 |---|---|---|---|
 | Product/founder | Pending | — | Review required before Sprint 0 merge |
-| Legal lead | Pending | — | Claims and authority-language review required |
+| Legal-framing and authority-boundary reviewer | Pending | — | Concept framing and disclaimer review required |
 
 No approval is inferred from the existence of this document.
+
+The legal-framing review concerns the accuracy of the concept's legal framing
+and disclaimers. It is not an opinion on enforceability, regulatory compliance,
+or production readiness.

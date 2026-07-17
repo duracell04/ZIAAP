@@ -2,13 +2,13 @@
 
 **Version:** 1.1
 
-**Review status:** Product/founder and legal-lead approval pending
+**Review status:** Product/founder approval and legal-framing review pending
 
 | ID | Surface | Owner role | Evidence source | Permitted wording | Prohibited variants | Minimum maturity | Review status | Last-review date |
 |---|---|---|---|---|---|---|---|---|
 | CL-001 | Opening/README | Product lead | Six-stage synthetic journey and scenario interactions | “Test your dispute-resolution system before you sign the contract.” | “Prevents disputes” or “predicts dispute outcomes” | C0 | Internally demonstrated; human approval pending | 2026-07-15 (draft) |
 | CL-002 | Product description | Product lead | Current UI and internal verification report | “High-fidelity interactive concept demonstrator,” qualified as workflow and interaction fidelity | Unqualified “high fidelity” or current “prototype” | C0 | Internally demonstrated; human approval pending | 2026-07-15 (draft) |
-| CL-003 | Human authority | Legal lead | Authority labels, fictional human review controls, legal governance reference | A properly appointed human arbitrator retains legal authority and responsibility | Software appointment, autonomous authority, or legally operative current decision | C0 | Demonstrated as a concept boundary; legal approval pending | 2026-07-15 (draft) |
+| CL-003 | Human authority | Legal-framing reviewer | Authority labels, fictional human review controls, legal governance reference | A properly appointed human arbitrator retains legal authority and responsibility | Software appointment, autonomous authority, or legally operative current decision | C0 | Demonstrated as a concept boundary; legal-framing review pending | 2026-07-15 (draft) |
 | CL-004 | AI Resolution Officer | Legal/product leads | Current analysis, calculation, scenario, and review interactions | Governed software capability that supports reviewable analysis | Legal office, arbitral institution, arbitrator, or autonomous decision-maker | C0 | Roadmap definition implemented; human approval pending | 2026-07-15 (draft) |
 | CL-005 | Process twin | Technical/product leads | Constitution, scenarios, manifest, and later-dispute simulation | Digital twin of the agreed process and observable behaviour, not a future-result predictor | Prediction of a future result or replication of legal judgment | C0 | Concept demonstrated; no predictive evidence claimed | 2026-07-15 (draft) |
 | CL-006 | Deterministic calculation | Technical lead | `lib/scenario.ts` and unit test vectors | Confirmed SLA inputs produce a reproducible CHF 1,500 synthetic result | Broader liability conclusion, legal advice, or AI-calculated result | C0 | Automated evidence present | 2026-07-15 |
@@ -26,11 +26,15 @@
 - Prediction of a future dispute result
 - Proof of identity, consent, provider execution, runtime, or legal effect
 
-## Approval record
+## Human review record
 
 | Role | Status | Last reviewed | Notes |
 |---|---|---|---|
 | Product/founder | Pending | — | Must approve proposition and commercial claims |
-| Legal lead | Pending | — | Must approve authority and legal-boundary wording |
+| Legal-framing and authority-boundary reviewer | Pending | — | Must review concept framing, disclaimers, and authority boundaries |
 | Technical lead | Draft complete | 2026-07-15 | Automated evidence references verified against repository |
 | UX/evaluation lead | Protocol drafted | 2026-07-15 | No reviewer outcomes asserted |
+
+The legal-framing review concerns the accuracy of the concept's legal framing
+and disclaimers. It is not an opinion on enforceability, regulatory compliance,
+or production readiness.

@@ -39,8 +39,9 @@ decision.
 5. **Later Dispute**
 6. **Audit Dossier**
 
-These names are canonical across the current public surfaces. Sprint 4 will
-complete the broader guided/explore, funding-roadmap, and review-session rebuild.
+These names are canonical across the current public surfaces. The existing
+later-stage interface is a design reference, not completed Sprint 4 capability.
+Any rebuild is conditional on a future funded development stage.
 
 ## Authority and execution model
 
@@ -100,7 +101,8 @@ pnpm.cmd build
 3. [Canonical glossary](docs/product/glossary.md)
 4. [Claims register](docs/product/claims-register.md)
 5. [Release scorecard](docs/product/release-scorecard.md)
-6. [Technical roadmap v1.1](docs/roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
+6. [Sprint 0 acceptance record](docs/review/sprint-0-acceptance-record.md)
+7. [Technical roadmap v1.1](docs/roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
 
 The older numbered documents have moved to `docs/reference/`. The Git tag
 `prototype-showcase-v1.0-review-candidate` preserves the frozen historical
@@ -108,12 +110,15 @@ candidate; its name does not classify the current roadmap-era working tree.
 
 ## Stage gate
 
-Sprints 0–4 form the Concept Integrity Release. Work stops after Sprint 4 for
-Gate C1: audit the concept, collect real reviewer and commercial evidence,
-re-estimate Sprints 5–34, and record a **go, refine, narrow, or hold** decision.
-Later estimates are provisional, and the 70-week sequential total is arithmetic
-planning only—not an upfront funding or delivery commitment.
+The current stage closes Sprint 0 as an accepted concept baseline. After
+machine verification and actual human evidence are reviewed, the accepted
+baseline may be merged. Further implementation then stops.
+
+Sprints 1–34 are provisional, funding-dependent future development. The
+existing later-stage interface remains a design reference. Prototype planning
+begins only after an angel-financing decision and a new prototype charter.
 
 No reviewer participation, comprehension result, usability result, independent
-validation, product approval, or legal approval may be inferred from repository
-artifacts. Pending human evidence is recorded explicitly in the scorecard.
+validation, product approval, or legal-framing review may be inferred from
+repository artifacts. Pending human evidence is recorded explicitly in the
+scorecard.
