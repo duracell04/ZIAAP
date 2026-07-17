@@ -3,7 +3,7 @@ import { getDemoState } from "@/lib/demo-data";
 import type { ContractState, ExecutionStatus } from "@/lib/case-model";
 import {
   allStressTestsAcknowledged, buildAdjudicationInput, buildProtocolManifest, canSimulateAppointment,
-  canonicalize, computeProtocolHash, invalidateProtocolState, prepareProtocolManifest,
+  canonicalize, computeProtocolHash, invalidateProtocolState, partyAlignmentReady, prepareProtocolManifest,
   simulateAppointmentTransition,
 } from "@/lib/protocol";
 
@@ -49,6 +49,27 @@ describe("simulation-only exact protocol manifest", () => {
     state.calibrationScenarios[0].selectedArtifactId = "live";
     state.calibrationScenarios[0].simulatedAcknowledgements = { supplier: "live", customer: "live" };
     expect(allStressTestsAcknowledged(state.calibrationScenarios)).toBe(true);
+  });
+
+  it("derives Stage 1 readiness from both profiles, eligible analysis, and every exact clause version", () => {
+    const complete = readyState();
+    expect(partyAlignmentReady(complete)).toBe(true);
+
+    for (const partyId of ["supplier", "customer"]) {
+      const state = readyState();
+      state.parties.find((party) => party.id === partyId)!.confirmed = false;
+      expect(partyAlignmentReady(state), `${partyId} profile`).toBe(false);
+    }
+
+    for (const topic of complete.decisions.map((decision) => decision.topic)) {
+      const state = readyState();
+      state.decisions.find((decision) => decision.topic === topic)!.confirmations.customer = null;
+      expect(partyAlignmentReady(state), `${topic} clause`).toBe(false);
+    }
+
+    const failedAnalysis = readyState();
+    failedAnalysis.analysis.metadata.executionStatus = "failed";
+    expect(partyAlignmentReady(failedAnalysis)).toBe(false);
   });
 
   it("blocks failed execution acknowledgement and manifest preparation", async () => {
