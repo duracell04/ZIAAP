@@ -1,0 +1,143 @@
+{
+  "id": "ZIAAP-MIN-001",
+  "title": "CustomerCo × CloudProvider service-credit demonstration",
+  "parties": {
+    "customer": "CustomerCo",
+    "provider": "CloudProvider"
+  },
+  "monthlyFeeChf": 10000,
+  "clause": {
+    "id": "clause-service-credit",
+    "original": "The customer receives a service credit where a material service outage exceeds the applicable tolerance period.",
+    "revised": "A customer-facing loss of a core service lasting more than four hours triggers a credit equal to 10% of the monthly fee. Each additional complete two hours adds 5%, capped at 20%. Provider system logs are primary evidence; customer operational records may rebut them."
+  },
+  "expectations": {
+    "customer": "A material outage means serious loss of a core service for more than four hours.",
+    "provider": "A material outage means complete platform unavailability for more than eight hours."
+  },
+  "divergence": {
+    "title": "The same incident could produce opposite answers",
+    "summary": "The parties disagree about both severity and duration. A six-hour loss of a core service would qualify for CustomerCo but not for CloudProvider under their original expectations."
+  },
+  "protocol": {
+    "trigger": "Customer-facing loss of a core service lasting more than four hours",
+    "creditRule": "10% of the monthly fee, plus 5% for each additional complete two hours, capped at 20%",
+    "evidenceRule": "Provider logs are primary; customer operational records may rebut them",
+    "authorityRule": "AI may organise and propose; a human arbitrator decides disputed issues"
+  },
+  "scenarios": {
+    "clear": {
+      "id": "scenario-clear-six-hours",
+      "title": "Complete six-hour record",
+      "facts": [
+        "Core checkout service unavailable from 09:00 to 15:00",
+        "Provider logs cover the complete period",
+        "Monthly service fee is CHF 10,000"
+      ],
+      "result": "15% service credit · CHF 1,500",
+      "explanation": "The first four hours trigger 10%. One additional complete two-hour period adds 5%."
+    },
+    "missing": {
+      "id": "scenario-missing-log",
+      "title": "Forty-five-minute log gap",
+      "facts": [
+        "Interruption reported from 09:00 to 15:00",
+        "Provider logs are missing from 11:20 to 12:05",
+        "Customer operational records cover the missing period"
+      ],
+      "result": "Human review required",
+      "explanation": "The evidence establishes more than four hours, but the additional complete two-hour period depends on contested evidence."
+    }
+  },
+  "sources": [
+    {
+      "id": "source-contract",
+      "title": "Draft service agreement · clause 4.2",
+      "kind": "Contract source",
+      "excerpt": "The customer receives a service credit where a material service outage exceeds the applicable tolerance period."
+    },
+    {
+      "id": "source-provider-log",
+      "title": "CloudProvider incident log",
+      "kind": "Provider operational record",
+      "excerpt": "Service interruption recorded 09:00–11:20 and 12:05–15:00. No log entries are available from 11:20 to 12:05."
+    },
+    {
+      "id": "source-customer-record",
+      "title": "CustomerCo incident chronology",
+      "kind": "Customer operational record",
+      "excerpt": "Core checkout functions were unavailable from 09:00 to 15:00. Support tickets continued throughout the provider-log gap."
+    },
+    {
+      "id": "source-invoice",
+      "title": "Monthly service invoice",
+      "kind": "Shared commercial record",
+      "excerpt": "Monthly service fee: CHF 10,000."
+    }
+  ],
+  "dispute": {
+    "transition": "18 months later",
+    "headline": "A six-hour service interruption is reported",
+    "summary": "CustomerCo requests the contractual service credit. CloudProvider accepts the base trigger but disputes whether the missing log period supports the additional 5%.",
+    "caseMap": [
+      {
+        "id": "case-agreed-interruption",
+        "status": "Agreed",
+        "text": "A customer-facing interruption occurred on 14 March."
+      },
+      {
+        "id": "case-agreed-fee",
+        "status": "Agreed",
+        "text": "The monthly service fee was CHF 10,000."
+      },
+      {
+        "id": "case-disputed-duration",
+        "status": "Disputed",
+        "text": "Whether the interruption is established for the complete six hours."
+      },
+      {
+        "id": "case-missing-log",
+        "status": "Missing",
+        "text": "Provider log data from 11:20 to 12:05."
+      },
+      {
+        "id": "case-mechanical-credit",
+        "status": "Mechanical",
+        "text": "Apply 10% if more than four hours are established and add 5% only for a complete additional two hours."
+      }
+    ],
+    "inference": {
+      "id": "inference-six-hours",
+      "proposition": "The qualifying interruption lasted six hours.",
+      "supportingEvidence": [
+        "CustomerCo incident chronology",
+        "Support tickets during the missing period",
+        "Provider logs before and after the gap"
+      ],
+      "contraryEvidence": [
+        "Provider log coverage is incomplete",
+        "CloudProvider disputes continuous unavailability during the gap"
+      ],
+      "status": "AI inference · Partially supported · Human review required",
+      "uncertainty": "The forty-five-minute gap determines whether the additional 5% credit is available."
+    },
+    "objection": "The customer chronology assumes that all affected functions remained unavailable during the missing log period. That assumption is disputed."
+  },
+  "review": {
+    "preliminaryAssessment": "The 10% base credit appears supported, but the additional 5% remains uncertain because the provider log has a forty-five-minute gap.",
+    "proposal": {
+      "label": "AI-proposed outcome · advisory only",
+      "creditPercent": 15,
+      "creditChf": 1500,
+      "summary": "Count the reported six-hour interruption and apply a 15% service credit.",
+      "strongestCustomerPoint": "Customer records and support tickets indicate continuous unavailability.",
+      "strongestProviderPoint": "The primary evidence source has a gap during the period needed for the additional 5%.",
+      "assumption": "The service remained unavailable throughout the missing provider-log period."
+    },
+    "humanDecision": {
+      "creditPercent": 10,
+      "creditChf": 1000,
+      "rationale": "More than four hours are established, so the 10% base credit applies. The complete additional two-hour period is not established strongly enough for the extra 5%."
+    }
+  }
+}
