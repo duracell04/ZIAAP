@@ -2011,7 +2011,7 @@ Material product decisions should be approved through a lightweight Product and 
 
 ## 16. Immediate next action
 
-The next development cycle should target **Sprints 0 to 4 as the ZIAAP Concept Integrity Release**, while executing and reviewing one sprint at a time. This produces the best near-term funding artifact because it:
+The immediate objective is to accept and merge the implemented Sprint 0 concept baseline. This produces the best near-term funding artifact because it:
 
 - calls the current work a concept demonstrator with high workflow and interaction fidelity;
 - preserves the ingenious full lifecycle;
@@ -2020,37 +2020,46 @@ The next development cycle should target **Sprints 0 to 4 as the ZIAAP Concept I
 - shows the arbitrator-on-steroids vision; and
 - makes every unbuilt capability a precise funded work package rather than a vague promise.
 
-Use the complete roadmap first as planning context. Map Sprints 0 to 4 to the current repository, identify existing implementation, resolve dependencies and confirm the acceptance tests without editing files. After approval, implement **Sprint 0 only** as the first bounded goal. Review its changes and evidence before authorising Sprint 1.
+Complete machine verification, product/founder approval, legal-framing and authority-boundary review, and two unfamiliar-reader reviews without fabricating evidence. Merge the accepted concept baseline only after those requirements have actual evidence.
 
-After Sprint 4, stop at Gate C1 and re-estimate the remaining programme. Subject to that decision, the next milestone is **Sprints 5 to 9**, which turns the concept into a functional proof of concept with persistent bilateral participation, real document sources and genuinely open-ended divergence detection.
+Sprints 1 to 34 remain provisional, funding-dependent future development. The existing later-stage interface is a design reference, not completed Sprint 4 capability. Do not plan prototype architecture, create a Sprint 1 branch or implement later capabilities until an angel-financing decision and a new prototype charter formally authorise that phase.
 
 ---
 
 ## 17. Codex execution protocol
 
-### 17.1 First run: Plan mode
+### 17.1 Current implementation status
 
-Use the roadmap in Plan mode before implementation. The planning task should inspect the live repository and produce a repository-specific execution plan for **Sprints 0 to 4 only**. It should identify what already exists, what must change, file-level dependencies, migrations, test coverage, risks, sequencing and definitions of done. It should make no code changes and stop for approval.
+| Sprint | Status | Treatment |
+|---|---|---|
+| Sprint 0 | Implemented; formal human acceptance pending | Complete acceptance and merge the concept baseline |
+| Sprints 1 to 3 | Precursor logic only | Provisional, funding-dependent prototype development |
+| Sprint 4 | Partial interface precursor | Design reference only during the concept-demonstrator phase |
+| Sprints 5 to 34 | Not implemented | Provisional strategic roadmap only |
 
-Recommended Plan-mode instruction:
+Repository UI or logic that resembles a later story does not establish that the later sprint is implemented.
 
-```text
-Read ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md and inspect the current ZIAAP repository. Produce a decision-complete, repository-specific execution plan for Sprints 0 to 4 only. Reconcile every story with the existing implementation, identify already-completed work, file-level changes, dependencies, migration requirements, test cases, risks, and the exact definition of done for each sprint. Preserve the current synthetic concept boundary. Make no code changes. Do not plan or begin Sprints 5 to 34 beyond noting dependencies. Stop for my approval.
-```
+### 17.2 One-stage-at-a-time execution
 
-### 17.2 Implementation runs: Goal mode
+The roadmap is a strategic dependency and funding map, not a single executable task. Authorise one evidence stage at a time. The current authorised work is Sprint 0 acceptance only:
 
-After the plan is approved, use Goal mode for one bounded sprint at a time, beginning with Sprint 0. Each goal must state the outcome, constraints and verification criteria. It must explicitly prohibit starting the next sprint.
+- restore frozen dependencies and run the complete machine-verification suite;
+- record exact technical results and environment failures;
+- collect actual product/founder, legal-framing and unfamiliar-reader evidence;
+- keep blank templates visibly pending; and
+- merge only the accepted concept baseline.
 
-Recommended first Goal-mode instruction:
+Machine verification does not establish external comprehension, legal validity, enforceability, security, production readiness or validation.
 
-```text
-Implement Sprint 0 of ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md according to the approved repository-specific plan. Complete only Sprint 0. Preserve the simulation-only concept boundary and existing working behaviour. Add or update the required documentation, claims register, glossary, maturity labels, release gates, and tests or terminology checks defined by the plan. Run all applicable verification. Do not begin Sprint 1. Finish with a concise report of changed files, verification results, unresolved risks, and whether Sprint 0 meets its definition of done.
-```
+### 17.3 Prototype funding boundary
 
-### 17.3 Repository isolation and review
+After the accepted concept baseline is merged, further technical implementation stops. Sprints 1 to 34 remain provisional until an angel-financing decision authorises a prototype phase and a new prototype charter defines its scope, evidence requirements and sequencing.
 
-Run each implementation goal in a dedicated Git worktree or branch. Review the diff, tests and sprint evidence before merging or starting the next sprint. Parallel goals may operate only on non-overlapping files and independently reviewable outcomes.
+Do not automatically plan Sprint 1, create a Sprint 1 branch or treat the current Sprint 4 interface precursor as completed capability. The future prototype plan may use this roadmap for dependency context, but it must be separately authorised.
+
+### 17.4 Repository isolation and review
+
+Run each authorised implementation goal in a dedicated Git worktree or branch. Review the diff, tests and evidence before merging. Parallel goals may operate only on non-overlapping files and independently reviewable outcomes, and they do not broaden the authorised funding stage.
 
 ---
 
