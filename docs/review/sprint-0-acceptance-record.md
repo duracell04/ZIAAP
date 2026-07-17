@@ -1,6 +1,6 @@
 # Sprint 0 Concept Acceptance Record
 
-**Status:** Machine verification complete; human acceptance pending
+**Status:** Corrected concept candidate internally verified; external acceptance pending
 
 This record covers Sprint 0 concept acceptance only. It does not approve or
 begin any later roadmap capability.
@@ -11,12 +11,15 @@ begin any later roadmap capability.
 |---|---|
 | Branch | `sprint/00-product-charter` |
 | Baseline commit | `bd4a85fe7e90b6babaaf9ff6544ce54a2ffa5c7a` |
+| Source corrections tested from commit | `a011fb9f1b4a9b49d789cb53ce029c483adc2a5f` |
+| Verification tree | Source candidate plus acceptance-document changes |
+| Frozen candidate HEAD | Reported in the task completion record; not self-embedded |
 | Verification date | 2026-07-17, Europe/Zurich |
 | Node.js | `v20.18.0` |
 | pnpm | `9.15.9` |
 | Lifecycle | `simulation_only` |
 | Legal effect | `false` |
-| Human-review candidate commit | Pending; no acceptance commit is inferred from this working tree |
+| Human-review candidate commit | Use the frozen candidate HEAD reported at task completion; no human participation is inferred |
 
 ## Technical non-goals
 
@@ -41,7 +44,7 @@ successfully in the approved Windows host context.
 | Frozen dependency installation | `pnpm.cmd install --frozen-lockfile` | Pass | Lockfile current; installation completed with pnpm 9.15.9 |
 | Type-check | `pnpm.cmd typecheck` | Pass | TypeScript completed with no diagnostics |
 | Lint | `pnpm.cmd lint` | Pass | ESLint completed with no findings |
-| Tests | `pnpm.cmd test` | Pass | 6 test files and 35 tests passed, including 6 terminology tests |
+| Tests | `pnpm.cmd test` | Pass | 7 test files and 37 tests passed, including readiness, ceremony-notice, and 6 terminology tests |
 | Production build | `pnpm.cmd build` | Pass | Next.js 16.1.6 optimized build; static application and five dynamic API routes |
 | Whitespace integrity | `git diff --check` | Pass | No whitespace errors |
 
@@ -62,10 +65,24 @@ Supporting automated evidence:
 | `package.json` | `86BD43ED11C6E3708F65B3F44A6E04A502E8B2AB93053B5AE6E97066E3E895D6` | `86BD43ED11C6E3708F65B3F44A6E04A502E8B2AB93053B5AE6E97066E3E895D6` | Unchanged |
 | `pnpm-lock.yaml` | `FBD98B74CCCBF8DF535B1DA900CE3D066F315F859394ACEE4B8E2871178E5B32` | `FBD98B74CCCBF8DF535B1DA900CE3D066F315F859394ACEE4B8E2871178E5B32` | Unchanged |
 
-The acceptance diff is limited to Sprint 0 governance, evidence, public
-status, and roadmap-execution documentation. No application API, domain schema,
-persistence, authentication, model infrastructure, or later-sprint capability
-is changed.
+The acceptance diff is limited to Sprint 0 concept clarity, presentation,
+terminology, internal evidence, public status, and roadmap-execution
+documentation. No application API, domain schema, persistence, authentication,
+model infrastructure, or later-sprint capability is changed.
+
+## Internal concept-demonstrator acceptance test
+
+The corrected production build completed the six-stage synthetic journey and
+the 1600 × 900, 1366 × 768, 1024 × 768, and 390 × 844 presentation checks.
+Guided and Explore Stage 1 behavior, state-derived ceremony notices, the
+settlement firewall, fictional human control, 12-of-12 dossier, browser console,
+print rules, and reset behavior passed.
+
+See the
+[`Sprint 0 Internal Concept-Demonstrator Acceptance Test`](sprint-0-internal-concept-acceptance-test.md)
+and the
+[`Corrected Concept Candidate Freeze`](sprint-0-concept-candidate-freeze.md).
+This is internal technical evidence, not unfamiliar-reader or expert evidence.
 
 ## Failure investigation
 
@@ -147,14 +164,17 @@ not evidence.
 - [x] Frozen dependency installation completed without package or lockfile changes
 - [x] Type-check passed
 - [x] Lint passed
-- [x] 6 test files and 35 tests passed
+- [x] 7 test files and 37 tests passed
 - [x] Production build passed
 - [x] `git diff --check` passed
+- [x] Corrected six-stage internal concept-demonstrator journey passed
+- [x] Required desktop, laptop, and mobile dossier presentation checks passed
 - [ ] Product/founder approval supplied
 - [ ] Legal-framing and authority-boundary review supplied
 - [ ] Unfamiliar arbitration/dispute-resolution reviewer evidence supplied
 - [ ] Unfamiliar business/commercial/investment reviewer evidence supplied
 - [ ] Accepted concept baseline merged
 
-Sprint 0 remains open for human acceptance. No later implementation is
-authorised by the machine-verification result.
+Sprint 0 is a corrected concept candidate, internally verified and ready for
+external concept review. Human acceptance remains open. No later implementation
+is authorised by the internal verification result.

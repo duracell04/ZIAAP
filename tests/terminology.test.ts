@@ -129,7 +129,7 @@ describe("Sprint 0 product language", () => {
     expect(scorecard).toContain("Product/founder approval");
     expect(scorecard).toContain("Legal-framing and authority-boundary review");
     expect(scorecard).not.toContain("Legal-lead approval");
-    expect(scorecard).toContain("Sprint 0 machine verification complete; human acceptance pending");
+    expect(scorecard).toContain("Sprint 0 corrected concept candidate, internally verified; external acceptance pending");
     expect(scorecard).toContain("Unchecked human-evidence items must remain pending");
   });
 });

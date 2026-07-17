@@ -2,16 +2,16 @@
 
 **Version:** 1.1
 
-**Current decision:** Sprint 0 machine verification complete; human acceptance pending
+**Current decision:** Sprint 0 corrected concept candidate, internally verified; external acceptance pending
 
 ## C0 — current concept baseline
 
 | Dimension | C0 exit criterion | Current evidence |
 |---|---|---|
 | Product | One before-signing proposition, six canonical stages, explicit current boundary | Implemented in charter, product language, README, UI, and reviewer materials |
-| Technical | Clean concept build with synthetic, resettable state and fail-closed optional live execution | Frozen install, typecheck, lint, 6 test files and 35 tests, production build, and `git diff --check` passed on 2026-07-17; see the [Sprint 0 acceptance record](../review/sprint-0-acceptance-record.md) |
+| Technical | Clean concept build with synthetic, resettable state and fail-closed optional live execution | Frozen install, typecheck, lint, 7 test files and 37 tests, production build, and `git diff --check` passed on 2026-07-17; see the [Sprint 0 acceptance record](../review/sprint-0-acceptance-record.md) |
 | Legal | Human authority and no-legal-effect boundaries are visible | Implemented; legal-framing and authority-boundary review pending |
-| UX | Complete illustrative journey can support internal review | [Human packet](../review/sprint-0-human-acceptance-packet.md) prepared; two required unfamiliar-reader sessions pending |
+| UX | Complete illustrative journey can support internal review | Corrected six-stage production journey and four-viewport presentation matrix passed internally; see the [internal concept-demonstrator acceptance test](../review/sprint-0-internal-concept-acceptance-test.md). [Human packet](../review/sprint-0-human-acceptance-packet.md) prepared; two required unfamiliar-reader sessions pending |
 | Evaluation | Claims and terminology are testable without fabricated outcomes | Six automated terminology tests pass; human evidence pending |
 
 ## Gate C1 — review-grade concept after Sprint 4
@@ -62,7 +62,9 @@ sequential total is arithmetic only and is not a funding or delivery commitment.
 - [x] Release gates cover product, technical, legal, UX, and evaluation evidence
 - [x] Automated terminology checks implemented and passing
 - [x] Frozen dependency installation completed without package or lockfile changes
-- [x] Typecheck, lint, 35 tests, production build, and `git diff --check` passed
+- [x] Typecheck, lint, 37 tests, production build, and `git diff --check` passed
+- [x] Corrected six-stage internal concept-demonstrator journey passed
+- [x] Dossier presentation passed at the required desktop, laptop, and mobile viewports
 - [ ] Product/founder approval
 - [ ] Legal-framing and authority-boundary review
 - [ ] Unfamiliar arbitration/dispute-resolution reviewer evidence
