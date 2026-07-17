@@ -78,3 +78,25 @@ Rate 1 (strongly disagree) to 5 (strongly agree):
 - Missing information:
 - One required change before Gate C1:
 - Would you request a follow-up conversation? Why?
+
+---
+
+## Hyper-minimal public walkthrough addendum
+
+Use this shorter section only for the `/demo` comprehension experiment. Record
+answers verbatim before discussing the technical C0 reference.
+
+1. In one sentence, what do you understand ZIAAP to do?
+2. What problem does the **Align** step address before conflict?
+3. What did the AI do after the future dispute occurred?
+4. What could CloudProvider challenge?
+5. Who made the simulated final decision, and how did it differ from the AI
+   proposal?
+6. What business value, if any, did you perceive?
+7. Which decisions or procedural steps must always remain under human control?
+8. What would prevent you or your organisation from using this process?
+9. Where could this save the greatest amount of time, cost or uncertainty?
+
+Any belief that the walkthrough appoints an arbitrator, issues an operative
+decision, executes a live model, validates legal conclusions or demonstrates
+cost/time savings is recorded as an authority or evidence-category error.

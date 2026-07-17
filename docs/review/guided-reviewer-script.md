@@ -1,5 +1,12 @@
 # ZIAAP Concept Integrity Guided Reviewer Script
 
+> **Routing note:** This script covers the preserved six-stage technical C0
+> reference at `/` and `/reference`. The separate four-minute public
+> comprehension experiment at `/demo` uses the
+> [Hyper-Minimal Public Concept Comprehension Script](public-demo-comprehension-script.md).
+> Results from either route remain pending evidence and must not be combined
+> without an approved evaluation protocol.
+
 ## Purpose
 
 Test whether the C0 concept demonstrator explains ZIAAP without presenter

@@ -8,6 +8,12 @@ import {
   CURRENT_MATURITY_LEVEL,
   DIGITAL_TWIN_BOUNDARY,
   LIFECYCLE_STAGES,
+  PUBLIC_DEMO_ARBITRATION_EXPLAINER,
+  PUBLIC_DEMO_AUTHORITY_LINE,
+  PUBLIC_DEMO_DESCRIPTION,
+  PUBLIC_DEMO_DISCLAIMER,
+  PUBLIC_DEMO_HEADLINE,
+  PUBLIC_DEMO_STEPS,
   PRODUCT_PROMISE,
   RESOLUTION_OFFICER_DEFINITION,
 } from "@/lib/product-language";
@@ -33,6 +39,14 @@ const narrativeFiles = [
   "components/reasoning-card.tsx",
   "components/evidence-card.tsx",
   "components/decision-panel.tsx",
+  "components/minimal-demo-opening.tsx",
+  "components/minimal-demo-shell.tsx",
+  "components/minimal-align-screen.tsx",
+  "components/minimal-test-screen.tsx",
+  "components/minimal-dispute-screen.tsx",
+  "components/minimal-review-screen.tsx",
+  "components/minimal-outcome-screen.tsx",
+  "components/minimal-feedback.tsx",
   "app/layout.tsx",
   "app/api/analyze/route.ts",
   "app/api/calibrate/route.ts",
@@ -44,6 +58,8 @@ const narrativeFiles = [
   "lib/product-language.ts",
   "lib/prompts.ts",
   "lib/protocol.ts",
+  "lib/minimal-demo.ts",
+  "docs/review/public-demo-comprehension-script.md",
 ];
 
 function read(path: string) {
@@ -74,6 +90,24 @@ describe("Sprint 0 product language", () => {
     const workspace = read("components/demo-workspace.tsx");
     expect(opening).toContain("LIFECYCLE_STAGES.map");
     for (const stage of LIFECYCLE_STAGES) expect(workspace).toContain(`\"${stage.label}\"`);
+  });
+
+  it("projects the canonical lifecycle into one plain-language public walkthrough", () => {
+    expect(PUBLIC_DEMO_HEADLINE).toBe("Agree the rules before the dispute.");
+    expect(PUBLIC_DEMO_ARBITRATION_EXPLAINER).toContain("outside court");
+    expect(PUBLIC_DEMO_DESCRIPTION).toContain("source-linked case");
+    expect(PUBLIC_DEMO_AUTHORITY_LINE).toBe("AI prepares. Parties can challenge. A human arbitrator decides.");
+    expect(PUBLIC_DEMO_DISCLAIMER).toBe("Synthetic demonstration · No legal effect · AI output is illustrative.");
+    expect(PUBLIC_DEMO_STEPS.map((step) => step.label)).toEqual([
+      "Align",
+      "Test",
+      "Dispute",
+      "Review",
+      "Outcome",
+    ]);
+    expect(new Set(PUBLIC_DEMO_STEPS.flatMap((step) => step.canonicalStages))).toEqual(
+      new Set(LIFECYCLE_STAGES.map((stage) => stage.id)),
+    );
   });
 
   it("keeps prohibited legacy claims out of normative public narratives", () => {
@@ -117,7 +151,7 @@ describe("Sprint 0 product language", () => {
 
     const claims = read("docs/product/claims-register.md");
     const claimRows = claims.split(/\r?\n/).filter((line) => /^\| CL-\d{3} \|/.test(line));
-    expect(claimRows).toHaveLength(10);
+    expect(claimRows).toHaveLength(12);
     for (const row of claimRows) {
       const fields = row.split("|").slice(1, -1).map((field) => field.trim());
       expect(fields).toHaveLength(9);

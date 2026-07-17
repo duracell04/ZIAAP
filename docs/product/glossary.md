@@ -1,6 +1,6 @@
 # ZIAAP Canonical Glossary
 
-**Version:** 1.1
+**Version:** 1.2
 
 | Term | Approved meaning | Reserved or prohibited use |
 |---|---|---|
@@ -19,6 +19,10 @@
 | High fidelity | High workflow and interaction fidelity | Do not imply production, legal, evidentiary, model, or outcome fidelity |
 | Live—unverified | A successful declared live execution without independent evaluation | Never relabel as validated |
 | Curated simulation | A synthetic fixture prepared by the concept team | Never imply that it was executed live |
+| Public walkthrough | The deterministic four-minute `/demo` experience for unfamiliar business and trade audiences | Not a production service, new maturity level, or evidence of comprehension |
+| Align / Test / Dispute / Review / Outcome | Plain-language interface projection of the canonical six-stage lifecycle | Do not store these labels as a competing legal or lifecycle state model |
+| AI-proposed outcome | An illustrative advisory proposal prepared for human review | Never call it a decision, award, or established fact |
+| Human review | Independent assessment in which a properly appointed human may adopt, modify, or reject software-supported analysis | A fictional simulated record is not a legal appointment or operative decision |
 
 ## Canonical authority statement
 

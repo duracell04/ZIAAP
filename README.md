@@ -43,6 +43,25 @@ These names are canonical across the current public surfaces. The existing
 later-stage interface is a design reference, not completed Sprint 4 capability.
 Any rebuild is conditional on a future funded development stage.
 
+## Hyper-minimal public concept experiment
+
+`/demo` is a separate four-minute, deterministic walkthrough for unfamiliar
+business and international-trade audiences. It uses one synthetic SaaS clause
+to show:
+
+> **Agree the rules before the dispute. AI prepares the case if conflict
+> occurs. Parties can challenge it. A human arbitrator decides.**
+
+The public walkthrough has five plain-language steps—Align, Test, Dispute,
+Review and Outcome—which project the canonical six-stage lifecycle without
+creating a competing lifecycle model. It makes no API or model call and stores
+resettable walkthrough state in the browser session.
+
+The existing root experience remains the current six-stage C0 reference during
+external comprehension review and is also available at `/reference`.
+`/feedback` prepares an unsubmitted local research response. No positive
+comprehension, usability, legal-framing or commercial-value result is claimed.
+
 ## Authority and execution model
 
 ```ts

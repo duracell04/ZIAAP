@@ -1,6 +1,6 @@
 # ZIAAP Claims Register
 
-**Version:** 1.1
+**Version:** 1.2
 
 **Review status:** Product/founder approval and legal-framing review pending
 
@@ -16,6 +16,8 @@
 | CL-008 | External comprehension | UX/evaluation lead | Reviewer protocol and completed de-identified session evidence | No positive public claim before real reviewer evidence is audited | “Reviewers understand,” “expert approved,” or a fabricated aggregate | C1 | Pending | 2026-07-15 (protocol only) |
 | CL-009 | Independent validation | Evaluation lead | Appropriately independent, defined evaluation programme | No positive validation claim before that programme reports results | “Validated,” “proven,” or self-validation by a model or internal test | V1 or evidence-specific earlier gate | Prohibited at C0 | 2026-07-15 (boundary only) |
 | CL-010 | Production service | Governance board | Persistence, identity, security, reliability, operations, and post-market evidence | No production-readiness claim before R1 evidence is approved | “Production-ready,” “secure,” “binding,” “enforceable,” or operative “award” | R1 | Prohibited at C0 | 2026-07-15 (boundary only) |
+| CL-011 | Hyper-minimal public opening | Product lead | Deterministic `/demo` walkthrough, fixture and reducer tests | “Agree the rules before the dispute.” qualified by the synthetic, no-legal-effect disclaimer | “Prevents disputes,” “guarantees agreement,” or a current legal service | C0 | Implemented as an isolated experiment; human approval pending | 2026-07-18 (draft) |
+| CL-012 | Public business-value explanation | Product and evaluation leads | One-clause concept workflow and future unfamiliar-reader protocol | “Designed to reduce case reconstruction and focus human attention on disputed questions” | Any current cost, speed, throughput, usability or workload-reduction result | C1 | Hypothesis only; unfamiliar-reader evidence pending | 2026-07-18 (hypothesis) |
 
 ## Cross-claim prohibited variants
 
@@ -25,6 +27,8 @@
   precise future or negative qualification and supporting evidence
 - Prediction of a future dispute result
 - Proof of identity, consent, provider execution, runtime, or legal effect
+- Demonstrated comprehension, cost reduction, speed improvement or professional
+  workload reduction before real evidence is recorded
 
 ## Human review record
 

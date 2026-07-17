@@ -4,7 +4,10 @@
     "high-fidelity interactive concept demonstrator",
     "workflow and interaction fidelity",
     "AI Resolution Officer",
-    "not a predictor of the future result"
+    "not a predictor of the future result",
+    "Agree the rules before the dispute.",
+    "AI prepares. Parties can challenge. A human arbitrator decides.",
+    "Synthetic demonstration · No legal effect · AI output is illustrative."
   ],
   "forbiddenPhrases": [
     "review-ready prototype",
@@ -22,6 +25,11 @@
     "Demonstration Dossier",
     "Later Synthetic Dispute",
     "legal approval",
-    "legal-lead approval"
+    "legal-lead approval",
+    "AI judge",
+    "autonomous arbitration",
+    "instant award",
+    "unbiased decision",
+    "objective truth"
   ]
 }
