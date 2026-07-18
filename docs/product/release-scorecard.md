@@ -2,16 +2,16 @@
 
 **Version:** 1.2
 
-**Current decision:** Operating-model refactor implemented; automated, browser and human acceptance pending
+**Current decision:** Operating-model refactor implemented; automated and browser acceptance passed; human acceptance pending
 
 ## C0 — current concept baseline
 
 | Dimension | C0 exit criterion | Current evidence |
 |---|---|---|
 | Product | Explicit north star, category thesis, three protocol layers, six canonical gates and current/future boundary | Implemented in operating model, charter, product language, README and UI; human approval pending |
-| Technical | Clean concept build with synthetic, resettable state, pure gate projections and fail-closed optional live execution | Automated suite, production build and `git diff --check` required for this refactor; final evidence recorded at handoff |
+| Technical | Clean concept build with synthetic, resettable state, pure gate projections and fail-closed optional live execution | Passed on 2026-07-18: typecheck, lint, 63 automated tests, production build and `git diff --check` |
 | Legal | Human authority and no-legal-effect boundaries are visible | Implemented; legal-framing and authority-boundary review pending |
-| UX | Six-gate expert journey and five-step public projection can support internal review | Automated composition coverage present; final browser matrix and unfamiliar-reader sessions pending |
+| UX | Six-gate expert journey and five-step public projection can support internal review | Browser matrix passed on 2026-07-18 at 1440, 1280, 768 and 390 px; unfamiliar-reader sessions pending |
 | Evaluation | Ambition and empirical claims remain distinguishable and testable | Automated terminology and claim-qualification coverage present; human evidence pending |
 
 ## Gate C1 — review-grade concept after Sprint 4
@@ -61,9 +61,9 @@ sequential total is arithmetic only and is not a funding or delivery commitment.
 - [x] Claims mapped to evidence, prohibited variants, thresholds, status, and review dates
 - [x] Release gates cover product, technical, legal, UX, and evaluation evidence
 - [x] Automated terminology checks implemented and passing
-- [ ] Current refactor typecheck, lint, full test suite, production build and `git diff --check`
+- [x] Current refactor typecheck, lint, full 63-test suite, production build and `git diff --check` passed on 2026-07-18
 - [x] Three-layer, six-gate operating model implemented in the C0 demonstrator
-- [ ] Current `/`, `/reference`, `/demo` and `/feedback` browser matrix
+- [x] Current `/`, `/reference`, all `/demo` routes and `/feedback` browser matrix passed at 1440, 1280, 768 and 390 px on 2026-07-18
 - [ ] Product/founder approval
 - [ ] Legal-framing and authority-boundary review
 - [ ] Corporate-governance and partner-ownership review
