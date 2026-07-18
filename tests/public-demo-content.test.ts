@@ -36,6 +36,15 @@ describe("hyper-minimal public surface", () => {
     }
   });
 
+  it("promotes the public walkthrough at the root while preserving the expert reference", () => {
+    const rootPage = read("app/page.tsx");
+    const referencePage = read("app/reference/page.tsx");
+    expect(rootPage).toContain('redirect("/demo")');
+    expect(rootPage).not.toContain("DemoWorkspace");
+    expect(referencePage).toContain("DemoWorkspace");
+    expect(referencePage).toContain("getDemoState");
+  });
+
   it("submits complete feedback through the bounded FormSubmit pilot", () => {
     const feedback = read("components/minimal-feedback.tsx");
     const page = read("app/feedback/page.tsx");

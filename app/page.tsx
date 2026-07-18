@@ -1,6 +1,5 @@
-import { DemoWorkspace } from "@/components/demo-workspace";
-import { getDemoState } from "@/lib/demo-data";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <DemoWorkspace initialState={getDemoState()} />;
+  redirect("/demo");
 }
