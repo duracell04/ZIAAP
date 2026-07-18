@@ -1,9 +1,11 @@
 # ZIAAP Canonical Glossary
 
-**Version:** 1.3
+**Version:** 1.4
 
 | Term | Approved meaning | Reserved or prohibited use |
 |---|---|---|
+| ZIAAP | **Zero-Instance Algorithmic Arbitration Protocol**; the hyphenated form belongs to the expanded product name | “Algorithmic” describes governed software support and protocol execution; it does not grant AI arbitral authority |
+| Zero Instance | The pre-conflict stage in which parties align expectations and configure how a future dispute should be handled | Do not hyphenate the standalone concept or imply that configuration predetermines a future result |
 | I0 · Flight Plan | Alignment and governed configuration before conflict | Editorial aviation language; do not imply mechanical outcomes or certification |
 | I1 · Cockpit | Configuration freeze and structured, contestable case production | Do not imply that software controls judgment |
 | I2 · Captain in Command | Independent human adjudication and the inspectable procedural record | Do not imply that the analogy changes legal authority |

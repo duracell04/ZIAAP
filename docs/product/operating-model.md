@@ -1,12 +1,26 @@
 # ZIAAP Operating Model
 
-**Version:** 1.0
+**Version:** 1.1
 
 **Status:** Normative future operating model; product/founder,
 legal-framing, corporate-governance and unfamiliar-reader review pending
 
 **Current implementation boundary:** C0 synthetic interactive concept
 demonstrator
+
+## Name and Zero Instance
+
+> **ZIAAP stands for Zero-Instance Algorithmic Arbitration Protocol.**
+
+“Zero Instance” describes the pre-conflict stage in which parties align
+expectations and configure how a future dispute should be handled. The
+hyphenated form belongs to the expanded product name; the standalone concept is
+written without a hyphen.
+
+“Algorithmic” describes governed software support and protocol execution. It
+does not grant AI arbitral authority, create a legal appointment, or imply that
+configuration predetermines a future result. Independent human arbitrators
+retain authority and responsibility.
 
 ## North-star ambition
 

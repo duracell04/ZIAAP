@@ -9,6 +9,7 @@ import { useMinimalDemo } from "@/components/minimal-demo-provider";
 import {
   PUBLIC_DEMO_DISCLAIMER,
   PUBLIC_DEMO_STEPS,
+  ZIAAP_TAGLINE,
   type PublicDemoStep,
 } from "@/lib/product-language";
 import {
@@ -69,7 +70,7 @@ export function MinimalDemoShell({
           <span>Z</span>
           <div>
             <strong>ZIAAP</strong>
-            <small>Clear dispute governance</small>
+            <small>{ZIAAP_TAGLINE}</small>
           </div>
         </Link>
         <div className="minimal-role">

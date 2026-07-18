@@ -9,11 +9,12 @@ import {
   NORTH_STAR_AMBITION,
   OPERATING_PRINCIPLE,
   PROTOCOL_LAYERS,
+  ZIAAP_TAGLINE,
 } from "@/lib/product-language";
 
 export function OpeningExperience({ beginGuided, explore }: { beginGuided: () => void; explore: () => void }) {
   return <main className="opening-shell">
-    <header className="opening-nav"><div className="wordmark opening-wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>Dispute governance, designed early</small></div></div><div><Badge tone="blue">{CURRENT_MATURITY_LEVEL} · concept demonstrator</Badge><Badge tone="red">Synthetic · simulation only</Badge></div></header>
+    <header className="opening-nav"><div className="wordmark opening-wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>{ZIAAP_TAGLINE}</small></div></div><div><Badge tone="blue">{CURRENT_MATURITY_LEVEL} · concept demonstrator</Badge><Badge tone="red">Synthetic · simulation only</Badge></div></header>
     <section className="opening-hero">
       <div className="opening-copy"><span className="eyebrow">{CURRENT_ARTIFACT_CLASSIFICATION}</span><h1>{CATEGORY_THESIS}</h1><p className="opening-definition">{NORTH_STAR_AMBITION}</p><div className="opening-actions"><Button onClick={beginGuided}>Begin guided demonstration <ArrowRight size={16} /></Button><Button variant="secondary" onClick={explore}><Compass size={16} /> Explore the workflow</Button></div></div>
       <aside className="opening-problem"><Sparkles size={20} /><span>Commercial aviation · editorial analogy</span><h2>{OPERATING_PRINCIPLE}</h2><p>The analogy means governed systems around professional judgment. It does not imply mechanical legal outcomes or aviation-grade certification.</p></aside>

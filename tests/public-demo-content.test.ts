@@ -117,6 +117,31 @@ describe("hyper-minimal public surface", () => {
     expect(language).not.toContain("canonicalStages");
   });
 
+  it("explains the ZIAAP name once in the public opening footer", () => {
+    const opening = read("components/minimal-demo-opening.tsx");
+    const shell = read("components/minimal-demo-shell.tsx");
+    const expertOpening = read("components/opening-experience.tsx");
+    const language = read("lib/product-language.ts");
+
+    expect(language).toContain(
+      'ZIAAP_ACRONYM_EXPANSION = "Zero-Instance Algorithmic Arbitration Protocol"',
+    );
+    expect(opening).toContain("<strong>ZIAAP stands for {ZIAAP_ACRONYM_EXPANSION}.</strong>");
+    expect(opening).toContain("{ZERO_INSTANCE_EXPLAINER}");
+    expect(opening).toContain('<footer className="minimal-opening-footer">');
+    expect(opening.indexOf('className="minimal-name-explainer"')).toBeGreaterThan(
+      opening.indexOf('className="minimal-opening-steps"'),
+    );
+    expect(opening.indexOf('className="minimal-name-explainer"')).toBeGreaterThan(
+      opening.indexOf("<h1>{PUBLIC_DEMO_HEADLINE}</h1>"),
+    );
+    expect(shell).not.toContain("ZIAAP_ACRONYM_EXPANSION");
+    expect(shell).not.toContain("ZERO_INSTANCE_EXPLAINER");
+    expect(opening).toContain("{ZIAAP_TAGLINE}");
+    expect(shell).toContain("{ZIAAP_TAGLINE}");
+    expect(expertOpening).toContain("{ZIAAP_TAGLINE}");
+  });
+
   it("provides semantic keyboard access and a non-overflowing mobile step projection", () => {
     const shell = read("components/minimal-demo-shell.tsx");
     const drawer = read("components/minimal-source-drawer.tsx");
@@ -130,6 +155,7 @@ describe("hyper-minimal public surface", () => {
     expect(drawer).toContain('aria-label="Close source drawer"');
     expect(drawer).toContain('event.key === "Escape"');
     expect(styles).toContain("@media (max-width: 620px)");
+    expect(styles).toMatch(/\.minimal-name-explainer\s*\{[^}]*max-width: 100%;[^}]*font-size: 11px;/);
     expect(styles).toMatch(/\.minimal-stepper\s*\{\s*grid-template-columns: repeat\(5, minmax\(0, 1fr\)\);/);
   });
 

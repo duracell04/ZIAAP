@@ -17,6 +17,9 @@ import {
   PUBLIC_DEMO_STEPS,
   PRODUCT_PROMISE,
   RESOLUTION_OFFICER_DEFINITION,
+  ZERO_INSTANCE_EXPLAINER,
+  ZIAAP_ACRONYM_EXPANSION,
+  ZIAAP_TAGLINE,
 } from "@/lib/product-language";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -69,6 +72,21 @@ function read(path: string) {
 }
 
 describe("Sprint 0 product language", () => {
+  it("defines the product name and Zero Instance without transferring authority to software", () => {
+    expect(ZIAAP_ACRONYM_EXPANSION).toBe("Zero-Instance Algorithmic Arbitration Protocol");
+    expect(ZERO_INSTANCE_EXPLAINER).toBe(
+      "“Zero Instance” describes the pre-conflict stage in which parties align expectations and configure how a future dispute should be handled.",
+    );
+    expect(ZIAAP_TAGLINE).toBe("Dispute governance, designed early");
+
+    const glossary = read("docs/product/glossary.md");
+    const operatingModel = read("docs/product/operating-model.md");
+    expect(glossary).toContain("it does not grant AI arbitral authority");
+    expect(glossary).toContain("Do not hyphenate the standalone concept");
+    expect(operatingModel).toContain("Independent human arbitrators");
+    expect(operatingModel).toContain("does not grant AI arbitral authority");
+  });
+
   it("locks the canonical proposition, current classification, and process-twin boundary", () => {
     expect(PRODUCT_PROMISE).toBe("Test your dispute-resolution system before you sign the contract.");
     expect(CANONICAL_PRODUCT_DEFINITION).toContain("AI Resolution Officer");

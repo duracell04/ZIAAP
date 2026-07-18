@@ -1,5 +1,12 @@
 export const PRODUCT_PROMISE = "Test your dispute-resolution system before you sign the contract.";
 
+export const ZIAAP_ACRONYM_EXPANSION = "Zero-Instance Algorithmic Arbitration Protocol";
+
+export const ZERO_INSTANCE_EXPLAINER =
+  "“Zero Instance” describes the pre-conflict stage in which parties align expectations and configure how a future dispute should be handled.";
+
+export const ZIAAP_TAGLINE = "Dispute governance, designed early";
+
 export const NORTH_STAR_AMBITION =
   "ZIAAP aims to transform arbitration from a largely bespoke, document-driven professional service into a structured, technology-native production system. The parties align critical rules before conflict. Software organises the record and performs explicit calculations. AI maintains source-linked, structured and contestable analysis. Independent human arbitrators retain full authority over procedure, judgment and any future award. The objective is not to automate arbitral authority. It is to make professional authority usable across a substantially broader range of commercial disputes.";
 

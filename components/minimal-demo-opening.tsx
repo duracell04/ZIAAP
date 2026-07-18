@@ -12,6 +12,9 @@ import {
   PUBLIC_DEMO_HEADLINE,
   PUBLIC_DEMO_STEPS,
   OPERATING_PRINCIPLE,
+  ZERO_INSTANCE_EXPLAINER,
+  ZIAAP_ACRONYM_EXPANSION,
+  ZIAAP_TAGLINE,
 } from "@/lib/product-language";
 
 export function MinimalDemoOpening() {
@@ -30,7 +33,7 @@ export function MinimalDemoOpening() {
           <span>Z</span>
           <div>
             <strong>ZIAAP</strong>
-            <small>Clear dispute governance</small>
+            <small>{ZIAAP_TAGLINE}</small>
           </div>
         </div>
         <span className="minimal-opening-status">Four-minute synthetic walkthrough</span>
@@ -85,6 +88,13 @@ export function MinimalDemoOpening() {
           ))}
         </ol>
       </section>
+
+      <footer className="minimal-opening-footer">
+        <div className="minimal-name-explainer">
+          <p><strong>ZIAAP stands for {ZIAAP_ACRONYM_EXPANSION}.</strong></p>
+          <p>{ZERO_INSTANCE_EXPLAINER}</p>
+        </div>
+      </footer>
     </main>
   );
 }
