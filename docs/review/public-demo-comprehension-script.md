@@ -56,9 +56,12 @@ data.
 - Whether “commercial aviation” is understood as governed systems around
   professional judgment rather than mechanical outcome predictability.
 
-## Promotion thresholds
+## Comprehension acceptance thresholds
 
-The public walkthrough may replace the root opening only when:
+The public walkthrough is exposed at the root for a bounded feedback pilot.
+That operational publication is not evidence that it passed this protocol.
+Any future claim that the public experience passed comprehension review
+requires:
 
 - median walkthrough time is four minutes or less;
 - at least four of five business participants explain before-conflict alignment
@@ -77,6 +80,7 @@ The public walkthrough may replace the root opening only when:
 - corporate-governance review confirms that no current partner-ownership fact is
   implied.
 
-Any authority-category error blocks promotion. Any other threshold miss
-requires revision and retesting of the affected cohort. Blank evidence fields
-remain pending and cannot be inferred from this protocol.
+Any authority-category error blocks a positive acceptance claim. Any other
+threshold miss requires revision and retesting of the affected cohort. Blank
+evidence fields remain pending and cannot be inferred from publication,
+submissions or this protocol.

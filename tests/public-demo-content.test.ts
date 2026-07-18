@@ -70,6 +70,19 @@ describe("hyper-minimal public surface", () => {
     expect(page).toContain('submitted={sent === "1"}');
   });
 
+  it("records the temporary processor risk and public-address exposure", () => {
+    const governance = read("docs/product/feedback-pilot-governance.md");
+    const normalizedGovernance = governance.replace(/\s+/g, " ");
+    expect(normalizedGovernance).toContain("Medium privacy and reputational risk");
+    expect(normalizedGovernance).toContain("FormSubmit, operated by Devro LABS");
+    expect(normalizedGovernance).toContain("retained for 30 days");
+    expect(normalizedGovernance).toContain("up to 12 months");
+    expect(normalizedGovernance).toContain("must not submit confidential case information");
+    expect(normalizedGovernance).toContain("persistent in Git history, forks, mirrors");
+    expect(normalizedGovernance).toContain("must be replaced by a processor");
+    expect(normalizedGovernance).toContain("does not prove mailbox delivery");
+  });
+
   it("does not call APIs, fetch remote data, or expose a live execution action", () => {
     const publicSurface = publicComponentFiles.map(read).join("\n");
     expect(publicSurface).not.toContain("fetch(");

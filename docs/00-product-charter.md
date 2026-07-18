@@ -152,6 +152,13 @@ Commercial-value statements in the walkthrough are hypotheses for unfamiliar
 reader research. They are not evidence that the concept reduces cost, time,
 disputes or professional workload.
 
+The deployed root redirects to `/demo` for a bounded public pilot. The optional
+`/feedback` form is the only public-path network exception: it posts low-risk
+research responses through FormSubmit under the
+[feedback-pilot governance](product/feedback-pilot-governance.md). Publication
+does not satisfy the comprehension, legal-framing, privacy-governance or
+product-approval gates.
+
 ## Evidence and authority boundaries
 
 - Illustrative fixtures are curated simulations, not executions.
@@ -172,8 +179,9 @@ interface demonstrates the six gates as synthetic workflow reference; it does
 not implement future institutional capability.
 
 The hyper-minimal public walkthrough remains an unaccepted concept-clarity
-experiment and is not promoted to `/`. Product/founder, legal-framing,
-corporate-governance and unfamiliar-reader evidence remains pending.
+experiment even though the deployed root now exposes it for a bounded pilot.
+Product/founder, legal-framing, privacy-governance, corporate-governance and
+unfamiliar-reader evidence remains pending.
 
 Sprints 1–34 remain provisional, funding-dependent future development. This
 bounded refactor authorises no backend, identity, production data, real
@@ -185,6 +193,7 @@ appointment, corporate implementation, signature or award work.
 - [Maturity model](product/maturity-model.md)
 - [Canonical glossary](product/glossary.md)
 - [Claims register](product/claims-register.md)
+- [Public feedback pilot governance](product/feedback-pilot-governance.md)
 - [Release scorecard](product/release-scorecard.md)
 - [Technical roadmap v1.1](roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
 

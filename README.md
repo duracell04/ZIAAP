@@ -65,10 +65,12 @@ Review and Outcome—which project the six canonical gates without
 creating a competing lifecycle model. It makes no API or model call and stores
 resettable walkthrough state in the browser session.
 
-The existing root experience remains the current six-gate C0 reference during
-external comprehension review and is also available at `/reference`.
-`/feedback` prepares an unsubmitted local research response. No positive
-comprehension, usability, legal-framing or commercial-value result is claimed.
+The deployed root redirects to this public walkthrough for a bounded pilot.
+The six-gate C0 expert experience remains available at `/reference`.
+`/feedback` sends required-email research responses through FormSubmit under
+the [temporary feedback-pilot governance](docs/product/feedback-pilot-governance.md).
+Root publication is not evidence of comprehension, usability, legal-framing,
+privacy-governance or commercial value.
 
 ## Authority and execution model
 
@@ -95,21 +97,25 @@ appointment, or enforceability.
 
 ## Run locally
 
-```powershell
-pnpm.cmd install --frozen-lockfile
-pnpm.cmd dev
+```bash
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
 Open `http://localhost:3000`. Live execution and retrieval remain disabled
 unless server-only policy flags explicitly enable them.
 
+On local Windows PowerShell installations that require executable suffixes,
+use `pnpm.cmd` for the same commands.
+
 ## Verification
 
-```powershell
-pnpm.cmd typecheck
-pnpm.cmd lint
-pnpm.cmd test
-pnpm.cmd build
+```bash
+pnpm typecheck
+pnpm lint
+pnpm test
+pnpm build
+git diff --check
 ```
 
 ## Repository map

@@ -22,7 +22,7 @@ high fidelity is limited to workflow and interaction fidelity.
 
 ## 2. Expert experience: three layers and six gates
 
-The existing root and `/reference` experiences use six screens:
+The preserved `/reference` experience uses six screens:
 
 1. **I0 · Alignment** compares independent expectations and confirms exact
    language.
@@ -44,7 +44,8 @@ authoritative case model.
 
 ## 3. Public experience
 
-The `/demo` experience remains a deterministic five-step projection:
+The root redirects to `/demo`, which remains a deterministic five-step
+projection:
 
 | Public step | Canonical gates |
 |---|---|
@@ -90,7 +91,10 @@ Fixtures return `illustrative_only`; successful declared live calls return
 `executed_unverified`; every live error returns `failed` with a reason and no
 fallback success.
 
-The public demo makes zero model or API calls.
+The public walkthrough makes zero model or application-API calls. Its optional
+feedback form is a disclosed exception to offline operation: the browser posts
+the required-email research response directly to the temporary FormSubmit
+processor. It does not add an application backend.
 
 ## 7. Accessibility and responsive requirements
 
@@ -116,11 +120,13 @@ The refactor requires typecheck, lint, tests, production build,
 browser checks and no console errors.
 
 Product/founder, legal-framing, corporate-governance and unfamiliar-reader
-evidence remains pending. The public experience is not promoted to `/`.
+evidence remains pending. Root publication is a pilot routing decision and
+does not satisfy any acceptance gate. Privacy-governance review of the
+temporary feedback processor also remains pending.
 
 ## 10. Non-goals
 
-No backend, authentication, confidential data, real appointment, corporate
+No application backend, authentication, confidential data, real appointment, corporate
 ownership implementation, signature, award, production case management,
 independent validation, sovereign runtime, Council of LLMs, DLT or enforcement
 is included.

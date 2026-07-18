@@ -166,7 +166,7 @@ describe("Sprint 0 product language", () => {
 
     const claims = read("docs/product/claims-register.md");
     const claimRows = claims.split(/\r?\n/).filter((line) => /^\| CL-\d{3} \|/.test(line));
-    expect(claimRows).toHaveLength(22);
+    expect(claimRows).toHaveLength(23);
     for (const row of claimRows) {
       const fields = row.split("|").slice(1, -1).map((field) => field.trim());
       expect(fields).toHaveLength(9);
@@ -179,7 +179,7 @@ describe("Sprint 0 product language", () => {
     expect(scorecard).toContain("Legal-framing and authority-boundary review");
     expect(scorecard).not.toContain("Legal-lead approval");
     expect(scorecard).toContain(
-      "Operating-model refactor implemented; automated and browser acceptance passed; human acceptance pending",
+      "Public-pilot implementation verified locally; production email delivery and human acceptance pending",
     );
     expect(scorecard).toContain("Unchecked human-evidence items must remain pending");
   });

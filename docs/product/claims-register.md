@@ -1,6 +1,6 @@
 # ZIAAP Claims Register
 
-**Version:** 1.3
+**Version:** 1.4
 
 **Review status:** Product/founder, legal-framing, corporate-governance and unfamiliar-reader review pending
 
@@ -28,6 +28,7 @@
 | CL-020 | Target market | Product/evaluation leads | Future segment validation | CHF 50,000–500,000 recurring and operational disputes are an initial target-market hypothesis | Addressable-market fact or proven demand claim | C1 plus market evidence | Hypothesis only | 2026-07-18 (hypothesis) |
 | CL-021 | Aviation analogy | Brand/legal leads | Comprehension protocol | Standardised governed systems around the arbitrator while preserving human judgment | Mechanical outcomes, pilotless arbitration, safety certification or regulatory equivalence | C0 | Editorial framing implemented; comprehension pending | 2026-07-18 (draft) |
 | CL-022 | External evidence | Research/legal leads | WorldCC, EUR-Lex, UNCITRAL, JAMS and ICC primary sources cited in the operating model | Sources establish context or precedent only | Claim that a source validates ZIAAP performance, legal classification, enforceability or scalability | Evidence-specific | Source qualification drafted; legal/research review pending | 2026-07-18 (draft) |
+| CL-023 | Public feedback pilot | Privacy/product leads | Native FormSubmit form, visible disclosure and feedback-pilot governance record | Temporary low-risk concept-research pilot with medium privacy and reputational risk | Secure, confidential, delivered, privacy-approved, validated research backend or suitable for institutional matters | C0 pilot exception | Implemented; privacy-governance and legal-framing review pending | 2026-07-18 (draft) |
 
 ## Required qualifications
 
@@ -46,6 +47,9 @@
 - **JAMS and ICC:** organisational or procedural precedents, not proof of
   ZIAAP’s model or scalability.
 - **WorldCC:** commercial-problem context, not value recoverable by ZIAAP.
+- **Public feedback:** “submitted” describes the browser workflow only and does
+  not prove mailbox delivery; FormSubmit is temporary and must not receive
+  confidential, privileged, case-specific or sensitive information.
 
 ## Cross-claim prohibited variants
 

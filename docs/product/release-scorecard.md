@@ -1,17 +1,17 @@
 # ZIAAP Release Scorecard
 
-**Version:** 1.2
+**Version:** 1.3
 
-**Current decision:** Operating-model refactor implemented; automated and browser acceptance passed; human acceptance pending
+**Current decision:** Public-pilot implementation verified locally; production email delivery and human acceptance pending
 
 ## C0 — current concept baseline
 
 | Dimension | C0 exit criterion | Current evidence |
 |---|---|---|
 | Product | Explicit north star, category thesis, three protocol layers, six canonical gates and current/future boundary | Implemented in operating model, charter, product language, README and UI; human approval pending |
-| Technical | Clean concept build with synthetic, resettable state, pure gate projections and fail-closed optional live execution | Passed on 2026-07-18: typecheck, lint, 63 automated tests, production build and `git diff --check` |
+| Technical | Clean concept build with synthetic, resettable state, pure gate projections and fail-closed optional live execution | Passed on 2026-07-18: typecheck, lint, 66 automated tests, production build and `git diff --check` |
 | Legal | Human authority and no-legal-effect boundaries are visible | Implemented; legal-framing and authority-boundary review pending |
-| UX | Six-gate expert journey and five-step public projection can support internal review | Browser matrix passed on 2026-07-18 at 1440, 1280, 768 and 390 px; unfamiliar-reader sessions pending |
+| UX | Six-gate expert journey and five-step public projection can support internal review | Complete public journey, root redirect, expert reference and feedback validation passed locally on 2026-07-18; desktop and the active mobile breakpoint had no overflow; exact 390 px production recheck and unfamiliar-reader sessions remain pending |
 | Evaluation | Ambition and empirical claims remain distinguishable and testable | Automated terminology and claim-qualification coverage present; human evidence pending |
 
 ## Gate C1 — review-grade concept after Sprint 4
@@ -61,11 +61,15 @@ sequential total is arithmetic only and is not a funding or delivery commitment.
 - [x] Claims mapped to evidence, prohibited variants, thresholds, status, and review dates
 - [x] Release gates cover product, technical, legal, UX, and evaluation evidence
 - [x] Automated terminology checks implemented and passing
-- [x] Current refactor typecheck, lint, full 63-test suite, production build and `git diff --check` passed on 2026-07-18
+- [x] Current public-pilot implementation typecheck, lint, full 66-test suite, production build and `git diff --check` passed on 2026-07-18
 - [x] Three-layer, six-gate operating model implemented in the C0 demonstrator
-- [x] Current `/`, `/reference`, all `/demo` routes and `/feedback` browser matrix passed at 1440, 1280, 768 and 390 px on 2026-07-18
+- [x] Current `/`, `/reference`, complete `/demo` journey and `/feedback` form/success path passed local browser verification on 2026-07-18 without contacting FormSubmit
+- [x] Responsive mobile breakpoint passed at the browser surface's 520 px minimum with no horizontal overflow
+- [ ] Exact 390 px preview/production recheck
+- [ ] FormSubmit production activation and second-submission mailbox delivery
 - [ ] Product/founder approval
 - [ ] Legal-framing and authority-boundary review
+- [ ] Privacy-governance review of the temporary feedback processor
 - [ ] Corporate-governance and partner-ownership review
 - [ ] Unfamiliar arbitration/dispute-resolution reviewer evidence
 - [ ] Unfamiliar business/commercial/investment reviewer evidence

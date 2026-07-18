@@ -9,7 +9,9 @@
 The application is a Next.js App Router concept demonstrator. State is
 synthetic, client-local and resettable. Public demo state is stored only in
 `sessionStorage`. Expert optional live execution uses existing fail-closed route
-handlers; the public walkthrough performs no network call.
+handlers; the public walkthrough performs no model or application-API call.
+The optional feedback form is the sole public-path network exception and uses a
+native browser POST to the temporary FormSubmit processor.
 
 No backend persistence, authentication, identity, confidential matter store,
 signature, legal appointment, award or legal effect is implemented.
@@ -78,7 +80,7 @@ It is not an award, legal record, runtime attestation or proof of validity.
 
 The following user routes remain stable:
 
-- `/`;
+- `/` (server redirect to `/demo`);
 - `/reference`;
 - `/demo`;
 - `/demo/align`;
@@ -108,18 +110,21 @@ configuration hash rather than accepting a model-supplied hash.
 Automated coverage must include gate ordering and mapping, readiness,
 invalidation, structured case content, sealed-settlement isolation,
 reasoning-memorandum authority, human pre-assessment order, human controls,
-event-derived black box, route stability, public persistence, no public network
-calls, terminology and claim qualifications.
+event-derived black box, route stability, public persistence, no public model
+or application-API calls, native feedback-form boundaries, terminology and
+claim qualifications.
 
 Required commands:
 
-```powershell
-pnpm.cmd typecheck
-pnpm.cmd lint
-pnpm.cmd test
-pnpm.cmd build
+```bash
+pnpm typecheck
+pnpm lint
+pnpm test
+pnpm build
 git diff --check
 ```
+
+Local Windows PowerShell execution may use `pnpm.cmd` for these commands.
 
 Browser verification covers `/`, `/reference`, the complete `/demo` path and
 `/feedback` at desktop, laptop, tablet and 390 px, including console inspection.
