@@ -301,6 +301,14 @@ dd { margin: 0; font-size: 11px; }
 .manifest-binding dl { display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: 0; }
 .manifest-binding dl > div { display: block; padding-right: 12px; }
 .manifest-binding dd { margin-top: 5px; overflow-wrap: anywhere; }
+.structured-case-card, .procedural-black-box { padding: 21px; margin-bottom: 14px; }
+.structured-case-card > p, .procedural-black-box > p { margin: 12px 0 0; color: var(--muted); line-height: 1.55; }
+.structured-case-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 16px; }
+.structured-case-flow span { min-width: 0; padding: 11px; background: var(--surface-strong); border: 1px solid var(--border); font-size: 10px; font-weight: 700; overflow-wrap: anywhere; }
+.procedural-black-box { border-top: 3px solid var(--blue); }
+.procedural-black-box .ledger { padding: 0; }
+.procedural-black-box .ledger-row { grid-template-columns: minmax(140px, .7fr) minmax(180px, 1fr) minmax(140px, .8fr); }
+.procedural-black-box .ledger-row p { grid-column: 1 / -1; margin: 0; color: var(--muted); font-size: 10px; line-height: 1.5; }
 .settlement-status { margin-top: 14px; padding: 12px; background: var(--surface-strong); border: 1px solid var(--border); }
 .settlement-status span { color: var(--muted); text-transform: uppercase; font-size: 9px; letter-spacing: .08em; }
 .settlement-status strong { display: block; margin-top: 4px; }
@@ -312,7 +320,7 @@ dd { margin: 0; font-size: 11px; }
 .opening-wordmark small { color: var(--muted); }
 .opening-hero { min-height: 540px; display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(280px, .75fr); gap: clamp(36px, 8vw, 110px); align-items: center; padding: 70px 0 56px; }
 .eyebrow { color: var(--red); text-transform: uppercase; font-size: 10px; font-weight: 800; letter-spacing: .17em; }
-.opening-copy h1 { max-width: 900px; margin: 16px 0 24px; font-size: clamp(45px, 6.5vw, 85px); line-height: .98; letter-spacing: -.055em; }
+.opening-copy h1 { max-width: 900px; margin: 16px 0 24px; font-size: clamp(42px, 5.4vw, 72px); line-height: 1; letter-spacing: -.05em; }
 .opening-definition { max-width: 800px; color: var(--muted); font-size: clamp(16px, 1.6vw, 21px); line-height: 1.6; }
 .opening-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 .opening-problem { padding: 28px; background: var(--foreground); color: var(--surface); border-radius: 8px; box-shadow: 0 24px 70px rgba(30,36,40,.16); }
@@ -326,7 +334,7 @@ dd { margin: 0; font-size: 11px; }
 .role-split h2, .lifecycle-panel h2 { margin: 8px 0; font-family: Georgia, serif; font-size: clamp(25px, 3vw, 36px); font-weight: 500; }
 .role-split p { max-width: 580px; color: var(--muted); line-height: 1.6; }
 .lifecycle-panel { display: grid; grid-template-columns: 260px 1fr; gap: 50px; padding: 64px 0; align-items: start; }
-.lifecycle-panel ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(90px, 1fr)); border-top: 1px solid var(--foreground); }
+.lifecycle-panel ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(90px, 1fr)); border-top: 1px solid var(--foreground); }
 .lifecycle-panel li { position: relative; min-height: 105px; padding: 16px 10px 10px 0; border-right: 1px solid var(--border); }
 .lifecycle-panel li span { display: block; color: var(--red); font: 10px ui-monospace, monospace; }
 .lifecycle-panel li strong { display: block; margin-top: 22px; max-width: 105px; font-size: 11px; }
@@ -408,6 +416,7 @@ dd { margin: 0; font-size: 11px; }
   .constitution-ack { align-items: flex-start; flex-direction: column; }
   .stress-input-grid, .manifest-scope, .artifact-boundary { grid-template-columns: 1fr; }
   .manifest-binding dl, .artifact-metadata { grid-template-columns: 1fr 1fr; }
+  .structured-case-flow { grid-template-columns: 1fr 1fr; }
   .dossier-index { grid-template-columns: 1fr 1fr; }
 }
 
@@ -431,6 +440,8 @@ dd { margin: 0; font-size: 11px; }
   .lifecycle-panel ol { grid-template-columns: 1fr 1fr; }
   .authority-strip dl { grid-template-columns: 1fr; }
   .manifest-binding dl, .artifact-metadata, .dossier-index { grid-template-columns: 1fr; }
+  .structured-case-flow, .procedural-black-box .ledger-row { grid-template-columns: 1fr; }
+  .procedural-black-box .ledger-row p { grid-column: auto; }
   .dossier-cover { grid-template-columns: 1fr; }
   .dossier-score { text-align: left; }
   .dossier-toolbar { align-items: stretch; flex-direction: column; }

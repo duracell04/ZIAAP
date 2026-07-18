@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { buildDemonstrationDossier, type DossierArtifact } from "@/lib/dossier";
 import type { ContractState } from "@/lib/case-model";
+import { buildProceduralBlackBox } from "@/lib/operating-model";
 
 function ArtifactMetadata({ artifact }: { artifact: DossierArtifact }) {
   return <div className="artifact-metadata"><span><small>Actor</small>{artifact.actor}</span><span><small>Authority</small>{artifact.authorityStatus}</span><span><small>Lifecycle</small>{artifact.lifecycleMode}</span><span><small>Execution</small>{artifact.executionStatus}</span><span><small>Version</small>{artifact.version}</span><span><small>Legal effect</small>false</span></div>;
@@ -11,13 +12,20 @@ function ArtifactMetadata({ artifact }: { artifact: DossierArtifact }) {
 
 export function DossierView({ state }: { state: ContractState }) {
   const dossier = buildDemonstrationDossier(state);
+  const blackBox = buildProceduralBlackBox(state);
   return <>
-    <div className="page-intro dossier-intro"><span>Stage 6 · Audit Dossier</span><h1>One state-derived record of the complete synthetic journey.</h1><p>Twelve artifacts make the commercial, procedural, technical, and authority story inspectable. Missing lifecycle evidence remains visibly pending; the dossier never invents completion.</p></div>
+    <div className="page-intro dossier-intro"><span>I2 · Captain in Command · Gate 6 · Simulated Outcome & Procedural Black Box</span><h1>One state-derived record of the complete synthetic journey.</h1><p>The event-derived black box and twelve existing artifacts make the procedural, technical and authority story inspectable. It excludes private fictional deliberation text and never invents completion.</p></div>
     <div className="dossier-toolbar"><div><Badge tone={dossier.complete ? "green" : "amber"}>{dossier.complete ? "Complete synthetic dossier" : `${dossier.availableCount} of 12 available`}</Badge><span className="version">External validation: {dossier.externalValidation}</span></div><Button variant="secondary" onClick={() => window.print()}><Printer size={15} /> Print presentation dossier</Button></div>
 
     <Card className="dossier-cover"><div><span>ZIAAP · C0 CONCEPT DEMONSTRATOR</span><h2>{dossier.title}</h2><p>Workflow and interaction fidelity · synthetic · simulation-only · no legal effect</p></div><div className="dossier-score"><strong>{dossier.availableCount}</strong><span>of 12 artifacts available</span></div></Card>
 
-    <div className="dossier-summary"><Card><BookOpenCheck size={20} /><span>Commercial story</span><h2>Align before conflict.</h2><p>Expose divergent expectations, compare options, confirm exact language, and generate an Alignment Annex.</p></Card><Card><FileText size={20} /><span>Protocol story</span><h2>Configure, test, and identify.</h2><p>Configure inference-time rules, inspect Scenario Laboratory behaviour, and hash the Configuration Manifest.</p></Card><Card><ShieldAlert size={20} /><span>Authority story</span><h2>Simulation never becomes authority.</h2><p>Human control, settlement separation, and legal-effect boundaries remain visible throughout.</p></Card></div>
+    <div className="dossier-summary"><Card><BookOpenCheck size={20} /><span>Commercial story</span><h2>Align before conflict.</h2><p>Expose divergent expectations, compare options, confirm exact language, and generate an Alignment Annex.</p></Card><Card><FileText size={20} /><span>Production story</span><h2>Configure, test, freeze and structure.</h2><p>The Constitution controls the runtime, scenario artifacts expose behavior, and the case remains a contestable state rather than a prose file.</p></Card><Card><ShieldAlert size={20} /><span>Authority story</span><h2>Simulation never becomes authority.</h2><p>Human control, settlement separation and legal-effect boundaries remain visible throughout.</p></Card></div>
+
+    <Card className="procedural-black-box">
+      <div className="finding-top"><div><Badge tone="blue">Generated from recorded events</Badge><h2>Procedural black box</h2></div><span className="version">{blackBox.events.length} events · private deliberation included: no</span></div>
+      <p>{blackBox.boundary}</p>
+      <div className="ledger">{blackBox.events.map((event) => <div className="ledger-row" key={event.id}><small>{event.timestamp}</small><strong>{event.action}</strong><span>{event.actor}</span><p>{event.detail}</p></div>)}</div>
+    </Card>
 
     <div className="dossier-index">{dossier.artifacts.map((artifact) => <a key={artifact.id} href={`#dossier-${artifact.id}`} className={artifact.available ? "available" : "pending"}><span>{String(artifact.index).padStart(2, "0")}</span><strong>{artifact.title}</strong><small>{artifact.available ? "Available" : "Pending"}</small></a>)}</div>
 

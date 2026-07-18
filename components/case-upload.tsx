@@ -36,17 +36,17 @@ export function GovernanceAlignment({ state, busy, notice, analysisActive, runAl
     ...state.parties.map((party) => ({ id: `profile-${party.id}`, label: `${party.id === "supplier" ? "Supplier" : "Customer"} profile confirmed`, complete: party.confirmed })),
     { id: "analysis", label: "Eligible analysis selected", complete: analysisEligible },
     ...state.decisions.map((decision) => ({ id: `clause-${decision.topic}`, label: `${topicLabels[decision.topic]} clause confirmed by both parties`, complete: isBilateralConfirmation(decision) })),
-    { id: "ready", label: "Stage 1 ready", complete: alignmentReady },
+    { id: "ready", label: "Gate 1 ready", complete: alignmentReady },
   ];
 
   return <>
-    <div className="page-intro"><span>Stage 1 · before conflict</span><h1>Turn hidden expectations into agreed governance.</h1><p>Independent party positions are compared against the draft, sources, and commercial consequences. AI supports analysis; the parties alone select and confirm contractual text.</p></div>
+    <div className="page-intro"><span>I0 · Flight Plan · Gate 1 · Alignment</span><h1>Turn hidden expectations into agreed governance.</h1><p>Independent party positions are compared against the draft, sources, and commercial consequences. AI supports analysis; the parties alone select and confirm contractual text.</p></div>
     <AuthorityStrip executionStatus={analysisActive ? state.analysis.metadata.executionStatus : "failed"} actor={state.analysis.metadata.executionMode === "live" ? "Live model execution" : "Concept curator"} version={state.analysis.metadata.artifactId} consequence={analysisActive ? "May support simulated alignment" : "Acknowledgement and manifest preparation blocked"} provenance={state.analysis.metadata.provenance} />
 
     <Card className="alignment-readiness" aria-labelledby="stage-one-readiness-title">
-      <div className="alignment-readiness-heading"><div><span>Stage 1 completion</span><h2 id="stage-one-readiness-title">Complete alignment before continuing.</h2></div><Badge tone={alignmentReady ? "green" : "amber"}>{alignmentReady ? "Ready" : "Incomplete"}</Badge></div>
+      <div className="alignment-readiness-heading"><div><span>Gate 1 completion</span><h2 id="stage-one-readiness-title">Complete alignment before continuing.</h2></div><Badge tone={alignmentReady ? "green" : "amber"}>{alignmentReady ? "Ready" : "Incomplete"}</Badge></div>
       <ol>{readinessItems.map((item) => <li key={item.id} className={item.complete ? "complete" : "pending"}><span aria-hidden="true">{item.complete ? <Check size={14} /> : <AlertTriangle size={14} />}</span><strong>{item.label}</strong><small>{item.complete ? "Complete" : "Pending"}</small></li>)}</ol>
-      {navigationNotice && <div className="stage-navigation-warning" role="alert"><AlertTriangle size={18} /><div><strong>Stage 1 remains incomplete.</strong><p>{navigationNotice}</p>{explorationTargetLabel && <Button variant="secondary" onClick={continueForExploration}>Continue for exploration only · {explorationTargetLabel}</Button>}</div></div>}
+      {navigationNotice && <div className="stage-navigation-warning" role="alert"><AlertTriangle size={18} /><div><strong>Gate 1 remains incomplete.</strong><p>{navigationNotice}</p>{explorationTargetLabel && <Button variant="secondary" onClick={continueForExploration}>Continue for exploration only · {explorationTargetLabel}</Button>}</div></div>}
     </Card>
 
     <Card className="draft-card"><div><BookOpen size={18} /><div><strong>Draft SaaS Agreement</strong><small>Shared source text · three clauses · synthetic matter</small></div></div><Badge>Source text</Badge></Card>

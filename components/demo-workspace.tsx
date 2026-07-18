@@ -15,10 +15,15 @@ import {
   alignmentAnalysisSchema, applyOption, normalizeDecisionStatus, reasoningMemorandumSchema, settlementProposalSchema, updateDecisionLanguage,
   type ArbitratorConstitution, type ContractState, type LedgerEvent, type Topic,
 } from "@/lib/case-model";
+import { getActiveMatterGate, getGateReadiness } from "@/lib/operating-model";
+import { MATTER_GATES, PROTOCOL_LAYERS } from "@/lib/product-language";
 import { humanDecisionCanRecord, invalidatePreparedManifest, invalidateProtocolState, partyAlignmentReady, prepareProtocolManifest, simulateAppointmentTransition } from "@/lib/protocol";
 
-const steps = ["Party Alignment", "Protocol Constitution", "Scenario Laboratory", "Configuration Manifest", "Later Dispute", "Audit Dossier"];
-const stepNotes = ["Clarify expectations", "Configure protocol", "Inspect behaviour", "Acknowledge exact manifest", "Human-controlled simulation", "Inspect twelve artifacts"];
+const steps = MATTER_GATES.map((gate) => ({
+  ...gate,
+  displayLabel: "demonstratorLabel" in gate ? gate.demonstratorLabel : gate.label,
+  layerLabel: PROTOCOL_LAYERS.find((layer) => layer.id === gate.layerId)?.label ?? gate.layerId,
+}));
 
 function newEvent(actor: string, action: string, objectId: string, detail: string, authorityClass: LedgerEvent["authorityClass"]): LedgerEvent {
   return { id: crypto.randomUUID(), timestamp: new Date().toISOString(), actor, action, objectId, detail, authorityClass };
@@ -44,6 +49,8 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   const [disputeNotice, setDisputeNotice] = useState("");
   const alignmentReady = partyAlignmentReady(state);
   const visiblePendingStep = alignmentReady ? null : pendingStep;
+  const activeGate = getActiveMatterGate(state);
+  const gateReadiness = steps.map((gate) => getGateReadiness(state, gate.id));
 
   function reset() {
     setState(structuredClone(initialState)); setStep(0); setPendingStep(null); setAnalysisActive(true); setAlignmentNotice(""); setCalibrationNotice(""); setAppointmentError(""); setDisputeNotice("");
@@ -258,6 +265,28 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
     setState((current) => ({ ...current, humanDecision: { ...current.humanDecision, [field]: value, simulatedDecisionRecord: null } }));
   }
 
+  function requestMoreEvidence() {
+    setState((current) => ({
+      ...current,
+      humanDecision: {
+        ...current.humanDecision,
+        status: "rejected",
+        rationale: "Additional evidence requested before any simulated disposition.",
+        simulatedDecisionRecord: null,
+      },
+      ledger: [
+        ...current.ledger,
+        newEvent(
+          current.constitution.humanArbitrator.name,
+          "Requested more evidence in fictional human review",
+          current.dispute.id,
+          "The advisory memorandum is not adopted; additional evidence is requested.",
+          "adjudicative",
+        ),
+      ],
+    }));
+  }
+
   function toggleChecklist(field: keyof ContractState["humanDecision"]["checklist"]) {
     setState((current) => ({ ...current, humanDecision: { ...current.humanDecision, checklist: { ...current.humanDecision.checklist, [field]: !current.humanDecision.checklist[field] }, simulatedDecisionRecord: null } }));
   }
@@ -273,18 +302,18 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
   if (experience === "opening") return <OpeningExperience beginGuided={() => { setExperience("guided"); setStep(0); }} explore={() => { setExperience("explore"); setStep(0); }} />;
 
   return <main className="app-shell">
-    <aside className="sidebar"><div className="wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>C0 concept demonstrator</small></div></div><nav aria-label="Concept workflow">{steps.map((label, index) => <button key={label} className={index === step ? "nav-step active" : "nav-step"} onClick={() => requestStep(index)} aria-current={index === step ? "step" : undefined}><span>{index + 1}</span><div>{label}<small>{stepNotes[index]}</small></div></button>)}</nav><div className="sidebar-note"><ShieldAlert size={16} /><p>Synthetic data · simulation only · no legal effect. The AI Resolution Officer is software; human legal authority remains external.</p></div><Button variant="ghost" onClick={() => { setPendingStep(null); setExperience("opening"); }}><ArrowLeft size={15} /> Return to introduction</Button><Button variant="ghost" onClick={reset}><RefreshCcw size={15} /> Reset demo</Button></aside>
+    <aside className="sidebar"><div className="wordmark"><span>Z</span><div><strong>ZIAAP</strong><small>C0 concept demonstrator</small></div></div><nav aria-label="Six matter gates">{steps.map((gate, index) => <button key={gate.id} className={index === step ? "nav-step active" : "nav-step"} onClick={() => requestStep(index)} aria-current={index === step ? "step" : undefined}><span>{gate.number}</span><div>{gate.displayLabel}<small>{gate.layerLabel} · {gateReadiness[index].status.replace("_", " ")}</small></div></button>)}</nav><div className="sidebar-note"><ShieldAlert size={16} /><p>Synthetic data · simulation only · no legal effect. The AI Resolution Officer is software; human legal authority remains external.</p></div><Button variant="ghost" onClick={() => { setPendingStep(null); setExperience("opening"); }}><ArrowLeft size={15} /> Return to introduction</Button><Button variant="ghost" onClick={reset}><RefreshCcw size={15} /> Reset demo</Button></aside>
     <section className="workspace"><header className="topbar"><div><Badge tone="red">{state.lifecycleMode}</Badge><span className="matter-id">{state.matter.id}</span></div><div className="topbar-status"><span><i className={state.appointment.manifestHash ? "dot done" : "dot"} />Exact manifest</span><span><i className={["appointment_simulated", "dispute_simulated", "closed"].includes(state.lifecycleStatus) ? "dot done" : "dot"} />{state.lifecycleStatus}</span></div></header>
       <div className="content">
-        {experience === "explore" && step > 0 && !alignmentReady && <div className="exploration-incomplete" role="status"><ShieldAlert size={17} /><div><strong>Exploration only · Stage 1 incomplete</strong><p>You may inspect this stage, but the simulated protocol cannot become ready until both profiles, an eligible analysis, and all three exact clause versions are confirmed.</p></div></div>}
-        {step === 0 && <GovernanceAlignment state={state} busy={alignmentBusy} notice={alignmentNotice} analysisActive={analysisActive} runAlignment={runAlignment} editExpectation={editExpectation} confirmProfile={confirmProfile} selectOption={selectOption} editDecision={editDecision} updateAlignmentScenario={updateAlignmentScenario} confirmClause={confirmClause} navigationNotice={visiblePendingStep === null ? "" : experience === "guided" ? "Complete all seven readiness conditions before continuing in the guided demonstration." : `Acknowledge this warning before opening ${steps[visiblePendingStep]} without completing the simulated alignment gate.`} explorationTargetLabel={experience === "explore" && visiblePendingStep !== null ? steps[visiblePendingStep] : null} continueForExploration={continueForExploration} />}
-        {step === 1 && <ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} acknowledgeConstitution={acknowledgeConstitution} />}
-        {step === 2 && <ValidationLab state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} acknowledgeScenario={acknowledgeScenario} />}
-        {step === 3 && <AppointmentCeremony state={state} busy={appointmentBusy} errorNotice={appointmentError} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
-        {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} prepareReasoningMemorandum={prepareReasoningMemorandum} updateDecision={updateDecision} toggleChecklist={toggleChecklist} recordDecision={recordDecision} />}
+        {experience === "explore" && step > 0 && !alignmentReady && <div className="exploration-incomplete" role="status"><ShieldAlert size={17} /><div><strong>Exploration only · Gate 1 incomplete</strong><p>You may inspect this gate, but the simulated protocol cannot become ready until both profiles, an eligible analysis, and all three exact clause versions are confirmed.</p></div></div>}
+        {step === 0 && <GovernanceAlignment state={state} busy={alignmentBusy} notice={alignmentNotice} analysisActive={analysisActive} runAlignment={runAlignment} editExpectation={editExpectation} confirmProfile={confirmProfile} selectOption={selectOption} editDecision={editDecision} updateAlignmentScenario={updateAlignmentScenario} confirmClause={confirmClause} navigationNotice={visiblePendingStep === null ? "" : experience === "guided" ? "Complete all seven readiness conditions before continuing in the guided demonstration." : `Acknowledge this warning before opening ${steps[visiblePendingStep].displayLabel} without completing the simulated alignment gate.`} explorationTargetLabel={experience === "explore" && visiblePendingStep !== null ? steps[visiblePendingStep].displayLabel : null} continueForExploration={continueForExploration} />}
+        {step === 1 && <><ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} acknowledgeConstitution={acknowledgeConstitution} /><ValidationLab embedded state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} acknowledgeScenario={acknowledgeScenario} /></>}
+        {step === 2 && <AppointmentCeremony state={state} busy={appointmentBusy} errorNotice={appointmentError} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
+        {step === 3 && <DisputePreview mode="production" state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} prepareReasoningMemorandum={prepareReasoningMemorandum} updateDecision={updateDecision} requestMoreEvidence={requestMoreEvidence} toggleChecklist={toggleChecklist} recordDecision={recordDecision} />}
+        {step === 4 && <DisputePreview mode="adjudication" state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} prepareReasoningMemorandum={prepareReasoningMemorandum} updateDecision={updateDecision} requestMoreEvidence={requestMoreEvidence} toggleChecklist={toggleChecklist} recordDecision={recordDecision} />}
         {step === 5 && <DossierView state={state} />}
       </div>
-      <footer className="step-footer"><Button variant="secondary" disabled={step === 0} onClick={() => requestStep(step - 1)}><ArrowLeft size={16} /> Previous</Button><span>Stage {step + 1} of 6</span><Button disabled={step === 5} onClick={() => requestStep(step + 1)}>{step === 4 ? "Open Audit Dossier" : "Continue"} <ArrowRight size={16} /></Button></footer>
+      <footer className="step-footer"><Button variant="secondary" disabled={step === 0} onClick={() => requestStep(step - 1)}><ArrowLeft size={16} /> Previous</Button><span>Gate {step + 1} of 6 · active state: {activeGate.replaceAll("_", " ")}</span><Button disabled={step === 5} onClick={() => requestStep(step + 1)}>{step === 4 ? "Open Procedural Black Box" : "Continue"} <ArrowRight size={16} /></Button></footer>
     </section>
   </main>;
 }

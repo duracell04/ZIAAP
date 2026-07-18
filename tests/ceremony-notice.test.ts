@@ -20,7 +20,7 @@ describe("state-derived ceremony notice", () => {
     state.lifecycleStatus = "manifest_acknowledged";
     expect(deriveCeremonyNotice(state, "Hidden by acknowledged state.")).toEqual({
       tone: "confirmation",
-      text: "Both parties have acknowledged the current Protocol Configuration Manifest. Complete the remaining simulated ceremony checks to continue.",
+      text: "Both parties have acknowledged the current configuration manifest. Complete the remaining simulated ceremony checks to continue.",
     });
 
     state.lifecycleStatus = "appointment_simulated";

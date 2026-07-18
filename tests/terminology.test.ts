@@ -8,6 +8,8 @@ import {
   CURRENT_MATURITY_LEVEL,
   DIGITAL_TWIN_BOUNDARY,
   LIFECYCLE_STAGES,
+  MATTER_GATES,
+  PROTOCOL_LAYERS,
   PUBLIC_DEMO_ARBITRATION_EXPLAINER,
   PUBLIC_DEMO_AUTHORITY_LINE,
   PUBLIC_DEMO_DESCRIPTION,
@@ -77,19 +79,24 @@ describe("Sprint 0 product language", () => {
     expect(DIGITAL_TWIN_BOUNDARY).toContain("not a predictor of the future result");
   });
 
-  it("uses one six-stage vocabulary", () => {
-    expect(LIFECYCLE_STAGES.map((stage) => stage.label)).toEqual([
-      "Party Alignment",
-      "Protocol Constitution",
-      "Scenario Laboratory",
-      "Configuration Manifest",
-      "Later Dispute",
-      "Audit Dossier",
+  it("uses one three-layer and six-gate operating model in the expert experience", () => {
+    expect(PROTOCOL_LAYERS.map((layer) => layer.label)).toEqual([
+      "I0 · Flight Plan",
+      "I1 · Cockpit",
+      "I2 · Captain in Command",
+    ]);
+    expect(MATTER_GATES.map((gate) => gate.label)).toEqual([
+      "Alignment",
+      "Configuration",
+      "Appointment & Configuration Freeze",
+      "Case Production",
+      "Independent Adjudication",
+      "Award & Black Box",
     ]);
     const opening = read("components/opening-experience.tsx");
     const workspace = read("components/demo-workspace.tsx");
-    expect(opening).toContain("LIFECYCLE_STAGES.map");
-    for (const stage of LIFECYCLE_STAGES) expect(workspace).toContain(`\"${stage.label}\"`);
+    expect(opening).toContain("MATTER_GATES.map");
+    expect(workspace).toContain("MATTER_GATES.map");
   });
 
   it("projects the canonical lifecycle into one plain-language public walkthrough", () => {

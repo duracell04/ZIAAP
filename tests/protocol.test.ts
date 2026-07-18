@@ -52,7 +52,7 @@ describe("simulation-only exact protocol manifest", () => {
     expect(allStressTestsAcknowledged(state.calibrationScenarios)).toBe(true);
   });
 
-  it("derives Stage 1 readiness from both profiles, eligible analysis, and every exact clause version", () => {
+  it("derives Gate 1 readiness from both profiles, eligible analysis, and every exact clause version", () => {
     const complete = readyState();
     expect(partyAlignmentReady(complete)).toBe(true);
 

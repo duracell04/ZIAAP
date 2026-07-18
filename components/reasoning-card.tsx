@@ -8,15 +8,18 @@ import type { ContractState } from "@/lib/case-model";
 
 type Props = {
   state: ContractState; running: boolean; notice: string;
+  embedded?: boolean;
   runValidation: (mode: "illustrative" | "live") => void;
   acknowledgeScenario: (id: string, party: "supplier" | "customer") => void;
 };
 
-export function ValidationLab({ state, running, notice, runValidation, acknowledgeScenario }: Props) {
+export function ValidationLab({ state, running, notice, embedded = false, runValidation, acknowledgeScenario }: Props) {
   const failedSelection = state.calibrationScenarios.some((scenario) => scenario.result && !scenario.selectedArtifactId);
   const acknowledgedCount = state.calibrationScenarios.filter((scenario) => scenario.result && scenario.simulatedAcknowledgements.supplier === scenario.result.artifactId && scenario.simulatedAcknowledgements.customer === scenario.result.artifactId).length;
   return <>
-    <div className="page-intro"><span>Stage 3 · Scenario Laboratory</span><h1>Observe how the exact Constitution behaves under pressure.</h1><p>Stress testing is an activity inside the Scenario Laboratory. It exercises the configured protocol against synthetic cases and reports observed behaviour, safeguards, and limitations without independently validating the model or outcome.</p></div>
+    {embedded
+      ? <div className="section-heading gate-section-heading"><div><span>Gate 2 · Configuration · scenario tests</span><h2>Observe how the exact Constitution behaves under pressure.</h2></div><p>Tests report behavior and limitations without independently validating a model or outcome.</p></div>
+      : <div className="page-intro"><span>Gate 2 · Configuration</span><h1>Observe how the exact Constitution behaves under pressure.</h1><p>Scenario testing exercises the configured control plane against synthetic cases and reports observed behaviour, safeguards, and limitations without independently validating the model or outcome.</p></div>}
 
     <div className="stage-distinction compact"><Card><SlidersHorizontal size={19} /><span>Calibration is configuration</span><h2>Constitution v{state.constitution.version}</h2><p>{constitutionAcknowledged(state) ? "Exact version acknowledged by both parties." : "Both parties must acknowledge the exact Constitution version."}</p></Card><Card><FlaskConical size={19} /><span>Stress testing is observation</span><h2>{acknowledgedCount} of 4 artifacts acknowledged</h2><p>Each artifact retains its own execution status and limitations.</p></Card></div>
 

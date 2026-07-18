@@ -30,10 +30,10 @@ export function ConstitutionBuilder({ state, updatePrinciple, acknowledgeConstit
   const acknowledged = (party: "supplier" | "customer") => constitution.simulatedAcknowledgements[party] === constitution.version;
 
   return <>
-    <div className="page-intro"><span>Stage 2 · Protocol Constitution</span><h1>Configure how the protocol should reason—before testing what it does.</h1><p>Arbitral reasoning calibration is an inference-time activity inside the Protocol Constitution. It sets relationship-specific instructions, sources, tools, safeguards, and boundaries without training or fine-tuning the underlying model.</p></div>
+    <div className="page-intro"><span>I0 · Flight Plan · Gate 2 · Configuration</span><h1>Configure the control plane, then test its observable behaviour.</h1><p>The Constitution converts governance into explicit software permissions, workflow boundaries, escalation rules and invalidation conditions. It configures the current simulation without training the underlying model or creating legal enforceability.</p></div>
     <AuthorityStrip executionStatus="not_executed" actor="Supplier and customer · simulated" version={`Constitution v${constitution.version}`} consequence="Controls the next synthetic stress-test configuration" provenance="Party-configured synthetic Constitution" />
 
-    <div className="stage-distinction"><Card><SlidersHorizontal size={20} /><span>Calibration asks</span><h2>What rules and values should guide the protocol?</h2><p>Configuration input. No model execution occurs on this screen.</p></Card><Card><Cpu size={20} /><span>Stress testing asks next</span><h2>What behavior does that exact configuration produce?</h2><p>Observed output with execution status and limitations—not validation.</p></Card></div>
+    <div className="stage-distinction"><Card><SlidersHorizontal size={20} /><span>Control plane asks</span><h2>What may the system do, and when must it stop?</h2><p>Configuration input. No model execution occurs in this section.</p></Card><Card><Cpu size={20} /><span>Scenario testing asks next</span><h2>What behavior does that exact configuration produce?</h2><p>Observed output with execution status and limitations—not validation.</p></Card></div>
 
     <div className="definition-banner"><Scale size={21} /><div><strong>Human authority remains external to the protocol</strong><p>A properly appointed human could conduct proceedings through an acknowledged ZIAAP protocol. This concept uses a fictional record, simulation only, and makes no legal appointment.</p></div></div>
 

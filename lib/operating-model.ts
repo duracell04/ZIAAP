@@ -47,7 +47,12 @@ function isGateComplete(state: ContractState, gate: MatterGate): boolean {
       );
     case "case_production":
       return isGateComplete(state, "appointment_configuration_freeze")
-        && (Boolean(state.reasoningMemorandum) || state.settlement.status === "settled");
+        && Boolean(
+          state.dispute.appointmentHash
+            && state.dispute.claim
+            && state.dispute.defence
+            && state.dispute.sharedEvidence.length,
+        );
     case "independent_adjudication":
       return state.settlement.status === "settled"
         || Boolean(
@@ -107,7 +112,6 @@ export function getGateReadiness(state: ContractState, gate: MatterGate): GateRe
       completionRequirements = [
         requirement("dispute_bound", "The synthetic dispute is bound to the frozen configuration", Boolean(state.dispute.appointmentHash)),
         requirement("case_structured", "Claims, defences, evidence, gaps and objections are represented in structured state", Boolean(state.dispute.claim && state.dispute.defence && state.dispute.sharedEvidence.length)),
-        requirement("production_complete", "A reasoning memorandum is derived or the sealed settlement track closes the matter", Boolean(state.reasoningMemorandum) || state.settlement.status === "settled"),
       ];
       currentBoundary = "Settlement content remains sealed from merits production.";
       break;
