@@ -1212,7 +1212,8 @@ dd { margin: 0; font-size: 11px; }
 .minimal-feedback-form { margin-top: 30px; padding: clamp(22px, 5vw, 40px); }
 .minimal-feedback-form label { display: block; margin-bottom: 21px; }
 .minimal-feedback-form label > span { display: block; margin-bottom: 7px; font-size: 11px; font-weight: 700; }
-.minimal-feedback-form select {
+.minimal-feedback-form select,
+.minimal-feedback-form input[type="email"] {
   width: 100%;
   min-height: 42px;
   padding: 8px 10px;
@@ -1223,6 +1224,31 @@ dd { margin: 0; font-size: 11px; }
   font: inherit;
 }
 .minimal-feedback-form textarea { min-height: 105px; }
+.minimal-feedback-honey { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+.minimal-feedback-privacy {
+  margin: 6px 0 20px;
+  padding: 18px;
+  color: var(--muted);
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.minimal-feedback-privacy > strong { color: var(--foreground); font-size: 12px; }
+.minimal-feedback-privacy p { margin: 8px 0 0; }
+.minimal-feedback-privacy a { color: var(--blue); overflow-wrap: anywhere; }
+.minimal-feedback-form .minimal-feedback-consent { display: flex; align-items: flex-start; gap: 10px; }
+.minimal-feedback-consent input { margin-top: 3px; flex: none; }
+.minimal-feedback-form .minimal-feedback-consent > span { margin: 0; color: var(--muted); line-height: 1.55; font-weight: 500; }
+.minimal-feedback-success {
+  margin-top: 24px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--green);
+  border-left: 4px solid var(--green);
+}
 .minimal-feedback-ready {
   margin-top: 14px;
   padding: 20px;

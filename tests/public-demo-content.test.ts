@@ -36,6 +36,31 @@ describe("hyper-minimal public surface", () => {
     }
   });
 
+  it("submits complete feedback through the bounded FormSubmit pilot", () => {
+    const feedback = read("components/minimal-feedback.tsx");
+    const page = read("app/feedback/page.tsx");
+    expect(feedback).toContain('method="POST"');
+    expect(feedback).toContain("https://formsubmit.co/enriquegeorg.zbinden@slta.ch");
+    expect(feedback).toContain('type="email" name="email" autoComplete="email" required');
+    expect(feedback).toContain('<select name="perspective" defaultValue="" required>');
+    expect(feedback).toContain('<option value="" disabled>Select your perspective</option>');
+    for (const name of ["explanation", "human_control", "adoption_barrier", "potential_saving"]) {
+      expect(feedback).toContain(`name="${name}" required`);
+    }
+    expect(feedback).toContain('name="consent" value="yes" required');
+    expect(feedback).toContain('name="_next" value={FEEDBACK_RETURN_URL}');
+    expect(feedback).toContain('name="_subject" value="New ZIAAP concept feedback"');
+    expect(feedback).toContain('name="_template" value="table"');
+    expect(feedback).toContain('name="_honey"');
+    expect(feedback).not.toContain("_captcha");
+    expect(feedback).not.toContain("localStorage");
+    expect(feedback).not.toContain("clipboard");
+    expect(feedback).not.toContain("Download JSON");
+    expect(feedback).toContain("Thank you. Your feedback has been submitted.");
+    expect(feedback).not.toMatch(/feedback (?:has been )?delivered/i);
+    expect(page).toContain('submitted={sent === "1"}');
+  });
+
   it("does not call APIs, fetch remote data, or expose a live execution action", () => {
     const publicSurface = publicComponentFiles.map(read).join("\n");
     expect(publicSurface).not.toContain("fetch(");

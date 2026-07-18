@@ -3,9 +3,14 @@ import { MinimalFeedback } from "@/components/minimal-feedback";
 
 export const metadata: Metadata = {
   title: "Professional concept feedback · ZIAAP",
-  description: "Prepare a local, unsubmitted response to the ZIAAP public concept walkthrough.",
+  description: "Submit low-risk concept feedback about the ZIAAP public walkthrough.",
 };
 
-export default function FeedbackPage() {
-  return <MinimalFeedback />;
+type FeedbackPageProps = {
+  searchParams: Promise<{ sent?: string | string[] }>;
+};
+
+export default async function FeedbackPage({ searchParams }: FeedbackPageProps) {
+  const { sent } = await searchParams;
+  return <MinimalFeedback submitted={sent === "1"} />;
 }

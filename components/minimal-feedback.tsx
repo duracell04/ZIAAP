@@ -1,77 +1,16 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
-import { ArrowLeft, Check, Clipboard, Download, MessageSquareText } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowLeft, Check, MessageSquareText, Send } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { PUBLIC_DEMO_DISCLAIMER } from "@/lib/product-language";
 
-const FEEDBACK_STORAGE_KEY = "ziaap:minimal-feedback:v1";
+const FEEDBACK_ENDPOINT = "https://formsubmit.co/enriquegeorg.zbinden@slta.ch";
+const FEEDBACK_RETURN_URL = "https://ziaap-26.vercel.app/feedback?sent=1";
 
-type FeedbackState = {
-  perspective: string;
-  explanation: string;
-  humanControl: string;
-  adoptionBarrier: string;
-  potentialSaving: string;
+type MinimalFeedbackProps = {
+  submitted?: boolean;
 };
 
-const initialFeedback: FeedbackState = {
-  perspective: "Business owner",
-  explanation: "",
-  humanControl: "",
-  adoptionBarrier: "",
-  potentialSaving: "",
-};
-
-export function MinimalFeedback() {
-  const [feedback, setFeedback] = useState(initialFeedback);
-  const [prepared, setPrepared] = useState(false);
-  const [notice, setNotice] = useState("");
-
-  function update(field: keyof FeedbackState, value: string) {
-    setPrepared(false);
-    setNotice("");
-    setFeedback((current) => ({ ...current, [field]: value }));
-  }
-
-  function serialize() {
-    return JSON.stringify(
-      {
-        artifact: "ZIAAP hyper-minimal public concept",
-        evidenceStatus: "Unverified participant response",
-        ...feedback,
-      },
-      null,
-      2,
-    );
-  }
-
-  function prepare() {
-    window.localStorage.setItem(FEEDBACK_STORAGE_KEY, serialize());
-    setPrepared(true);
-    setNotice("Feedback prepared locally. Nothing was sent.");
-  }
-
-  async function copy() {
-    await navigator.clipboard.writeText(serialize());
-    setNotice("Feedback copied to the clipboard. Nothing was sent.");
-  }
-
-  function download() {
-    const blob = new Blob([serialize()], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = "ziaap-concept-feedback.json";
-    anchor.click();
-    URL.revokeObjectURL(url);
-    setNotice("Feedback downloaded as a local JSON file. Nothing was sent.");
-  }
-
-  const complete = Object.values(feedback).every((value) => value.trim().length > 0);
-
+export function MinimalFeedback({ submitted = false }: MinimalFeedbackProps) {
   return (
     <main className="minimal-feedback-page">
       <header>
@@ -84,62 +23,100 @@ export function MinimalFeedback() {
           <span>Professional feedback</span>
           <h1>What did you understand—and what would stop you using this approach?</h1>
           <p>
-            These responses are stored only in your browser unless you choose to copy or download them.
-            They are research input, not approval or validation.
+            Your responses are concept-research input, not approval or validation. They are submitted
+            by email through the temporary FormSubmit service.
           </p>
         </div>
 
-        <Card className="minimal-feedback-form">
-          <label>
-            <span>Your perspective</span>
-            <select value={feedback.perspective} onChange={(event) => update("perspective", event.target.value)}>
-              <option>Business owner</option>
-              <option>International trade professional</option>
-              <option>In-house counsel</option>
-              <option>Arbitrator</option>
-              <option>Mediator</option>
-              <option>Law firm</option>
-              <option>Institution</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <label>
-            <span>In one sentence, what do you understand ZIAAP to do?</span>
-            <textarea value={feedback.explanation} onChange={(event) => update("explanation", event.target.value)} />
-          </label>
-          <label>
-            <span>Which decisions or procedural steps must always remain under human control?</span>
-            <textarea value={feedback.humanControl} onChange={(event) => update("humanControl", event.target.value)} />
-          </label>
-          <label>
-            <span>What would prevent you or your organisation from using this process?</span>
-            <textarea value={feedback.adoptionBarrier} onChange={(event) => update("adoptionBarrier", event.target.value)} />
-          </label>
-          <label>
-            <span>Where could this save the greatest amount of time, cost, or uncertainty?</span>
-            <textarea value={feedback.potentialSaving} onChange={(event) => update("potentialSaving", event.target.value)} />
-          </label>
-          <Button disabled={!complete} onClick={prepare}>
-            <Check size={15} /> Prepare feedback locally
-          </Button>
-        </Card>
-
-        {prepared && (
-          <Card className="minimal-feedback-ready">
-            <div>
-              <Check size={20} />
-              <div>
-                <strong>Local feedback record ready</strong>
-                <p>No response has been transmitted.</p>
-              </div>
-            </div>
-            <div>
-              <Button variant="secondary" onClick={copy}><Clipboard size={15} /> Copy responses</Button>
-              <Button variant="secondary" onClick={download}><Download size={15} /> Download JSON</Button>
-            </div>
+        {submitted && (
+          <Card className="minimal-feedback-success" role="status" aria-live="polite">
+            <Check size={20} />
+            <strong>Thank you. Your feedback has been submitted.</strong>
           </Card>
         )}
-        {notice && <p className="minimal-feedback-notice" role="status">{notice}</p>}
+
+        <form className="card minimal-feedback-form" method="POST" action={FEEDBACK_ENDPOINT}>
+          <input type="hidden" name="_next" value={FEEDBACK_RETURN_URL} />
+          <input type="hidden" name="_subject" value="New ZIAAP concept feedback" />
+          <input type="hidden" name="_template" value="table" />
+          <label className="minimal-feedback-honey" aria-hidden="true">
+            Leave this field empty
+            <input type="text" name="_honey" tabIndex={-1} autoComplete="off" />
+          </label>
+
+          <label>
+            <span>Your email address</span>
+            <input type="email" name="email" autoComplete="email" required />
+          </label>
+
+          <label>
+            <span>Your perspective</span>
+            <select name="perspective" defaultValue="" required>
+              <option value="" disabled>Select your perspective</option>
+              <option value="Business owner">Business owner</option>
+              <option value="International trade professional">International trade professional</option>
+              <option value="In-house counsel">In-house counsel</option>
+              <option value="Arbitrator">Arbitrator</option>
+              <option value="Mediator">Mediator</option>
+              <option value="Law firm">Law firm</option>
+              <option value="Institution">Institution</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <label>
+            <span>In one sentence, what do you understand ZIAAP to do?</span>
+            <textarea name="explanation" required />
+          </label>
+
+          <label>
+            <span>Which decisions or procedural steps must always remain under human control?</span>
+            <textarea name="human_control" required />
+          </label>
+
+          <label>
+            <span>What would prevent you or your organisation from using this process?</span>
+            <textarea name="adoption_barrier" required />
+          </label>
+
+          <label>
+            <span>Where could this save the greatest amount of time, cost, or uncertainty?</span>
+            <textarea name="potential_saving" required />
+          </label>
+
+          <aside className="minimal-feedback-privacy" aria-labelledby="feedback-privacy-title">
+            <strong id="feedback-privacy-title">How this feedback is handled</strong>
+            <p>
+              <b>Controller:</b> Enrique Georg Zbinden, ZIAAP concept project.{" "}
+              <b>Contact and rights requests:</b>{" "}
+              <a href="mailto:enriquegeorg.zbinden@slta.ch">enriquegeorg.zbinden@slta.ch</a>.
+            </p>
+            <p>
+              We collect your email, perspective and four answers for concept research and possible
+              submission-related follow-up. FormSubmit, operated by Devro LABS, processes the
+              submission and states that it retains submissions for 30 days. Messages may remain in
+              the project mailbox for up to 12 months and will then be deleted unless continued
+              retention is legally necessary.
+            </p>
+            <p>
+              Your details will not be used for a newsletter or unrelated marketing. Do not submit
+              confidential case information, privileged material, sensitive personal data or
+              information about an identifiable dispute.
+            </p>
+          </aside>
+
+          <label className="minimal-feedback-consent">
+            <input type="checkbox" name="consent" value="yes" required />
+            <span>
+              I consent to this processing and confirm that my response contains no confidential,
+              privileged, case-specific or sensitive personal information.
+            </span>
+          </label>
+
+          <button className="button button-primary" type="submit">
+            <Send size={15} /> Submit feedback
+          </button>
+        </form>
       </section>
     </main>
   );
