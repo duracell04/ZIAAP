@@ -1,19 +1,55 @@
 # ZIAAP Product Charter
 
-**Version:** 1.2
+**Version:** 1.3
 
 **Current maturity:** C0 — interactive concept demonstrator
 
 **Status:** Product/founder approval and legal-framing review pending
 
-## Product promise
+## North-star ambition
 
-> **Test your dispute-resolution system before you sign the contract.**
+> **ZIAAP aims to transform arbitration from a largely bespoke,
+> document-driven professional service into a structured, technology-native
+> production system.**
+>
+> The parties align critical rules before conflict. Software organises the
+> record and performs explicit calculations. AI maintains source-linked,
+> structured and contestable analysis. Independent human arbitrators retain
+> full authority over procedure, judgment and any future award.
+>
+> The objective is not to automate arbitral authority. It is to make
+> professional authority usable across a substantially broader range of
+> commercial disputes.
 
-ZIAAP helps parties align contractual meaning and test the observable behaviour
-of an agreed dispute-resolution process before signing, using a governed AI
-Resolution Officer to augment a properly appointed human arbitrator who retains
-legal authority.
+This is a future ambition. The current repository is the C0 concept described
+below.
+
+### Category thesis
+
+> **Traditional arbitration standardises procedural rules. ZIAAP also
+> standardises the production environment through which a case is prepared,
+> examined and decided.**
+
+### Institutional thesis
+
+> **The future ZIAAP institution is intended to be owned and professionally
+> governed by participating arbitrator partners, supported by a shared
+> engineering and case-administration platform.**
+
+Partner ownership is a target governance design, not an implemented corporate
+fact. Any “first” claim is aspirational and awaits competitive substantiation.
+
+### Economic thesis
+
+> **By reducing repeated reconstruction, administration and drafting, ZIAAP
+> seeks to make independent human arbitration operationally faster, more
+> predictable and economically viable for lower-value and higher-volume
+> commercial disputes.**
+
+The initial CHF 50,000–500,000 market range and the SaaS, platform,
+technology-services, supply, logistics, payment, delivery and service-level
+categories are hypotheses. No measured cost, speed, capacity or market result
+is claimed.
 
 ## Current artifact
 
@@ -44,8 +80,9 @@ the future protocol, observe that configuration under synthetic scenarios,
 acknowledge the tested configuration, and preserve it for a later human-led
 process.
 
-The target capability is a **digital twin of the agreed dispute-resolution
-process and its observable behaviour, not a predictor of the future result**.
+The target capability is a structured, versioned and contestable decision
+environment. A reasoning memorandum is one advisory artifact derived from that
+state; it is not the authoritative case model or a verdict.
 
 ## AI Resolution Officer boundary
 
@@ -56,23 +93,31 @@ reviewable analysis. A properly appointed human arbitrator retains procedural
 authority, independent judgment, and responsibility for any legally operative
 decision.
 
-## Six-stage lifecycle
+## Three layers and six gates
 
-1. **Party Alignment** — compare independent expectations and resolve divergence.
-2. **Protocol Constitution** — configure rules, values, sources, tools,
-   uncertainty, and escalation.
-3. **Scenario Laboratory** — observe and interrogate the configured protocol.
-4. **Configuration Manifest** — bind the tested synthetic configuration and its
-   acknowledgements.
-5. **Later Dispute** — demonstrate a bound, human-controlled later process.
-6. **Audit Dossier** — project a truthful, inspectable lifecycle record.
+| Layer | Gate | Purpose |
+|---|---|---|
+| I0 · Flight Plan | 1. Alignment | Resolve material differences in operational contract expectations |
+| I0 · Flight Plan | 2. Configuration | Assemble the Constitution, evidence policy, deterministic tools, scenario tests and permitted AI uses |
+| I1 · Cockpit | 3. Appointment & Configuration Freeze | Identify the human arbitrator, freeze the configuration and record integrity evidence |
+| I1 · Cockpit | 4. Case Production | Maintain the structured, versioned and contestable case state |
+| I2 · Captain in Command | 5. Independent Adjudication | Preserve independent human review with zero algorithmic presumption |
+| I2 · Captain in Command | 6. Award & Black Box | Produce any future human-signed award and preserve the procedural record |
+
+The current demonstrator labels Gate 6 **Simulated Outcome & Procedural Black
+Box**. It does not produce an award.
+
+The Constitution is the versioned control plane that converts governance into
+explicit system permissions, workflow boundaries, escalation rules and
+invalidation conditions. “Machine-enforceable” refers only to software runtime
+permissions and guards, not legal enforcement.
 
 ## Hyper-minimal public concept experiment
 
 The repository also contains a separate deterministic public walkthrough at
 `/demo`. It is a comprehension experiment for business owners and
 international-trade participants, not a new maturity level or a replacement for
-the canonical lifecycle.
+the canonical gates.
 
 Its approved public hierarchy is:
 
@@ -84,16 +129,16 @@ Its approved public hierarchy is:
 
 > **AI prepares. Parties can challenge. A human arbitrator decides.**
 
-The walkthrough projects the canonical lifecycle into five plain-language
+The walkthrough projects the six canonical gates into five plain-language
 steps:
 
-| Public step | Canonical lifecycle projection |
+| Public step | Canonical gate projection |
 |---|---|
-| Align | Party Alignment |
-| Test | Protocol Constitution, Scenario Laboratory and Configuration Manifest |
-| Dispute | Later Dispute |
-| Review | Human-controlled activity inside Later Dispute |
-| Outcome | Audit Dossier |
+| Align | Gate 1 · Alignment |
+| Test | Gate 2 · Configuration and the configuration-integrity portion of Gate 3 |
+| Dispute | Gate 4 · Case Production |
+| Review | Gate 5 · Independent Adjudication |
+| Outcome | Gate 6 · Simulated Outcome & Procedural Black Box |
 
 This projection changes information architecture only. It does not create new
 legal, technical or lifecycle authority.
@@ -137,6 +182,7 @@ after an angel-financing decision and a new prototype charter.
 
 ## Canonical references
 
+- [Operating model](product/operating-model.md)
 - [Maturity model](product/maturity-model.md)
 - [Canonical glossary](product/glossary.md)
 - [Claims register](product/claims-register.md)

@@ -1,11 +1,15 @@
 # ZIAAP
 
-> **Test your dispute-resolution system before you sign the contract.**
+> **ZIAAP aims to transform arbitration from a largely bespoke,
+> document-driven professional service into a structured, technology-native
+> production system.**
 
-ZIAAP helps parties align contractual meaning and test the observable behaviour
-of an agreed dispute-resolution process before signing, using a governed AI
-Resolution Officer to augment a properly appointed human arbitrator who retains
-legal authority.
+Parties align critical rules before conflict. Software organises the record and
+performs explicit calculations. AI maintains source-linked, structured and
+contestable analysis. Independent human arbitrators retain full authority over
+procedure, judgment and any future award.
+
+> **Standardise the cockpit. Automate the instruments. Preserve the captain.**
 
 ## Current status
 
@@ -14,12 +18,13 @@ high fidelity limited to workflow and interaction fidelity. It uses synthetic
 data, client-local resettable state, curated simulation fixtures, and optional
 live-unverified execution.
 
-It is not an externally validated system, legal appointment, operative award
-process, production arbitration service, identity system, confidential matter
-store, or predictor of a future dispute result.
+It is not an externally validated system, arbitral institution, legal
+appointment, operative award process, production arbitration service, identity
+system, confidential matter store, or predictor of a future dispute result.
 
-The target concept is a **digital twin of the agreed dispute-resolution process
-and its observable behaviour, not a predictor of the future result**.
+The future institutional, partner-ownership, market and economic propositions
+are hypotheses. No current cost, speed, capacity, scalability, legal-effect or
+commercial result is claimed.
 
 ## AI Resolution Officer
 
@@ -30,18 +35,21 @@ reviewable analysis. A properly appointed human arbitrator retains procedural
 authority, independent judgment, and responsibility for any legally operative
 decision.
 
-## Six-stage lifecycle
+## Operating model
 
-1. **Party Alignment**
-2. **Protocol Constitution**
-3. **Scenario Laboratory**
-4. **Configuration Manifest**
-5. **Later Dispute**
-6. **Audit Dossier**
+ZIAAP's future operating model has three protocol layers and six matter gates:
 
-These names are canonical across the current public surfaces. The existing
-later-stage interface is a design reference, not completed Sprint 4 capability.
-Any rebuild is conditional on a future funded development stage.
+| Layer | Gates |
+|---|---|
+| **I0 · Flight Plan** | 1. Alignment; 2. Configuration |
+| **I1 · Cockpit** | 3. Appointment & Configuration Freeze; 4. Case Production |
+| **I2 · Captain in Command** | 5. Independent Adjudication; 6. Award & Black Box |
+
+The current demonstrator calls Gate 6 **Simulated Outcome & Procedural Black
+Box** and never presents a fictional result as an award. The
+[canonical operating model](docs/product/operating-model.md) defines the
+institutional ambition, authority boundaries, evidence qualifications and
+current C0 limits.
 
 ## Hyper-minimal public concept experiment
 
@@ -53,11 +61,11 @@ to show:
 > occurs. Parties can challenge it. A human arbitrator decides.**
 
 The public walkthrough has five plain-language steps—Align, Test, Dispute,
-Review and Outcome—which project the canonical six-stage lifecycle without
+Review and Outcome—which project the six canonical gates without
 creating a competing lifecycle model. It makes no API or model call and stores
 resettable walkthrough state in the browser session.
 
-The existing root experience remains the current six-stage C0 reference during
+The existing root experience remains the current six-gate C0 reference during
 external comprehension review and is also available at `/reference`.
 `/feedback` prepares an unsubmitted local research response. No positive
 comprehension, usability, legal-framing or commercial-value result is claimed.
@@ -115,13 +123,14 @@ pnpm.cmd build
 
 ## Canonical documents
 
-1. [Product charter](docs/00-product-charter.md)
-2. [Maturity model](docs/product/maturity-model.md)
-3. [Canonical glossary](docs/product/glossary.md)
-4. [Claims register](docs/product/claims-register.md)
-5. [Release scorecard](docs/product/release-scorecard.md)
-6. [Sprint 0 acceptance record](docs/review/sprint-0-acceptance-record.md)
-7. [Technical roadmap v1.1](docs/roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
+1. [Operating model](docs/product/operating-model.md)
+2. [Product charter](docs/00-product-charter.md)
+3. [Maturity model](docs/product/maturity-model.md)
+4. [Canonical glossary](docs/product/glossary.md)
+5. [Claims register](docs/product/claims-register.md)
+6. [Release scorecard](docs/product/release-scorecard.md)
+7. [Sprint 0 acceptance record](docs/review/sprint-0-acceptance-record.md)
+8. [Technical roadmap v1.1](docs/roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
 
 The older numbered documents have moved to `docs/reference/`. The Git tag
 `prototype-showcase-v1.0-review-candidate` preserves the frozen historical
