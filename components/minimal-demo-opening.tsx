@@ -11,6 +11,7 @@ import {
   PUBLIC_DEMO_DISCLAIMER,
   PUBLIC_DEMO_HEADLINE,
   PUBLIC_DEMO_STEPS,
+  OPERATING_PRINCIPLE,
 } from "@/lib/product-language";
 
 export function MinimalDemoOpening() {
@@ -44,6 +45,7 @@ export function MinimalDemoOpening() {
           <span className="minimal-eyebrow">For business owners and trade partners</span>
           <h1>{PUBLIC_DEMO_HEADLINE}</h1>
           <p className="minimal-opening-description">{PUBLIC_DEMO_DESCRIPTION}</p>
+          <p className="minimal-aviation-line">{OPERATING_PRINCIPLE}</p>
           <div className="minimal-arbitration-explainer">
             <Scale size={19} />
             <p>{PUBLIC_DEMO_ARBITRATION_EXPLAINER}</p>
@@ -75,7 +77,10 @@ export function MinimalDemoOpening() {
           {PUBLIC_DEMO_STEPS.map((step, index) => (
             <li key={step.id}>
               <span>{index + 1}</span>
-              <strong>{step.label}</strong>
+              <div>
+                <small>{step.contextLabel}</small>
+                <strong>{step.label}</strong>
+              </div>
             </li>
           ))}
         </ol>

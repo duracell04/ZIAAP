@@ -7,7 +7,6 @@ import {
   CURRENT_ARTIFACT_CLASSIFICATION,
   CURRENT_MATURITY_LEVEL,
   DIGITAL_TWIN_BOUNDARY,
-  LIFECYCLE_STAGES,
   MATTER_GATES,
   PROTOCOL_LAYERS,
   PUBLIC_DEMO_ARBITRATION_EXPLAINER,
@@ -99,7 +98,7 @@ describe("Sprint 0 product language", () => {
     expect(workspace).toContain("MATTER_GATES.map");
   });
 
-  it("projects the canonical lifecycle into one plain-language public walkthrough", () => {
+  it("projects the six canonical gates into one plain-language public walkthrough", () => {
     expect(PUBLIC_DEMO_HEADLINE).toBe("Agree the rules before the dispute.");
     expect(PUBLIC_DEMO_ARBITRATION_EXPLAINER).toContain("outside court");
     expect(PUBLIC_DEMO_DESCRIPTION).toContain("source-linked case");
@@ -112,8 +111,15 @@ describe("Sprint 0 product language", () => {
       "Review",
       "Outcome",
     ]);
-    expect(new Set(PUBLIC_DEMO_STEPS.flatMap((step) => step.canonicalStages))).toEqual(
-      new Set(LIFECYCLE_STAGES.map((stage) => stage.id)),
+    expect(PUBLIC_DEMO_STEPS.map((step) => step.canonicalGates)).toEqual([
+      ["alignment"],
+      ["configuration", "appointment_configuration_freeze"],
+      ["case_production"],
+      ["independent_adjudication"],
+      ["award_black_box"],
+    ]);
+    expect(new Set(PUBLIC_DEMO_STEPS.flatMap((step) => step.canonicalGates))).toEqual(
+      new Set(MATTER_GATES.map((gate) => gate.id)),
     );
   });
 

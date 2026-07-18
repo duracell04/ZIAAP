@@ -60,6 +60,7 @@ export function MinimalDemoShell({
 
   const furthestStep = getFurthestPublicDemoStep(state);
   const furthestIndex = PUBLIC_DEMO_STEPS.findIndex((step) => step.id === furthestStep);
+  const currentStepDefinition = PUBLIC_DEMO_STEPS.find((step) => step.id === currentStep)!;
 
   return (
     <main className={currentStep === "review" ? "minimal-app minimal-app-review" : "minimal-app"}>
@@ -113,6 +114,7 @@ export function MinimalDemoShell({
 
       <section className="minimal-stage">
         <header className="minimal-stage-intro">
+          <small>{currentStepDefinition.contextLabel}</small>
           <span>{eyebrow}</span>
           <h1>{title}</h1>
           <p>{introduction}</p>

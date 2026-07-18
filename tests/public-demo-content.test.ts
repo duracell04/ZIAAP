@@ -59,6 +59,17 @@ describe("hyper-minimal public surface", () => {
     expect(outcome).toContain("Human decision · simulated");
   });
 
+  it("uses restrained aviation framing and projects each public step to canonical gates", () => {
+    const opening = read("components/minimal-demo-opening.tsx");
+    const shell = read("components/minimal-demo-shell.tsx");
+    const language = read("lib/product-language.ts");
+    expect(opening).toContain("OPERATING_PRINCIPLE");
+    expect(opening).not.toMatch(/cockpit dashboard|aircraft control|take off|landing/i);
+    expect(shell).toContain("currentStepDefinition.contextLabel");
+    expect(language).toContain("canonicalGates");
+    expect(language).not.toContain("canonicalStages");
+  });
+
   it("provides semantic keyboard access and a non-overflowing mobile step projection", () => {
     const shell = read("components/minimal-demo-shell.tsx");
     const drawer = read("components/minimal-source-drawer.tsx");

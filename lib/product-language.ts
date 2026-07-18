@@ -148,36 +148,24 @@ export const CONTROL_ALLOCATION = [
   },
 ] as const;
 
-/**
- * @deprecated Use MATTER_GATES. Retained temporarily for compatibility while
- * current C0 reference components migrate to the operating-model projection.
- */
-export const LIFECYCLE_STAGES = [
-  { id: "party_alignment", label: "Party Alignment" },
-  { id: "protocol_constitution", label: "Protocol Constitution" },
-  { id: "scenario_laboratory", label: "Scenario Laboratory" },
-  { id: "configuration_manifest", label: "Configuration Manifest" },
-  { id: "later_dispute", label: "Later Dispute" },
-  { id: "audit_dossier", label: "Audit Dossier" },
-] as const;
-
 export const PUBLIC_DEMO_STEPS = [
-  { id: "align", label: "Align", canonicalStages: ["party_alignment"] },
+  { id: "align", label: "Align", contextLabel: "I0 · Gate 1", canonicalGates: ["alignment"] },
   {
     id: "test",
     label: "Test",
-    canonicalStages: ["protocol_constitution", "scenario_laboratory", "configuration_manifest"],
+    contextLabel: "I0 · Gate 2 / I1 · Gate 3 integrity",
+    canonicalGates: ["configuration", "appointment_configuration_freeze"],
   },
-  { id: "dispute", label: "Dispute", canonicalStages: ["later_dispute"] },
-  { id: "review", label: "Review", canonicalStages: ["later_dispute"] },
-  { id: "outcome", label: "Outcome", canonicalStages: ["audit_dossier"] },
+  { id: "dispute", label: "Dispute", contextLabel: "I1 · Gate 4", canonicalGates: ["case_production"] },
+  { id: "review", label: "Review", contextLabel: "I2 · Gate 5", canonicalGates: ["independent_adjudication"] },
+  { id: "outcome", label: "Outcome", contextLabel: "I2 · Gate 6", canonicalGates: ["award_black_box"] },
 ] as const satisfies ReadonlyArray<{
   id: string;
   label: string;
-  canonicalStages: ReadonlyArray<(typeof LIFECYCLE_STAGES)[number]["id"]>;
+  contextLabel: string;
+  canonicalGates: ReadonlyArray<MatterGate>;
 }>;
 
-export type LifecycleStage = (typeof LIFECYCLE_STAGES)[number]["id"];
 export type ProtocolLayer = (typeof PROTOCOL_LAYERS)[number]["id"];
 export type MatterGate = (typeof MATTER_GATES)[number]["id"];
 export type PublicDemoStep = (typeof PUBLIC_DEMO_STEPS)[number]["id"];
