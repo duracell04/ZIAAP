@@ -12,7 +12,7 @@ import { OpeningExperience } from "@/components/opening-experience";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  alignmentAnalysisSchema, applyOption, normalizeDecisionStatus, proposedDeterminationSchema, settlementProposalSchema, updateDecisionLanguage,
+  alignmentAnalysisSchema, applyOption, normalizeDecisionStatus, reasoningMemorandumSchema, settlementProposalSchema, updateDecisionLanguage,
   type ArbitratorConstitution, type ContractState, type LedgerEvent, type Topic,
 } from "@/lib/case-model";
 import { humanDecisionCanRecord, invalidatePreparedManifest, invalidateProtocolState, partyAlignmentReady, prepareProtocolManifest, simulateAppointmentTransition } from "@/lib/protocol";
@@ -241,15 +241,15 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
     setState((current) => ({ ...current, humanDecision: { ...current.humanDecision, preliminaryAssessment: value } }));
   }
 
-  async function runDetermination(executionMode: "illustrative" | "live") {
+  async function prepareReasoningMemorandum(executionMode: "illustrative" | "live") {
     setDisputeBusy(true); setDisputeNotice("");
     try {
       const response = await fetch("/api/dispute-preview", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ executionMode, state }) });
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.reason ?? payload.error ?? "Protocol execution failed.");
-      const determination = proposedDeterminationSchema.parse(payload);
-      setState((current) => ({ ...current, lifecycleStatus: "dispute_simulated", proposedDetermination: determination, dispute: { ...current.dispute, stage: "human_review" }, ledger: [...current.ledger, newEvent("ZIAAP simulation protocol", "Produced provisional simulation-only determination", determination.id, "No independent legal effect; future human judgment remains required.", "advisory")] }));
-      setDisputeNotice(determination.metadata.notice ?? determination.metadata.label);
+      const reasoningMemorandum = reasoningMemorandumSchema.parse(payload);
+      setState((current) => ({ ...current, lifecycleStatus: "dispute_simulated", reasoningMemorandum, dispute: { ...current.dispute, stage: "human_review" }, ledger: [...current.ledger, newEvent("ZIAAP simulation protocol", "Prepared advisory reasoning memorandum", reasoningMemorandum.id, "State-derived analysis only · no independent legal effect · future human judgment remains required.", "advisory")] }));
+      setDisputeNotice(reasoningMemorandum.metadata.notice ?? reasoningMemorandum.metadata.label);
     } catch (error) { setDisputeNotice(error instanceof Error ? error.message : "Frozen protocol could not run."); }
     finally { setDisputeBusy(false); }
   }
@@ -281,7 +281,7 @@ export function DemoWorkspace({ initialState }: { initialState: ContractState })
         {step === 1 && <ConstitutionBuilder state={state} updatePrinciple={updatePrinciple} acknowledgeConstitution={acknowledgeConstitution} />}
         {step === 2 && <ValidationLab state={state} running={calibrating} notice={calibrationNotice} runValidation={runValidation} acknowledgeScenario={acknowledgeScenario} />}
         {step === 3 && <AppointmentCeremony state={state} busy={appointmentBusy} errorNotice={appointmentError} freezePackage={freezePackage} confirmHash={confirmHash} setReviewFlag={setReviewFlag} appoint={appoint} />}
-        {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} runDetermination={runDetermination} updateDecision={updateDecision} toggleChecklist={toggleChecklist} recordDecision={recordDecision} />}
+        {step === 4 && <DisputePreview state={state} busy={disputeBusy} notice={disputeNotice} toggleSettlementConsent={toggleSettlementConsent} requestSettlement={requestSettlement} respondSettlement={respondSettlement} updatePreliminary={updatePreliminary} prepareReasoningMemorandum={prepareReasoningMemorandum} updateDecision={updateDecision} toggleChecklist={toggleChecklist} recordDecision={recordDecision} />}
         {step === 5 && <DossierView state={state} />}
       </div>
       <footer className="step-footer"><Button variant="secondary" disabled={step === 0} onClick={() => requestStep(step - 1)}><ArrowLeft size={16} /> Previous</Button><span>Stage {step + 1} of 6</span><Button disabled={step === 5} onClick={() => requestStep(step + 1)}>{step === 4 ? "Open Audit Dossier" : "Continue"} <ArrowRight size={16} /></Button></footer>

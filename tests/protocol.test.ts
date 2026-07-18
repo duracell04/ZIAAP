@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { getDemoState } from "@/lib/demo-data";
 import type { ContractState, ExecutionStatus } from "@/lib/case-model";
+import { buildReasoningMemorandumInput } from "@/lib/operating-model";
 import {
-  allStressTestsAcknowledged, buildAdjudicationInput, buildProtocolManifest, canSimulateAppointment,
+  allStressTestsAcknowledged, buildProtocolManifest, canSimulateAppointment,
   canonicalize, computeProtocolHash, invalidateProtocolState, partyAlignmentReady, prepareProtocolManifest,
   simulateAppointmentTransition,
 } from "@/lib/protocol";
@@ -127,7 +128,7 @@ describe("simulation-only exact protocol manifest", () => {
   it("constructs adjudication input without sealed settlement content", () => {
     const state = getDemoState();
     state.settlement.proposal = { id: "sealed", label: "System-generated, non-binding settlement proposal", terms: ["SECRET TERM"], basis: "SECRET CONCESSION", sourceScope: "Shared case record only", materialStatus: "sealed_settlement" };
-    const serialized = JSON.stringify(buildAdjudicationInput(state, "sha256:test"));
+    const serialized = JSON.stringify(buildReasoningMemorandumInput(state, "sha256:test"));
     expect(serialized).not.toContain("SECRET TERM"); expect(serialized).not.toContain("SECRET CONCESSION");
   });
 });

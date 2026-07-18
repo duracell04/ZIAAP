@@ -85,7 +85,7 @@ export function invalidateProtocolState(state: ContractState, constitution: Cont
       simulatedArbitratorAccepted: false, simulatedAcceptanceRecord: null, preparedAt: null, simulatedAt: null,
     },
     dispute: { ...state.dispute, appointmentHash: null, stage: "not_started" },
-    proposedDetermination: null,
+    reasoningMemorandum: null,
     humanDecision: {
       preliminaryAssessment: "", status: "pending", rationale: "",
       checklist: { sourcesReviewed: false, objectionsReviewed: false, calibrationChecked: false, independentJudgment: false },
@@ -98,7 +98,7 @@ export function invalidatePreparedManifest(state: ContractState): ContractState 
   return {
     ...state, lifecycleStatus: "draft",
     appointment: { ...state.appointment, manifestHash: null, simulatedAcknowledgements: { supplier: null, customer: null }, disclosuresReviewed: false, simulatedArbitratorAccepted: false, simulatedAcceptanceRecord: null, preparedAt: null, simulatedAt: null },
-    dispute: { ...state.dispute, appointmentHash: null, stage: "not_started" }, proposedDetermination: null,
+    dispute: { ...state.dispute, appointmentHash: null, stage: "not_started" }, reasoningMemorandum: null,
   };
 }
 
@@ -145,20 +145,10 @@ export function settlementCanActivate(state: ContractState) {
   return state.lifecycleStatus === "appointment_simulated" && state.settlement.consents.supplier && state.settlement.consents.customer;
 }
 
-export function buildAdjudicationInput(state: ContractState, appointmentHash: string) {
-  return {
-    constitution: state.constitution,
-    appointmentHash,
-    contractDecisions: state.decisions,
-    dispute: state.dispute,
-    legalSources: state.analysis.sources,
-  };
-}
-
 export function humanDecisionCanRecord(state: ContractState) {
   const decision = state.humanDecision;
   return Boolean(
-    state.proposedDetermination && decision.preliminaryAssessment.trim() && decision.rationale.trim()
+    state.reasoningMemorandum && decision.preliminaryAssessment.trim() && decision.rationale.trim()
     && decision.status !== "pending" && Object.values(decision.checklist).every(Boolean),
   );
 }

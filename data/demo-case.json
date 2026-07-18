@@ -216,7 +216,7 @@
     "status": "not_started", "consents": { "supplier": false, "customer": false }, "proposal": null,
     "responses": { "supplier": "pending", "customer": "pending" }, "sealed": true, "meritsRecord": []
   },
-  "proposedDetermination": null,
+  "reasoningMemorandum": null,
   "humanDecision": {
     "preliminaryAssessment": "", "status": "pending", "rationale": "",
     "checklist": { "sourcesReviewed": false, "objectionsReviewed": false, "calibrationChecked": false, "independentJudgment": false },

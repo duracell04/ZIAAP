@@ -1,14 +1,15 @@
 import { Output, generateText } from "ai";
 import { openai } from "@ai-sdk/openai";
-import { contractStateSchema, proposedDeterminationSchema } from "@/lib/case-model";
-import { buildAdjudicationInput, buildProtocolManifest, computeProtocolHash } from "@/lib/protocol";
+import { contractStateSchema, reasoningMemorandumSchema } from "@/lib/case-model";
+import { buildReasoningMemorandumInput } from "@/lib/operating-model";
+import { buildProtocolManifest, computeProtocolHash } from "@/lib/protocol";
 import { executionFailure, failureResponse } from "@/lib/execution";
 
 export const runtime = "nodejs";
 
-function cachedDetermination(hash: string) {
-  return proposedDeterminationSchema.parse({
-    id: "determination-outage-001", appointmentHash: hash,
+function cachedReasoningMemorandum(hash: string) {
+  return reasoningMemorandumSchema.parse({
+    id: "reasoning-memorandum-outage-001", configurationHash: hash,
     issues: ["Contractual service credit", "Maintenance exclusion", "Causation and claimed loss", "Effect of the liability limitation"],
     findings: [
       "The confirmed 99.2% uptime input produces a CHF 1,500 service credit under the frozen formula.",
@@ -21,8 +22,8 @@ function cachedDetermination(hash: string) {
     escalationFlags: ["mandatory_law", "disputed_fact", "causation", "human_independent_judgment"],
     reasoningSummary: "The frozen protocol resolves the mechanical credit, preserves disputed propositions, and presents the residual issues without using settlement content.",
     proposedDisposition: "Illustrate the CHF 1,500 contractual credit. Reserve all additional liability, causation, and limitation issues for future independent human determination on a completed record.",
-    materialStatus: "proposed_determination", independentLegalEffect: false,
-    metadata: { executionMode: "illustrative", executionStatus: "illustrative_only", artifactId: "determination-illustrative-v1", label: "Illustrative protocol determination", provenance: "Curated offline synthetic fixture" },
+    materialStatus: "reasoning_memorandum", independentLegalEffect: false,
+    metadata: { executionMode: "illustrative", executionStatus: "illustrative_only", artifactId: "reasoning-memorandum-illustrative-v1", label: "Illustrative reasoning memorandum", provenance: "Curated offline synthetic fixture" },
   });
 }
 
@@ -36,7 +37,7 @@ export async function POST(request: Request) {
   if (state.settlement.status === "settled") return Response.json({ error: "The dispute is settled; adjudication cannot continue." }, { status: 409 });
   const hash = await computeProtocolHash(buildProtocolManifest(state));
   if (hash !== state.appointment.manifestHash || state.dispute.appointmentHash !== hash) return Response.json({ error: "The active dispute is not bound to the frozen appointment package." }, { status: 409 });
-  const cached = cachedDetermination(hash);
+  const cached = cachedReasoningMemorandum(hash);
   if (executionMode === "illustrative") return Response.json(cached);
 
   const configuredModel = process.env.OPENAI_MODEL ?? "gpt-5-mini";
@@ -46,13 +47,13 @@ export async function POST(request: Request) {
 
   try {
     const { output } = await generateText({
-      model: openai(configuredModel), output: Output.object({ schema: proposedDeterminationSchema.omit({ metadata: true }) }), abortSignal: AbortSignal.timeout(12_000),
-      system: "Operate only as the simulation-only ZIAAP protocol identified by the exact manifest. Produce a provisional synthetic determination without independent legal effect. Preserve equality, sources, objections, uncertainty, and future mandatory human judgment. Never use settlement proposals, concessions, or responses.",
-      prompt: JSON.stringify(buildAdjudicationInput(state, hash)),
+      model: openai(configuredModel), output: Output.object({ schema: reasoningMemorandumSchema.omit({ metadata: true, configurationHash: true }) }), abortSignal: AbortSignal.timeout(12_000),
+      system: "Operate only as the simulation-only ZIAAP protocol identified by the exact manifest. Prepare a source-linked advisory reasoning memorandum without independent legal effect. Preserve equality, sources, objections, uncertainty, and future mandatory human judgment. Never use settlement proposals, concessions, or responses.",
+      prompt: JSON.stringify(buildReasoningMemorandumInput(state, hash)),
     });
-    return Response.json({ ...output, metadata: { executionMode: "live", executionStatus: "executed_unverified", artifactId: crypto.randomUUID(), label: "Live protocol determination", provenance: `Live OpenAI execution using ${configuredModel}` } });
+    return Response.json({ ...output, configurationHash: hash, metadata: { executionMode: "live", executionStatus: "executed_unverified", artifactId: crypto.randomUUID(), label: "Live reasoning memorandum", provenance: `Live OpenAI execution using ${configuredModel}` } });
   } catch (error) {
     const timedOut = error instanceof Error && (error.name === "AbortError" || error.message.toLowerCase().includes("timeout"));
-    return failureResponse(executionFailure(timedOut ? "timeout" : "provider_failure", timedOut ? "Live determination timed out." : "The live provider failed or returned unusable output.", true), timedOut ? 504 : 502);
+    return failureResponse(executionFailure(timedOut ? "timeout" : "provider_failure", timedOut ? "Live reasoning memorandum timed out." : "The live provider failed or returned unusable output.", true), timedOut ? 504 : 502);
   }
 }

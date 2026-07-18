@@ -11,7 +11,7 @@ describe("lawyer-grade contract state", () => {
     expect(state.constitution).toMatchObject({ materialStatus: "protocol_constitution" });
     expect(state.calibrationScenarios).toHaveLength(4);
     expect(state.appointment.manifestHash).toBeNull();
-    expect(state.proposedDetermination).toBeNull();
+    expect(state.reasoningMemorandum).toBeNull();
   });
 
   it("requires both parties to confirm the exact clause version", () => {

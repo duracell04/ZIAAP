@@ -18,7 +18,7 @@ export const showcaseAuthoritySchema = z.object({
 export const materialStatusSchema = z.enum([
   "source", "party_assertion", "provisional_ai_analysis", "legal_source", "draft",
   "agreed_contractual_text", "reproducible_calculation", "protocol_constitution",
-  "calibration_result", "appointment_record", "sealed_settlement", "proposed_determination",
+  "calibration_result", "appointment_record", "sealed_settlement", "reasoning_memorandum",
   "human_decision",
 ]);
 
@@ -183,11 +183,11 @@ export const settlementTrackSchema = z.object({
   sealed: z.literal(true), meritsRecord: z.array(z.string()),
 });
 
-export const proposedDeterminationSchema = z.object({
-  id: z.string(), appointmentHash: z.string(), issues: z.array(z.string()), findings: z.array(z.string()),
+export const reasoningMemorandumSchema = z.object({
+  id: z.string(), configurationHash: z.string(), issues: z.array(z.string()), findings: z.array(z.string()),
   sourceIds: z.array(z.string()), counterarguments: z.array(z.string()), uncertainty: z.array(z.string()),
   escalationFlags: z.array(z.string()), reasoningSummary: z.string(), proposedDisposition: z.string(),
-  materialStatus: z.literal("proposed_determination"), independentLegalEffect: z.literal(false),
+  materialStatus: z.literal("reasoning_memorandum"), independentLegalEffect: z.literal(false),
   metadata: z.object({
     executionMode: z.enum(["illustrative", "live"]), executionStatus: executionStatusSchema,
     artifactId: z.string(), label: z.string(), provenance: z.string(), notice: z.string().optional(),
@@ -214,7 +214,7 @@ export const contractStateSchema = z.object({
   legalConstraint: legalConstraintSchema,
   constitution: arbitratorConstitutionSchema, calibrationScenarios: z.array(calibrationScenarioSchema).length(4),
   appointment: appointmentRecordSchema, dispute: disputeSessionSchema, settlement: settlementTrackSchema,
-  proposedDetermination: proposedDeterminationSchema.nullable(), humanDecision: humanDecisionSchema,
+  reasoningMemorandum: reasoningMemorandumSchema.nullable(), humanDecision: humanDecisionSchema,
   ledger: z.array(ledgerEventSchema),
 }).superRefine((state, context) => {
   if (state.analysis.metadata.executionStatus === "validated") context.addIssue({ code: "custom", path: ["analysis", "metadata", "executionStatus"], message: "Validated is unreachable in this concept environment." });
@@ -247,7 +247,7 @@ export type CalibrationScenario = z.infer<typeof calibrationScenarioSchema>;
 export type ContractState = z.infer<typeof contractStateSchema>;
 export type LedgerEvent = z.infer<typeof ledgerEventSchema>;
 export type LegalConstraint = z.infer<typeof legalConstraintSchema>;
-export type ProposedDetermination = z.infer<typeof proposedDeterminationSchema>;
+export type ReasoningMemorandum = z.infer<typeof reasoningMemorandumSchema>;
 
 export function isBilateralConfirmation(decision: AlignmentDecision) {
   return decision.confirmations.supplier === decision.version && decision.confirmations.customer === decision.version;
