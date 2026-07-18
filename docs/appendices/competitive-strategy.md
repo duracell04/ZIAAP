@@ -1,5 +1,9 @@
 # Competitive Strategy
 
+> **Historical, non-normative strategy appendix.** It may use superseded
+> lifecycle or product language. The
+> [ZIAAP Operating Model](../product/operating-model.md) is canonical.
+
 > **Supporting strategy appendix — not a build specification.**
 
 ## 1. Focused Positioning

@@ -1,130 +1,149 @@
-# Institutional Brand Book
+# ZIAAP Institutional Brand Book
 
-> Current brand reference. The product charter, glossary, and claims register
-> control maturity and authority wording.
+> Current normative brand reference. The
+> [operating model](../product/operating-model.md), product charter, glossary
+> and claims register control ambition, maturity and authority wording.
 
-## Calm precision for governed dispute-resolution software
+## 1. Brand promise
 
-## 1. Canonical promise and description
+> **Reasoning made visible. Judgment kept human.**
 
-> **Test your dispute-resolution system before you sign the contract.**
+The category thesis is:
 
-ZIAAP helps parties align contractual meaning and test the observable behaviour
-of an agreed dispute-resolution process before signing, using a governed AI
-Resolution Officer to augment a properly appointed human arbitrator who retains
-legal authority.
+> **Traditional arbitration standardises procedural rules. ZIAAP also
+> standardises the production environment through which a case is prepared,
+> examined and decided.**
+
+The operating principle may appear once on an opening or strategy surface:
+
+> **Commercial aviation made safe flight scalable by standardising everything
+> around the pilot. ZIAAP aims to make high-quality arbitration scalable by
+> standardising everything around the arbitrator.**
+
+> **Standardise the cockpit. Automate the instruments. Preserve the captain.**
+
+The analogy is editorial. Never imply mechanical legal outcomes, autonomous
+flight, aviation-grade certification or regulatory equivalence.
+
+## 2. Current boundary
 
 Describe the current artifact as a **C0 high-fidelity interactive concept
-demonstrator**, immediately qualifying high fidelity as workflow and interaction
-fidelity. Lead with the commercial problem and before-signing governance insight.
+demonstrator**, immediately qualifying high fidelity as workflow and
+interaction fidelity. It is synthetic, resettable, simulation-only and without
+legal effect.
 
-The AI Resolution Officer is a governed software capability, never shorthand for
-software holding legal or arbitral office.
+The AI Resolution Officer is governed software, never a legal office,
+institution, arbitrator or autonomous decision-maker. A properly appointed
+human arbitrator retains legal authority and responsibility.
 
-## 2. Voice
+Partner ownership, the CHF 50,000–500,000 target range, “first,” faster, more
+predictable, economically viable and scalable are future hypotheses governed
+by the claims register.
 
-Precise, calm, institutional, candid, and commercially literate. Explain what an
-artifact does and does not establish. Prefer verbs such as compare, structure,
-calculate, identify, acknowledge, simulate, review, challenge, and reject.
+## 3. Voice
 
-Do not use validated, appointed, signed, award, binding, secure, autonomous, or
-enforceable as a current positive claim. A future or negative use must be precise
-and supported by the claims register.
+Precise, calm, institutional, candid and commercially literate. State radical
+future ambition in intentional language—“aims,” “seeks,” “intended”—and state
+current evidence conservatively.
 
-## 3. Canonical terminology
+Prefer compare, align, structure, calculate, configure, test, freeze, identify,
+challenge, review, modify, reject, request evidence and record.
+
+Do not use validated, appointed, signed, award, binding, secure, autonomous,
+enforceable, first, faster, scalable or economically viable as a current
+positive claim.
+
+## 4. Canonical operating-model language
 
 | Use | Meaning |
 |---|---|
-| Party Alignment | Parties expose and resolve divergent contractual expectations |
-| Protocol Constitution | Parties configure rules, values, sources, tools, uncertainty, escalation, and change policy |
-| Arbitral reasoning calibration | An activity inside Protocol Constitution; inference-time configuration with model weights unchanged |
-| Scenario Laboratory | Synthetic interrogation of the exact configuration and its observable behaviour |
-| Stress testing | An activity inside Scenario Laboratory, not independent validation or future-result prediction |
-| Configuration Manifest | Digestible selected configuration, not actor, runtime, provider, signature, or consent attestation |
-| Later Dispute | Fictional ceremony, shared record, optional settlement, software analysis, and retained human control |
-| Audit Dossier | Truthful projection of available and pending lifecycle evidence |
-| Acknowledge for simulated ceremony | No legal or authoritative effect |
-| Provisional simulation-only analysis | Non-operative AI Resolution Officer artifact |
-| Simulated human record | Fictional, unsigned, and non-operative |
+| I0 · Flight Plan | Gate 1 Alignment and Gate 2 Configuration before conflict |
+| I1 · Cockpit | Gate 3 Appointment & Configuration Freeze and Gate 4 Case Production |
+| I2 · Captain in Command | Gate 5 Independent Adjudication and Gate 6 Award & Black Box |
+| Constitution | Versioned software control plane for permissions, boundaries, escalation and invalidation |
+| Structured case state | The authoritative technical representation of claims, defences, facts, evidence, gaps, rules, calculations, objections, uncertainty and human interventions |
+| Reasoning memorandum | State-derived advisory artifact; not a verdict or authoritative case model |
+| Procedural black box | Event-derived record excluding private human deliberation |
+| Simulated Outcome & Procedural Black Box | Required C0 label for Gate 6 |
 
-The target is a digital twin of the agreed dispute-resolution process and its
-observable behaviour, not a predictor of the future result.
+The public experience remains Align / Test / Dispute / Review / Outcome. Those
+labels project the gates and never form a competing lifecycle.
 
-## 4. Visual character
+## 5. Visual character
 
 Warm institutional paper, charcoal structure, oxblood authority cautions,
-reasoning blue, evidence green, and amber uncertainty. Serif display typography
+reasoning blue, evidence green and amber uncertainty. Serif display typography
 signals deliberation; restrained sans-serif and monospace identify controls,
-status, versions, and digests.
+status, versions and digests.
 
-The interface should feel like a carefully designed governance instrument, not a
-generic chatbot, court portal, crypto product, or futuristic control room.
+Use aviation sparingly: one editorial analogy, small I0/I1/I2 context labels
+and one concise role diagram. Do not introduce cockpit dashboards, aircraft
+controls or aviation-themed actions.
 
-## 5. Semantic treatments
+The interface should feel like a governed professional instrument, not a
+generic chatbot, court portal, crypto product or futuristic control room.
 
-Source text is neutral. Party assertions are contextual. AI-supported analysis
-is blue and always paired with execution status. Legal constraints use red and a
-review boundary. Deterministic calculations use green with visible formula and
-inputs. Proposed options remain selectable and non-agreed. Agreed text shows
-exact version and bilateral confirmation.
+## 6. Semantic treatments
 
-## 6. Required artifact fields
+Source text is neutral. Party assertions identify the party. AI inferences are
+visually distinct, source-linked and uncertain. Contested material has a
+non-colour marker. Missing evidence is amber and named. Deterministic
+calculations show formula and inputs. Human decisions receive the strongest
+institutional frame.
 
-Every consequential artifact shows:
+An AI inference must never resemble an established fact. A reasoning
+memorandum must never resemble a verdict.
 
-- artifact type and actor;
-- `simulation_only`;
-- execution status;
-- version;
-- source/provenance;
-- consequence;
-- `legalEffect: false`; and
-- synthetic data, no production identity verification, no institutional
-  appointment, no production signature, and no legally operative award.
+## 7. Required artifact fields
 
-## 7. Interaction language
+Every consequential artifact shows actor, authority class, lifecycle mode,
+execution status, version, provenance, consequence, `legalEffect: false` and
+the current synthetic limitations.
 
-Approved primary labels:
+## 8. Interaction language
+
+Approved primary labels include:
 
 - `Begin guided demonstration`
 - `Explore the workflow`
 - `View illustrative example`
 - `Run live execution`
-- `Confirm this profile`
 - `Confirm exact version`
-- `Acknowledge for simulated ceremony`
 - `Prepare Configuration Manifest`
-- `Continue to fictional appointment simulation`
+- `Simulate appointment under acknowledged manifest`
+- `Reveal illustrative memorandum`
+- `Prepare live memorandum`
+- `Request more evidence`
 - `Record simulated human decision`
-- `Open Audit Dossier`
-- `Print Audit Dossier`
-- `Return to introduction`
+- `Open Procedural Black Box`
+- `Restart`
 
-Failures name the cause and recovery. Never imply that an illustrative fixture
-was silently substituted after live failure.
+Failures name cause and recovery. Never silently substitute an illustrative
+fixture after live failure.
 
-## 8. Opening composition
+## 9. Opening and responsive composition
 
-The opening balances the canonical promise, concise definition, current C0
-classification, human/software role split, six-stage lifecycle, process-twin
-boundary, and explicit limitation disclosure. The disclosure is visible without
-interaction.
+The expert opening balances the category thesis, current C0 classification,
+one aviation analogy, human/software role split, three layers, six gates and
+explicit limitation disclosure.
 
-## 9. Responsive and print behaviour
+The public opening keeps the approved business hierarchy and only one action:
+start the four-minute simulation. Market statistics and institutional detail
+stay outside the golden path.
 
 Desktop uses editorial asymmetry and generous whitespace. Mobile stacks roles,
-metadata, profiles, positions, options, and lifecycle steps without losing
-labels. Print suppresses navigation/actions, preserves artifact boundaries, and
-renders the Audit Dossier and Alignment Annex clearly.
-
-The dossier uses a charcoal cover, commercial/process/authority summary,
-numbered artifact index, metadata rail, provenance/consequence/boundary
-triptych, and explicit external-validation-pending closing note.
+metadata, profiles, positions, options and gates without losing labels. Print
+suppresses navigation and actions while preserving artifact boundaries.
 
 ## 10. Brand acceptance
 
-A viewer must not confuse a curated simulation with live execution, live
-execution with independent validation, a fictional ceremony with legal
-appointment, provisional software output with an operative award, the AI
-Resolution Officer with an arbitrator, or fictional human control with a
-production signature. Any authority-category confusion blocks release.
+Release is blocked if a viewer confuses:
+
+- future institution with current C0 software;
+- curated simulation with live execution;
+- live execution with independent validation;
+- fictional ceremony with legal appointment;
+- reasoning memorandum with verdict or award;
+- AI Resolution Officer with arbitrator;
+- partner-ownership target with present corporate fact; or
+- aviation analogy with mechanical result predictability.

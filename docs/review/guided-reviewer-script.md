@@ -1,101 +1,91 @@
-# ZIAAP Concept Integrity Guided Reviewer Script
+# ZIAAP Operating-Model Guided Reviewer Script
 
-> **Routing note:** This script covers the preserved six-stage technical C0
-> reference at `/` and `/reference`. The separate four-minute public
-> comprehension experiment at `/demo` uses the
-> [Hyper-Minimal Public Concept Comprehension Script](public-demo-comprehension-script.md).
-> Results from either route remain pending evidence and must not be combined
-> without an approved evaluation protocol.
+> This script covers the six-gate C0 expert reference at `/` and `/reference`.
+> The four-minute `/demo` uses the
+> [public comprehension script](public-demo-comprehension-script.md).
 
 ## Purpose
 
-Test whether the C0 concept demonstrator explains ZIAAP without presenter
-interpretation. Do not teach answers, correct participants during tasks, or
-convert observations into validation claims. Record confusion verbatim.
+Test whether unfamiliar reviewers can explain the category thesis, structured
+case state and human authority without presenter interpretation. Record
+confusion verbatim. Do not teach answers or convert observations into
+validation claims.
 
-## Reviewer profile and setup
+## Setup
 
-Record role, relevant arbitration/commercial/technology experience, device,
-viewport, prior ZIAAP knowledge, build/commit, and timezone. Do not collect
-confidential client or dispute data.
+Record reviewer role, relevant arbitration/commercial/technology experience,
+device, viewport, prior ZIAAP knowledge, commit and timezone. Use no confidential
+data. Reset before the session. Target 35–50 minutes.
 
-- Use the reviewed Concept Integrity Release commit.
-- Reset before every session.
-- Ask the reviewer to think aloud.
-- Keep public live execution disabled; test its failure state separately.
-- Target 35–50 minutes.
+## 1. Unassisted opening
 
-## Part 1 — Unassisted opening
+Ask:
 
-Show only the opening and say:
+> Please explore this page without my explanation. Tell me what ZIAAP aims to
+> become, what the current repository is and who controls judgment.
 
-> Please explore this page as if nobody were available to explain it. Tell me
-> what you think ZIAAP is, what problem it addresses, what it can currently
-> prove, and anything that feels unclear or overstated.
+Record whether the reviewer identifies:
 
-Record, without coaching:
+- future production-system ambition versus current C0 simulation;
+- partner ownership as a target, not a current fact;
+- AI Resolution Officer as software;
+- the human arbitrator as responsible;
+- aviation as governed systems around professional judgment, not mechanical
+  outcomes; and
+- no current cost, speed, scale, legal-effect or validation result.
 
-- the before-signing value proposition;
-- alignment and process-testing meaning;
-- current C0 concept classification;
-- workflow/interaction-fidelity qualification;
-- process-twin versus future-result prediction boundary;
-- AI Resolution Officer versus human-arbitrator authority; and
-- time to a coherent explanation.
+## 2. Gate 1 · Alignment
 
-Any belief that software holds arbitral office, predicts the result, issues an
-award, or provides a production service is an authority-category error.
+Ask the reviewer to trace independent expectations, divergence, sources,
+options, exact wording and bilateral simulated confirmation. Ask who selects
+the wording.
 
-## Part 2 — Party Alignment
+## 3. Gate 2 · Configuration
 
-Ask the reviewer to inspect the draft, independent expectations, divergence,
-sources, options, deterministic calculation, exact-version confirmations, and
-Alignment Annex. Ask which elements are party assertions, AI-supported analysis,
-legal constraints, deterministic results, and agreed synthetic text.
+Ask why Constitution controls and scenario testing appear on one screen. Have
+the reviewer explain:
 
-## Part 3 — Protocol Constitution
+- Constitution as software control plane;
+- configuration versus model training;
+- scenario observation versus independent validation; and
+- why behavior-affecting changes invalidate downstream state.
 
-Ask what is being configured, why model weights remain unchanged, which choices
-require human judgment, and why configuration is not observed behaviour or
-independent validation. Have both simulated parties acknowledge the exact
-Constitution version.
+## 4. Gate 3 · Appointment & Configuration Freeze
 
-## Part 4 — Scenario Laboratory
+Ask what the manifest and digest identify and exclude. Complete the fictional
+interaction. Ask whether it proves identity, consent, provider execution,
+runtime, signature, appointment or legal effect.
 
-Select **View illustrative example**. Ask the reviewer to identify hypothetical
-facts, evidence, safeguards, observed behaviour, execution status, limitations,
-provenance, and consequence. Ask how curated simulation differs from live—
-unverified execution, conformance, validation, and prediction.
+## 5. Gate 4 · Case Production
 
-## Part 5 — Configuration Manifest
+Ask the reviewer to explain why the structured case state is the core product.
+Locate claims, defences, facts, evidence, missing evidence, deterministic
+calculation and objections. Confirm sealed settlement terms remain outside
+merits input.
 
-Ask the reviewer to inspect the manifest and explain what its digest identifies
-and what it cannot prove. Complete the fictional acknowledgement ceremony and
-ask whether any interaction created identity proof, consent proof, provider
-proof, runtime attestation, signature, legal appointment, or legal effect.
+## 6. Gate 5 · Independent Adjudication
 
-## Part 6 — Later Dispute
+Record a fictional preliminary assessment, then reveal the illustrative
+reasoning memorandum. Ask:
 
-Trace manifest identification, shared merits, optional sealed settlement,
-fictional human pre-assessment, AI Resolution Officer analysis, and fictional
-human control. Confirm that settlement content remains outside merits and that
-the human may adopt, modify, or reject the provisional software output.
+- why the sequence reduces anchoring;
+- whether the memorandum is a verdict;
+- what “zero algorithmic presumption” means; and
+- whether the human can adopt, modify, reject and request more evidence.
 
-## Part 7 — Audit Dossier
+## 7. Gate 6 · Simulated Outcome & Procedural Black Box
 
-Ask the reviewer to locate actor, authority, lifecycle, execution status,
-version, provenance, consequence, and legal-effect boundary. Ask which artifacts
-are commercially useful and why Gate C1 evidence remains pending.
+Ask which information comes from recorded events, what the black box excludes
+and why it is not an award or proof of legal validity.
 
-## Part 8 — Failure and reset
+## 8. Failure and reset
 
-After reset, select **Run live execution** in the default environment. Ask what
-failed, whether an illustrative result was silently substituted, why later use
-is blocked, and which deliberate action recovers. Reset and verify the initial
-synthetic state.
+Use a live action in the default disabled environment. Ask whether a fixture was
+silently substituted and how the reviewer recovers. Reset and confirm initial
+state.
 
-## Part 9 — Close
+## 9. Close
 
-Use the questionnaire verbatim, then ask what was valuable, theatrical,
-overstated, missing, or removable. Save a de-identified findings-log copy. Do not
-aggregate or publish results until the Gate C1 evaluation protocol is approved.
+Use the questionnaire verbatim. Ask what is valuable, theatrical, overstated,
+missing or removable. Save a de-identified findings log. No aggregation or
+publication occurs before the evaluation protocol is approved.

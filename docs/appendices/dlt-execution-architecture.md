@@ -1,5 +1,8 @@
 # DLT and Smart-Contract Execution Architecture
 
+> **Historical, non-normative architecture appendix.** The
+> [ZIAAP Operating Model](../product/operating-model.md) is canonical.
+
 > **Future product architecture — not current MVP scope, not a smart-contract
 > specification, and not a representation that any token, wallet signature, or
 > automated transfer is legally effective in every deployment.**

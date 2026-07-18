@@ -1,5 +1,8 @@
 # ZIAAP Sovereign Arbitral Runtime
 
+> **Historical, non-normative architecture appendix.** The
+> [ZIAAP Operating Model](../product/operating-model.md) is canonical.
+
 > **Future architecture and strategic capability map — not current MVP scope,
 > a production deployment specification, a certification claim, or a guarantee
 > that an award will be valid or enforceable in a particular jurisdiction.**

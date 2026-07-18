@@ -6,9 +6,11 @@
 
 **Current artifact classification:** High-fidelity interactive concept demonstrator, where “high-fidelity” refers specifically to workflow and interaction fidelity
 
-**Core product promise:** **Test your dispute-resolution system before you sign the contract.**
+**Category thesis:** **Traditional arbitration standardises procedural rules. ZIAAP also standardises the production environment through which a case is prepared, examined and decided.**
 
-**Target product model:** AI-native dispute governance, with an AI Resolution Officer that augments a legally responsible human arbitrator.
+**Target product model:** A future partner-owned AI-native arbitration provider in which the production environment is standardised around a legally responsible human arbitrator.
+
+**Current boundary:** The partner model, CHF 50,000–500,000 target range, “first” category position and economic benefits are hypotheses, not current facts.
 
 ---
 
@@ -24,11 +26,11 @@ The roadmap therefore uses the following maturity ladder:
 
 | Level | Name | Evidence required | Planned milestone |
 |---|---|---|---|
-| C0 | Interactive concept demonstrator | Coherent six-stage journey, synthetic fixtures, honest limitations | Current state |
+| C0 | Interactive concept demonstrator | Coherent three-layer, six-gate journey, synthetic fixtures, honest limitations | Current state |
 | C1 | Review-grade concept demonstrator | Canonical state, truthful artifacts, structured contract integrity, clear funding roadmap | Sprint 4 |
 | P1 | Functional proof of concept | Real persistence, separate users, real document inputs and live AI divergence detection | Sprint 9 |
-| P2 | Testable prototype | Negotiated structured terms, typed Constitution, scenario laboratory, independent conformance harness and exact configuration manifest | Sprint 19 |
-| P3 | Audit-ready prototype | Later-dispute workflow, evidence graph, Resolution Officer, arbitrator cockpit, challenge round and verifiable dossier | Sprint 28 |
+| P2 | Testable prototype | Negotiated structured terms, typed Constitution control plane, scenario testing, independent conformance harness and exact configuration integrity | Sprint 19 |
+| P3 | Audit-ready prototype | Structured case production, evidence graph, Resolution Officer, arbitrator cockpit, challenge round and verifiable procedural black box | Sprint 28 |
 | V1 | Controlled pilot | Security controls, external expert evaluation and supervised real alignment matters | Sprint 31 |
 | R1 | Production product | Integrations, reliability, governance, administration and post-market monitoring | Sprint 34 |
 
@@ -45,6 +47,24 @@ The phrase **perfect concept** is defined here as a concept that is:
 ---
 
 ## 2. Product thesis
+
+> **ZIAAP aims to transform arbitration from a largely bespoke,
+> document-driven professional service into a structured, technology-native
+> production system.**
+
+The objective is not to automate arbitral authority. It is to make professional
+authority usable across a substantially broader range of commercial disputes.
+
+The future institution is intended to be owned and professionally governed by
+participating arbitrator partners, supported by shared engineering and case
+administration. This is a target governance design. Any “first” description is
+aspirational and requires competitive substantiation.
+
+By reducing repeated reconstruction, administration and drafting, ZIAAP seeks
+to make independent human arbitration operationally faster, more predictable
+and economically viable for lower-value and higher-volume commercial disputes.
+The CHF 50,000–500,000 range and named dispute categories are initial market
+hypotheses. No quantified outcome is claimed.
 
 ZIAAP changes the sequence of arbitration. Instead of choosing a thin dispute clause and discovering the practical decision system only after conflict, the parties:
 
@@ -64,13 +84,13 @@ The product is therefore not merely contract review and not autonomous arbitrati
 
 | Capability | User value |
 |---|---|
-| Alignment before conflict | Reveals where parties silently mean different things |
+| Gate 1 alignment before conflict | Reveals where parties silently mean different things |
 | Computable contract governance | Converts selected commercial rules into reproducible operations |
-| Protocol Constitution | Makes evidence, fairness, uncertainty, escalation and tool policies explicit |
-| Scenario laboratory | Lets parties test the future resolution system before signing |
+| Constitution control plane | Makes permissions, evidence, fairness, uncertainty, escalation, tools and invalidation explicit |
+| Gate 2 scenario testing | Lets parties test observable behaviour before signing |
 | AI Resolution Officer | Structures and challenges the later dispute at high capacity |
-| Human arbitrator cockpit | Preserves independent judgment while reducing reconstruction work |
-| Procedural trace and dossier | Makes the lifecycle understandable, contestable and auditable |
+| Gate 5 human arbitrator workspace | Preserves independent judgment with zero algorithmic presumption |
+| Gate 6 procedural black box | Makes recorded procedure understandable, contestable and inspectable |
 
 ### 2.2 Resolution Officer definition
 
@@ -101,6 +121,9 @@ The roadmap preserves the following boundaries:
 | Evaluator / auditor | Test robustness, trace provenance, verify manifests, inspect bias, measure comprehension and validate claims |
 | Security / privacy officer | Govern sensitive data, retention, access, providers, incidents and cross-border handling |
 | Platform operator | Maintain reliable execution, model governance, observability, support and release controls |
+| Arbitrator partner | Define professional standards, retain independent case judgment and govern the target institution |
+| Engineering team | Build the shared production environment without appointment or live-case merits authority |
+| Investor | Hold only governance rights consistent with no authority over appointments, proceedings or merits |
 
 ---
 
@@ -121,7 +144,7 @@ flowchart TB
     AL[Alignment service]
     CC[Structured term and clause compiler]
     POL[Protocol policy service]
-    LAB[Scenario laboratory]
+    LAB[Scenario testing]
     EV[Conformance evaluation]
     DIS[Dispute and evidence service]
     SET[Settlement firewall]
@@ -172,7 +195,7 @@ The minimum canonical entity model comprises:
 - Dispute, issue, claim, defence, submission, relief and procedural objection
 - Evidence item, proposition, challenge, response and evidence gap
 - Settlement track, proposal provenance, response and permitted status
-- Resolution Officer analysis, provisional determination and uncertainty
+- Resolution Officer analysis, reasoning memorandum and uncertainty
 - Human preassessment, issue-level action, rationale and final decision record
 - Dossier, export profile, signature reference and validation evidence
 
@@ -194,16 +217,19 @@ stateDiagram-v2
 
 ---
 
-## 5. Six-stage user lifecycle
+## 5. Three layers and six matter gates
 
-| Stage | Product action | Required input | Primary output | Gate to next stage |
+| Layer | Gate | Product action | Primary output | Gate condition |
 |---|---|---|---|---|
-| 1. Party Alignment | Compare independent expectations and resolve divergence | Contract, party profiles, sources | Aligned structured terms and compiled clauses | Exact bilateral approvals and current analysis |
-| 2. Protocol Constitution | Configure rules, values, sources, tools, uncertainty and escalation | Aligned contract and policy choices | Versioned typed Constitution | Bilateral acknowledgement and valid policy |
-| 3. Scenario Laboratory | Interrogate the future resolution protocol | Constitution, contract, scenarios | Run traces, sensitivity and conformance evidence | Current suite, eligible results and accepted risk |
-| 4. Configuration Manifest | Bind the tested protocol configuration | Contract, policy, tools, source packs and evaluations | Hashed manifest and acknowledgements | Verified digest and required approvals |
-| 5. Later Dispute | Apply the bound state with AI Resolution Officer and human arbitrator | Claims, evidence, objections and manifest | Contestable analysis, challenge round and human decision | Human review and applicable institutional process |
-| 6. Audit Dossier | Export a canonical, verifiable lifecycle record | All active artifacts and events | Human-readable and machine-readable dossier | Independent verification |
+| I0 · Flight Plan | 1. Alignment | Compare expectations and resolve material divergence | Aligned structured terms | Exact bilateral approvals and current analysis |
+| I0 · Flight Plan | 2. Configuration | Assemble the Constitution control plane and test observable behavior | Versioned Constitution and scenario artifacts | Bilateral acknowledgement and eligible results |
+| I1 · Cockpit | 3. Appointment & Configuration Freeze | Complete any future human appointment and bind exact configuration | Appointment record and verified configuration manifest | Applicable appointment plus digest and approvals |
+| I1 · Cockpit | 4. Case Production | Maintain claims, defences, facts, evidence, gaps, calculations, objections and uncertainty as structured state | Contestable case environment | Complete shared record and challenge rights |
+| I2 · Captain in Command | 5. Independent Adjudication | Record independent human assessment and review the advisory reasoning memorandum | Human-controlled disposition | Independent merits review with zero algorithmic presumption |
+| I2 · Captain in Command | 6. Award & Black Box | Produce any future human-signed award and preserve recorded procedure | Award plus procedural black box | Human signature and applicable institutional process |
+
+At C0, Gate 3 appointment is fictional and Gate 6 is **Simulated Outcome &
+Procedural Black Box**, never an award.
 
 ---
 
@@ -214,9 +240,9 @@ flowchart LR
   S0[S0 Charter] --> S1[S1 Domain model] --> S2[S2 Artifact eligibility] --> S3[S3 Clause compiler] --> S4[S4 Review-grade concept]
   S4 --> S5[S5 Persistence] --> S6[S6 Identity] --> S7[S7 Ingestion] --> S8[S8 Expectations] --> S9[S9 AI alignment]
   S9 --> S10[S10 Negotiation] --> S11[S11 Deterministic tools] --> S12[S12 Annex] --> S13[S13 SaaS pack]
-  S13 --> S14[S14 Typed Constitution] --> S15[S15 Scenario lab] --> S16[S16 Evaluation] --> S17[S17 Robustness] --> S18[S18 Runtime provenance] --> S19[S19 Manifest]
+  S13 --> S14[S14 Typed Constitution] --> S15[S15 Scenario testing] --> S16[S16 Evaluation] --> S17[S17 Robustness] --> S18[S18 Runtime provenance] --> S19[S19 Manifest]
   S19 --> S20[S20 Dispute intake] --> S21[S21 Evidence graph] --> S22[S22 Resolution Officer] --> S23[S23 Arbitrator cockpit] --> S24[S24 Challenge round] --> S25[S25 Settlement]
-  S25 --> S26[S26 Decision trace] --> S27[S27 Replay] --> S28[S28 Audit dossier]
+  S25 --> S26[S26 Decision trace] --> S27[S27 Replay] --> S28[S28 Procedural black box]
   S28 --> S29[S29 Security] --> S30[S30 External evaluation] --> S31[S31 Pilot] --> S32[S32 Integrations] --> S33[S33 Reliability] --> S34[S34 Production governance]
 ```
 
@@ -426,7 +452,7 @@ No matter can contain legally displayed text that conflicts with executable stru
 
 **Phase:** Phase 0: Concept truth and program foundation
 
-**Objective:** Rebuild the existing six-stage experience on the corrected state, terminology and eligibility foundations.
+**Objective:** Rebuild the existing experience around I0–I2 and the six matter gates on corrected state, terminology and eligibility foundations.
 
 **Why this sprint exists:** A polished concept should demonstrate the invention without implying that unbuilt capabilities already exist. This is the first fundable, externally reviewable milestone.
 
@@ -439,7 +465,7 @@ No matter can contain legally displayed text that conflicts with executable stru
 | ID | User story | Acceptance criterion |
 |---|---|---|
 | S4-US1 | As a first-time visitor, I want the opening to lead with testing the dispute-resolution system before signing, so that the core invention is immediately clear. | The first screen communicates alignment, protocol testing, human authority and future dispute continuity in under one minute. |
-| S4-US2 | As a reviewer, I want six consistently named stages, so that navigation and lifecycle language match. | Sidebar, footer, dossier and documentation use the same six-stage model. |
+| S4-US2 | As a reviewer, I want six consistently named gates, so that navigation and operating-model language match. | Sidebar, footer, black box and documentation use the same six-gate model. |
 | S4-US3 | As a user, I want every illustrative action labelled as curated simulation, so that I can distinguish mock data from real execution. | Illustrative, live-unverified, deterministic and human-simulated outputs use visually distinct authority labels. |
 | S4-US4 | As an investor, I want to see what funding would build next, so that current limitations read as a roadmap rather than product confusion. | Each unbuilt capability links to the relevant milestone and validation requirement. |
 | S4-US5 | As a researcher, I want a guided walkthrough and a free-exploration mode, so that comprehension and behaviour can be studied separately. | The concept supports scripted review, task logging and resettable exploration. |
@@ -776,7 +802,7 @@ Every formal result is reproducible and explicitly separated from judgment.
 
 **Depends on:** Sprints 8 to 11.
 
-**Unlocks:** Protocol Constitution, manifest and real contract drafting workflows.
+**Unlocks:** Constitution control plane, configuration manifest and real contract drafting workflows.
 
 #### User stories
 
@@ -895,7 +921,7 @@ Every material governance commitment is either machine-testable or explicitly ma
 
 ---
 
-### Sprint 15: Scenario laboratory and protocol interrogation
+### Sprint 15: Scenario testing and protocol interrogation
 
 **Phase:** Phase 3: Protocol twin and evaluation
 
@@ -1077,7 +1103,7 @@ Every AI output has complete, governed execution provenance within the limits of
 
 **Depends on:** Sprints 12 and 14 to 18.
 
-**Unlocks:** Later dispute binding, audit verification and institutional workflows.
+**Unlocks:** Gate 4 dispute binding, black-box verification and institutional workflows.
 
 #### User stories
 
@@ -1206,7 +1232,7 @@ Every material factual proposition has visible support, opposition, status and p
 
 **Depends on:** Sprints 14, 18, 20 and 21.
 
-**Unlocks:** Arbitrator cockpit, party challenge round and provisional determinations.
+**Unlocks:** Arbitrator workspace, party challenge round and advisory reasoning memoranda.
 
 #### User stories
 
@@ -1421,7 +1447,7 @@ A user can understand and verify the procedural basis of a conclusion without be
 
 **Depends on:** Sprints 18, 19 and 26.
 
-**Unlocks:** Audit dossier, model governance and institutional verification.
+**Unlocks:** Procedural black box, model governance and institutional verification.
 
 #### User stories
 
@@ -1454,7 +1480,7 @@ Reviewers can reconstruct and compare the system’s state and behaviour at any 
 
 ---
 
-### Sprint 28: Audit dossier, signed export and independent verifier
+### Sprint 28: Procedural black box, signed export and independent verifier
 
 **Phase:** Phase 5: Traceability, explanation and trust
 
@@ -1485,7 +1511,7 @@ Reviewers can reconstruct and compare the system’s state and behaviour at any 
 
 #### Required sprint artifacts
 
-- Audit dossier
+- Procedural black box and dossier export
 - Export profiles
 - Machine-readable package
 - Independent verifier
@@ -1864,7 +1890,7 @@ The trace must distinguish:
 
 **Mandatory decision:** conduct an evidence review, record a go/refine/narrow/hold decision, and re-estimate Sprints 5 to 34 before further implementation.
 
-- six-stage concept is comprehensible;
+- three-layer, six-gate concept is comprehensible;
 - contract text cannot conflict with structured terms;
 - artifact eligibility is canonical;
 - illustrative provenance is truthful;

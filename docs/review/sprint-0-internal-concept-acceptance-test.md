@@ -1,5 +1,10 @@
 # Sprint 0 Internal Concept-Demonstrator Acceptance Test
 
+> **Historical, non-normative verification record.** The
+> [ZIAAP Operating Model](../product/operating-model.md) supersedes its
+> lifecycle and artifact language. Its results do not verify the current
+> refactor.
+
 **Status:** Pass — internally verified candidate; external acceptance pending
 
 This record documents an internal technical and arbitrator-perspective exercise

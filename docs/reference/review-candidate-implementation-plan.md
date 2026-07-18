@@ -1,7 +1,8 @@
 # Historical Review-Candidate Implementation Plan
 
 > Historical reference for the frozen `prototype-showcase-v1.0-review-candidate`
-> tag. The roadmap v1.1 product charter and sprint plans supersede this document.
+> tag. The [ZIAAP Operating Model](../product/operating-model.md), roadmap v1.1,
+> product charter and sprint plans supersede this document.
 
 ## Decision-Complete Foundation Before Implementation
 

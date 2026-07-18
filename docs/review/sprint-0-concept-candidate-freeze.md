@@ -1,5 +1,9 @@
 # Sprint 0 Corrected Concept Candidate Freeze
 
+> **Historical, non-normative freeze record.** It predates the current
+> [ZIAAP Operating Model](../product/operating-model.md) refactor and does not
+> approve the current branch.
+
 **Status:** Internally verified and ready for external concept review; external
 acceptance pending
 

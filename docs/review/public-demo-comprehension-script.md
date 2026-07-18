@@ -53,6 +53,8 @@ data.
   CHF 1,000.
 - Any belief that AI, ZIAAP or a fictional record holds legal authority.
 - Any perceived business value or adoption barrier.
+- Whether “commercial aviation” is understood as governed systems around
+  professional judgment rather than mechanical outcome predictability.
 
 ## Promotion thresholds
 
@@ -68,8 +70,12 @@ The public walkthrough may replace the root opening only when:
   party challenge;
 - no participant believes the demonstration appoints an arbitrator, issues an
   enforceable award, executes live AI or provides validated legal conclusions;
-- every visible control works; and
-- product/founder approval and legal-framing review are recorded.
+- no participant interprets the aviation analogy as mechanical or predictable
+  legal outcomes;
+- every visible control works;
+- product/founder approval and legal-framing review are recorded; and
+- corporate-governance review confirms that no current partner-ownership fact is
+  implied.
 
 Any authority-category error blocks promotion. Any other threshold miss
 requires revision and retesting of the affected cohort. Blank evidence fields

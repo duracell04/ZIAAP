@@ -1,118 +1,39 @@
-# Current Concept Service Blueprint
+# Current C0 Service Blueprint
 
-> Reference description of the existing C0 synthetic implementation. The
-> product charter, glossary, and roadmap are canonical where they differ.
+> Normative workflow reference for the synthetic demonstrator. See the
+> [operating model](../product/operating-model.md) for the future institution.
 
-## Synthetic, simulation-only journey
-
-## 1. Actors
-
-| Actor | Concept role | Authority boundary |
-|---|---|---|
-| Supplier and customer | State expectations, select options, confirm exact versions, and acknowledge eligible artifacts | Actions are simulated; identity, capacity, and consent are not proven |
-| AI Resolution Officer | Compare, structure, calculate, test, explain, and prepare provisional reviewable analysis | Governed software capability; no legal office, signature, validation verdict, or independent legal effect |
-| Fictional human arbitrator | Demonstrate disclosure, review, independent judgment, and decision controls | No institutional or legal appointment occurs |
-| Concept curator | Supplies synthetic curated simulations | Fixtures are `illustrative_only`, not live executions or independently validated evidence |
-
-## 2. End-to-end blueprint
-
-The opening explains the proposition, current C0 maturity, roles, lifecycle, and
-limits. The lifecycle then uses exactly six stages:
-
-| Stage | Viewer action | System action | Gate | Artifact |
+| Layer and gate | Party or reviewer action | System action | Human authority | C0 output |
 |---|---|---|---|---|
-| Party Alignment | Confirm expectations, inspect divergences, choose and confirm terms | Link sources, display options, and run a deterministic scenario | Exact versions confirmed | Alignment Annex |
-| Protocol Constitution | Configure inference-time principles, sources, tools, safeguards, and change policy | Increment the Constitution on change; weights remain unchanged | Exact Constitution acknowledged | Constitution record |
-| Scenario Laboratory | Choose a curated simulation or declared live execution; acknowledge exact artifacts | Report observable behaviour, provenance, and limitations | Eligible selected artifacts acknowledged | Scenario artifacts |
-| Configuration Manifest | Inspect and acknowledge the exact synthetic configuration digest | Rebuild and hash the selected configuration | Async integrity verifier | Configuration Manifest |
-| Later Dispute | Complete the fictional appointment subsection, assemble a shared record, optionally activate settlement, and exercise human control | Verify configuration binding and preserve the settlement firewall | Matching manifest and completed fictional human review controls | Provisional software analysis and simulated human record |
-| Audit Dossier | Inspect the projected lifecycle record | Project available and pending evidence without inventing completion | State-derived availability | Synthetic Audit Dossier |
+| I0 · Gate 1 · Alignment | Confirm expectations, inspect divergence and confirm exact wording | Compare sources and run deterministic contract calculations | Parties select wording | Alignment Annex |
+| I0 · Gate 2 · Configuration | Configure and acknowledge the Constitution; inspect scenario behavior | Apply control-plane invalidation and produce eligible scenario artifacts | Parties configure the simulation; no adjudication occurs | Constitution and scenario-test artifacts |
+| I1 · Gate 3 · Appointment & Configuration Freeze | Acknowledge the exact digest and complete fictional checks | Rebuild and hash the configuration; reject stale state | Any real appointment remains external | Configuration manifest and fictional appointment record |
+| I1 · Gate 4 · Case Production | Submit or inspect claims, defences, evidence, gaps and objections | Build structured case state; calculate only from confirmed inputs; keep settlement sealed | Parties control submissions and objections | Structured synthetic merits record |
+| I2 · Gate 5 · Independent Adjudication | Record preliminary view, inspect memorandum, adopt, modify, reject or request evidence | Prepare source-linked advisory memorandum after pre-assessment | Properly appointed human retains judgment; current review is fictional | Reasoning memorandum and simulated human record |
+| I2 · Gate 6 · Simulated Outcome & Procedural Black Box | Inspect the event-derived trace and existing artifacts | Project recorded events and availability without inventing completion | Private human deliberation is excluded | Synthetic black box and artifact set |
 
-The current C0 component layout still places the fictional ceremony beside the
-manifest. The canonical lifecycle treats it as the first gated subsection of
-Later Dispute; Sprint 4 completes that structural move.
+## Public projection
 
-## 3. Party Alignment service sequence
+Align maps to Gate 1; Test maps to Gate 2 plus Gate 3 configuration integrity;
+Dispute maps to Gate 4; Review maps to Gate 5; Outcome maps to Gate 6.
 
-```text
-Draft contract
-→ independent party expectations
-→ divergence analysis
-→ source-linked issues
-→ options and trade-offs
-→ deterministic scenario testing
-→ revised language
-→ exact-version bilateral confirmation
-→ Alignment Annex
-```
+The public path excludes the appointment interaction and all live execution.
 
-Each divergence shows both positions, semantic/commercial/legal dimension,
-practical consequence, uncertainty, sources, authority class, options,
-trade-offs, and unresolved matters. Each option shows revised language,
-structured terms, commercial effect, evidence, review boundary, deterministic
-result where relevant, and selection consequence.
+## Failure and recovery
 
-## 4. Execution service states
+- Incomplete alignment blocks guided progression.
+- Constitution changes invalidate scenario and downstream artifacts.
+- Configuration-hash mismatch blocks the fictional appointment transition.
+- Live execution failure remains visible and never becomes illustrative success.
+- Missing evidence blocks deterministic conclusions or escalates to human
+  review.
+- Settlement content remains sealed from merits production.
+- A reasoning memorandum cannot appear before the fictional preliminary
+  assessment.
+- A simulated human record requires disposition, rationale and checklist.
 
-Two actions are distinct:
+## Current boundaries
 
-- **View illustrative example** returns `illustrative_only` and is presented as
-  a curated simulation.
-- **Run live execution** returns `executed_unverified` only after a successful
-  declared configuration execution.
-
-Live model mismatch, unavailable credentials/configuration, timeout, provider
-failure, or invalid output returns `failed`. The prior valid artifact is
-preserved but inactive; the viewer must deliberately select an eligible
-artifact. No live failure returns fixture success.
-
-## 5. Configuration Manifest preparation
-
-Readiness is displayed synchronously. Mutation occurs only through an async
-command that rebuilds the manifest, recomputes SHA-256, and verifies party
-profiles, exact clause versions, selected execution artifacts and status,
-bilateral artifact acknowledgements, Constitution version, lifecycle status,
-exact-digest acknowledgements, disclosure review, fictional acceptance, and
-complete unique scenario references.
-
-Rejection preserves the prior state. These checks support internal synthetic
-change detection only, not actor identity, consent, provenance, runtime
-attestation, or legal authority.
-
-## 6. Invalidation
-
-Expectation changes make analysis stale. Contract, scenario, Constitution, or
-artifact changes clear downstream digest, acknowledgements, disclosure,
-fictional acceptance, dispute binding, and decision state. Revoking a digest
-acknowledgement returns the lifecycle to `manifest_prepared`. Reset restores the
-initial fixture.
-
-## 7. Settlement firewall
-
-Settlement begins only after separate bilateral simulated consent. Proposal
-content and responses remain outside merits input. Only occurrence, termination
-status, or a completed synthetic settlement enters the shared record.
-
-## 8. Safe failure table
-
-| Condition | Behaviour |
-|---|---|
-| Invalid request | Reject `400` |
-| Live disabled | Explicit `failed`, `403` |
-| Model mismatch or lifecycle conflict | Explicit `failed`, `409` |
-| Invalid output | Explicit `failed`, `422` |
-| Provider failure | Explicit `failed`, `502` |
-| Credentials/config unavailable | Explicit `failed`, `503` |
-| Timeout | Explicit `failed`, `504` |
-| Digest or reference mismatch | Reject transition; preserve state |
-
-## 9. Evidence handoff
-
-The Git tag `prototype-showcase-v1.0-review-candidate` preserves the prior frozen
-candidate and its twelve-artifact dossier. The current working classification is
-C0 high-fidelity interactive concept demonstrator, with fidelity limited to
-workflow and interaction.
-
-No participation, finding, comprehension result, usability result, commercial
-interest, or independent validation is simulated. Those evidence fields remain
-pending until real sessions occur and are audited.
+Every action is synthetic, simulation-only and without legal effect. The C0
+service does not verify identity, appoint an arbitrator, accept a confidential
+matter, issue an award, prove enforceability or implement partner ownership.

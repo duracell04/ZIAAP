@@ -1,102 +1,126 @@
 # Current Concept Product Requirements
 
-> Reference requirements for the existing C0 implementation. The Concept
-> Integrity Release roadmap controls maturity and lifecycle terminology.
+> Normative requirements for the current C0 implementation. The
+> [operating model](../product/operating-model.md) controls institutional and
+> lifecycle terminology.
 
-## C0 high-fidelity interactive concept demonstrator
-
-High fidelity is limited to workflow and interaction fidelity.
-
-## 1. Objective
+## 1. Objective and boundary
 
 Enable arbitration experts, commercial lawyers, design partners, institutions,
-and investors to understand ZIAAP with minimal presenter explanation while never
-mistaking simulation for authority, execution for independent validation, the AI
-Resolution Officer for a legal actor, or software output for a human decision.
+business owners and investors to understand the future operating model without
+mistaking:
 
-## 2. Primary experience and six stages
+- simulation for authority;
+- execution for independent validation;
+- the AI Resolution Officer for a legal actor;
+- the reasoning memorandum for a verdict;
+- partner ownership for a current corporate fact; or
+- the aviation analogy for mechanical outcome predictability.
 
-The opening experience precedes the lifecycle and explains the proposition,
-current maturity, role boundaries, and limitations. The lifecycle stages are:
+The repository remains a high-fidelity interactive concept demonstrator, where
+high fidelity is limited to workflow and interaction fidelity.
 
-1. Party Alignment;
-2. Protocol Constitution;
-3. Scenario Laboratory;
-4. Configuration Manifest;
-5. Later Dispute; and
-6. Audit Dossier.
+## 2. Expert experience: three layers and six gates
 
-Arbitral reasoning calibration is an activity inside Protocol Constitution.
-Stress testing is an activity inside Scenario Laboratory. The fictional
-appointment simulation belongs at the start of Later Dispute, after the verified
-and acknowledged Configuration Manifest.
+The existing root and `/reference` experiences use six screens:
 
-## 3. Opening requirements
+1. **I0 · Alignment** compares independent expectations and confirms exact
+   language.
+2. **I0 · Configuration** combines the Constitution control plane and scenario
+   testing.
+3. **I1 · Appointment & Configuration Freeze** prepares the exact manifest and
+   contains an explicitly fictional appointment interaction.
+4. **I1 · Case Production** presents claims, defences, facts, evidence, missing
+   evidence, calculations and objections as structured state.
+5. **I2 · Independent Adjudication** records a preliminary fictional human view
+   before revealing the advisory reasoning memorandum and exposes adopt,
+   modify, reject and request-more-evidence controls.
+6. **I2 · Simulated Outcome & Procedural Black Box** presents the event-derived
+   record and existing artifacts without calling the result an award.
 
-Within approximately one minute, the viewer can identify the before-signing
-commercial problem, human/software distinction, six-stage lifecycle, C0
-classification, workflow-and-interaction fidelity qualification, process-twin
-boundary, and simulation-only limitations. The screen includes the canonical
-definition, **Begin guided demonstration**, and **Explore the workflow**.
+Configuration manifest remains a Gate 3 technical artifact, not a lifecycle
+stage. The reasoning memorandum is a Gate 5 advisory artifact, not the
+authoritative case model.
 
-## 4. Party Alignment requirements
+## 3. Public experience
 
-The UI connects draft clauses, independent expectations, divergence findings,
-source-linked issues, options and trade-offs, deterministic scenario testing,
-revised language, exact-version bilateral confirmation, and a generated
-Alignment Annex.
+The `/demo` experience remains a deterministic five-step projection:
 
-Every divergence shows topic, positions, dimension, consequence, uncertainty,
-sources, authority, options, trade-offs, and unresolved matters. Every option
-shows revised language, structured terms, commercial consequence, evidence,
-legal-review boundary, deterministic result where relevant, and selection effect.
+| Public step | Canonical gates |
+|---|---|
+| Align | Gate 1 |
+| Test | Gate 2 plus Gate 3 configuration integrity |
+| Dispute | Gate 4 |
+| Review | Gate 5 |
+| Outcome | Gate 6 |
+
+The legal appointment portion of Gate 3 is unavailable in the public
+simulation. Public routes, the `MinimalDemoState` v1 schema, golden case, source
+drawer, one-action progression, session persistence, Back/Forward behavior and
+offline execution remain stable.
+
+## 4. State requirements
+
+- Existing `ContractState` lifecycle statuses remain operational readiness
+  state.
+- `getActiveMatterGate` and `getGateReadiness` are pure projections.
+- `buildStructuredCaseState` is the primary case projection.
+- `buildReasoningMemorandumInput` excludes sealed settlement content.
+- `buildProceduralBlackBox` is generated from recorded events and excludes
+  private fictional deliberation text.
+- Behavior-affecting configuration changes invalidate manifests, dispute
+  binding and downstream reasoning artifacts.
 
 ## 5. Authority requirements
 
 - Enforce `simulation_only` and `legalEffect: false`.
 - Keep execution and lifecycle status separate.
-- Make `authoritative`, `validated`, and unqualified `appointed` unreachable.
-- Label actor, status, version, consequence, provenance, and limitation on
+- Make `authoritative`, `validated` and ordinary appointed state unreachable.
+- Label actor, status, version, consequence, provenance and limitation on
   consequential artifacts.
-- Qualify acknowledgements and fictional ceremonies as simulated and without
-  legal effect.
-- Keep human legal authority and the governed-software role visible.
+- A properly appointed human arbitrator retains judgment and any future
+  signature.
+- Engineers, investors and the future institution have no live-case merits
+  authority.
 
 ## 6. Execution and failure requirements
 
-Provide distinct curated-simulation and live actions. Fixtures return
-`illustrative_only`; successful declared live calls return
+Expert reference routes may expose distinct curated-simulation and live actions.
+Fixtures return `illustrative_only`; successful declared live calls return
 `executed_unverified`; every live error returns `failed` with a reason and no
-fallback success. Preserve prior valid artifacts but require deliberate
-reselection. Disable unrestricted live execution and retrieval in public
-deployments.
+fallback success.
 
-## 7. Integrity requirements
+The public demo makes zero model or API calls.
 
-Use synchronous predicates only for UI readiness. Immediately before a material
-ceremony mutation, an async command rebuilds and hashes the Configuration
-Manifest and checks every version, artifact, acknowledgement, disclosure,
-lifecycle, and reference invariant. Rejection preserves state. These controls
-support only internal synthetic consistency.
+## 7. Accessibility and responsive requirements
 
-## 8. Accessibility and responsive requirements
+Keyboard focus is visible; semantic controls and status regions are used;
+colour is never the sole status cue; desktop and mobile have no page-level
+horizontal scroll; and dense detail uses progressive disclosure. Required
+browser widths include desktop, laptop, tablet and 390 px.
 
-Keyboard focus is visible; semantic controls and status regions are used; colour
-is never the sole status cue; desktop and mobile have no page-level horizontal
-scroll; dense detail uses progressive disclosure; loading, stale, failed,
-blocked, partial-confirmation, locked-Annex, and reset states are designed.
+## 8. Claims requirements
 
-## 9. Acceptance criteria
+The north star, category thesis, partner target and economic thesis may be
+stated only with the qualifications in the claims register. “First,” CHF
+50,000–500,000, faster, predictable, economically viable and scalable remain
+hypotheses.
 
-The C0 concept baseline requires typecheck, lint, tests, production build,
-desktop and mobile critical paths, failure/reset/invalid-transition flows,
-opening navigation, the complete six-stage illustrative journey, Audit Dossier,
-and print layout. Canonical documentation must match schemas, fixtures, API
-metadata, UI copy, tests, and reviewer materials. Real comprehension, usability,
-commercial, and independent-validation evidence remains pending.
+External sources establish context or precedent only. They do not validate
+ZIAAP, establish AI Act classification or prove enforceability.
+
+## 9. Acceptance
+
+The refactor requires typecheck, lint, tests, production build,
+`git diff --check`, complete expert and public critical paths, responsive
+browser checks and no console errors.
+
+Product/founder, legal-framing, corporate-governance and unfamiliar-reader
+evidence remains pending. The public experience is not promoted to `/`.
 
 ## 10. Non-goals
 
-No production case management, confidential data, identity, legal appointment,
-signature, operative award, independent validation, institutional integration,
-sovereign runtime, Council of LLMs, DLT, or enforcement is included.
+No backend, authentication, confidential data, real appointment, corporate
+ownership implementation, signature, award, production case management,
+independent validation, sovereign runtime, Council of LLMs, DLT or enforcement
+is included.

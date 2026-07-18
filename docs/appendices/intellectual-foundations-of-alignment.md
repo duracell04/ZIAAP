@@ -1,5 +1,8 @@
 # Intellectual Foundations of Contract Alignment
 
+> **Historical, non-normative theory appendix.** The
+> [ZIAAP Operating Model](../product/operating-model.md) is canonical.
+
 > **Supporting theory appendix — not a build specification.**
 
 This appendix records the legal-philosophical, contract-theoretical, and

@@ -1,135 +1,124 @@
-# Current Concept HCI and Information Architecture
+# HCI and Information Architecture
 
-> Reference design material for the C0 synthetic implementation. The product
-> charter and canonical glossary control terminology.
+> Normative C0 interaction reference. Canonical model:
+> [ZIAAP Operating Model](../product/operating-model.md).
 
-## Self-explaining interactive concept demonstrator
+## 1. Information hierarchy
 
-## 1. Experience objective
+The expert opening communicates, in order:
 
-The interface should answer, in order: what problem exists before signing, why
-dispute governance begins while interests remain aligned, what parties
-configure, what the AI Resolution Officer contributes, what a human controls,
-what was simulated or executed, and what the C0 concept cannot prove.
+1. C0 workflow-and-interaction-fidelity classification;
+2. category thesis and north-star ambition;
+3. one restrained aviation analogy with its limitation;
+4. human/software authority split;
+5. I0, I1 and I2;
+6. the six matter gates; and
+7. synthetic, simulation-only, no-legal-effect limitations.
 
-## 2. Opening information architecture
+The public opening communicates only the approved business hierarchy, one
+aviation sentence, a concise who-does-what diagram, five projected steps and
+one action.
 
-The opening contains:
+## 2. Expert navigation
 
-1. the canonical promise and product definition;
-2. current C0 maturity and workflow-and-interaction fidelity qualification;
-3. before-signing commercial value;
-4. human-arbitrator and governed-software role comparison;
-5. exact six-stage lifecycle;
-6. guided and explore entry actions; and
-7. visible synthetic, simulation-only and process-twin boundaries.
+Guided and Explore modes use the same six destinations:
 
-Guided mode begins at Party Alignment. Explore mode permits direct navigation
-while retaining truthful incomplete-state indicators. Both provide return to the
-opening.
+1. Alignment;
+2. Configuration;
+3. Appointment & Configuration Freeze;
+4. Case Production;
+5. Independent Adjudication; and
+6. Simulated Outcome & Procedural Black Box.
 
-## 3. Workspace navigation
+Each navigation item shows its I0/I1/I2 context and derived readiness. The
+operational `lifecycleStatus` remains visible as technical state but does not
+define the canonical information architecture.
 
-1. Party Alignment;
-2. Protocol Constitution;
-3. Scenario Laboratory;
-4. Configuration Manifest;
-5. Later Dispute; and
-6. Audit Dossier.
+## 3. Screen composition
 
-Arbitral reasoning calibration remains an activity inside Protocol Constitution,
-and stress testing remains an activity inside Scenario Laboratory. Navigation
-labels describe a synthetic process, not legal completion. The global frame
-shows C0 maturity, lifecycle mode, manifest readiness, and lifecycle status.
+### Gate 1
 
-## 4. Party Alignment composition
+Expectation comparison, divergence, sources, options, exact wording and
+bilateral confirmation.
 
-The current C0 screen uses progressive sections:
+### Gate 2
 
-- source contract;
-- two independent party profiles;
-- separate curated-simulation/live analysis controls;
-- authority and limitations strip;
-- material-type legend;
-- divergence cards with positions, consequence, sources, and uncertainty;
-- selectable option and detailed consequence panel;
-- legal constraint treatment;
-- editable revised text, pending the Sprint 3 structured compiler;
-- deterministic scenario card;
-- exact-version confirmations; and
-- locked or generated Alignment Annex.
+Constitution control-plane settings and scenario testing share one screen.
+Configuration input and observed output remain visually distinct.
 
-Edits expose stale or invalidated state rather than silently carrying prior
-readiness forward.
+### Gate 3
 
-## 5. Semantic grammar
+Readiness, inspectable manifest, configuration hash, fictional disclosure and
+fictional appointment checks. The screen repeatedly states that the interaction
+creates no appointment or legal effect.
 
-| Material | Treatment | Required label |
-|---|---|---|
-| Source text | neutral paper | `SOURCE TEXT` |
-| Party assertion | amber/party context | `PARTY ASSERTION` |
-| AI-supported analysis | reasoning blue | `AI-SUPPORTED ANALYSIS` plus execution status |
-| Legal constraint | red rule | `LEGAL CONSTRAINT · REVIEW REQUIRED` |
-| Deterministic calculation | green result | formula, inputs, and blocked/calculated state |
-| Proposed option | neutral selection | `PROPOSED OPTION` |
-| Agreed text | green confirmation | exact version and both parties |
+### Gate 4
 
-Authority metadata is never encoded by colour alone.
+The structured case environment is introduced before claims, defences,
+evidence, gaps, objections and the sealed settlement workspace. The UI states:
+“The memorandum is not the case.”
 
-## 6. Execution states
+### Gate 5
 
-- curated simulation selected;
-- live loading;
-- live—unverified selected;
-- live failed with preserved inactive artifact;
-- stale after input edits; and
-- deliberate recovery through curated selection or successful rerun.
+The order is fixed:
 
-Failures use `role=status` or equivalent announcement and state why later use is
-blocked.
+```text
+Fictional preliminary human assessment
+→ advisory reasoning memorandum
+→ adopt / modify / reject / request more evidence
+→ simulated human record
+```
 
-## 7. Configuration Manifest interaction
+The memorandum receives no visual or procedural presumption.
 
-The UI readiness predicate may enable a button but is not an integrity proof. An
-async transition exposes pending, accepted, and rejected states. The digest is
-described as a Configuration Manifest digest, and its exclusions are visible
-near the value.
+### Gate 6
 
-The view exposes selected contents, version, artifact references, readiness
-gates, digest, bilateral acknowledgements, disclosure, fictional acceptance, and
-transition result. The current C0 layout retains the fictional ceremony here;
-Sprint 4 moves it to the first gated subsection of Later Dispute.
+The strongest institutional frame belongs to the simulated human outcome. The
+event-derived black box appears before the existing artifact index and states
+that private deliberation is excluded.
 
-## 8. Later Dispute and Audit Dossier
+## 4. Public projection
 
-Later Dispute orders Configuration Manifest identification, fictional human
-ceremony, shared merits record, purpose-separated settlement, fictional human
-pre-assessment, provisional AI Resolution Officer analysis, and fictional human
-control. The view remains usable after the internal lifecycle advances.
+Public navigation remains Align / Test / Dispute / Review / Outcome. Future
+steps remain locked, completed steps are revisitable and Back/Forward preserves
+session state.
 
-Audit Dossier is the sixth destination. It includes a cover, presentation
-summary, artifact index, metadata, state-derived contents, pending states,
-external-validation note, and print action. Missing evidence remains pending
-rather than being filled with illustrative completion.
+Small context labels map the steps to canonical gates without requiring the
+user to learn the expert model. No appointment interaction appears.
 
-## 9. Accessibility and responsive behaviour
+## 5. Semantic treatments
 
-All controls are keyboard operable, focus-visible, and labelled. Headings follow
-document order. Status does not rely on colour. At narrow widths, two-column
-roles, profiles, positions, options, metadata, and lifecycle elements stack.
-Horizontal scroll is limited to intentional local navigation, never the page.
+- established state: solid neutral;
+- party statement: party identified;
+- AI inference: differentiated border, source and uncertainty;
+- contested: red marker plus text;
+- missing evidence: amber plus text;
+- deterministic calculation: formula and inputs;
+- human decision: strongest institutional frame.
 
-## 10. Print
+Colour never carries status alone.
 
-Print hides navigation and controls, preserves authority metadata, and prints the
-Audit Dossier and Alignment Annex with synthetic/no-effect boundaries.
+## 6. Responsive and accessible behavior
 
-## 11. Reviewer comprehension targets
+All controls use semantic buttons, links, labels and headings. Focus is visible.
+The source drawer traps and restores focus and closes with Escape. Layouts must
+avoid page-level horizontal scroll at desktop, laptop, tablet and 390 px.
 
-Without coaching, reviewers should explain the before-signing proposition, C0
-classification, fidelity qualification, six stages, process-twin boundary, AI
-Resolution Officer role, retained human legal authority, curated simulation
-versus live—unverified execution, conformance versus validation, Configuration
-Manifest meaning, settlement firewall, fictional human control, dossier
-provenance, and most valuable output. All results remain pending until real
-sessions occur.
+The public path permits one primary progression at a time. Dense expert details
+use disclosure elements and source-linked artifacts.
+
+## 7. Editorial aviation boundary
+
+Permitted:
+
+- one opening analogy;
+- small I0/I1/I2 labels; and
+- one concise role diagram.
+
+Prohibited:
+
+- cockpit dashboards;
+- aircraft controls;
+- themed progress actions;
+- safety-certification implications; and
+- deterministic-outcome imagery.

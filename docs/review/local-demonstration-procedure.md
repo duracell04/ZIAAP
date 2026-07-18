@@ -20,13 +20,12 @@ then reset before the reviewer begins.
 ## Critical path
 
 1. Opening and unassisted proposition
-2. Party Alignment and exact-version confirmation
-3. Protocol Constitution and exact-version acknowledgement
-4. Scenario Laboratory using curated simulations
-5. Configuration Manifest and fictional ceremony
-6. Later Dispute, settlement firewall, AI Resolution Officer analysis, and
-   fictional human control
-7. Audit Dossier
+2. Gate 1 Alignment and exact-version confirmation
+3. Gate 2 Configuration: Constitution control plane and scenario testing
+4. Gate 3 Appointment & Configuration Freeze
+5. Gate 4 structured Case Production and settlement firewall
+6. Gate 5 preliminary human review, reasoning memorandum, and human controls
+7. Gate 6 Simulated Outcome & Procedural Black Box
 8. Disabled live execution and deliberate recovery
 9. Reset
 
@@ -36,7 +35,11 @@ then reset before the reviewer begins.
 - Keyboard focus remains visible and controls remain operable.
 - Authority, execution status, provenance, and legal-effect boundaries remain
   visible on consequential artifacts.
-- No settlement proposal content appears in merits-facing analysis or dossier.
+- No settlement proposal content appears in reasoning-memorandum input or
+  merits-facing artifacts.
+- The black box is event-derived and excludes private fictional deliberation.
+- The reviewer can distinguish the structured case state from the advisory
+  memorandum.
 - The reviewer is not coached on maturity, process-twin, software-role, or human
   authority questions before answering.
 

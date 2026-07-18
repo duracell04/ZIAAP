@@ -1,5 +1,11 @@
 # Sprint 0 Human Acceptance Packet
 
+> **Historical, non-normative packet.** The current
+> [guided reviewer script](guided-reviewer-script.md),
+> [questionnaire](reviewer-questionnaire.md) and
+> [public comprehension script](public-demo-comprehension-script.md) supersede
+> its comprehension proposition and cohort requirements.
+
 **Status:** Prepared; no reviewer participation or outcome is inferred
 
 ## Purpose

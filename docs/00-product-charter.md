@@ -166,19 +166,18 @@ disputes or professional workload.
 
 ## Current release objective
 
-The current objective is to accept and merge a technically clean,
-terminologically disciplined, legally responsible, and externally
-comprehensible concept baseline. The existing later-stage interface remains a
-design reference, not completed roadmap capability.
+The current objective is to review a technically clean, terminologically
+disciplined and legally responsible C0 operating-model refactor. The expert
+interface demonstrates the six gates as synthetic workflow reference; it does
+not implement future institutional capability.
 
-The hyper-minimal public walkthrough is isolated from that reference and remains
-an unaccepted concept-clarity experiment until its product/founder,
-legal-framing and unfamiliar-reader evidence is recorded. The existing root
-experience remains unchanged during that review.
+The hyper-minimal public walkthrough remains an unaccepted concept-clarity
+experiment and is not promoted to `/`. Product/founder, legal-framing,
+corporate-governance and unfamiliar-reader evidence remains pending.
 
-Sprints 1–34 are provisional, funding-dependent future development. Prototype
-planning, including any canonical domain model or Sprint 4 rebuild, begins only
-after an angel-financing decision and a new prototype charter.
+Sprints 1–34 remain provisional, funding-dependent future development. This
+bounded refactor authorises no backend, identity, production data, real
+appointment, corporate implementation, signature or award work.
 
 ## Canonical references
 
@@ -193,8 +192,10 @@ after an angel-financing decision and a new prototype charter.
 
 | Role | Status | Name/date | Evidence |
 |---|---|---|---|
-| Product/founder | Pending | — | Review required before Sprint 0 merge |
+| Product/founder | Pending | — | Operating-model and commercial-thesis review required before refactor merge |
 | Legal-framing and authority-boundary reviewer | Pending | — | Concept framing and disclaimer review required |
+| Corporate-governance reviewer | Pending | — | Partner-ownership target and conflict safeguards review required |
+| Unfamiliar-reader cohorts | Pending | — | Business and dispute-professional comprehension evidence required |
 
 No approval is inferred from the existence of this document.
 

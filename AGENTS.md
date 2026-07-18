@@ -10,6 +10,12 @@ The AI Resolution Officer is a governed software capability. It is not a legal
 office, arbitral institution, arbitrator, or autonomous decision-maker. A
 properly appointed human arbitrator retains legal authority and responsibility.
 
+The canonical future operating model is defined in
+`docs/product/operating-model.md`: I0 Flight Plan, I1 Cockpit and I2 Captain in
+Command, projected through six matter gates. The partner-owned institution,
+CHF 50,000–500,000 target range, “first” category position and economic benefits
+are hypotheses, not current product or company facts.
+
 ## Sprint execution
 
 - Implement one roadmap sprint per task and branch.
@@ -25,6 +31,9 @@ properly appointed human arbitrator retains legal authority and responsibility.
 
 - Treat structured state and pure projections as authoritative; UI-local state
   may represent only navigation, loading, notices, and research-session UI.
+- Treat the reasoning memorandum as a state-derived advisory artifact and the
+  procedural black box as an event-derived record that excludes private human
+  deliberation.
 - Keep illustrative, live-unverified, deterministic, and human-simulated
   outputs visibly distinct.
 - Never fabricate legal, institutional, reviewer, comprehension, usability,

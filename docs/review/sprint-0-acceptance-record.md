@@ -1,5 +1,10 @@
 # Sprint 0 Concept Acceptance Record
 
+> **Historical, non-normative acceptance record.** The
+> [ZIAAP Operating Model](../product/operating-model.md) supersedes its
+> lifecycle and artifact language. The recorded Sprint 0 evidence remains
+> historical and is not evidence for the current refactor.
+
 **Status:** Corrected concept candidate internally verified; external acceptance pending
 
 This record covers Sprint 0 concept acceptance only. It does not approve or

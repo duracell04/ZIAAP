@@ -1,128 +1,125 @@
 # Current Concept Technical Requirements
 
-> Reference description of the current C0 implementation. Roadmap-era technical
-> documents become canonical sprint by sprint.
+> Normative C0 technical reference. The
+> [operating model](../product/operating-model.md) controls canonical layers,
+> gates and authority language.
 
-## Simulation-only Next.js concept demonstrator
+## 1. Architecture boundary
 
-## 1. Stack and boundary
+The application is a Next.js App Router concept demonstrator. State is
+synthetic, client-local and resettable. Public demo state is stored only in
+`sessionStorage`. Expert optional live execution uses existing fail-closed route
+handlers; the public walkthrough performs no network call.
 
-Next.js 16 App Router, React 19, TypeScript strict mode, Zod, Vitest, Tailwind CSS,
-and AI SDK route handlers. The synthetic fixture loads in a Server Component and
-is passed into a focused client workspace. Provider credentials remain server
-only. No database, authentication, signing, or production integration exists.
+No backend persistence, authentication, identity, confidential matter store,
+signature, legal appointment, award or legal effect is implemented.
 
-## 2. Current state model
+## 2. Authoritative state
 
-`ContractState` contains root `lifecycleMode`, `lifecycleStatus`, `legalEffect`,
-and `syntheticData`. Execution status belongs to each executable artifact and is
-orthogonal to workflow progress. Material-status fields describe content type,
-not authority. Sprint 1 replaces this showcase-era shape with the canonical
-versioned `MatterState`; `ContractState` remains a compatibility concern until
-that approved sprint begins.
+`ContractState` remains the expert reference state. Its operational
+`lifecycleStatus` values are retained for compatibility and readiness.
 
-The current schema rejects authoritative mode, validated artifacts, ordinary
-appointment status, unresolved or duplicate references, ineligible selected
-artifacts, and impossible prepared/simulated lifecycle combinations.
+The only material schema rename in this refactor is:
 
-## 3. Status meanings
+- `proposedDetermination` → `reasoningMemorandum`;
+- `proposed_determination` → `reasoning_memorandum`; and
+- artifact `appointmentHash` → `configurationHash`.
 
-- `not_executed`: no model execution;
-- `illustrative_only`: curated offline simulation;
-- `executed_unverified`: successful declared live call without independent evaluation;
-- `validated`: reserved and unreachable; and
-- `failed`: no usable artifact and later use blocked.
+The dispute’s existing `appointmentHash` binding remains unchanged.
 
-Only illustrative and live—unverified artifacts are currently eligible for
-simulation-only use.
+`MinimalDemoState` remains schema version 1 under
+`ziaap:minimal-demo:v1`; no field changed solely for terminology.
 
-## 4. Current Configuration Manifest implementation
+## 3. Pure operating-model projections
 
-Canonical JSON contains root boundaries, matter ID, party-profile confirmation,
-contract decisions and versions, alignment scenario, Constitution, legal
-architecture, fictional human record, model/prompt/retrieval/tool/engine
-identity, selected Scenario Laboratory artifacts and execution status, and
-change policy. Object keys are sorted recursively before SHA-256.
+`lib/operating-model.ts` exposes:
 
-The digest supports change detection for selected synthetic configuration. It is
-not full runtime, build, dependency, provider, environment, actor, consent, or
-signature attestation.
+- `getActiveMatterGate(state)`;
+- `getGateReadiness(state, gate)`;
+- `buildStructuredCaseState(state)`;
+- `buildReasoningMemorandumInput(state, configurationHash)`; and
+- `buildProceduralBlackBox(state)`.
 
-## 5. Transition functions
+These functions derive meaning from structured state. They add no persisted
+lifecycle state.
 
-Synchronous functions may calculate UI readiness only. The current code symbol
-`simulateAppointmentTransition` is async and recomputes the digest immediately
-before mutation. It checks lifecycle/authority, party profiles, exact clause
-versions, selected artifacts and eligibility, bilateral artifact
-acknowledgements, unique complete references, Constitution version, exact digest
-acknowledgements, disclosure review, and fictional acceptance. It returns a
-typed result and preserves the exact input state on rejection.
+## 4. Structured case state
 
-The symbol name reflects the frozen C0 implementation. It does not create a
-legal appointment; the canonical lifecycle places the fictional ceremony at the
-start of Later Dispute.
+The case projection separates contract rules, Constitution identity, claims,
+defences, agreed and disputed facts, evidence, missing evidence, applicable
+rules, deterministic calculations, objections, uncertainty, possible
+dispositions and human-control events.
 
-## 6. Invalidation
+The reasoning memorandum is derived from this state and never replaces it.
+Sealed settlement terms, concessions and responses are excluded from memorandum
+input.
 
-Expectation, decision, scenario, Constitution, or artifact changes reset
-downstream lifecycle and clear digest, acknowledgements, disclosure, fictional
-acceptance, dispute binding, and later decisions. Live failure preserves prior
-artifacts but clears selected eligibility. Reset clones the original fixture.
+## 5. Constitution and configuration integrity
 
-## 7. Route contracts
+The Constitution is the versioned software control plane. Behavior-affecting
+changes increment its version and invalidate scenario artifacts, the
+configuration manifest, simulated acknowledgements, dispute binding, reasoning
+memorandum and fictional human-decision state.
 
-`POST /api/analyze`, `/api/calibrate`, and `/api/dispute-preview` accept
-`executionMode: illustrative | live`. Illustrative returns
-`illustrative_only`. Live success returns `executed_unverified`. Live errors
-return `{ executionStatus: "failed", code, reason, retryable }` and no artifact.
+The configuration manifest and SHA-256 digest support only internal change
+detection. They do not attest provider execution, build, dependencies, runtime,
+identity, signature or legal effect.
 
-Error status mapping:
+## 6. Procedural black box
 
-- `400` invalid request;
-- `403` public live policy disabled;
-- `409` model/lifecycle mismatch;
-- `422` invalid structured output;
-- `502` provider failure;
-- `503` credentials/config unavailable; and
-- `504` timeout.
+The black-box projection is generated from ledger events and includes
+configuration identity, party objections and human-control markers. It omits
+the text of fictional preliminary assessments and rationales, and marks
+`privateDeliberationIncluded: false`.
 
-`/api/legal-source` follows the same no-silent-fallback rule.
-`/api/settlement-preview` is deterministic and requires matching manifest state
-and separate bilateral simulated consent.
+It is not an award, legal record, runtime attestation or proof of validity.
 
-## 8. Public policy
+## 7. Route stability
 
-`ZIAAP_LIVE_EXECUTION_ENABLED` and `ZIAAP_LIVE_RETRIEVAL_ENABLED` are disabled
-unless explicitly set server-side. Public deployment exposes no credential or
-uncontrolled-spend path and uses curated deterministic artifacts.
+The following user routes remain stable:
 
-## 9. Test requirements
+- `/`;
+- `/reference`;
+- `/demo`;
+- `/demo/align`;
+- `/demo/test`;
+- `/demo/dispute`;
+- `/demo/review`;
+- `/demo/outcome`; and
+- `/feedback`.
 
-Automated tests cover schema parsing, deterministic arithmetic, manifest hashing,
-settlement segregation, illustrative/live route semantics, model mismatch,
-no-fallback failures, reserved authority, stale and forged digests, post-prepare
-edits, revoked acknowledgement, inconsistent versions, direct bypass, state
-preservation, invalid routes/status combinations, reset, and missing/duplicate
-references.
+Existing route-handler paths also remain stable. `/api/dispute-preview` now
+returns a reasoning-memorandum schema without changing its URL.
 
-Internal verification additionally requires frozen install, typecheck, lint,
-tests, build, desktop/mobile browser paths, loading/blocked/failure/reset states,
-opening navigation, the complete six-stage journey, Audit Dossier generation,
-and print layout.
+## 8. Execution status and failure
 
-## 10. State-derived Audit Dossier
+Only `simulation_only` is available. `authoritative` and `validated` remain
+reserved and unreachable.
 
-The current code symbol `buildDemonstrationDossier` projects twelve records from
-`ContractState`. It marks missing lifecycle evidence pending rather than
-inventing completion and excludes sealed settlement proposal content. Every
-record carries actor, authority status, lifecycle mode, execution status,
-version, provenance, consequence, and `legalEffect: false`.
+Curated fixtures are `illustrative_only`; successful declared live calls are
+`executed_unverified`; failures are `failed` and never silently replaced with a
+successful fixture.
 
-Sprint 2 introduces the common artifact envelope and Sprint 4 completes the
-Audit Dossier surface; neither later capability is claimed here.
+The route binds any live reasoning memorandum to the server-recomputed
+configuration hash rather than accepting a model-supplied hash.
 
-## 11. Security and legal limits
+## 9. Verification
 
-Client-side hashing and transitions support only internal concept consistency.
-They do not authenticate actors, prove consent or provenance, secure confidential
-data, produce signatures, establish legal effect, or independently validate AI.
+Automated coverage must include gate ordering and mapping, readiness,
+invalidation, structured case content, sealed-settlement isolation,
+reasoning-memorandum authority, human pre-assessment order, human controls,
+event-derived black box, route stability, public persistence, no public network
+calls, terminology and claim qualifications.
+
+Required commands:
+
+```powershell
+pnpm.cmd typecheck
+pnpm.cmd lint
+pnpm.cmd test
+pnpm.cmd build
+git diff --check
+```
+
+Browser verification covers `/`, `/reference`, the complete `/demo` path and
+`/feedback` at desktop, laptop, tablet and 390 px, including console inspection.

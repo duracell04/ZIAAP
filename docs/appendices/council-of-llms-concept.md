@@ -1,5 +1,8 @@
 # Council of LLMs Concept
 
+> **Historical, non-normative evaluation appendix.** The
+> [ZIAAP Operating Model](../product/operating-model.md) is canonical.
+
 > **Future evaluation appendix — not current implementation scope.**
 
 ## 1. Relationship to the AI-Native Arbitrator

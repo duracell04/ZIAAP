@@ -28,6 +28,7 @@ const rules = JSON.parse(readFileSync(resolve(root, "config/terminology-rules.js
 const narrativeFiles = [
   "README.md",
   "docs/00-product-charter.md",
+  "docs/product/operating-model.md",
   "docs/review/guided-reviewer-script.md",
   "docs/review/reviewer-questionnaire.md",
   "docs/review/expert-feedback-instructions.md",
@@ -137,15 +138,16 @@ describe("Sprint 0 product language", () => {
       read("docs/00-product-charter.md"),
       read("docs/product/glossary.md"),
       read("lib/product-language.ts"),
-    ].join("\n").toLowerCase();
+    ].join("\n").replace(/\s+/g, " ").toLowerCase();
     for (const phrase of rules.requiredPhrases) {
-      expect(canonical, `required phrase: ${phrase}`).toContain(phrase.toLowerCase());
+      expect(canonical, `required phrase: ${phrase}`).toContain(phrase.replace(/\s+/g, " ").toLowerCase());
     }
   });
 
   it("links the charter to every required Sprint 0 artifact", () => {
     const charter = read("docs/00-product-charter.md");
     const links = [
+      "docs/product/operating-model.md",
       "docs/product/maturity-model.md",
       "docs/product/glossary.md",
       "docs/product/claims-register.md",
@@ -164,7 +166,7 @@ describe("Sprint 0 product language", () => {
 
     const claims = read("docs/product/claims-register.md");
     const claimRows = claims.split(/\r?\n/).filter((line) => /^\| CL-\d{3} \|/.test(line));
-    expect(claimRows).toHaveLength(12);
+    expect(claimRows).toHaveLength(22);
     for (const row of claimRows) {
       const fields = row.split("|").slice(1, -1).map((field) => field.trim());
       expect(fields).toHaveLength(9);
@@ -176,7 +178,67 @@ describe("Sprint 0 product language", () => {
     expect(scorecard).toContain("Product/founder approval");
     expect(scorecard).toContain("Legal-framing and authority-boundary review");
     expect(scorecard).not.toContain("Legal-lead approval");
-    expect(scorecard).toContain("Sprint 0 corrected concept candidate, internally verified; external acceptance pending");
+    expect(scorecard).toContain("Operating-model refactor implemented; automated, browser and human acceptance pending");
     expect(scorecard).toContain("Unchecked human-evidence items must remain pending");
+  });
+
+  it("keeps bold institutional and economic claims explicitly qualified", () => {
+    const operatingModel = read("docs/product/operating-model.md");
+    const normalizedOperatingModel = operatingModel.replace(/\s+/g, " ");
+    const claims = read("docs/product/claims-register.md");
+    expect(normalizedOperatingModel).toContain("aspirational category claim");
+    expect(normalizedOperatingModel).toContain("Competitive substantiation is pending");
+    expect(normalizedOperatingModel).toContain("CHF 50,000–500,000");
+    expect(normalizedOperatingModel).toContain("hypotheses requiring validation");
+    expect(normalizedOperatingModel).toContain("Classification depends on intended use");
+    expect(normalizedOperatingModel).toContain("applicable Article 6 analysis");
+    expect(normalizedOperatingModel).toContain("does not establish enforceability");
+    expect(normalizedOperatingModel).toContain("do not prove the feasibility or performance");
+    expect(normalizedOperatingModel).toContain("do not establish a causal scalability claim");
+    for (const requiredQualification of [
+      "Partner ownership",
+      "First",
+      "Economic outcomes",
+      "CHF 50,000–500,000",
+      "AI Act",
+      "New York Convention",
+      "JAMS and ICC",
+      "WorldCC",
+    ]) {
+      expect(claims).toContain(`**${requiredQualification}:**`);
+    }
+  });
+
+  it("removes the superseded six-stage labels from normative current surfaces", () => {
+    const currentNormative = [
+      "README.md",
+      "docs/00-product-charter.md",
+      "docs/product/operating-model.md",
+      "docs/product/glossary.md",
+      "docs/product/maturity-model.md",
+      "docs/product/release-scorecard.md",
+      "docs/roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md",
+      "docs/reference/brand-book.md",
+      "docs/reference/current-product-requirements.md",
+      "docs/reference/current-technical-requirements.md",
+      "docs/reference/current-service-blueprint.md",
+      "docs/reference/current-legal-governance.md",
+      "docs/reference/hci-information-architecture.md",
+      "docs/review/guided-reviewer-script.md",
+      "docs/review/reviewer-questionnaire.md",
+      "docs/review/expert-feedback-instructions.md",
+      "components/demo-workspace.tsx",
+      "components/opening-experience.tsx",
+      "lib/product-language.ts",
+    ].map(read).join("\n");
+    for (const legacyStage of [
+      "Party Alignment",
+      "Protocol Constitution",
+      "Scenario Laboratory",
+      "Later Dispute",
+      "Audit Dossier",
+    ]) {
+      expect(currentNormative, legacyStage).not.toContain(legacyStage);
+    }
   });
 });

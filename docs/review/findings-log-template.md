@@ -19,15 +19,19 @@ Create one de-identified copy per reviewer. Never infer or fabricate entries.
 
 | Topic | Verbatim answer | Confidence 1–5 | Accurate? | Evidence/time |
 |---|---|---:|---|---|
-| Before-signing proposition | | | | |
+| North-star and category thesis | | | | |
 | C0 classification | | | | |
 | Fidelity qualification | | | | |
-| Party Alignment | | | | |
-| Process twin boundary | | | | |
+| I0–I2 and six gates | | | | |
+| Constitution control plane | | | | |
+| Structured case state | | | | |
 | AI Resolution Officer | | | | |
 | Human legal authority | | | | |
 | Execution/validation boundary | | | | |
-| Manifest scope | | | | |
+| Reasoning-memorandum boundary | | | | |
+| Procedural black-box boundary | | | | |
+| Aviation analogy | | | | |
+| Partner-ownership qualification | | | | |
 | Commercial value | | | | |
 
 ## Findings
@@ -40,7 +44,7 @@ An authority-category error is always blocking until corrected and retested.
 
 ## Quantitative summary
 
-- Required questions accurately answered: /10
+- Required questions accurately answered:
 - Mean confidence: /5
 - Task completion: complete / partial / failed
 - Presenter interventions:

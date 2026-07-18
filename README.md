@@ -136,17 +136,18 @@ The older numbered documents have moved to `docs/reference/`. The Git tag
 `prototype-showcase-v1.0-review-candidate` preserves the frozen historical
 candidate; its name does not classify the current roadmap-era working tree.
 
-## Stage gate
+## Acceptance gate
 
-The current stage closes Sprint 0 as an accepted concept baseline. After
-machine verification and actual human evidence are reviewed, the accepted
-baseline may be merged. Further implementation then stops.
+The prior Sprint 0 baseline remains preserved in Git history. This
+category-defining operating-model refactor is a bounded C0 concept change, not
+Sprint 1. It requires machine verification plus product/founder, legal-framing,
+corporate-governance and unfamiliar-reader review before merge.
 
 Sprints 1–34 are provisional, funding-dependent future development. The
 existing later-stage interface remains a design reference. Prototype planning
 begins only after an angel-financing decision and a new prototype charter.
 
 No reviewer participation, comprehension result, usability result, independent
-validation, product approval, or legal-framing review may be inferred from
-repository artifacts. Pending human evidence is recorded explicitly in the
-scorecard.
+validation, product approval, legal-framing review, partner-ownership approval
+or economic evidence may be inferred from repository artifacts. Pending human
+evidence is recorded explicitly in the scorecard.

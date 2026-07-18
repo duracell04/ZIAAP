@@ -1,4 +1,4 @@
-# ZIAAP Concept Integrity Questionnaire
+# ZIAAP Operating-Model Questionnaire
 
 ## Session metadata
 
@@ -9,94 +9,100 @@
 - Device and viewport:
 - Prior familiarity: none / limited / substantial
 
-Record answers verbatim and confidence from 1–5. Do not mark answers correct
-during the session.
+Record answers verbatim and confidence from 1–5. Do not correct answers during
+the session.
 
 ## Unassisted comprehension
 
-1. What problem does ZIAAP address before a contract is signed?
-2. What is the current artifact and what does “high fidelity” mean here?
-3. What does Party Alignment mean?
-4. What is being tested in the Scenario Laboratory?
-5. What is the process digital twin, and what does it not predict?
+1. What does ZIAAP aim to become?
+2. What is the current artifact, and what does “high fidelity” mean?
+3. What does ZIAAP standardise around the human arbitrator?
+4. What do I0, I1 and I2 mean?
+5. What does the aviation analogy communicate, and what must it not imply?
 6. What is the AI Resolution Officer?
-7. What remains under human legal authority?
-8. What is curated simulation, live—unverified execution, conformance, and
-   independent validation?
-9. What does the Configuration Manifest identify and exclude?
-10. Which output appears commercially valuable?
+7. Who retains legal authority and responsibility?
+8. What is partner ownership in this concept: current fact, validated plan or
+   future target?
+9. Which commercial or economic outcomes have actually been demonstrated?
+
+## Six-gate comprehension
+
+10. Name the six gates in order.
+11. How does Alignment differ from Configuration?
+12. What does the Constitution control, and what does “machine-enforceable” not
+    mean?
+13. What must be true before configuration freeze?
+14. Why is the structured case state more than an AI-authored memorandum?
+15. How is settlement content separated from merits production?
+16. Why does the fictional preliminary assessment precede the reasoning
+    memorandum?
+17. What can the human do with the memorandum?
+18. What does the procedural black box include and exclude?
+19. Why is Gate 6 called **Simulated Outcome & Procedural Black Box** at C0?
 
 ## Authority checks
 
-Classify each statement as true, false, or future-only:
+Classify each statement as true, false or future-only:
 
-- The current repository is a production arbitration service.
-- High fidelity includes proven legal or future-outcome fidelity.
-- A curated simulation was executed live.
-- Live—unverified means independently validated.
-- The AI Resolution Officer is a legal office or arbitrator.
-- A properly appointed human retains legal authority and responsibility.
-- The manifest digest proves actor identity or provider-side execution.
-- The fictional ceremony creates a legal appointment.
-- The deterministic calculator decides broader liability.
-- The process twin predicts the future result of a dispute.
-
-## Lifecycle comprehension
-
-11. Name the six stages in order.
-12. How does Protocol Constitution differ from Scenario Laboratory?
-13. What must be true before the Configuration Manifest can be prepared?
-14. How is settlement information separated from merits reasoning?
-15. Why does the fictional human pre-assessment precede software analysis?
-16. Why is the final dossier called an Audit Dossier if external validation is
-    still pending?
-17. What evidence is required to move from C0 to C1?
-18. What must happen at Gate C1 before Sprint 5?
+- The current repository operates an arbitral institution.
+- Participating arbitrators currently own ZIAAP.
+- The Constitution legally enforces an award.
+- The case is represented as structured, contestable state.
+- The reasoning memorandum is a verdict.
+- AI output receives a presumption because it is polished.
+- A properly appointed human remains responsible.
+- Engineers or investors may control live-case merits.
+- The black box contains private human deliberation.
+- New York Convention participation proves a ZIAAP output is enforceable.
+- The EU AI Act automatically classifies every arbitration tool as high-risk.
+- ZIAAP has demonstrated faster, cheaper or scalable arbitration.
 
 ## Usability ratings
 
 Rate 1 (strongly disagree) to 5 (strongly agree):
 
-- I understood the before-signing proposition without explanation.
-- I understood the current C0 maturity and fidelity qualification.
-- I could distinguish the AI Resolution Officer from the human arbitrator.
-- I could distinguish simulation, live execution, failure, and validation.
-- I understood where the Alignment Annex came from.
-- I could distinguish configuration from observed scenario behaviour.
-- I understood what the manifest contains and excludes.
-- I could trace the later-dispute sequence.
-- I understood how settlement remains separated from merits.
-- I could use the Audit Dossier to reconstruct the synthetic journey.
-- I knew what to do after a failed live execution.
-- The concept made its limitations visible without overwhelming the proposition.
+- I understood the future ambition without confusing it with current maturity.
+- I understood the three layers and six gates.
+- I understood the Constitution as software control plane.
+- I understood structured case state versus advisory memorandum.
+- I could distinguish deterministic calculation from probabilistic analysis.
+- I understood settlement separation.
+- I understood why human pre-assessment comes first.
+- I could identify adopt, modify, reject and request-more-evidence controls.
+- I understood the procedural black box boundary.
+- The aviation analogy clarified the model without implying predictable
+  outcomes.
+- The limitations remained visible without overwhelming the proposition.
 
 ## Open response
 
-- Most valuable output:
+- Most valuable capability:
 - Least credible claim or interaction:
 - Most confusing term:
 - Missing information:
-- One required change before Gate C1:
+- Required change before Gate C1:
 - Would you request a follow-up conversation? Why?
 
 ---
 
 ## Hyper-minimal public walkthrough addendum
 
-Use this shorter section only for the `/demo` comprehension experiment. Record
-answers verbatim before discussing the technical C0 reference.
+Use this section only for `/demo`.
 
 1. In one sentence, what do you understand ZIAAP to do?
-2. What problem does the **Align** step address before conflict?
-3. What did the AI do after the future dispute occurred?
+2. What problem does **Align** address before conflict?
+3. What did AI do after the future dispute occurred?
 4. What could CloudProvider challenge?
 5. Who made the simulated final decision, and how did it differ from the AI
    proposal?
-6. What business value, if any, did you perceive?
+6. What concrete business value, if any, did you perceive?
 7. Which decisions or procedural steps must always remain under human control?
-8. What would prevent you or your organisation from using this process?
-9. Where could this save the greatest amount of time, cost or uncertainty?
+8. What does the commercial-aviation sentence mean here?
+9. Did it imply that legal outcomes are mechanical or predictable?
+10. What would prevent your organisation from using this process?
+11. Where could it potentially save the greatest time, cost or uncertainty?
 
 Any belief that the walkthrough appoints an arbitrator, issues an operative
-decision, executes a live model, validates legal conclusions or demonstrates
-cost/time savings is recorded as an authority or evidence-category error.
+decision, executes live AI, validates legal conclusions, implements
+partner ownership or demonstrates cost/time savings is recorded as an authority
+or evidence-category error.

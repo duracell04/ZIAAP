@@ -1,126 +1,68 @@
-# Current Concept Legal Governance
+# Current Legal and Governance Boundaries
 
-> Reference description of the existing C0 synthetic implementation. The
-> product charter, canonical glossary, and claims register control public claims.
+> Normative C0 framing reference, not legal advice or a legal opinion. See the
+> [operating model](../product/operating-model.md).
 
-## Governed software, human legal authority, simulation-only concept
+## Current status
 
-## 1. Governing rule
+The repository is synthetic, client-local, resettable, simulation-only and
+without legal effect. It is not an arbitral institution, appointment service,
+confidential matter system, signature process or award process.
 
-The AI Resolution Officer may structure information, compare positions, apply
-confirmed deterministic rules, expose uncertainty, test configurations, and
-prepare provisional reviewable analysis. It is a governed software capability,
-not a legal office, arbitral institution, arbitrator, or autonomous
-decision-maker.
+The AI Resolution Officer is governed software. A properly appointed human
+arbitrator retains procedural authority, independent judgment, responsibility
+and any future signature.
 
-Any future legally consequential decision remains the responsibility of a
-properly appointed human under applicable law and procedure. The present C0
-concept demonstrator is synthetic, `simulation_only`, and has
-`legalEffect: false`. It performs no legal or institutional appointment,
-identity verification, production signature, operative award, enforcement, or
-independent validation.
+## Authority allocation
 
-## 2. Authority hierarchy
+| Actor | Intended control | Excluded authority |
+|---|---|---|
+| Deploying customers and parties | Approved data boundary, submissions, corrections and objections, subject to law | No unilateral control of judgment |
+| Future ZIAAP institution | Rules, administration and operational safeguards | No case-merits decision |
+| Engineering | Runtime, security, retrieval, deterministic tools and technical operations | No appointment or live-case merits authority |
+| Arbitrator partners | Professional standards and independent case judgment | No access to other arbitrators’ confidential matters or case revenue |
+| Investors | Ordinary governance consistent with the future constitution | No authority over appointments, proceedings or merits |
 
-1. mandatory law and public policy;
-2. valid party agreement;
-3. applicable arbitration law and rules;
-4. valid future appointment and procedural decisions of the human arbitrator;
-5. the acknowledged protocol configuration; and
-6. advisory or mechanical ZIAAP outputs.
+Partner ownership is a target design, not an implemented corporate fact.
 
-The concept demonstrates only lower governance layers and fictional records. It
-does not establish items 1–4 for a real matter.
+## Constitution
 
-## 3. Consent separation
+The Constitution is a versioned software control plane. Its runtime guards may
+be described as machine-enforceable only in the sense that software enforces
+permissions, workflow boundaries, escalation and invalidation.
 
-The interface keeps separate:
+The Constitution does not legally enforce an arbitration agreement, procedure
+or award.
 
-- party-profile confirmation;
-- exact contractual-version confirmation;
-- acknowledgement of an eligible simulation artifact;
-- acknowledgement of the exact Configuration Manifest digest;
-- fictional disclosure review and acceptance;
-- optional simulated settlement consent; and
-- simulated human review.
+## Six gates
 
-No checkbox proves identity, capacity, authority, informed consent, provenance,
-legal form, signature, or enforceability.
+Gate 3’s current appointment interaction is fictional. Gate 5’s reasoning
+memorandum is advisory and receives zero algorithmic presumption. Gate 6 is
+labelled **Simulated Outcome & Procedural Black Box** in C0 and never produces
+an award.
 
-## 4. Execution authority
+The black box excludes private human deliberation. It does not prove legal
+validity, enforceability, identity, provider execution or runtime attestation.
 
-Curated simulations are `illustrative_only`. Successful declared live model
-calls are `executed_unverified`. Neither is independently validated or
-authoritative. `failed` blocks acknowledgement and ceremony. `validated` is a
-reserved future execution status and cannot be created by the current concept or
-by the model under test.
+## Settlement firewall
 
-The software may report observed safeguards and limitations. It may not give
-itself an authoritative pass, approve an appointment, or enter an authoritative
-route.
+Settlement requires separate bilateral simulated activation. Proposal terms,
+concessions and responses remain outside reasoning-memorandum input and
+merits-facing artifacts. Only permitted occurrence or status information may
+enter the shared record.
 
-## 5. Configuration Manifest
+## External legal context
 
-The Configuration Manifest identifies selected contractual decisions, legal
-architecture, Constitution, declared model/prompt/retrieval/tool/engine versions,
-selected Scenario Laboratory artifacts, fictional human record, and change
-policy. Its SHA-256 digest supports internal synthetic change detection.
+- EU AI Act classification depends on intended use and the applicable Article
+  6 analysis. The concept does not claim that every arbitration tool is
+  automatically high-risk or compliant.
+- New York Convention participation does not establish enforceability of a
+  ZIAAP process or output.
+- JAMS and ICC are organisational or procedural context, not validation of
+  ZIAAP’s target institution.
 
-It is not complete build or dependency attestation, provider-execution proof,
-environment or runtime attestation, a production signature, or proof that a
-particular actor consented.
+## Pending review
 
-## 6. Human independence and review
-
-The future product concept preserves a human arbitrator’s ability and duty to
-control procedure, address challenges, evaluate sources and objections, require
-more evidence, and adopt, modify, or reject software output. The current concept
-uses a fictional person and a non-operative simulated record only.
-
-## 7. Equality and contestability
-
-Material propositions identify source and actor. Party assertions, source text,
-AI-supported analysis, legal constraints, deterministic calculations, proposed
-options, and agreed text remain visually distinct. Missing evidence and
-competing positions are preserved. Party-label symmetry is an illustrative
-scenario, not proof of universal fairness.
-
-## 8. Mechanical and legal outputs
-
-Confirmed arithmetic may be reproduced by deterministic code. Legal
-interpretation, enforceability, credibility, causation, mandatory-law effects,
-and remedies remain bounded and subject to qualified review and future human
-judgment. The synthetic service-credit result does not decide broader liability.
-
-## 9. Settlement firewall
-
-Settlement is optional and separately activated. Proposal terms, concessions,
-and responses are sealed from merits reasoning. Provisional analysis may receive
-only the shared merits record and permitted settlement-status facts.
-
-## 10. Safe failure
-
-The system stops on missing configuration, credentials, model mismatch, timeout,
-provider error, invalid output, stale digest, inconsistent versions, missing
-references, or incomplete acknowledgement. A live failure never becomes fixture
-success. Rejected transitions preserve prior state and route to deliberate
-recovery or human escalation.
-
-## 11. Prohibited claims
-
-Do not claim that the current concept demonstrator:
-
-- is an arbitral institution or appointment service;
-- verifies parties, capacity, authority, or consent;
-- independently validates a model, legal process, or outcome;
-- provides legal advice;
-- signs or issues an operative award;
-- processes confidential production disputes;
-- attests a runtime or provider execution; or
-- creates enforceable rights, duties, or dispositions.
-
-## 12. Governance statement
-
-> The AI Resolution Officer augments analytical capacity and procedural
-> consistency; a properly appointed human arbitrator retains legal authority,
-> independent judgment, and responsibility.
+Product/founder, legal-framing, corporate-governance and unfamiliar-reader
+review remains pending. No opinion on enforceability, regulatory compliance,
+professional rules, data duties or production readiness is inferred.

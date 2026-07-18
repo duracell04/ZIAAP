@@ -2,6 +2,8 @@
 
 > Historical evidence for the frozen `prototype-showcase-v1.0-review-candidate`
 > tag. It does not classify or approve the current roadmap-era working tree.
+> The [ZIAAP Operating Model](../product/operating-model.md) supersedes its
+> lifecycle and artifact language.
 
 ## Candidate identity
 

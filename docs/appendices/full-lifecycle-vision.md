@@ -1,5 +1,9 @@
 # Full Contract-to-Resolution Vision
 
+> **Historical, non-normative vision appendix.** It may use superseded
+> lifecycle or artifact language. The
+> [ZIAAP Operating Model](../product/operating-model.md) is canonical.
+
 > **Future product vision — not a build specification and not an eighth core document.**
 
 ## 1. Lifecycle Thesis
