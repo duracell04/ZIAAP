@@ -84,6 +84,11 @@ export function MinimalFeedback({ submitted = false }: MinimalFeedbackProps) {
             <textarea name="potential_saving" required />
           </label>
 
+          <label>
+            <span>Any additional thoughts, ideas, or suggestions for improvement? (Optional)</span>
+            <textarea name="additional_comments" />
+          </label>
+
           <aside className="minimal-feedback-privacy" aria-labelledby="feedback-privacy-title">
             <strong id="feedback-privacy-title">How this feedback is handled</strong>
             <p>
@@ -95,11 +100,11 @@ export function MinimalFeedback({ submitted = false }: MinimalFeedbackProps) {
               .
             </p>
             <p>
-              We collect your email, perspective and four answers for concept research and possible
-              submission-related follow-up. FormSubmit, operated by Devro LABS, processes the
-              submission and states that it retains submissions for 30 days. Messages may remain in
-              the project mailbox for up to 12 months and will then be deleted unless continued
-              retention is legally necessary.
+              We collect your email, perspective, four required answers and any optional additional
+              comments for concept research and possible submission-related follow-up. FormSubmit,
+              operated by Devro LABS, processes the submission and states that it retains
+              submissions for 30 days. Messages may remain in the project mailbox for up to 12
+              months and will then be deleted unless continued retention is legally necessary.
             </p>
             <p>
               Your details will not be used for a newsletter or unrelated marketing. Do not submit

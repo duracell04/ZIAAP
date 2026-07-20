@@ -7,10 +7,10 @@
 ## Purpose and boundary
 
 The public feedback form collects a participant's email address, perspective
-and four written answers for ZIAAP concept research and possible
-submission-related follow-up. It is not a newsletter, marketing list,
-production research backend, confidential matter channel or evidence of
-product, legal-framing or comprehension approval.
+and four required answers, plus any optional additional comments, for ZIAAP
+concept research and possible submission-related follow-up. It is not a
+newsletter, marketing list, production research backend, confidential matter
+channel or evidence of product, legal-framing or comprehension approval.
 
 Participants must not submit confidential case information, privileged
 material, sensitive personal data or information about an identifiable
@@ -60,8 +60,9 @@ the controlled production acceptance test in which the activated FormSubmit
 endpoint sends a later submission to the project mailbox.
 
 CAPTCHA remains enabled. The form also uses a honeypot, requires the
-participant email and perspective, requires all four answers, and requires
-express consent to the disclosed processing and content restriction.
+participant email and perspective, requires all four core answers, offers one
+optional open-comments field, and requires express consent to the disclosed
+processing and content restriction.
 
 ## Public address exposure
 
