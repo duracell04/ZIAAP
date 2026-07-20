@@ -3,7 +3,7 @@ import { ArrowLeft, Check, MessageSquareText, Send } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { PUBLIC_DEMO_DISCLAIMER } from "@/lib/product-language";
 
-const FEEDBACK_ENDPOINT = "https://formsubmit.co/enriquegeorg.zbinden@slta.ch";
+const FEEDBACK_ENDPOINT = "https://formsubmit.co/enriquegeorg.zbinden@swisslegaltech.ch";
 const FEEDBACK_RETURN_URL = "https://ziaap-26.vercel.app/feedback?sent=1";
 
 type MinimalFeedbackProps = {
@@ -89,7 +89,10 @@ export function MinimalFeedback({ submitted = false }: MinimalFeedbackProps) {
             <p>
               <b>Controller:</b> Enrique Georg Zbinden, ZIAAP concept project.{" "}
               <b>Contact and rights requests:</b>{" "}
-              <a href="mailto:enriquegeorg.zbinden@slta.ch">enriquegeorg.zbinden@slta.ch</a>.
+              <a href="mailto:enriquegeorg.zbinden@swisslegaltech.ch">
+                enriquegeorg.zbinden@swisslegaltech.ch
+              </a>
+              .
             </p>
             <p>
               We collect your email, perspective and four answers for concept research and possible

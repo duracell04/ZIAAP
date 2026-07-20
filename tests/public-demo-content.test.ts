@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const obsoleteFeedbackAddress = ["enriquegeorg.zbinden", ["slta", "ch"].join(".")].join("@");
 
 const publicComponentFiles = [
   "components/minimal-demo-opening.tsx",
@@ -49,7 +50,11 @@ describe("hyper-minimal public surface", () => {
     const feedback = read("components/minimal-feedback.tsx");
     const page = read("app/feedback/page.tsx");
     expect(feedback).toContain('method="POST"');
-    expect(feedback).toContain("https://formsubmit.co/enriquegeorg.zbinden@slta.ch");
+    expect(feedback).toContain(
+      "https://formsubmit.co/enriquegeorg.zbinden@swisslegaltech.ch",
+    );
+    expect(feedback).toContain("mailto:enriquegeorg.zbinden@swisslegaltech.ch");
+    expect(feedback).not.toContain(obsoleteFeedbackAddress);
     expect(feedback).toContain('type="email" name="email" autoComplete="email" required');
     expect(feedback).toContain('<select name="perspective" defaultValue="" required>');
     expect(feedback).toContain('<option value="" disabled>Select your perspective</option>');
@@ -58,10 +63,14 @@ describe("hyper-minimal public surface", () => {
     }
     expect(feedback).toContain('name="consent" value="yes" required');
     expect(feedback).toContain('name="_next" value={FEEDBACK_RETURN_URL}');
+    expect(feedback).toContain(
+      'FEEDBACK_RETURN_URL = "https://ziaap-26.vercel.app/feedback?sent=1"',
+    );
     expect(feedback).toContain('name="_subject" value="New ZIAAP concept feedback"');
     expect(feedback).toContain('name="_template" value="table"');
     expect(feedback).toContain('name="_honey"');
     expect(feedback).not.toContain("_captcha");
+    expect(feedback.match(/\brequired\b/g) ?? []).toHaveLength(7);
     expect(feedback).not.toContain("localStorage");
     expect(feedback).not.toContain("clipboard");
     expect(feedback).not.toContain("Download JSON");
@@ -81,6 +90,8 @@ describe("hyper-minimal public surface", () => {
     expect(normalizedGovernance).toContain("persistent in Git history, forks, mirrors");
     expect(normalizedGovernance).toContain("must be replaced by a processor");
     expect(normalizedGovernance).toContain("does not prove mailbox delivery");
+    expect(normalizedGovernance).toContain("enriquegeorg.zbinden@swisslegaltech.ch");
+    expect(governance).not.toContain(obsoleteFeedbackAddress);
   });
 
   it("does not call APIs, fetch remote data, or expose a live execution action", () => {

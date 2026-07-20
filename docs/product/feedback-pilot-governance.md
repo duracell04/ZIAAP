@@ -19,7 +19,8 @@ dispute.
 ## Controller, processor and retention
 
 - **Controller:** Enrique Georg Zbinden, ZIAAP concept project.
-- **Contact and rights requests:** [enriquegeorg.zbinden@slta.ch](mailto:enriquegeorg.zbinden@slta.ch).
+- **Contact and rights requests:**
+  [enriquegeorg.zbinden@swisslegaltech.ch](mailto:enriquegeorg.zbinden@swisslegaltech.ch).
 - **Temporary processor/recipient:** FormSubmit, operated by Devro LABS.
 - **FormSubmit retention:** FormSubmit states that submissions are retained for
   30 days.
@@ -65,7 +66,8 @@ express consent to the disclosed processing and content restriction.
 ## Public address exposure
 
 The direct FormSubmit action intentionally publishes
-`enriquegeorg.zbinden@slta.ch` in rendered HTML and public repository source.
+`enriquegeorg.zbinden@swisslegaltech.ch` in rendered HTML and public
+repository source.
 Committing it also makes the address persistent in Git history, forks, mirrors
 and archives. Moving to an opaque endpoint later will not remove the address
 from existing history.
