@@ -3,7 +3,7 @@ import { ArrowLeft, Check, MessageSquareText, Send } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { PUBLIC_DEMO_DISCLAIMER } from "@/lib/product-language";
 
-const FEEDBACK_ENDPOINT = "https://formsubmit.co/enriquegeorg.zbinden@swisslegaltech.ch";
+const FEEDBACK_ENDPOINT = "https://formsubmit.co/27b2603104675fc200cb5588be264702";
 const FEEDBACK_RETURN_URL = "https://ziaap-26.vercel.app/feedback?sent=1";
 
 type MinimalFeedbackProps = {

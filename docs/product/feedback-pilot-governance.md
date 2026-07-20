@@ -66,16 +66,16 @@ processing and content restriction.
 
 ## Public address exposure
 
-The direct FormSubmit action intentionally publishes
-`enriquegeorg.zbinden@swisslegaltech.ch` in rendered HTML and public
-repository source.
-Committing it also makes the address persistent in Git history, forks, mirrors
-and archives. Moving to an opaque endpoint later will not remove the address
-from existing history.
+The active FormSubmit action uses the random-like identifier supplied after
+mailbox activation and no longer exposes the project mailbox in the form
+action. The controller contact
+`enriquegeorg.zbinden@swisslegaltech.ch` remains public in the rendered
+disclosure and repository source so participants can exercise their rights.
 
-This exposure is accepted for the easiest pilot configuration. Any future
-recipient address should be reviewed before it is committed to a public
-repository.
+Earlier naked FormSubmit recipient addresses remain persistent in Git history,
+forks, mirrors and archives. No Git history rewrite is attempted because that
+would create disproportionate release risk and would not remove copies that
+already exist outside the canonical repository.
 
 ## Approval status
 

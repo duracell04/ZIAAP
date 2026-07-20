@@ -52,7 +52,8 @@ describe("hyper-minimal public surface", () => {
     const feedback = read("components/minimal-feedback.tsx");
     const page = read("app/feedback/page.tsx");
     expect(feedback).toContain('method="POST"');
-    expect(feedback).toContain(nakedFeedbackEndpoint);
+    expect(feedback).toContain("https://formsubmit.co/27b2603104675fc200cb5588be264702");
+    expect(feedback).not.toContain(nakedFeedbackEndpoint);
     expect(feedback).toContain(`mailto:${correctedFeedbackAddress}`);
     expect(feedback).not.toContain(obsoleteFeedbackAddress);
     expect(feedback).toContain('type="email" name="email" autoComplete="email" required');
@@ -96,6 +97,9 @@ describe("hyper-minimal public surface", () => {
     expect(normalizedGovernance).toContain("must be replaced by a processor");
     expect(normalizedGovernance).toContain("does not prove mailbox delivery");
     expect(normalizedGovernance).toContain(correctedFeedbackAddress);
+    expect(normalizedGovernance).toContain("no longer exposes the project mailbox");
+    expect(normalizedGovernance).toContain("remains public in the rendered disclosure");
+    expect(normalizedGovernance).toContain("No Git history rewrite");
     expect(governance).not.toContain(obsoleteFeedbackAddress);
   });
 
