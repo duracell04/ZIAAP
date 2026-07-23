@@ -184,7 +184,8 @@ describe("Sprint 0 product language", () => {
 
     const claims = read("docs/product/claims-register.md");
     const claimRows = claims.split(/\r?\n/).filter((line) => /^\| CL-\d{3} \|/.test(line));
-    expect(claimRows).toHaveLength(23);
+    expect(claimRows).toHaveLength(24);
+    expect(claims).toContain("| CL-024 | AI-convex product doctrine |");
     for (const row of claimRows) {
       const fields = row.split("|").slice(1, -1).map((field) => field.trim());
       expect(fields).toHaveLength(9);
@@ -224,8 +225,39 @@ describe("Sprint 0 product language", () => {
       "New York Convention",
       "JAMS and ICC",
       "WorldCC",
+      "AI-convex doctrine",
+      "Answer quality",
+      "Provider flexibility",
+      "Deployment terminology",
     ]) {
       expect(claims).toContain(`**${requiredQualification}:**`);
+    }
+  });
+
+  it("keeps the AI-convex doctrine process-centred and future-qualified", () => {
+    const operatingModel = read("docs/product/operating-model.md");
+    const normalizedOperatingModel = operatingModel.replace(/\s+/g, " ");
+    const glossary = read("docs/product/glossary.md");
+    const validationPlan = read("docs/product/feedback-disposition-and-validation-plan.md");
+    const normalizedValidationPlan = validationPlan.replace(/\s+/g, " ");
+
+    expect(normalizedOperatingModel).toContain(
+      "ZIAAP's durable product is not a claim to superior AI legal answers.",
+    );
+    expect(normalizedOperatingModel).toContain(
+      "provider-flexible, protocol-authoritative and model-version-specific",
+    );
+    expect(normalizedOperatingModel).toContain("they are not current C0 properties");
+    expect(normalizedValidationPlan).toContain("applies equally to both commercial hypotheses");
+    expect(normalizedValidationPlan).toContain("does not select a wedge");
+    for (const term of [
+      "Provider-flexible",
+      "Protocol-authoritative",
+      "Model-version-specific",
+      "Controlled trust boundary",
+      "Local-capable / sovereign-deployable",
+    ]) {
+      expect(glossary).toContain(`| ${term} |`);
     }
   });
 

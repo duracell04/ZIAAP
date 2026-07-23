@@ -1,6 +1,6 @@
 # ZIAAP Claims Register
 
-**Version:** 1.4
+**Version:** 1.6
 
 **Review status:** Product/founder, legal-framing, corporate-governance and unfamiliar-reader review pending
 
@@ -27,8 +27,9 @@
 | CL-019 | Economic thesis | Product/evaluation leads | Future market and outcome research | ZIAAP “seeks” or “aims” to make arbitration faster, more predictable and viable by reducing repeated production | Achieved or quantified cost, speed, capacity, market-size or viability claim | Evidence-specific future gate | Hypothesis only | 2026-07-18 (hypothesis) |
 | CL-020 | Target market | Product/evaluation leads | Future segment validation | CHF 50,000–500,000 recurring and operational disputes are an initial target-market hypothesis | Addressable-market fact or proven demand claim | C1 plus market evidence | Hypothesis only | 2026-07-18 (hypothesis) |
 | CL-021 | Aviation analogy | Brand/legal leads | Comprehension protocol | Standardised governed systems around the arbitrator while preserving human judgment | Mechanical outcomes, pilotless arbitration, safety certification or regulatory equivalence | C0 | Editorial framing implemented; comprehension pending | 2026-07-18 (draft) |
-| CL-022 | External evidence | Research/legal leads | WorldCC, EUR-Lex, UNCITRAL, JAMS and ICC primary sources cited in the operating model | Sources establish context or precedent only | Claim that a source validates ZIAAP performance, legal classification, enforceability or scalability | Evidence-specific | Source qualification drafted; legal/research review pending | 2026-07-18 (draft) |
+| CL-022 | External evidence | Research/legal leads | Dated primary and official sources classified in the legal-governance reference and feedback-disposition plan | Sources establish bounded legal, institutional or competitive context only; state their force, jurisdiction, date and limits | Claim that any source validates ZIAAP performance, legal classification, enforceability, adoption or scalability | Evidence-specific | Source qualification updated; legal/research review pending | 2026-07-23 (draft) |
 | CL-023 | Public feedback pilot | Privacy/product leads | Native FormSubmit form, visible disclosure and feedback-pilot governance record | Temporary low-risk concept-research pilot with medium privacy and reputational risk | Secure, confidential, delivered, privacy-approved, validated research backend or suitable for institutional matters | C0 pilot exception | Implemented; privacy-governance and legal-framing review pending | 2026-07-18 (draft) |
+| CL-024 | AI-convex product doctrine | Product/technical/legal leads | Canonical operating model, structured-state implementation and future comparative evaluation programme | “ZIAAP's durable product is intended to be the governed production environment through which ambiguity and divergence become structured, source-linked, versioned and contestable state; models remain evaluated, version-bound proposal engines.” | Superior legal answers; ownership of arbitration or the legal process; model equivalence; current model independence, local-first operation or sovereign deployment | C0 for target doctrine; evidence-specific for performance | Future product thesis; product, technical and legal review pending | 2026-07-23 (draft) |
 
 ## Required qualifications
 
@@ -50,6 +51,27 @@
 - **Public feedback:** “submitted” describes the browser workflow only and does
   not prove mailbox delivery; FormSubmit is temporary and must not receive
   confidential, privileged, case-specific or sensitive information.
+- **Red-team feedback:** always “research input”; never validation, acceptance,
+  expert approval, due diligence or authority to pivot.
+- **Comparative AI authority:** *ARIHQ c. Santé Québec* is comparative Québec
+  authority concerning a materially affected domestic award, not Swiss law or
+  a rule that any AI use justifies annulment.
+- **AI-convex doctrine:** always a target product and architecture thesis; never
+  evidence of performance, adoption, portability or a competitive moat.
+- **Answer quality:** legal-quality non-inferiority and citation fidelity are
+  future evaluation guardrails, not established results or a claim that ZIAAP
+  produces better legal answers.
+- **Provider flexibility:** describe the intended architecture as
+  “provider-flexible, protocol-authoritative and model-version-specific.” Every
+  provider/model/version is behaviour-affecting; never imply equivalence or
+  transferable approval.
+- **Deployment terminology:** “local-capable” and “sovereign-deployable” are
+  future architecture terms. A controlled trust boundary is a policy boundary,
+  not proof of compliance, confidentiality, security or no-egress operation.
+  Do not use unqualified “local-first,” “model-independent” or
+  “model-agnostic.”
+- **Investment readiness:** describe the missing business-case evidence; do not
+  infer that the company is investable or uninvestable.
 
 ## Cross-claim prohibited variants
 
@@ -60,6 +82,8 @@
 - Proof of identity, consent, provider execution, runtime or legal effect
 - Demonstrated comprehension, cost reduction, speed improvement, capacity, scalability or workload reduction before real evidence is recorded
 - Unqualified “first,” “faster,” “predictable,” “economically viable” or “scalable”
+- Claim that ZIAAP owns arbitration or the legal process, or produces superior legal answers
+- Unqualified “model-independent,” “model-agnostic” or “local-first,” or a claim of current local-capable or sovereign deployment
 
 ## Human review record
 

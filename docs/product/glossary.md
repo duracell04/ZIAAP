@@ -1,6 +1,6 @@
 # ZIAAP Canonical Glossary
 
-**Version:** 1.4
+**Version:** 1.5
 
 | Term | Approved meaning | Reserved or prohibited use |
 |---|---|---|
@@ -20,6 +20,11 @@
 | Conformance | Measured agreement with a declared policy or rule | Do not use as a synonym for external validation |
 | Validation | Evidence from an appropriately independent, defined programme | Reserved until that programme exists and reports results |
 | Configuration manifest | A digestible technical artifact identifying selected contract, policy, source, tool and evaluation references inside Gate 3 | It is not a lifecycle stage and does not prove provider execution, runtime, identity, signature or legal effect |
+| Provider-flexible | Intended future architecture in which authoritative protocol state and execution interfaces can be preserved across adapters while every provider, model and version is separately evaluated and approved | Not a current C0 capability; never use “model-independent” or “model-agnostic,” or imply equivalent behaviour or transferable approval |
+| Protocol-authoritative | Design constraint under which only the deterministic procedural kernel can commit accepted state; model outputs remain proposal artifacts | Does not grant the protocol legal authority or legal effect and does not describe a current production runtime |
+| Model-version-specific | Each future approved execution profile is bound to its identified provider, model version and other behaviour-affecting configuration | Approval, evaluation evidence and acknowledgements do not transfer silently to another profile |
+| Controlled trust boundary | A future approved deployment perimeter and data-flow policy governing where processing may occur and what egress is allowed | Not proof of compliance, confidentiality, security, privilege preservation or no-egress operation |
+| Local-capable / sovereign-deployable | Reserved future architecture properties requiring an approved local adapter plus applicable evaluation, security and data-boundary evidence | Not current C0 properties or universal product promises; do not use unqualified “local-first” |
 | Structured case state | Claims, defences, facts, evidence, gaps, rules, calculations, objections, uncertainty, possible dispositions and human interventions represented as versioned state | Do not reduce it to a document pile or generated prose |
 | Reasoning memorandum | A source-linked advisory artifact derived from structured case state | Never call it a verdict, decision, award or authoritative case model |
 | Procedural black box | Event-derived record of configuration identity, provenance, objections, system outputs and human controls | Excludes private human deliberation and does not prove legal validity or runtime attestation |
@@ -43,7 +48,10 @@
 ## Canonical authority statement
 
 > The AI Resolution Officer augments analytical capacity and procedural
-> consistency; a properly appointed human arbitrator retains legal authority,
+> consistency; it does not control authoritative state, commit consequential
+> transitions or exercise legal authority. Applicable law and the formally
+> adopted procedure govern the exercise of procedural authority, parties retain
+> challenge rights, and a properly appointed human arbitrator retains
 > independent judgment and responsibility.
 
 ## Governing claims principle

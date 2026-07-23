@@ -1,6 +1,6 @@
 # ZIAAP Product Charter
 
-**Version:** 1.3
+**Version:** 1.5
 
 **Current maturity:** C0 — interactive concept demonstrator
 
@@ -29,6 +29,19 @@ below.
 > **Traditional arbitration standardises procedural rules. ZIAAP also
 > standardises the production environment through which a case is prepared,
 > examined and decided.**
+
+### AI-convex product doctrine
+
+> **ZIAAP's durable product is intended to be the governed production
+> environment through which contractual ambiguity and divergence become
+> structured, source-linked, versioned and contestable state—not a claim to
+> superior AI legal answers.**
+
+Models are intended to remain evaluated, version-bound proposal engines.
+Parties retain challenge rights, and properly authorised humans retain
+consequential decisions. Legal-quality non-inferiority and citation fidelity
+are future evaluation guardrails, not established performance or the claimed
+moat. The doctrine applies to both research wedges and selects neither one.
 
 ### Institutional thesis
 
@@ -89,9 +102,14 @@ state; it is not the authoritative case model or a verdict.
 The AI Resolution Officer is a governed software capability. It is not a legal
 office, arbitral institution, arbitrator, or autonomous decision-maker. It may
 structure, compare, retrieve, calculate, test, challenge, explain, and prepare
-reviewable analysis. A properly appointed human arbitrator retains procedural
-authority, independent judgment, and responsibility for any legally operative
-decision.
+reviewable analysis, but it does not control the authoritative record, commit
+consequential transitions or exercise legal authority. ZIAAP structures state,
+evidence, permissions and transition controls; parties control their own
+submissions and objections; applicable law and the formally adopted procedure
+govern the exercise of procedural authority; and properly authorised humans
+control consequential decisions. A properly appointed human arbitrator
+retains independent judgment and responsibility for any legally operative
+merits decision.
 
 ## Three layers and six gates
 
@@ -183,6 +201,14 @@ experiment even though the deployed root now exposes it for a bounded pilot.
 Product/founder, legal-framing, privacy-governance, corporate-governance and
 unfamiliar-reader evidence remains pending.
 
+The anonymised red-team memorandum received on 2026-07-23 is recorded as
+**refine/narrow research input** in the
+[feedback disposition and pre-prototype validation plan](product/feedback-disposition-and-validation-plan.md).
+It brings forward a comparison between an embedded bilateral I0 diagnostic and
+an institution/tribunal-facing case-intelligence workspace. It does not select
+either wedge, change the I0–I2 architecture or current public claims, satisfy
+human acceptance, reorder the roadmap, or authorise prototype implementation.
+
 Sprints 1–34 remain provisional, funding-dependent future development. This
 bounded refactor authorises no backend, identity, production data, real
 appointment, corporate implementation, signature or award work.
@@ -193,6 +219,7 @@ appointment, corporate implementation, signature or award work.
 - [Maturity model](product/maturity-model.md)
 - [Canonical glossary](product/glossary.md)
 - [Claims register](product/claims-register.md)
+- [Feedback disposition and pre-prototype validation plan](product/feedback-disposition-and-validation-plan.md)
 - [Public feedback pilot governance](product/feedback-pilot-governance.md)
 - [Release scorecard](product/release-scorecard.md)
 - [Technical roadmap v1.1](roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)

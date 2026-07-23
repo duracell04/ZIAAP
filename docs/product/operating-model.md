@@ -1,6 +1,6 @@
 # ZIAAP Operating Model
 
-**Version:** 1.1
+**Version:** 1.2
 
 **Status:** Normative future operating model; product/founder,
 legal-framing, corporate-governance and unfamiliar-reader review pending
@@ -51,6 +51,36 @@ The case is not intended to begin as an unstructured document collection and
 end as AI-generated prose. The intended product is a governed decision
 environment whose facts, evidence, calculations, objections, uncertainty and
 human interventions remain structured, versioned and inspectable.
+
+## AI-convex product doctrine
+
+> **ZIAAP's durable product is not a claim to superior AI legal answers. It is
+> the governed production environment through which contractual ambiguity and
+> divergence become structured, source-linked, versioned and contestable
+> state. Models are evaluated, version-bound proposal engines; they never
+> control the authoritative record, execute consequential transitions or
+> exercise legal authority. Parties retain challenge rights, and properly
+> authorised humans retain consequential decisions.**
+
+Answer quality, citation fidelity and legal-quality non-inferiority are
+mandatory future evaluation thresholds, not the claimed source of durable
+differentiation. A governed process does not force ambiguity into false
+agreement: its structured result may be clarification, deliberately preserved
+ambiguity, incomplete agreement, separately recorded expectations or
+unresolved divergence. An amendment changes the authoritative agreement only
+when it is formally incorporated through the applicable process.
+
+This doctrine applies across both research wedges: an embedded bilateral I0
+interpretation-gap diagnostic and an institution/tribunal-facing
+case-intelligence workspace. It does not select either wedge, alter I0–I2 or
+the six gates, reorder the roadmap, or authorise technical implementation.
+
+The intended future architecture is **provider-flexible,
+protocol-authoritative and model-version-specific**. Those terms do not claim
+current multi-provider operation, equivalent behaviour between models or
+transferable approval. **Local-capable** and **sovereign-deployable** are
+reserved for future architectures that satisfy their own evaluation, security
+and data-boundary requirements; they are not current C0 properties.
 
 ## Institutional thesis
 
@@ -210,11 +240,16 @@ machine-generated.
 
 > **Deploying customers and parties select the approved data boundary.**
 >
-> **ZIAAP controls the future institutional procedure.**
+> **ZIAAP structures state, evidence, permissions and transition controls; it
+> does not acquire legal or procedural authority by doing so.**
 >
-> **The parties control their submissions and objections.**
+> **Applicable law and the formally adopted procedure govern the exercise of
+> procedural authority.**
 >
-> **The arbitrator controls the judgment.**
+> **The parties control their own submissions and objections.**
+>
+> **Properly authorised humans control consequential decisions. A properly
+> appointed arbitrator controls adjudicative judgment.**
 
 Data-boundary choices remain subject to applicable law and formal
 controller/processor duties. Engineers and investors have no live-case merits
