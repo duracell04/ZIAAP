@@ -336,7 +336,7 @@ Every stakeholder can describe ZIAAP consistently and classify the current artif
 | ID | User story | Acceptance criterion |
 |---|---|---|
 | S1-US1 | As a platform engineer, I want one canonical matter schema, so that every interface and service interprets the same state. | The schema covers identity, contract, alignment, protocol, evaluation, manifest, dispute, settlement, human decision and dossier references. |
-| S1-US2 | As a user, I want every stage transition to have explicit prerequisites, so that the system explains what is complete and what remains open. | A pure transition function returns allowed, blocked and reason codes for every lifecycle action. |
+| S1-US2 | As a user, I want every stage transition to have explicit prerequisites, so that the system explains what is complete and what remains open. | A pure transition function returns allowed, blocked and reason codes for every lifecycle action. Only the deterministic procedural kernel can commit authoritative state; a model output cannot invoke a transition. |
 | S1-US3 | As an auditor, I want every material state change represented as an event, so that the complete lifecycle can be reconstructed. | Events include actor, role, object, prior version, new version, reason, timestamp and correlation ID. |
 | S1-US4 | As a developer, I want derived states calculated from canonical data, so that UI-only flags cannot contradict the matter record. | No eligibility, readiness or completion status is stored solely in component state. |
 | S1-US5 | As a product owner, I want explicit terminal and rollback states, so that failed runs, revoked approvals and superseded versions remain understandable. | State diagrams cover failure, revocation, supersession, reopening and closure. |
@@ -379,7 +379,7 @@ No screen derives legal, artifact or lifecycle readiness from local state.
 | ID | User story | Acceptance criterion |
 |---|---|---|
 | S2-US1 | As a user, I want every AI, deterministic and human artifact to show its status, so that I know whether it is current, stale, failed, superseded or revoked. | Every artifact uses a shared envelope with type, version, parents, hash, actor, execution status, authority status and legal effect. |
-| S2-US2 | As a system, I want successful executions separated from failed attempts, so that a failed run never becomes an eligible artifact. | Execution attempts and artifacts have separate schemas and lifecycle rules. |
+| S2-US2 | As a system, I want successful executions separated from failed attempts, so that a failed run never becomes an eligible artifact. | Execution attempts and artifacts have separate schemas and lifecycle rules. Every model result is a proposal artifact with `legalEffect: false`; it can affect authoritative state only through validation and an authorised transition. |
 | S2-US3 | As an auditor, I want an explanation for every ineligible artifact, so that the system is inspectable rather than silently blocked. | Eligibility returns machine-readable reason codes and plain-language explanations. |
 | S2-US4 | As a party, I want acknowledgements bound to an exact artifact digest, so that later edits automatically clear prior approval. | Acknowledgements reference artifact ID, content digest, actor identity and version. |
 | S2-US5 | As a dossier reader, I want availability calculated by the same rules used in the workflow, so that the final record never contradicts an earlier stage. | Lifecycle gates, UI, manifest and dossier import the same eligibility projection. |
@@ -896,7 +896,7 @@ ZIAAP has one bounded, testable and commercially intelligible beachhead.
 |---|---|---|
 | S14-US1 | As both parties, I want to configure interpretation, evidence, fairness, remedies, uncertainty and escalation through understandable controls, so that the protocol reflects our risk preferences. | Controls use typed options, ranges and documented defaults. |
 | S14-US2 | As counsel, I want conflicting policy choices identified, so that an internally inconsistent Constitution cannot be accepted. | A policy validator reports contradictions, precedence gaps and legal-review flags. |
-| S14-US3 | As an arbitrator, I want mandatory human-reserved questions defined, so that the AI resolution officer escalates rather than overreaches. | Escalation rules cover credibility, mandatory law, serious procedural objections, missing decisive evidence and exceptional remedies. |
+| S14-US3 | As an arbitrator, I want mandatory human-reserved questions defined, so that the AI resolution officer escalates rather than overreaches. | Policy explicitly enumerates permitted model tasks and human-reserved actions, fails closed outside those permissions, and reserves credibility, mandatory law, serious procedural objections, missing decisive evidence and exceptional remedies for human review. |
 | S14-US4 | As an evaluator, I want policy requirements translated into executable checks, so that conformance can be graded independently of the model’s self-description. | Each policy rule maps to one or more deterministic or reviewer-scored checks. |
 | S14-US5 | As a party, I want edits to create a new Constitution version and impact report, so that behaviour-affecting changes trigger retesting and fresh approval. | Versioning clears dependent evaluations and manifest acknowledgements. |
 
@@ -1066,11 +1066,11 @@ Protocol testing quantifies stability, sensitivity and asymmetry rather than pre
 
 | ID | User story | Acceptance criterion |
 |---|---|---|
-| S18-US1 | As an operator, I want approved model snapshots, so that generic aliases cannot silently alter behaviour. | Execution policy selects allow-listed immutable or contractually pinned versions where available. |
-| S18-US2 | As an auditor, I want the complete request and response envelope, so that a run can be examined and compared. | The record includes prompts, context, retrieval, tool calls, settings, timestamps, provider metadata and output digest. |
-| S18-US3 | As a privacy officer, I want configurable redaction and retention, so that traceability remains compatible with confidentiality. | Sensitive traces use encrypted storage, scoped access and matter-specific retention. |
-| S18-US4 | As a product owner, I want model changes treated as governed releases, so that evaluation and approval thresholds apply before activation. | A change request links expected benefit, risk, test results and rollback plan. |
-| S18-US5 | As a developer, I want provider abstraction, so that ZIAAP can compare models without weakening provenance or policy enforcement. | All providers conform to one execution and evidence contract. |
+| S18-US1 | As an operator, I want approved model snapshots, so that generic aliases cannot silently alter behaviour. | An immutable `ExecutionProfile` identifies the adapter, deployment class, provider and model snapshot, engine, tokenizer, parameters, prompt, source, tool and evaluation digests, data boundary and egress policy; execution selects only an approved profile from a server-controlled registry. |
+| S18-US2 | As an auditor, I want the complete request and response envelope, so that a run can be examined and compared. | A `ModelTaskEnvelope` binds the task to immutable state, configuration and evidence references, permissions, permitted sources and tools, output schema and timeout. A `ModelRunArtifact` records a proposal or typed failure, citations, uncertainty, profile and attempt identities, request and output digests, observed runtime metadata, timing, cost and `legalEffect: false`. |
+| S18-US3 | As a privacy officer, I want configurable redaction and retention, so that traceability remains compatible with confidentiality. | Sensitive traces use encrypted storage, scoped access and matter-specific retention, and execution enforces the profile's approved data boundary and egress policy. |
+| S18-US4 | As a product owner, I want model changes treated as governed releases, so that evaluation and approval thresholds apply before activation. | A provider, model, endpoint, engine, parameter or material prompt change creates a new profile, triggers evaluation, invalidates dependent approvals and artifacts, and requires fresh approval. Rollback is permitted only to an exact previously approved profile. |
+| S18-US5 | As a developer, I want provider abstraction, so that ZIAAP can compare models without weakening provenance or policy enforcement. | Fixture, hosted and local adapters conform to one execution and evidence contract, cannot mutate matter state or invoke transitions, and cannot silently substitute or fall back. Legal-source retrieval remains a separately governed connector, and clients cannot supply arbitrary endpoints. |
 
 #### Test plan
 
@@ -1109,11 +1109,11 @@ Every AI output has complete, governed execution provenance within the limits of
 
 | ID | User story | Acceptance criterion |
 |---|---|---|
-| S19-US1 | As a party, I want one inspectable configuration package, so that I can see exactly what the future resolution protocol contains. | The manifest references contract digests, policy versions, source packs, tools, scenario suites, evaluation reports and model declarations. |
+| S19-US1 | As a party, I want one inspectable configuration package, so that I can see exactly what the future resolution protocol contains. | The manifest references contract digests, policy versions, source packs, tools, scenario suites, evaluation reports and exact `ExecutionProfile` digests rather than generic model declarations. |
 | S19-US2 | As an auditor, I want the manifest content canonically hashed, so that later changes are detectable. | Canonical serialization and digest algorithms are versioned and independently testable. |
-| S19-US3 | As a party, I want acknowledgements bound to the exact manifest, so that each accepted configuration is explicit. | Acknowledgements include actor, role, authentication evidence, digest and timestamp. |
+| S19-US3 | As a party, I want acknowledgements bound to the exact manifest, so that each accepted configuration is explicit. | Acknowledgements include actor, role, authentication evidence, digest and timestamp; any profile or other behaviour-affecting change clears dependent acknowledgements. |
 | S19-US4 | As a user, I want a plain-language manifest summary, so that technical precision remains understandable. | The summary explains what is bound, what remains uncertain and which properties are outside the attestation. |
-| S19-US5 | As a reviewer, I want replay verification, so that the system can prove that a later matter references the same configuration. | A verifier recomputes all available digests and reports missing or unverifiable components. |
+| S19-US5 | As a reviewer, I want replay verification, so that the system can prove that a later matter references the same configuration. | A verifier recomputes all available digests and reports missing or unverifiable components. Schema and manifest migrations create explicit new versions; legacy hashes and acknowledgements remain historical evidence and are never reinterpreted as approval of a new profile. |
 
 #### Test plan
 
@@ -1543,7 +1543,7 @@ The final record is canonical, portable, verifiable and explicit about evidentia
 | S29-US2 | As a privacy officer, I want data classification, retention and deletion controls, so that information is handled according to matter policy. | Each data class has purpose, location, retention, deletion and export rules. |
 | S29-US3 | As counsel, I want privileged and confidential material labelled and access-scoped, so that the system supports procedural confidentiality. | Labels govern search, prompts, exports and reviewer access. |
 | S29-US4 | As an operator, I want encryption, secret management and security monitoring, so that infrastructure meets pilot expectations. | Controls cover data in transit, at rest, backups, keys and suspicious activity. |
-| S29-US5 | As a pilot customer, I want a transparent AI data-use policy, so that I know whether providers retain data or use it for training. | Provider settings, contracts and technical controls are documented per environment. |
+| S29-US5 | As a pilot customer, I want a transparent AI data-use policy, so that I know whether providers retain data or use it for training. | Provider settings, contracts, technical controls, deployment perimeter and data flows are documented per execution profile. An `offline_sovereign` profile requires an approved local adapter and verified no-egress controls; the label alone proves neither compliance nor confidentiality. |
 
 #### Test plan
 
@@ -1712,7 +1712,7 @@ ZIAAP can enter existing contract and arbitration workflows without conflating e
 | ID | User story | Acceptance criterion |
 |---|---|---|
 | S33-US1 | As an operator, I want end-to-end tracing, so that every user action and AI run can be diagnosed without exposing unnecessary matter content. | Observability uses correlation IDs, structured events and privacy-aware logs. |
-| S33-US2 | As a user, I want explicit failure and recovery guidance, so that an unavailable model or source never appears as a successful artifact. | Failure states preserve prior evidence as inactive and identify recovery options. |
+| S33-US2 | As a user, I want explicit failure and recovery guidance, so that an unavailable model or source never appears as a successful artifact. | Failure states preserve prior evidence as inactive and identify recovery options. Provider or source outage never triggers silent substitution: an approved offline profile may be selected through the governed workflow, otherwise the process pauses or uses an authorised manual fallback. |
 | S33-US3 | As a service owner, I want backup and restoration procedures, so that matters and audit records can be recovered. | Recovery objectives are defined and tested. |
 | S33-US4 | As a model-governance lead, I want drift and regression alerts, so that behaviour changes trigger investigation before user impact expands. | Monitoring compares live samples with approved evaluation thresholds. |
 | S33-US5 | As a customer, I want service status and incident communication, so that operational transparency matches the trust model. | Status, incident and post-incident processes are documented. |
@@ -1755,8 +1755,8 @@ The platform fails visibly, recovers predictably and preserves the integrity of 
 | ID | User story | Acceptance criterion |
 |---|---|---|
 | S34-US1 | As an enterprise administrator, I want tenant policy and user administration, so that my organisation controls access, retention and approved models. | Admin actions are permissioned, audited and scoped. |
-| S34-US2 | As a customer, I want transparent service and usage pricing, so that value and cost align with matters, users and AI execution. | Billing events are explainable and never affect legal or analytical outcomes. |
-| S34-US3 | As a governance board, I want release approval and rollback authority, so that material product and model changes receive accountable review. | Release records include evaluation, legal, security and operational evidence. |
+| S34-US2 | As a customer, I want transparent service and usage pricing, so that value and cost align with matters, users and AI execution. | Billing events are explainable and never affect legal or analytical outcomes. Reporting measures verified cost per completed procedural state or matter, including inference, retrieval, infrastructure, verification, human review and exception handling rather than token price alone. |
+| S34-US3 | As a governance board, I want release approval and rollback authority, so that material product and model changes receive accountable review. | Release records include evaluation, legal, security and operational evidence. A model-runtime rollback can activate only an exact previously approved `ExecutionProfile`; interface compatibility or benchmark improvement does not transfer approval. |
 | S34-US4 | As a product team, I want post-market incident and correction tracking, so that systemic failure modes become product improvements. | Complaints, overrides, errors and near misses feed the risk and evaluation backlog. |
 | S34-US5 | As a strategy lead, I want a repeatable vertical-expansion framework, so that new domains inherit the same evidence and governance standards. | New packs require ontology, sources, templates, datasets, expert review and pilot gates. |
 
