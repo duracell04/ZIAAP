@@ -135,8 +135,9 @@ git diff --check
 4. [Canonical glossary](docs/product/glossary.md)
 5. [Claims register](docs/product/claims-register.md)
 6. [Release scorecard](docs/product/release-scorecard.md)
-7. [Sprint 0 acceptance record](docs/review/sprint-0-acceptance-record.md)
-8. [Technical roadmap v1.1](docs/roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
+7. [Feedback disposition and pre-prototype validation plan](docs/product/feedback-disposition-and-validation-plan.md)
+8. [Sprint 0 acceptance record](docs/review/sprint-0-acceptance-record.md)
+9. [Technical roadmap v1.1](docs/roadmap/ZIAAP_Concept_to_Validated_Product_Technical_Roadmap_v1.1.md)
 
 The older numbered documents have moved to `docs/reference/`. The Git tag
 `prototype-showcase-v1.0-review-candidate` preserves the frozen historical

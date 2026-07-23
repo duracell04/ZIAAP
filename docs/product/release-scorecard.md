@@ -1,8 +1,8 @@
 # ZIAAP Release Scorecard
 
-**Version:** 1.3
+**Version:** 1.4
 
-**Current decision:** Public-pilot implementation verified locally; production email delivery and human acceptance pending
+**Current decision:** Public-pilot implementation verified locally; production email delivery and human acceptance pending; pre-prototype wedge unselected
 
 ## C0 — current concept baseline
 
@@ -27,6 +27,32 @@
 C1 remains a future, funding-dependent gate and is not implied by Sprint 0
 acceptance. Prototype planning requires an angel-financing decision and a new
 prototype charter.
+
+## Pre-prototype wedge research gate — not a maturity gate
+
+The 2026-07-23 red-team memorandum is research input, not evidence that C0 or C1
+has advanced. Before a new prototype charter can select a first product, the
+[feedback disposition and validation plan](feedback-disposition-and-validation-plan.md)
+requires an embedded bilateral I0 diagnostic and an institution/tribunal-facing
+case-intelligence workspace to be compared on the same decision fields.
+
+| Evidence | Embedded I0 diagnostic | Case-intelligence workspace |
+|---|---|---|
+| One buyer and one painful workflow | Pending | Pending |
+| Adoption authority and payment trigger | Pending | Pending |
+| Manual baseline cost and implementation burden | Pending | Pending |
+| Benchmark against manual work and a frontier general model | Pending | Pending |
+| Stated price tests and revealed commitment to the exact scoped delivery | Pending | Pending |
+| Feasible economics and capital assumptions | Pending | Pending |
+| Research-data compliance | Pending | Pending |
+| Intended-deployment data-rights feasibility | Pending | Pending |
+| Written conditional pilot intent | Pending | Pending |
+
+The permitted output is a reviewed **go, refine, narrow, or hold** recommendation.
+The gate does not reorder provisional sprints, start Sprint 1, authorise a live
+consequential matter or itself create a maturity transition. A selected wedge
+still requires product/founder review and a separately authorised prototype
+charter.
 
 ## Gate P1 — functional proof of concept after Sprint 9
 
