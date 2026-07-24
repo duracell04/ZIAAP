@@ -126,14 +126,18 @@ describe("hyper-minimal public surface", () => {
     expect(outcome).toContain("Human decision · simulated");
   });
 
-  it("uses restrained aviation framing and projects each public step to canonical gates", () => {
+  it("labels current and future steps and projects each public step to canonical gates", () => {
     const opening = read("components/minimal-demo-opening.tsx");
     const shell = read("components/minimal-demo-shell.tsx");
     const language = read("lib/product-language.ts");
     expect(opening).toContain("OPERATING_PRINCIPLE");
     expect(opening).not.toMatch(/cockpit dashboard|aircraft control|take off|landing/i);
     expect(shell).toContain("currentStepDefinition.contextLabel");
+    expect(shell).toContain("currentStepDefinition.statusLabel");
     expect(language).toContain("canonicalGates");
+    expect(language).toContain('commercialStatus: "current_product"');
+    expect(language).toContain('commercialStatus: "future_extension"');
+    expect(language).not.toContain('canonicalGates: ["configuration", "appointment_configuration_freeze"]');
     expect(language).not.toContain("canonicalStages");
   });
 

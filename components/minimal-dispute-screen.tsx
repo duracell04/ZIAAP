@@ -30,10 +30,10 @@ export function MinimalDisputeScreen() {
   return (
     <MinimalDemoShell
       currentStep="dispute"
-      eyebrow={`${matter.dispute.transition} · future dispute`}
+      eyebrow={`${matter.dispute.transition} · deferred future architecture`}
       title={matter.dispute.headline}
       introduction={matter.dispute.summary}
-      businessValue="Start from an organised record instead of paying professionals to reconstruct scattered documents repeatedly."
+      businessValue="This later hypothesis would start from an authorised export, not automatic access to private alignment material."
       role="CloudProvider view"
     >
       <Card className="minimal-source-stack">

@@ -116,6 +116,7 @@ export function MinimalDemoShell({
       <section className="minimal-stage">
         <header className="minimal-stage-intro">
           <small>{currentStepDefinition.contextLabel}</small>
+          <small>{currentStepDefinition.statusLabel}</small>
           <span>{eyebrow}</span>
           <h1>{title}</h1>
           <p>{introduction}</p>

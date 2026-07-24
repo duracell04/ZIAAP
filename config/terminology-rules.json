@@ -1,15 +1,15 @@
 {
   "requiredPhrases": [
-    "Test your dispute-resolution system before you sign the contract.",
+    "Align material contract expectations before you sign.",
+    "ZIAAP Contract Alignment",
     "high-fidelity interactive concept demonstrator",
     "workflow and interaction fidelity",
     "AI Resolution Officer",
     "not a predictor of the future result",
-    "ZIAAP aims to transform arbitration from a largely bespoke, document-driven professional service into a structured, technology-native production system.",
-    "Traditional arbitration standardises procedural rules. ZIAAP also standardises the production environment through which a case is prepared, examined and decided.",
-    "Radical operating-model ambition, conservative empirical claims.",
-    "Agree the rules before the dispute.",
-    "AI prepares. Parties can challenge. A human arbitrator decides.",
+    "Computational Private Ordering",
+    "Sell the narrow product. Preserve the larger architecture. Prove the bridge between them.",
+    "Align expectations before you sign.",
+    "AI structures scenarios. Each party confirms its own position.",
     "Synthetic demonstration · No legal effect · AI output is illustrative."
   ],
   "forbiddenPhrases": [
@@ -27,13 +27,21 @@
     "Exact protocol manifest",
     "Demonstration Dossier",
     "Later Synthetic Dispute",
-    "legal approval",
-    "legal-lead approval",
     "AI judge",
+    "ZIAAP is AI arbitration",
+    "AI arbitration product",
     "autonomous arbitration",
     "instant award",
     "unbiased decision",
     "objective truth",
-    "AI verdict"
+    "AI verdict",
+    "dead on arrival",
+    "automatically invalidates an award",
+    "all mediation data must be physically destroyed",
+    "mediation data must be physically deleted",
+    "calling it administrative software avoids",
+    "administrative software is exempt",
+    "all I0 records may be submitted as evidence",
+    "guaranteed evidentiary effect"
   ]
 }

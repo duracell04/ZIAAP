@@ -1,43 +1,44 @@
-export const PRODUCT_PROMISE = "Test your dispute-resolution system before you sign the contract.";
+export const PRODUCT_PROMISE = "Align material contract expectations before you sign.";
+
+export const CURRENT_PRODUCT_NAME = "ZIAAP Contract Alignment";
 
 export const ZIAAP_ACRONYM_EXPANSION = "Zero-Instance Algorithmic Arbitration Protocol";
 
 export const ZERO_INSTANCE_EXPLAINER =
-  "“Zero Instance” describes the pre-conflict stage in which parties align expectations and configure how a future dispute should be handled.";
+  "“Zero Instance” describes the pre-conflict stage in which parties compare operational expectations and govern material differences before signing.";
 
-export const ZIAAP_TAGLINE = "Dispute governance, designed early";
+export const ZIAAP_TAGLINE = "Contract alignment, made inspectable";
 
 export const NORTH_STAR_AMBITION =
-  "ZIAAP aims to transform arbitration from a largely bespoke, document-driven professional service into a structured, technology-native production system. The parties align critical rules before conflict. Software organises the record and performs explicit calculations. AI maintains source-linked, structured and contestable analysis. Independent human arbitrators retain full authority over procedure, judgment and any future award. The objective is not to automate arbitral authority. It is to make professional authority usable across a substantially broader range of commercial disputes.";
+  "The same governed data model may later support lifecycle re-alignment, confidential mediation, and structured handover to independent human adjudication, with strict separation between commercial platform economics and neutral authority.";
 
-export const CATEGORY_THESIS =
-  "Traditional arbitration standardises procedural rules. ZIAAP also standardises the production environment through which a case is prepared, examined and decided.";
+export const CATEGORY_THESIS = "Computational Private Ordering";
 
-export const INSTITUTIONAL_THESIS =
-  "The future ZIAAP institution is intended to be owned and professionally governed by participating arbitrator partners, supported by a shared engineering and case-administration platform.";
+export const NEUTRALITY_PRINCIPLE =
+  "ZIAAP OpCo owns the software and commercial relationships but does not exercise mediation, appointment, adjudicative, or award authority.";
 
-export const ECONOMIC_THESIS =
-  "By reducing repeated reconstruction, administration and drafting, ZIAAP seeks to make independent human arbitration operationally faster, more predictable and economically viable for lower-value and higher-volume commercial disputes.";
+export const PILOT_01_DEFINITION =
+  "Pilot 01 applies the ZIAAP alignment protocol to selected high-impact clauses in complex enterprise systems-integration MSAs. Its purpose is to test whether the protocol identifies commercially material differences in expected contractual outcomes that the parties and their advisers had not already recognised.";
 
 export const OPERATING_PRINCIPLE =
-  "Commercial aviation made safe flight scalable by standardising everything around the pilot. ZIAAP aims to make high-quality arbitration scalable by standardising everything around the arbitrator.";
+  "Sell the narrow product. Preserve the larger architecture. Prove the bridge between them.";
 
 export const BRAND_PROMISE =
-  "Standardise the cockpit. Automate the instruments. Preserve the captain.";
+  "Structure the scenarios. Preserve the originals. Let the parties decide.";
 
 export const CANONICAL_PRODUCT_DEFINITION =
-  "ZIAAP helps parties align contractual meaning and test the observable behaviour of an agreed dispute-resolution process before signing, using a governed AI Resolution Officer to augment a properly appointed human arbitrator who retains legal authority.";
+  "ZIAAP is a scenario-based contract-alignment system for complex commercial agreements. It converts selected clauses into concrete operational scenarios, collects the parties’ independent expectations, identifies materially different outcomes, and produces a versioned record of what was aligned, deliberately left open, or incorporated into the contract.";
 
-export const PUBLIC_DEMO_HEADLINE = "Agree the rules before the dispute.";
+export const PUBLIC_DEMO_HEADLINE = "Align expectations before you sign.";
 
-export const PUBLIC_DEMO_ARBITRATION_EXPLAINER =
-  "Arbitration is a private way for businesses to resolve a dispute outside court with a neutral human decision-maker.";
+export const PUBLIC_DEMO_PRODUCT_BOUNDARY =
+  "The current product ends with a versioned alignment record. Lifecycle re-alignment, mediation support, and arbitral handover are future extensions.";
 
 export const PUBLIC_DEMO_DESCRIPTION =
-  "ZIAAP helps businesses uncover different contract expectations, test the agreed dispute rules, and prepare a source-linked case for a human arbitrator if conflict occurs.";
+  "Turn selected clauses into operational scenarios, compare each party’s independently confirmed expectations, and record what was aligned or deliberately left open.";
 
 export const PUBLIC_DEMO_AUTHORITY_LINE =
-  "AI prepares. Parties can challenge. A human arbitrator decides.";
+  "AI structures scenarios. Each party confirms its own position.";
 
 export const PUBLIC_DEMO_DISCLAIMER =
   "Synthetic demonstration · No legal effect · AI output is illustrative.";
@@ -58,7 +59,7 @@ export const PROTOCOL_LAYERS = [
     id: "i0",
     label: "I0 · Flight Plan",
     publicLabel: "Align before conflict",
-    purpose: "Align contractual expectations and configure the governed protocol before conflict.",
+    purpose: "Align contractual expectations and govern material open issues before conflict.",
   },
   {
     id: "i1",
@@ -130,23 +131,23 @@ export const MATTER_GATES = [
 export const CONTROL_ALLOCATION = [
   {
     actor: "Deploying customers and parties",
-    controls: "Approved data boundary, submissions, corrections and objections, subject to law and formal data duties.",
-    excludedAuthority: "No unilateral control over institutional procedure or human judgment.",
+    controls: "Approved data boundary, independent responses, corrections, bilateral dispositions and external adoption acts.",
+    excludedAuthority: "No unilateral control over the counterparty's position or later neutral judgment.",
   },
   {
-    actor: "ZIAAP engineering",
-    controls: "Shared runtime, cybersecurity, retrieval, deterministic tools, evaluation systems and technical operations.",
-    excludedAuthority: "No live-case merits authority or appointment authority.",
+    actor: "ZIAAP OpCo",
+    controls: "Software, product revenue, implementation, cybersecurity and technical operations.",
+    excludedAuthority: "No mediation, appointment, adjudicative or award authority.",
   },
   {
-    actor: "Future ZIAAP institution",
-    controls: "Institutional rules, administration, professional standards and operational safeguards.",
-    excludedAuthority: "Does not decide the merits of a matter.",
+    actor: "Alignment facilitators",
+    controls: "Scoped I0 facilitation under separate, disclosed engagement terms.",
+    excludedAuthority: "No later mediation or adjudication of a dispute arising from that engagement.",
   },
   {
-    actor: "Arbitrator partners",
-    controls: "Professional standards, procedural judgment and independent case decisions.",
-    excludedAuthority: "No access to other arbitrators' confidential matters or case-revenue information.",
+    actor: "Independent professionals and institutions",
+    controls: "Any later mediation, appointment, procedure, evidence assessment and human judgment under their own authority.",
+    excludedAuthority: "No automatic access to I0 private material or platform economics that compromise independence.",
   },
   {
     actor: "Investors",
@@ -156,21 +157,53 @@ export const CONTROL_ALLOCATION = [
 ] as const;
 
 export const PUBLIC_DEMO_STEPS = [
-  { id: "align", label: "Align", contextLabel: "I0 · Gate 1", canonicalGates: ["alignment"] },
+  {
+    id: "align",
+    label: "Align",
+    contextLabel: "I0 · Gate 1",
+    canonicalGates: ["alignment"],
+    commercialStatus: "current_product",
+    statusLabel: "ZIAAP Contract Alignment",
+  },
   {
     id: "test",
-    label: "Test",
-    contextLabel: "I0 · Gate 2 / I1 · Gate 3 integrity",
-    canonicalGates: ["configuration", "appointment_configuration_freeze"],
+    label: "Test scenarios",
+    contextLabel: "I0 · Gate 2",
+    canonicalGates: ["configuration"],
+    commercialStatus: "current_product",
+    statusLabel: "ZIAAP Contract Alignment",
   },
-  { id: "dispute", label: "Dispute", contextLabel: "I1 · Gate 4", canonicalGates: ["case_production"] },
-  { id: "review", label: "Review", contextLabel: "I2 · Gate 5", canonicalGates: ["independent_adjudication"] },
-  { id: "outcome", label: "Outcome", contextLabel: "I2 · Gate 6", canonicalGates: ["award_black_box"] },
+  {
+    id: "dispute",
+    label: "Structure dispute",
+    contextLabel: "I1 · Gate 4",
+    canonicalGates: ["case_production"],
+    commercialStatus: "future_extension",
+    statusLabel: "Future architecture",
+  },
+  {
+    id: "review",
+    label: "Human review",
+    contextLabel: "I2 · Gate 5",
+    canonicalGates: ["independent_adjudication"],
+    commercialStatus: "future_extension",
+    statusLabel: "Future architecture",
+  },
+  {
+    id: "outcome",
+    label: "Procedural record",
+    contextLabel: "I2 · Gate 6",
+    canonicalGates: ["award_black_box"],
+    commercialStatus: "future_extension",
+    statusLabel: "Future architecture",
+  },
 ] as const satisfies ReadonlyArray<{
   id: string;
   label: string;
   contextLabel: string;
   canonicalGates: ReadonlyArray<MatterGate>;
+  commercialStatus: "current_product" | "future_extension";
+  statusLabel: string;
 }>;
 
 export type ProtocolLayer = (typeof PROTOCOL_LAYERS)[number]["id"];
