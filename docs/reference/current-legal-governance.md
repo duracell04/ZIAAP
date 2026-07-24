@@ -18,12 +18,31 @@ and any future signature.
 | Actor | Intended control | Excluded authority |
 |---|---|---|
 | Deploying customers and parties | Approved data boundary, submissions, corrections and objections, subject to law | No unilateral control of judgment |
-| Future ZIAAP institution | Rules, administration and operational safeguards | No case-merits decision |
-| Engineering | Runtime, security, retrieval, deterministic tools and technical operations | No appointment or live-case merits authority |
-| Arbitrator partners | Professional standards and independent case judgment | No access to other arbitrators’ confidential matters or case revenue |
-| Investors | Ordinary governance consistent with the future constitution | No authority over appointments, proceedings or merits |
+| ZIAAP OpCo | Software, product revenue, implementation, security and technical operations | No mediation, appointment, adjudicative or award authority |
+| Alignment facilitators | Scoped I0 operation under disclosed engagement terms | No later mediation or adjudication of a dispute arising from the engagement |
+| Independent professionals and institutions | Any later mediation, appointment, procedure, evidence assessment and human judgment under their own authority | No automatic access to I0 private material or platform economics that compromise independence |
+| Investors | Ordinary OpCo governance | No authority over neutral appointments, proceedings or merits |
 
-Partner ownership is a target design, not an implemented corporate fact.
+The partner-owned institution was superseded as current strategy on 2026-07-24
+and remains only historical research input.
+
+## Neutrality firewall
+
+An arbitrator's economic connection with a technology provider does not make an
+award automatically invalid. The
+[2024 IBA Guidelines](https://www.ibanet.org/document?id=guidelines-on-conflicts-of-interest-in-international-arbitration-2024)
+use fact-sensitive standards for independence, impartiality, disclosure,
+financial interests, commercial relationships and institutional roles.
+Material ZIAAP economics or participation in promotion, appointment or case
+administration may create disclosure obligations, challenge risk and possible
+set-aside or enforcement arguments under the applicable framework.
+
+The default design therefore gives an arbitrator no ZIAAP equity, platform
+revenue share, sales duty, referral commission or compensation affected by
+whether ZIAAP is used. Any later neutral has a separate engagement and invoice,
+independent appointment, written disclosure, isolated access and control over
+the use of authorised material. Disclosure alone does not prove independence or
+cure every conflict.
 
 ## Constitution
 
@@ -50,6 +69,20 @@ Settlement requires separate bilateral simulated activation. Proposal terms,
 concessions and responses remain outside reasoning-memorandum input and
 merits-facing artifacts. Only permitted occurrence or status information may
 enter the shared record.
+
+A later mediation workspace requires separate encryption keys, access-control
+domains, mediator and party-private partitions, retrieval indexes and explicit
+per-object export decisions. No model memory or retrieval context transfers
+automatically to a tribunal workspace.
+
+Retention is determined by applicable law, professional duties, adopted rules,
+valid party agreement and the approved matter schedule. Article 107 of the
+[Supreme People's Court Civil Procedure Interpretation](https://www.court.gov.cn/fabu/xiangqing/353651.html)
+limits adverse later use of specified compromise admissions in later
+litigation, subject to its exceptions. It does not impose universal physical
+destruction of every mediation record. Content, executed settlements, security
+logs, preservation holds, deletion and cryptographic sealing must be treated
+separately.
 
 ## External-source hierarchy
 
@@ -104,9 +137,10 @@ guarantee recognition or enforcement of any ZIAAP process or output.
 ## Feature-specific AI and data analysis
 
 Classification under the
-[EU AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) depends on the exact
-feature, intended use, actor, territory, degree of influence and Article 6
-analysis. Annex III 8(a) covers certain systems used similarly in alternative
+[EU AI Act](https://eur-lex.europa.eu/eli/reg/2024/1689/oj) follows intended
+purpose and actual influence, assessed through the exact feature, actor,
+territory, degree of influence and Article 6 analysis. Annex III 8(a) covers
+certain systems used similarly in alternative
 dispute resolution to research and interpret facts or law and apply law to
 concrete facts. A tribunal-facing merits or disposition feature may therefore
 differ from genuinely ancillary administration, chronology or routing. An I0
@@ -119,6 +153,12 @@ provisions and any enacted amendment in force on the deployment or publication
 date; this snapshot does not state that Articles 26 or 50 were already
 applicable on 2026-07-23.
 
+Product naming does not determine classification. A system used substantively
+to interpret facts or law, assess evidence or influence a legally effective ADR
+outcome cannot be made ancillary merely by calling it administrative software.
+I0, any mediation feature and any tribunal-facing feature require separate
+intended-purpose, influence and actor analysis.
+
 Human-in-the-loop is also not a complete analysis under the
 [Swiss Federal Act on Data Protection](https://www.fedlex.admin.ch/eli/cc/2022/491/en).
 Each future feature must document controller, processor and subprocessor roles;
@@ -130,6 +170,29 @@ required. Privilege, professional secrecy and arbitral confidentiality require
 separate analysis. The
 [FDPIC AI guidance](https://www.edoeb.admin.ch/en/ai-and-data-protection) is a
 research input, not approval of ZIAAP.
+
+## China-law research snapshot
+
+The revised
+[Chinese Arbitration Law](https://policy.mofcom.gov.cn/claw/clawContent.shtml?id=103718)
+was adopted on 12 September 2025 and took effect on 1 March 2026. Article 11
+recognises online arbitration with the same legal effect as offline activity;
+Article 23 concerns institutional arbitrator lists; Article 45 concerns
+disclosure of circumstances that may create reasonable doubts; Article 46
+contains mandatory recusal grounds; and Article 82 permits defined
+non-institutional arrangements for specified foreign-related maritime and
+designated-zone disputes. This does not support the blanket claim that all
+arbitration in China must always be institutional or that an I0 software label
+creates evidentiary effect.
+
+Articles 2 and 17 of the
+[Chinese Interim Measures for Generative AI Services](https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm)
+show why filing and security-assessment analysis must follow the actual service
+and deployment. The Measures address services provided to the public in China,
+exclude specified non-public research and enterprise use from their scope, and
+tie Article 17 assessment and filing duties to services with public-opinion or
+social-mobilisation attributes. They do not establish one universal filing or
+security-classification duty for every private enterprise deployment.
 
 ## AI-use guidance and runtime selection
 
@@ -157,6 +220,7 @@ before publication or consequential use.
 
 ## Pending review
 
-Product/founder, legal-framing, corporate-governance and unfamiliar-reader
-review remains pending. No opinion on enforceability, regulatory compliance,
+Product direction was approved on 2026-07-24. Legal-framing, neutrality,
+privacy, security, market, usability, production and unfamiliar-reader reviews
+remain pending. No opinion on enforceability, regulatory compliance,
 professional rules, data duties or production readiness is inferred.

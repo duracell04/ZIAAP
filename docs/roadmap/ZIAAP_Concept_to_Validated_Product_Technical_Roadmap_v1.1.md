@@ -6,11 +6,11 @@
 
 **Current artifact classification:** High-fidelity interactive concept demonstrator, where “high-fidelity” refers specifically to workflow and interaction fidelity
 
-**Category thesis:** **Traditional arbitration standardises procedural rules. ZIAAP also standardises the production environment through which a case is prepared, examined and decided.**
+**Category thesis:** **Computational Private Ordering**
 
-**Target product model:** A future partner-owned AI-native arbitration provider in which the production environment is standardised around a legally responsible human arbitrator.
+**Target product model:** ZIAAP Contract Alignment, beginning with scenario-based pre-signature alignment for selected high-impact clauses in complex enterprise systems-integration MSAs.
 
-**Current boundary:** The partner model, CHF 50,000–500,000 target range, “first” category position and economic benefits are hypotheses, not current facts.
+**Current boundary:** The current repository remains C0 and does not implement or run Pilot 01. Lifecycle re-alignment, segregated mediation, arbitral handover and partner ownership are deferred hypotheses. The [Pilot 01 Protocol](../product/pilot-01-protocol.md) controls the active specification.
 
 ---
 
@@ -20,7 +20,7 @@ The current ZIAAP experience should be described as a **high-fidelity interactiv
 
 The approved official description is:
 
-> ZIAAP is a high-fidelity interactive concept demonstrator of an AI-native dispute-governance protocol, with high fidelity at the workflow and interaction level. Using synthetic data and simulation-only state, it demonstrates how parties could align contractual meaning, test an agreed future resolution protocol and its observable behaviour, preserve procedural traceability, and support a human arbitrator. It is not an externally validated system, legal appointment, operative award process, or production arbitration service.
+> ZIAAP is a C0 high-fidelity interactive concept demonstrator, where high fidelity is limited to workflow and interaction. It uses synthetic, resettable, simulation-only state to illustrate Contract Alignment and deferred human-controlled architecture. It is not an implemented product, confidential matter system, pilot, legal appointment, operative award process or externally validated system.
 
 The roadmap therefore uses the following maturity ladder:
 
@@ -28,10 +28,10 @@ The roadmap therefore uses the following maturity ladder:
 |---|---|---|---|
 | C0 | Interactive concept demonstrator | Coherent three-layer, six-gate journey, synthetic fixtures, honest limitations | Current state |
 | C1 | Review-grade concept demonstrator | Canonical state, truthful artifacts, structured contract integrity, clear funding roadmap | Sprint 4 |
-| P1 | Functional proof of concept | Real persistence, separate users, real document inputs and live AI divergence detection | Sprint 9 |
-| P2 | Testable prototype | Negotiated structured terms, typed Constitution control plane, scenario testing, independent conformance harness and exact configuration integrity | Sprint 19 |
-| P3 | Audit-ready prototype | Structured case production, evidence graph, Resolution Officer, arbitrator cockpit, challenge round and verifiable procedural black box | Sprint 28 |
-| V1 | Controlled pilot | Security controls, external expert evaluation and supervised real alignment matters | Sprint 31 |
+| P1 | Functional proof of concept | Real persistence, separate parties, real systems-integration inputs and live divergence proposals | Sprint 9 |
+| P2 | Testable Contract Alignment prototype | Sealed responses, confirmation, scenario comparison, typed legal status and exact version integrity | Sprint 19 |
+| P3 | Deferred downstream prototype | Structured case production and human-neutral workflow only after an I0 Go/Narrow decision | No active milestone |
+| V1 | Controlled Pilot 01 | Security controls, external evaluation and four supervised systems-integration alignment matters | Sprint 31 |
 | R1 | Production product | Integrations, reliability, governance, administration and post-market monitoring | Sprint 34 |
 
 The phrase **perfect concept** is defined here as a concept that is:
@@ -48,53 +48,53 @@ The phrase **perfect concept** is defined here as a concept that is:
 
 ## 2. Product thesis
 
-> **ZIAAP aims to transform arbitration from a largely bespoke,
-> document-driven professional service into a structured, technology-native
-> production system.**
+> **ZIAAP is a scenario-based contract-alignment system for complex commercial
+> agreements. It converts selected clauses into concrete operational scenarios,
+> collects the parties' independent expectations, identifies materially
+> different outcomes, and produces a versioned record of what was aligned,
+> deliberately left open, or incorporated into the contract.**
 
-The objective is not to automate arbitral authority. It is to make professional
-authority usable across a substantially broader range of commercial disputes.
+The initial wedge is limited to systems-integration MSAs. The former two-wedge
+comparison and partner-owned institution were superseded as current execution
+strategy on 2026-07-24. The larger I0–I2 architecture remains staged and must be
+earned through I0 evidence.
 
-The future institution is intended to be owned and professionally governed by
-participating arbitrator partners, supported by shared engineering and case
-administration. This is a target governance design. Any “first” description is
-aspirational and requires competitive substantiation.
-
-By reducing repeated reconstruction, administration and drafting, ZIAAP seeks
-to make independent human arbitration operationally faster, more predictable
-and economically viable for lower-value and higher-volume commercial disputes.
-The CHF 50,000–500,000 range and named dispute categories are initial market
-hypotheses. No quantified outcome is claimed.
-
-ZIAAP changes the sequence of arbitration. Instead of choosing a thin dispute clause and discovering the practical decision system only after conflict, the parties:
+ZIAAP Contract Alignment changes the sequence of contract review. For selected
+high-impact clauses, the parties:
 
 1. state their independent expectations;
 2. identify hidden divergence;
-3. convert resolved meaning into structured contractual governance;
-4. configure the future AI-assisted resolution protocol;
-5. interrogate and stress-test that exact configuration;
-6. acknowledge the configuration they tested;
-7. preserve the state into any later dispute;
-8. give a human arbitrator a high-capacity AI Resolution Officer; and
-9. retain source-linked, contestable and auditable human control.
+3. preserve original and AI-normalised responses separately;
+4. confirm or correct the representations before bilateral reveal;
+5. resolve, consciously preserve or defer each material open point;
+6. record the legal status and permitted use of each object; and
+7. version-lock the result without claiming that software created legal effect.
 
-The product is therefore not merely contract review and not autonomous arbitration. It is a **digital twin of the agreed dispute-resolution process and its observable behaviour**, connected to the contract and later available to the arbitrator. It models the configured process, constraints, test responses and recorded state; it does not claim to predict the unknowable result of a future dispute.
+The product is not autonomous contracting, mediation or arbitration. It is a
+governed alignment environment. Any future process twin, mediation workspace or
+tribunal handover is a separate extension with its own intended purpose,
+permissions and authority.
 
-### 2.1 The seven product capabilities
+### 2.1 Initial and deferred capabilities
 
 | Capability | User value |
 |---|---|
-| Gate 1 alignment before conflict | Reveals where parties silently mean different things |
-| Computable contract governance | Converts selected commercial rules into reproducible operations |
-| Constitution control plane | Makes permissions, evidence, fairness, uncertainty, escalation, tools and invalidation explicit |
-| Gate 2 scenario testing | Lets parties test observable behaviour before signing |
-| AI Resolution Officer | Structures and challenges the later dispute at high capacity |
-| Gate 5 human arbitrator workspace | Preserves independent judgment with zero algorithmic presumption |
-| Gate 6 procedural black box | Makes recorded procedure understandable, contestable and inspectable |
+| Gate 1 alignment before conflict | Reveals where parties silently expect different operational outcomes |
+| Gate 2 scenario testing | Tests selected wording against concrete dependencies, triggers and remedies |
+| Typed alignment record | Preserves original and derived text, authority, status, use and version separately |
+| Lifecycle re-alignment | Deferred extension triggered by later events or amendments |
+| Segregated mediation | Deferred purpose-bound workspace with no automatic data transfer |
+| Structured neutral handover | Deferred per-object export to independently authorised professionals or institutions |
 
-### 2.2 Resolution Officer definition
+### 2.2 Deferred Resolution Officer definition
 
-The **AI Resolution Officer** is a software role and governed system capability. It is not a legal office, an arbitral institution, an arbitrator, or an autonomous decision-maker. It may structure, compare, retrieve, calculate, test, challenge, explain and prepare reviewable analysis. A properly appointed human arbitrator retains procedural authority, independent judgment and responsibility for any legally operative decision.
+The **AI Resolution Officer** is a deferred software role and governed system
+capability. It is not part of the initial sales proposition, a legal office, an
+arbitral institution, an arbitrator or an autonomous decision-maker. It may
+structure, compare, retrieve, calculate, test, challenge, explain and prepare
+reviewable analysis. A properly appointed human arbitrator retains procedural
+authority, independent judgment and responsibility for any legally operative
+decision.
 
 ### 2.3 Product boundaries
 
@@ -241,9 +241,10 @@ flowchart LR
   S4 --> S5[S5 Persistence] --> S6[S6 Identity] --> S7[S7 Ingestion] --> S8[S8 Expectations] --> S9[S9 AI alignment]
   S9 --> S10[S10 Negotiation] --> S11[S11 Deterministic tools] --> S12[S12 Annex] --> S13[S13 SaaS pack]
   S13 --> S14[S14 Typed Constitution] --> S15[S15 Scenario testing] --> S16[S16 Evaluation] --> S17[S17 Robustness] --> S18[S18 Runtime provenance] --> S19[S19 Manifest]
-  S19 --> S20[S20 Dispute intake] --> S21[S21 Evidence graph] --> S22[S22 Resolution Officer] --> S23[S23 Arbitrator cockpit] --> S24[S24 Challenge round] --> S25[S25 Settlement]
+  S19 --> I0G{I0 Go or Narrow?}
+  I0G --> S29[S29 I0 security] --> S30[S30 I0 external evaluation] --> S31[S31 Contract Alignment Pilot 01] --> S32[S32 Contract integrations] --> S33[S33 Reliability] --> S34[S34 Production governance]
+  I0G -. separate downstream approval .-> S20[S20 Dispute intake] --> S21[S21 Evidence graph] --> S22[S22 Resolution Officer] --> S23[S23 Arbitrator cockpit] --> S24[S24 Challenge round] --> S25[S25 Settlement]
   S25 --> S26[S26 Decision trace] --> S27[S27 Replay] --> S28[S28 Procedural black box]
-  S28 --> S29[S29 Security] --> S30[S30 External evaluation] --> S31[S31 Pilot] --> S32[S32 Integrations] --> S33[S33 Reliability] --> S34[S34 Production governance]
 ```
 
 ### 6.1 Parallelisation
@@ -253,10 +254,13 @@ The roadmap is written as a safe logical sequence. After Sprint 5, several works
 - **Track A, Contract governance:** Sprints 7 to 13
 - **Track B, AI policy and evaluation:** Sprints 14 to 18
 - **Track C, Trust platform:** identity, artifacts, provenance, security and manifest
-- **Track D, Dispute and arbitrator workflow:** Sprints 20 to 25
+- **Track D, deferred dispute and arbitrator workflow:** Sprints 20 to 28 only after an I0 Go/Narrow decision and separate charter
 - **Track E, Research and external validation:** study design can begin during Sprints 13 to 18
 
-A fully sequential programme is 70 weeks. A properly staffed team can target a review-grade concept in roughly 8 to 10 weeks, a testable prototype in roughly 8 to 12 months, a controlled pilot in roughly 12 to 18 months, and production readiness in roughly 18 to 24 months. These are planning assumptions, not commitments.
+The 70-week figure is retained only as arithmetic across all 35 historical
+sprint numbers. It is not an execution sequence because Sprints 20–28 are a
+deferred branch. All dates after the authorised stage require re-estimation and
+are planning assumptions, not commitments.
 
 ### 6.2 Stage-gated execution and re-estimation
 
@@ -835,13 +839,15 @@ The aligned contract package is internally consistent, bilaterally approved and 
 
 ---
 
-### Sprint 13: Vertical rule pack for international SaaS
+### Sprint 13: Vertical rule pack for enterprise systems integration
 
 **Phase:** Phase 2: Alignment and contract governance
 
 **Objective:** Define the first narrow domain pack, including clause ontology, scenarios, sources, evaluation cases and legal-review boundaries.
 
-**Why this sprint exists:** Domain neutrality prevents credible testing. A specific SaaS SLA wedge creates a named buyer, bounded evidence model and measurable performance target.
+**Why this sprint exists:** Domain neutrality prevents credible testing. Complex
+enterprise systems-integration MSAs create the selected buyer workflow, bounded
+clause families and measurable scenario-alignment target.
 
 **Depends on:** Sprints 7 to 12.
 
@@ -851,22 +857,22 @@ The aligned contract package is internally consistent, bilaterally approved and 
 
 | ID | User story | Acceptance criterion |
 |---|---|---|
-| S13-US1 | As a SaaS supplier, I want guided coverage of uptime, maintenance, credits, liability and dispute architecture, so that the system reflects my real contract concerns. | The pack defines supported clause families, fields, options and evidence. |
-| S13-US2 | As an enterprise customer, I want customer-facing risk and remedy assumptions represented, so that the pack remains balanced. | Buyer-side scenarios and obligations are equally covered. |
+| S13-US1 | As a systems integrator, I want guided coverage of acceptance, readiness, milestones, dependencies, data migration, change control and delay attribution, so that the system reflects the delivery model. | The pack defines supported clause families, fields, scenarios and evidence. |
+| S13-US2 | As an enterprise customer, I want customer dependencies, third-party systems, remediation, transition and exit assumptions represented, so that the pack remains balanced. | Customer- and integrator-side scenarios and obligations are equally covered. |
 | S13-US3 | As counsel, I want jurisdictional boundaries clearly marked, so that the pack distinguishes Swiss-law support from issues requiring separate review. | Every rule and source has scope metadata. |
 | S13-US4 | As an evaluator, I want a representative synthetic and de-identified case set, so that model performance can be measured beyond one curated example. | The dataset covers easy, ambiguous, adversarial and edge cases. |
 | S13-US5 | As a product manager, I want pack versioning, so that new legal or commercial knowledge creates a reviewable release rather than silent behaviour change. | Pack versions declare schema, templates, sources, tests and migration notes. |
 
 #### Test plan
 
-- Coverage review against a representative SaaS agreement corpus.
-- Balance review by supplier-side and customer-side experts.
+- Coverage review against a rights-cleared representative systems-integration agreement corpus.
+- Balance review by integrator-side and customer-side experts.
 - Case-set diversity and leakage audit.
 - Pack version and migration tests.
 
 #### Required sprint artifacts
 
-- SaaS rule pack v1
+- Systems-integration MSA rule pack v1
 - Clause ontology
 - Source pack
 - Evaluation corpus
@@ -1137,6 +1143,12 @@ A party can inspect, acknowledge and later verify the exact protocol configurati
 ---
 
 ### Sprint 20: Dispute intake, jurisdiction gate and issue tree
+
+> **Deferred downstream sequence:** Sprints 20–28 are not on the Contract
+> Alignment critical path and are not authorised by Pilot 01. They require a
+> recorded I0 Go or Narrow result, an updated legal and regulatory analysis and
+> a separate implementation charter. Their numbering is preserved for roadmap
+> traceability only.
 
 **Phase:** Phase 4: Dispute resolution and arbitrator augmentation
 
@@ -1531,7 +1543,8 @@ The final record is canonical, portable, verifiable and explicit about evidentia
 
 **Why this sprint exists:** Real legal and commercial matters contain highly sensitive information. Pilot credibility depends on secure handling, limited access and transparent data governance.
 
-**Depends on:** Sprints 5 to 28.
+**Depends on:** Sprints 5 to 19 for the I0 product path. Sprints 20–28 are not
+Pilot 01 prerequisites.
 
 **Unlocks:** Controlled pilots and institutional due diligence.
 
@@ -1570,11 +1583,14 @@ Independent reviewers can assess how sensitive matter data is protected througho
 
 **Phase:** Phase 6: Pilot readiness and production
 
-**Objective:** Run independent evaluation with business owners, contract lawyers, arbitrators, AI evaluators and security reviewers.
+**Objective:** Run independent I0 evaluation with systems-integration business
+owners, transaction lawyers, AI evaluators, privacy specialists and security
+reviewers.
 
 **Why this sprint exists:** Internal conformance testing cannot establish usability, legal plausibility or institutional trust. Funding should buy external evidence, not only more features.
 
-**Depends on:** Sprints 4, 13, 16 to 29.
+**Depends on:** Sprints 4, 13, 16 to 19 and 29. Deferred Sprints 20–28 are not
+Pilot 01 prerequisites.
 
 **Unlocks:** Pilot approval and evidence-based product refinement.
 
@@ -1609,25 +1625,32 @@ The product has independent evidence about comprehension, usefulness, risk and r
 
 ---
 
-### Sprint 31: Controlled pilot operations
+### Sprint 31: ZIAAP Contract Alignment Pilot 01
 
 **Phase:** Phase 6: Pilot readiness and production
 
-**Objective:** Run a narrow, supervised pilot on real contract alignment matters and synthetic or low-stakes dispute simulations.
+**Objective:** Run the separately authorised Pilot 01 tracks for complex
+enterprise systems-integration MSAs: five to ten rights-cleared retrospective
+reconstructions and four supervised live shadow negotiations without
+independent legal effect.
 
-**Why this sprint exists:** A pilot tests workflow, incentives, support burden and adoption without prematurely claiming authoritative arbitration capability.
+**Why this sprint exists:** Pilot 01 tests whether scenario-based alignment
+reveals previously unrecognised material divergence at a tolerable participation
+and professional-services cost. It excludes mediation, arbitration and active
+dispute simulation.
 
 **Depends on:** Sprints 29 and 30.
 
-**Unlocks:** Institutional integration, commercial validation and production roadmap.
+**Unlocks:** A Go, Narrow, Refine or Hold decision for Contract Alignment and,
+only after Go/Narrow, consideration of later lifecycle architecture.
 
 #### User stories
 
 | ID | User story | Acceptance criterion |
 |---|---|---|
-| S31-US1 | As a pilot organisation, I want structured onboarding, so that roles, data policy, supported scope and escalation are clear. | Each pilot has a signed charter, scope, contacts, data rules and success metrics. |
+| S31-US1 | As a pilot organisation, I want structured onboarding, so that authority, selected clauses, data policy, supported scope and withdrawal are clear. | Each pilot has a signed charter, exact source version, contacts, data rules and success metrics. |
 | S31-US2 | As a case manager, I want operational playbooks, so that questions, failures and escalations are handled consistently. | Runbooks cover support, incident response, data requests and legal review. |
-| S31-US3 | As a product team, I want usage and outcome telemetry, so that the real workflow can be improved. | Metrics cover completion, time, drop-off, corrections, challenges, satisfaction and willingness to pay. |
+| S31-US3 | As a product team, I want predeclared workflow telemetry, so that the real workflow can be evaluated. | Metrics cover material scenarios, previously unrecognised divergence, dispositions, party and counsel time, delay, usefulness and authorised paid follow-on commitment. |
 | S31-US4 | As a pilot participant, I want an obvious route to human assistance, so that experimental limitations never trap the user. | Escalation and support are available at every stage. |
 | S31-US5 | As a sponsor, I want a pilot evidence dossier, so that funding and partnership decisions use observed results. | The dossier links quantitative results, qualitative findings, incidents and next decisions. |
 
@@ -1648,21 +1671,26 @@ The product has independent evidence about comprehension, usefulness, risk and r
 
 #### Exit gate
 
-At least one narrow use case is completed end to end under controlled, documented conditions.
+Four eligible live shadow matters are completed and reported against the
+predeclared management thresholds, or the decision is recorded as Inconclusive,
+Refine or Hold without lowering the thresholds after observing results.
 
 ---
 
-### Sprint 32: Institutional and contract-platform integrations
+### Sprint 32: Contract-platform integrations
 
 **Phase:** Phase 6: Pilot readiness and production
 
-**Objective:** Connect ZIAAP to the systems through which contracts, signatures, appointments and case administration actually occur.
+**Objective:** Connect ZIAAP to the systems through which contracts, approved
+wording, external adoption evidence and lifecycle triggers are managed.
 
 **Why this sprint exists:** Adoption improves when ZIAAP augments existing legal and commercial workflows rather than requiring a separate universe.
 
 **Depends on:** Sprint 31 and stable APIs.
 
-**Unlocks:** Repeatable distribution and institutional partnerships.
+**Unlocks:** Repeatable Contract Alignment distribution. Institutional and
+adjudicative integrations remain deferred pending a separate downstream
+decision.
 
 #### User stories
 
@@ -1670,7 +1698,7 @@ At least one narrow use case is completed end to end under controlled, documente
 |---|---|---|
 | S32-US1 | As counsel, I want contract-system integration, so that source documents, versions and aligned clauses remain synchronised. | Connectors use explicit import, export and reconciliation rules. |
 | S32-US2 | As a party, I want approved documents routed to an electronic-signature provider, so that execution evidence is attached to the exact version. | Signature status and certificate references return to the matter record. |
-| S32-US3 | As an arbitral institution, I want appointment and case metadata exchange, so that human authority and administration remain institutionally grounded. | Integration keeps institutional records distinct from ZIAAP protocol state. |
+| S32-US3 | As a contract owner, I want lifecycle review triggers exported without private response leakage, so that re-alignment can start from an authorised event. | Integration exports only the approved object, purpose, status, version and authority record. |
 | S32-US4 | As a legal researcher, I want governed source-provider integrations, so that legal materials are current, licensed and snapshotted. | Connectors record source terms, jurisdiction, update time and digest. |
 | S32-US5 | As an enterprise architect, I want documented APIs and webhooks, so that ZIAAP can participate in broader contract and dispute workflows. | APIs have scoped credentials, idempotency, audit events and versioning. |
 
@@ -1916,6 +1944,10 @@ The trace must distinguish:
 
 ### Gate P3, audit-ready prototype, after Sprint 28
 
+This gate is deferred and cannot begin from the current roadmap merely because
+P2 is complete. It requires an I0 Go/Narrow decision and a separate downstream
+charter.
+
 - later dispute, evidence graph and AI Resolution Officer;
 - human preassessment and issue-level control;
 - bilateral challenge and response;
@@ -1956,7 +1988,7 @@ The trace must distinguish:
 | Human review can become ceremonial | Independent preassessment and granular issue control | S23 |
 | Dossier can include stale artifacts | Canonical eligibility and independent verification | S2, S28 |
 | Current experience is one-browser simulation | Persistence, identity and bilateral roles | S5, S6 |
-| Domain-neutral positioning prevents credible validation | International SaaS rule pack | S13 |
+| Domain-neutral positioning prevents credible validation | Systems-integration MSA rule pack | S13 |
 | Traceability risks becoming explanation theatre | Proposition graph, replay and role-specific views | S26, S27 |
 
 ---
@@ -2028,7 +2060,7 @@ Material product decisions should be approved through a lightweight Product and 
 | Bias or role asymmetry | Unequal procedural treatment | Mechanical paired cases, subgroup tests and party challenge |
 | Confidentiality leakage | Privilege, trade secret and trust harm | Isolation, retention, sealed tracks, provider controls and redaction |
 | Automation bias | Human review becomes ceremonial | Preassessment, granular review actions, challenge round and reliance studies |
-| Two-party adoption friction | Low activation and long sales cycles | Unilateral alignment value, narrow SaaS wedge, contract-platform distribution |
+| Two-party adoption friction | Low activation and long sales cycles | Fixed-scope systems-integration alignment service, measured participation burden and contract-platform distribution |
 | Weak legal-source grounding | Unsupported legal propositions | Source snapshots, typed citations and review boundaries |
 | Evaluation data scarcity | Uncertain generalisability | Narrow vertical, synthetic and de-identified corpus, expert partnerships |
 | Institutional resistance | Product remains outside real workflow | Human authority, integrations and institution-led pilots |
@@ -2094,9 +2126,11 @@ Run each authorised implementation goal in a dedicated Git worktree or branch. R
 - Total sprints: 35
 - Total user and enabler stories: 175
 - Default sprint length: two weeks
-- Sequential arithmetic planning horizon: 70 weeks, not an upfront delivery or funding commitment
-- Parallel target to controlled pilot: approximately 12 to 18 months
-- Parallel target to production readiness: approximately 18 to 24 months
+- Historical arithmetic across every numbered sprint: 70 weeks; not a sequence,
+  target or funding commitment
+- Contract Alignment pilot and production estimates: pending Gate C1
+  re-estimation
+- Deferred Sprints 20–28: excluded from the I0 critical path and unestimated
 
 ## Appendix B. Recommended repository documents
 

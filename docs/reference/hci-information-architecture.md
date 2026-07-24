@@ -1,23 +1,23 @@
 # HCI and Information Architecture
 
-> Normative C0 interaction reference. Canonical model:
+> Normative C0 interaction reference. Current product specification:
+> [Pilot 01 Protocol](../product/pilot-01-protocol.md). Long-term model:
 > [ZIAAP Operating Model](../product/operating-model.md).
 
 ## 1. Information hierarchy
 
-The expert opening communicates, in order:
+The opening communicates, in order:
 
-1. C0 workflow-and-interaction-fidelity classification;
-2. category thesis and north-star ambition;
-3. one restrained aviation analogy with its limitation;
-4. human/software authority split;
-5. I0, I1 and I2;
-6. the six matter gates; and
+1. ZIAAP Contract Alignment and its systems-integration MSA scope;
+2. the Computational Private Ordering category thesis;
+3. C0 workflow-and-interaction-fidelity classification;
+4. party, facilitator, OpCo and future-neutral authority boundaries;
+5. Align and Test scenarios as the current wedge;
+6. I0, I1, I2 and the remaining gates as preserved future architecture; and
 7. synthetic, simulation-only, no-legal-effect limitations.
 
-The public opening communicates only the approved business hierarchy, one
-aviation sentence, a concise who-does-what diagram, five projected steps and
-one action.
+The public opening uses one action and does not lead with arbitration,
+institutional ownership, dispute-value targeting or an aviation analogy.
 
 ## 2. Expert navigation
 
@@ -79,18 +79,25 @@ that private deliberation is excluded.
 
 ## 4. Public projection
 
-Public navigation remains Align / Test / Dispute / Review / Outcome. Future
-steps remain locked, completed steps are revisitable and Back/Forward preserves
-session state.
+Public navigation remains Align / Test scenarios / Structure dispute / Human
+review / Procedural record. Align and Test scenarios are labelled ZIAAP
+Contract Alignment. The remaining steps are labelled future architecture.
+Future steps remain locked, completed steps are revisitable and Back/Forward
+preserves session state.
 
-Small context labels map the steps to canonical gates without requiring the
-user to learn the expert model. No appointment interaction appears.
+Small context labels map current steps to Gates 1 and 2 and future steps to
+Gates 4, 5 and 6 without requiring the user to learn the expert model. Gate 3
+is not implied to be current and no appointment interaction appears.
 
 ## 5. Semantic treatments
 
 - established state: solid neutral;
 - party statement: party identified;
-- AI inference: differentiated border, source and uncertainty;
+- original party text: immutable and attributable;
+- AI normalisation or inference: differentiated border, source and
+  uncertainty;
+- party-confirmed representation: confirmation actor and disposition shown;
+- legal status: record kind and legal effect shown separately;
 - contested: red marker plus text;
 - missing evidence: amber plus text;
 - deterministic calculation: formula and inputs;
@@ -107,18 +114,23 @@ avoid page-level horizontal scroll at desktop, laptop, tablet and 390 px.
 The public path permits one primary progression at a time. Dense expert details
 use disclosure elements and source-linked artifacts.
 
-## 7. Editorial aviation boundary
+## 7. Current/future editorial boundary
 
 Permitted:
 
-- one opening analogy;
-- small I0/I1/I2 labels; and
-- one concise role diagram.
+- small I0/I1/I2 labels on long-term architecture;
+- one concise role diagram; and
+- clearly marked future-extension screens in the preserved demonstrator.
 
 Prohibited:
 
+- aviation as the current customer proposition;
 - cockpit dashboards;
 - aircraft controls;
 - themed progress actions;
 - safety-certification implications; and
-- deterministic-outcome imagery.
+- deterministic-outcome imagery;
+- AI arbitration or an autonomous neutral;
+- unqualified legal-effect or evidentiary promises; and
+- any interface suggestion that model output can reveal responses, assign
+  legal status or lock a version.

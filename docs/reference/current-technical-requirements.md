@@ -1,7 +1,9 @@
 # Current Concept Technical Requirements
 
 > Normative C0 technical reference. The
-> [operating model](../product/operating-model.md) controls canonical layers,
+> [Pilot 01 Protocol](../product/pilot-01-protocol.md) controls the proposed
+> Contract Alignment state and status model. The
+> [operating model](../product/operating-model.md) controls deferred layers,
 > gates and authority language.
 
 ## 1. Architecture boundary
@@ -15,6 +17,10 @@ native browser POST to the temporary FormSubmit processor.
 
 No backend persistence, authentication, identity, confidential matter store,
 signature, legal appointment, award or legal effect is implemented.
+
+This branch is documentation and public-language reconciliation only. It does
+not implement the Pilot 01 state machine, recruit participants, accept a real
+contract or run a pricing experiment.
 
 ## 2. Authoritative state
 
@@ -31,6 +37,10 @@ The dispute’s existing `appointmentHash` binding remains unchanged.
 
 `MinimalDemoState` remains schema version 1 under
 `ziaap:minimal-demo:v1`; no field changed solely for terminology.
+
+The Pilot 01 state sequence and orthogonal `recordKind` and `legalEffect`
+fields are specifications for a future authorised prototype. They do not
+silently redefine `ContractState` or create a second authoritative state in C0.
 
 ## 3. Pure operating-model projections
 
@@ -111,8 +121,9 @@ Automated coverage must include gate ordering and mapping, readiness,
 invalidation, structured case content, sealed-settlement isolation,
 reasoning-memorandum authority, human pre-assessment order, human controls,
 event-derived black box, route stability, public persistence, no public model
-or application-API calls, native feedback-form boundaries, terminology and
-claim qualifications.
+or application-API calls, native feedback-form boundaries, Pilot 01 protocol
+contracts, the current/future public split, terminology and claim
+qualifications.
 
 Required commands:
 

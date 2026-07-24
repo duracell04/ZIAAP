@@ -1,91 +1,73 @@
-# ZIAAP Operating-Model Guided Reviewer Script
+# ZIAAP Contract Alignment Guided Reviewer Script
 
-> This script covers the six-gate C0 expert reference at `/` and `/reference`.
-> The four-minute `/demo` uses the
+> Protocol only; no reviewer recruitment or evidence is authorised. This
+> script covers the C0 opening and the preserved expert reference at
+> `/reference`. The four-minute `/demo` uses the
 > [public comprehension script](public-demo-comprehension-script.md).
 
 ## Purpose
 
-Test whether unfamiliar reviewers can explain the category thesis, structured
-case state and human authority without presenter interpretation. Record
-confusion verbatim. Do not teach answers or convert observations into
+Test whether unfamiliar reviewers can explain the current Contract Alignment
+wedge, its legal-status and authority boundaries, and the distinction between
+current product and future architecture without presenter interpretation.
+Record confusion verbatim. Do not teach answers or convert observations into
 validation claims.
 
 ## Setup
 
-Record reviewer role, relevant arbitration/commercial/technology experience,
-device, viewport, prior ZIAAP knowledge, commit and timezone. Use no confidential
-data. Reset before the session. Target 35–50 minutes.
+Under a separately approved research charter, record reviewer role, relevant
+contract/commercial/technology experience, device, viewport, prior ZIAAP
+knowledge, commit and timezone. Use no confidential data. Reset before the
+session.
 
 ## 1. Unassisted opening
 
 Ask:
 
-> Please explore this page without my explanation. Tell me what ZIAAP aims to
-> become, what the current repository is and who controls judgment.
+> Please explore this page without my explanation. Tell me what ZIAAP's current
+> product is, what the current repository is and who controls each meaningful
+> decision.
 
 Record whether the reviewer identifies:
 
-- future production-system ambition versus current C0 simulation;
-- partner ownership as a target, not a current fact;
-- AI Resolution Officer as software;
-- the human arbitrator as responsible;
-- aviation as governed systems around professional judgment, not mechanical
-  outcomes; and
-- no current cost, speed, scale, legal-effect or validation result.
+- Contract Alignment for systems-integration MSAs as the current wedge;
+- Computational Private Ordering as a broader category thesis;
+- current C0 simulation versus proposed Pilot 01;
+- parties as controllers of their own positions and any bilateral disposition;
+- model output as a proposal rather than an authoritative transition;
+- OpCo and facilitators as non-neutral roles; and
+- no current legal-effect, cost, speed, scale or validation result.
 
-## 2. Gate 1 · Alignment
+## 2. Current I0 walkthrough
 
-Ask the reviewer to trace independent expectations, divergence, sources,
-options, exact wording and bilateral simulated confirmation. Ask who selects
-the wording.
+Ask the reviewer to trace clause selection, scenario approval, independent
+responses, confirmation or correction, symmetric reveal and a disposition.
+Ask why original and AI-normalised text must remain separate, why results
+default to non-binding and what external act would be needed for incorporation.
 
-## 3. Gate 2 · Configuration
+## 3. Pilot 01 protocol
 
-Ask why Constitution controls and scenario testing appear on one screen. Have
-the reviewer explain:
+Ask the reviewer to identify the eligible contract family, exclusions,
+authority requirements, failure paths, outputs, Track A and Track B, and the
+Go/Narrow/Refine/Hold rules. Confirm the reviewer does not interpret a written
+protocol as executed evidence.
 
-- Constitution as software control plane;
-- configuration versus model training;
-- scenario observation versus independent validation; and
-- why behavior-affecting changes invalidate downstream state.
+## 4. Deferred architecture
 
-## 4. Gate 3 · Appointment & Configuration Freeze
+Open `/reference`. Ask which gates are preserved future architecture and who
+would retain any later mediation, appointment, evidence-assessment or
+adjudicative authority. Confirm Gate 3 is not implied to be in the current
+public product.
 
-Ask what the manifest and digest identify and exclude. Complete the fictional
-interaction. Ask whether it proves identity, consent, provider execution,
-runtime, signature, appointment or legal effect.
+## 5. Failure and reset
 
-## 5. Gate 4 · Case Production
+Use a declared live action in the default disabled environment. Ask whether a
+fixture was silently substituted and how the reviewer recovers. Reset and
+confirm initial state.
 
-Ask the reviewer to explain why the structured case state is the core product.
-Locate claims, defences, facts, evidence, missing evidence, deterministic
-calculation and objections. Confirm sealed settlement terms remain outside
-merits input.
-
-## 6. Gate 5 · Independent Adjudication
-
-Record a fictional preliminary assessment, then reveal the illustrative
-reasoning memorandum. Ask:
-
-- why the sequence reduces anchoring;
-- whether the memorandum is a verdict;
-- what “zero algorithmic presumption” means; and
-- whether the human can adopt, modify, reject and request more evidence.
-
-## 7. Gate 6 · Simulated Outcome & Procedural Black Box
-
-Ask which information comes from recorded events, what the black box excludes
-and why it is not an award or proof of legal validity.
-
-## 8. Failure and reset
-
-Use a live action in the default disabled environment. Ask whether a fixture was
-silently substituted and how the reviewer recovers. Reset and confirm initial
-state.
-
-## 9. Close
+## 6. Close
 
 Use the questionnaire verbatim. Ask what is valuable, theatrical, overstated,
-missing or removable. Save a de-identified findings log. No aggregation or
-publication occurs before the evaluation protocol is approved.
+missing or removable. Under an approved charter, save a de-identified findings
+log. No aggregation or publication occurs before the evaluation protocol is
+approved.
