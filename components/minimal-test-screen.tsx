@@ -25,16 +25,16 @@ export function MinimalTestScreen() {
     ["Trigger", matter.protocol.trigger],
     ["Credit", matter.protocol.creditRule],
     ["Evidence", matter.protocol.evidenceRule],
-    ["Decision authority", matter.protocol.authorityRule],
+    ["Human approval", matter.protocol.authorityRule],
   ] as const;
 
   return (
     <MinimalDemoShell
       currentStep="test"
-      eyebrow="Step 2 · test before signing"
-      title="See how the agreed rules behave before a real dispute."
-      introduction="A clear rule should produce a clear result when the evidence is complete—and stop when important evidence is missing."
-      businessValue="Know in advance which thresholds, records, and human decisions will matter."
+      eyebrow="Step 2 · operational scenarios before signing"
+      title="Test how selected wording behaves in concrete business situations."
+      introduction="A useful alignment record shows where the same clause produces the same expectation—and where dependencies or missing information produce different outcomes."
+      businessValue="Direct negotiation time toward commercially material differences before they become embedded in the deal."
     >
       <div className="minimal-rule-grid">
         {rules.map(([label, value], index) => {
@@ -121,7 +121,7 @@ export function MinimalTestScreen() {
           <Badge>Simulation only</Badge>
           <h2>The protocol exposes both certainty and uncertainty.</h2>
           <p>
-            Both businesses can now see the trigger, calculation, evidence hierarchy, and point reserved for human review.
+            Both businesses can now inspect the trigger, calculation, evidence hierarchy, and point that still requires an attributable human act.
           </p>
           <div className="minimal-primary-action">
             <Button onClick={() => dispatch({ type: "CONFIRM_PROTOCOL" })}>
@@ -134,11 +134,11 @@ export function MinimalTestScreen() {
       {protocol.confirmed && (
         <div className="minimal-next-panel">
           <div>
-            <Badge tone="green">Protocol confirmed in the simulation</Badge>
-            <h2>Now apply the same rule to a future incident.</h2>
+            <Badge tone="green">Current product boundary reached</Badge>
+            <h2>The remaining steps illustrate deferred dispute architecture.</h2>
           </div>
           <Button onClick={() => router.push("/demo/dispute")}>
-            Jump to the future dispute <ArrowRight size={16} />
+            Explore future architecture <ArrowRight size={16} />
           </Button>
         </div>
       )}

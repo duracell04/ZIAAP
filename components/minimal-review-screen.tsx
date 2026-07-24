@@ -45,10 +45,10 @@ export function MinimalReviewScreen() {
   return (
     <MinimalDemoShell
       currentStep="review"
-      eyebrow="Step 4 · human arbitrator workspace"
+      eyebrow="Step 4 · deferred independent-human workspace"
       title="Review the disputed question without surrendering judgment."
       introduction="The human records an independent preliminary view before seeing the AI proposal, then may adopt, modify, or reject it."
-      businessValue="Use senior professional time for the contested judgment—not for rebuilding the file."
+      businessValue="Any later neutral remains independently appointed, controls the procedure, and receives no automatic platform authority."
       role="Human arbitrator · simulated"
     >
       <div className="minimal-human-command">

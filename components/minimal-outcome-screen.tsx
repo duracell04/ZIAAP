@@ -42,10 +42,10 @@ export function MinimalOutcomeScreen() {
   return (
     <MinimalDemoShell
       currentStep="outcome"
-      eyebrow="Step 5 · complete trace"
+      eyebrow="Step 5 · deferred procedural record"
       title="The system prepared the matter. The human changed the result."
       introduction="One clause now connects the parties’ expectations, the tested protocol, the later evidence, the objection, and the simulated human decision."
-      businessValue="Receive a clearer, inspectable process while keeping consequential judgment under accountable human control."
+      businessValue="Preserve an inspectable procedural record while keeping consequential judgment under independently appointed human control."
     >
       <Card className="minimal-outcome-hero">
         <div>

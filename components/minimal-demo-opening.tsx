@@ -1,15 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ArrowRight, Check, Scale, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, FileCheck2, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useMinimalDemo } from "@/components/minimal-demo-provider";
 import {
-  PUBLIC_DEMO_ARBITRATION_EXPLAINER,
   PUBLIC_DEMO_AUTHORITY_LINE,
   PUBLIC_DEMO_DESCRIPTION,
   PUBLIC_DEMO_DISCLAIMER,
   PUBLIC_DEMO_HEADLINE,
+  PUBLIC_DEMO_PRODUCT_BOUNDARY,
   PUBLIC_DEMO_STEPS,
   OPERATING_PRINCIPLE,
   ZERO_INSTANCE_EXPLAINER,
@@ -50,8 +50,8 @@ export function MinimalDemoOpening() {
           <p className="minimal-opening-description">{PUBLIC_DEMO_DESCRIPTION}</p>
           <p className="minimal-aviation-line">{OPERATING_PRINCIPLE}</p>
           <div className="minimal-arbitration-explainer">
-            <Scale size={19} />
-            <p>{PUBLIC_DEMO_ARBITRATION_EXPLAINER}</p>
+            <FileCheck2 size={19} />
+            <p>{PUBLIC_DEMO_PRODUCT_BOUNDARY}</p>
           </div>
           <Button disabled={!hydrated} onClick={start}>
             Start the 4-minute simulation <ArrowRight size={16} />
@@ -63,18 +63,18 @@ export function MinimalDemoOpening() {
           <span>Who does what</span>
           <h2>{PUBLIC_DEMO_AUTHORITY_LINE}</h2>
           <ul>
-            <li><Check size={14} /> Businesses agree the rules.</li>
-            <li><Check size={14} /> AI organises and proposes.</li>
-            <li><Check size={14} /> Parties can challenge.</li>
-            <li><Check size={14} /> The human arbitrator remains responsible.</li>
+            <li><Check size={14} /> Each party answers independently.</li>
+            <li><Check size={14} /> Original and normalised text stay separate.</li>
+            <li><Check size={14} /> Both parties approve any shared result.</li>
+            <li><Check size={14} /> External counsel controls contract adoption.</li>
           </ul>
         </aside>
       </section>
 
       <section className="minimal-opening-steps" aria-labelledby="walkthrough-title">
         <div>
-          <span className="minimal-eyebrow">One connected business story</span>
-          <h2 id="walkthrough-title">See the complete idea without learning a legal platform.</h2>
+          <span className="minimal-eyebrow">Current product and future architecture</span>
+          <h2 id="walkthrough-title">Start with contract alignment; treat later dispute support as deferred.</h2>
         </div>
         <ol>
           {PUBLIC_DEMO_STEPS.map((step, index) => (
@@ -83,6 +83,7 @@ export function MinimalDemoOpening() {
               <div>
                 <small>{step.contextLabel}</small>
                 <strong>{step.label}</strong>
+                <small>{step.statusLabel}</small>
               </div>
             </li>
           ))}

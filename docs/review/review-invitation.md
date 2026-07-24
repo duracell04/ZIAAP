@@ -1,21 +1,26 @@
-# Review Invitation
+# Review Invitation Draft
 
-**Subject:** Expert review request — ZIAAP C0 dispute-governance concept
+> Draft only. The 2026-07-24 product-direction decision does not authorise
+> reviewer recruitment, outreach or Pilot 01 execution.
 
-We are inviting arbitration, commercial, legal-technology, design, and
-investment experts to review ZIAAP, a synthetic high-fidelity interactive
-concept demonstrator. High fidelity refers only to workflow and interaction.
+**Subject:** Expert review request - ZIAAP Contract Alignment C0 concept
 
-ZIAAP explores a future arbitration production system in which parties align
-rules before conflict, software maintains a structured case state, AI prepares
-contestable analysis and a properly appointed human retains legal authority.
-The expert experience presents I0–I2 and six matter gates.
+ZIAAP Contract Alignment is specified as a scenario-based pre-signature
+alignment product for selected clauses in complex enterprise
+systems-integration MSAs. The repository is a synthetic high-fidelity
+interactive concept demonstrator; high fidelity refers only to workflow and
+interaction.
 
-The session takes 35–50 minutes and includes an unassisted opening, guided tasks,
-failure/reset checks, and a short questionnaire. It does not involve a real
-dispute, legal appointment, confidential data, production system, or validation
-claim.
+The current proposition converts selected clauses into operational scenarios,
+collects independently confirmed party expectations and records what was
+aligned or deliberately left open. The preserved I0-I2 dispute architecture is
+shown separately as future context.
 
-Would you review whether the operating model, partner-ownership target,
-commercial-aviation analogy and conservative claims are clear, and help identify
-value, confusion, overclaiming and evidence required before Gate C1?
+Any future review session would test whether the current product, authority
+boundaries, current/future split and Pilot 01 evidence requirements are clear.
+It would not involve a real contract, dispute, legal appointment, confidential
+data, production system or validation claim.
+
+This text may be used only after a separate recruitment and research charter
+approves participants, data handling, retention, consent and accountable
+owners.

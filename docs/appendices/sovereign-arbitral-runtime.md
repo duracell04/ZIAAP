@@ -7,27 +7,46 @@
 > a production deployment specification, a certification claim, or a guarantee
 > that an award will be valid or enforceable in a particular jurisdiction.**
 
-## Final Refined Value Proposition
+## Future Runtime Doctrine and Architecture
 
 ### Definition
 
-> **The ZIAAP Arbitral Runtime is a sovereign-deployable, case-isolated,
-> version-governed, and auditable AI decision environment containing the
-> appointed model, the parties’ agreed Constitution and exemplars, authorised
-> legal sources, procedural workflows, tool permissions, evaluation suite, and
-> cryptographically verifiable process record.**
+> **The ZIAAP Arbitral Runtime is a future provider-flexible,
+> protocol-authoritative, model-version-specific environment for converting
+> contractual ambiguity and divergence into structured, source-linked,
+> versioned, and contestable state. Its durable value lies in the governed
+> process, not a claim that one model produces superior legal answers.**
 >
-> It supports an agent-first proceeding while preserving the appointed human
-> arbitrator’s independent judgment, procedural duties, and non-delegable
-> responsibility for the award. Controlled migration, disaster recovery, and
-> manual fallback procedures preserve the arbitral mandate when technology
-> changes or fails.
+> Models are evaluated, version-bound proposal engines. They do not control the
+> authoritative matter record, execute consequential transitions, exercise
+> legal authority, or issue an award. Parties retain their opportunities to
+> submit, object, and challenge; applicable law and adopted procedure govern
+> procedural authority; and properly authorised humans retain consequential
+> decisions.
+
+The intended production sequence is:
+
+```text
+Interfaces
+-> deterministic procedural kernel
+-> governed model-execution gateway
+-> validation and evaluation
+-> party contestation and human review
+-> accepted state transition
+```
+
+Within this future architecture map, the sequence establishes the governing
+design constraint: only the deterministic procedural kernel may commit
+authoritative state. A model run can produce a proposal artifact, including an
+explicit insufficiency or unresolved state, but it cannot cause an accepted
+state transition directly.
 
 The runtime includes more than a locally hosted LLM:
 
 ```text
 ZIAAP Arbitral Runtime
-= Model
+= Deterministic Procedural Kernel
++ Governed Model-Execution Gateway
 + Constitution
 + Exemplars
 + Legal Corpus
@@ -47,8 +66,8 @@ institution-hosted, client-hosted, or operated as a controlled hybrid.
 
 The human arbitrator holds legal office and remains responsible for the award.
 The runtime may structure the proceeding, analyse the agreed record, expose
-counterarguments, and produce a provisional determination. It cannot issue the
-award or silently replace the appointed human decision-maker.
+counterarguments, and produce proposal artifacts. It cannot issue the award or
+silently replace the appointed human decision-maker.
 
 ### Calibration terminology
 
@@ -65,6 +84,46 @@ For a fully local sovereign deployment, the clean formulation is:
 > fine-tuned for legal tasks. For each contractual relationship, the parties
 > then calibrate the arbitral reasoning protocol without modifying the
 > underlying model.**
+
+### Future execution contracts
+
+These contracts describe intended Sprint 18 boundaries. They are not current
+APIs and do not authorise implementation of Sprint 18 or migration of the
+current concept demonstrator.
+
+- **`ExecutionProfile`** is the immutable identity of an approved execution
+  environment. It records the adapter, deployment class, provider and model
+  snapshot, engine, tokenizer and parameter identity, prompt, source, tool and
+  evaluation digests, and the applicable data boundary and egress policy.
+- **`ModelTaskEnvelope`** is the input to a governed model run. It records the
+  task type, immutable state, configuration and evidence references,
+  permissions, permitted sources and tools, required output schema, and
+  timeout. It grants no authority to alter the matter record.
+- **`ModelRunArtifact`** is either a proposal-only result or a typed failure.
+  It records citations, uncertainty, profile and attempt identity, request and
+  output digests, observed runtime metadata, timing, cost, and
+  `legalEffect: false`.
+
+### Runtime invariants
+
+- Model adapters cannot mutate matter state or invoke procedural transitions.
+- The server selects profiles from a controlled registry; a client cannot
+  supply an arbitrary endpoint or silently redirect a task.
+- Legal-source retrieval remains a separately governed connector with its own
+  source, access, version, and failure controls.
+- Silent fallback and silent model substitution are prohibited.
+- A provider, model, endpoint, engine, parameter, or material prompt change
+  creates a new `ExecutionProfile`. It requires evaluation, invalidates
+  dependent approvals and artifacts, and requires fresh approval before use.
+- Rollback is permitted only to an exact, previously approved profile.
+- `offline_sovereign` is a future deployment profile, not a universal product
+  promise. It requires an approved local adapter and a verified no-egress
+  policy; without both, the workflow pauses or uses an authorised manual
+  fallback.
+- Any future migration from the demonstrator's OpenAI-specific identity must
+  use an explicit schema and manifest version change. Existing hashes and
+  acknowledgements remain legacy evidence and are never reinterpreted as
+  approval of a new profile.
 
 ---
 
@@ -104,12 +163,12 @@ jurisdiction-specific data-transfer analysis.
 
 ## 2. Version-Governed Arbitral Continuity
 
-11. **Identifiable appointed baseline.** The parties can identify the exact
-    model weights, Constitution, exemplars, tools, and sources accepted at
-    appointment.
+11. **Identifiable approved baseline.** The parties can identify the exact
+    execution profile, Constitution, exemplars, tools, and sources accepted
+    under the adopted procedure.
 12. **Protection against silent model changes.** External providers cannot
-    change the appointed model’s behaviour during the contractual relationship
-    without a governed update.
+    change the approved execution profile's behaviour during the contractual
+    relationship without a governed update.
 13. **Version-locked reasoning environment.** The runtime can record the model,
     tokenizer, inference engine, prompts, parameters, retrieval configuration,
     and evaluation suite.
@@ -123,12 +182,12 @@ jurisdiction-specific data-transfer analysis.
     the original stress tests and exemplars.
 18. **Equal-version treatment.** Both parties can verify that the same approved
     runtime was applied throughout the proceeding.
-19. **Preservation of the appointed Constitution.** Hardware or software
+19. **Preservation of the adopted Constitution.** Hardware or software
     migration does not automatically change the parties’ agreed interpretive
     principles.
 20. **Documented legal-source updates.** New legislation and decisions can
     enter through a governed legal-corpus update without silently replacing the
-    appointed model.
+    approved execution profile.
 
 Version-locking identifies the approved baseline. It does not guarantee
 bit-for-bit reproducibility across every hardware stack or make an obsolete or
@@ -145,8 +204,9 @@ insecure component safe to operate indefinitely.
     original runtime benchmarks before deployment.
 23. **Material-difference disclosure.** Any significant behavioural change
     resulting from migration must be documented and disclosed.
-24. **Rollback capability.** Previous validated runtime versions remain
-    available where technically, securely, and legally appropriate.
+24. **Rollback capability.** An exact, previously approved execution profile
+    may remain available where technically, securely, and legally appropriate;
+    interface compatibility alone never authorises rollback or substitution.
 25. **Software Bill of Materials.** Models, libraries, drivers, containers, and
     dependencies can be catalogued for audit and security review.
 26. **Dependency governance.** Third-party libraries and tools can be approved,
@@ -312,17 +372,20 @@ locally hosted.
 74. **Selective cloud use.** Non-sensitive workloads can use external models
     where performance or cost advantages justify them and the appointment
     permits it.
-75. **Local control of the decision core.** The legally consequential reasoning
-    environment remains under the governance specified in the appointment.
-76. **Model substitution without workflow replacement.** Individual models can
-    be upgraded while preserving the case schema, Constitution, audit
-    structure, and evaluation suite—but only through the amendment and
-    recalibration process.
+75. **Protocol-authoritative procedural core.** The deterministic kernel, case
+    state, permissions, transition rules, and authority boundaries remain
+    outside the model and under the adopted governance.
+76. **Provider flexibility without approval transfer.** An individual model can
+    be replaced while preserving the case schema, Constitution, audit
+    structure, and evaluation suite, but the replacement creates a new
+    execution profile and requires evaluation, invalidation, and fresh
+    approval.
 77. **Independent verification models.** A second system can check citations
     and calculations without controlling the final recommendation.
-78. **Model-agnostic architecture.** ZIAAP can evaluate suitable sovereign and
-    open-weight systems alongside proprietary systems without treating any
-    model family as inherently qualified for arbitral use.
+78. **Provider-flexible architecture.** ZIAAP can evaluate suitable sovereign,
+    open-weight, and proprietary systems through common interfaces without
+    treating interface compatibility, deployment location, or model family as
+    evidence that a specific version is qualified for use.
 
 Multi-model Council orchestration remains future work. No model may be silently
 substituted under an existing appointment, even if its interface is compatible
@@ -415,6 +478,9 @@ Local deployment is usually a premium control and security proposition. It
 becomes cheaper than cloud inference only under suitable utilisation and
 operational conditions. Total cost of ownership must include engineering,
 security, energy, redundancy, licensing, compliance, and specialist support.
+The governing economic metric is therefore verified cost per completed
+procedural state or matter, including inference, retrieval, infrastructure,
+verification, human review, and exception handling—not token price alone.
 
 ---
 
@@ -512,14 +578,18 @@ The ZIAAP Arbitral Runtime should make the following limitations explicit:
 
 ---
 
-## Final Strategic Positioning
+## Future Strategic Positioning
 
-> **ZIAAP does not sell a local LLM. It provides an appointable, sovereign, and
-> governed arbitral intelligence environment.**
+> **ZIAAP does not compete by promising a better legal answer or selling a
+> local LLM. It is designed to provide the governed process through which
+> contractual ambiguity and divergence become structured, source-linked,
+> versioned and contestable state under human authority.**
 
 Its central advantages are:
 
-1. **Sovereignty:** the parties and institution control the case environment.
+1. **Controlled trust boundary:** the parties and institution can govern an
+   approved deployment perimeter and data-flow policy; this is not by itself
+   proof of compliance or confidentiality.
 2. **Continuity:** the appointed reasoning system remains identifiable and
    version-governed.
 3. **Inspectability:** evidence, sources, AI actions, and human decisions remain
@@ -534,9 +604,10 @@ Its central advantages are:
 
 ### Core Promise
 
-> **A stable, inspectable, and sovereign AI-native arbitration environment,
-> configured before conflict and governed throughout the life of the
-> contractual relationship.**
+> **A future provider-flexible, protocol-authoritative, and
+> model-version-specific environment in which model output remains a proposal,
+> parties can contest material propositions, and properly authorised humans
+> retain consequential decisions.**
 
 ## Selected Governance References
 

@@ -164,6 +164,20 @@ Any authority-category error blocks acceptance until the relevant language or
 experience is corrected and independently retested. Blank rows are preparation,
 not evidence.
 
+## External feedback memorandum disposition — 2026-07-23
+
+The anonymised synthesis supplied on 2026-07-23 is recorded as **refine/narrow
+research input only** in the
+[feedback disposition and pre-prototype validation plan](../product/feedback-disposition-and-validation-plan.md).
+It does not satisfy either unfamiliar-reviewer row, product/founder approval,
+legal-framing review, market validation or independent validation.
+
+The synthesis lacks a frozen candidate commit, required session metadata,
+verbatim unassisted responses, completed per-reviewer findings logs and
+no-coaching evidence. It must not be reverse-engineered into acceptance data or
+combined with later formal sessions as if their methods were equivalent. All
+pending fields and checkboxes in this record remain unchanged.
+
 ## Acceptance state
 
 - [x] Frozen dependency installation completed without package or lockfile changes

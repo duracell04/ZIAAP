@@ -1,17 +1,19 @@
 # ZIAAP Release Scorecard
 
-**Version:** 1.3
+**Version:** 1.5
 
-**Current decision:** Public-pilot implementation verified locally; production email delivery and human acceptance pending
+**Current decision:** ZIAAP Contract Alignment selected as the sole active wedge;
+Pilot 01 is specification-only; implementation, execution and evidence remain
+pending
 
 ## C0 — current concept baseline
 
 | Dimension | C0 exit criterion | Current evidence |
 |---|---|---|
-| Product | Explicit north star, category thesis, three protocol layers, six canonical gates and current/future boundary | Implemented in operating model, charter, product language, README and UI; human approval pending |
-| Technical | Clean concept build with synthetic, resettable state, pure gate projections and fail-closed optional live execution | Passed on 2026-07-18: typecheck, lint, 66 automated tests, production build and `git diff --check` |
+| Product | Contract Alignment proposition, Computational Private Ordering category thesis, three protocol layers, six long-term gates and current/future boundary | Product direction approved 2026-07-24; implementation and external acceptance pending |
+| Technical | Clean concept build with synthetic, resettable state, pure gate projections and fail-closed optional live execution | Passed on 2026-07-24: typecheck, lint, 70 automated tests, production build and `git diff --check` |
 | Legal | Human authority and no-legal-effect boundaries are visible | Implemented; legal-framing and authority-boundary review pending |
-| UX | Six-gate expert journey and five-step public projection can support internal review | Complete public journey, root redirect, expert reference and feedback validation passed locally on 2026-07-18; desktop and the active mobile breakpoint had no overflow; exact 390 px production recheck and unfamiliar-reader sessions remain pending |
+| UX | Six-gate expert journey and five-step public projection can support internal review | Root redirect, `/demo`, `/demo/align`, `/reference` and `/feedback` passed local browser smoke on 2026-07-24 with no console warnings, unlabelled checked controls or horizontal overflow at desktop and the 390 px target (389 CSS px after browser rounding); unfamiliar-reader sessions remain pending |
 | Evaluation | Ambition and empirical claims remain distinguishable and testable | Automated terminology and claim-qualification coverage present; human evidence pending |
 
 ## Gate C1 — review-grade concept after Sprint 4
@@ -27,6 +29,29 @@
 C1 remains a future, funding-dependent gate and is not implied by Sprint 0
 acceptance. Prototype planning requires an angel-financing decision and a new
 prototype charter.
+
+## Pilot 01 specification gate — not a maturity gate
+
+The [Pilot 01 Protocol](pilot-01-protocol.md) specifies the selected systems-
+integration MSA wedge. Its existence does not advance C0 or C1, implement the
+workflow or authorise real data or participants.
+
+| Evidence | Current status |
+|---|---|
+| Product-direction decision | Approved 2026-07-24 |
+| Complete state, status, neutrality and measurement specification | Implemented as documentation; review pending |
+| Legal-framing and authority-boundary review | Pending |
+| Intended-deployment privacy and data-rights feasibility | Pending |
+| Security architecture and independent testing | Pending |
+| Track A rights-cleared reconstruction results | Not started |
+| Four Track B shadow matters | Not started; not authorised |
+| Usability, implementation-burden and counsel-time evidence | Not established |
+| Authorised paid follow-on commitment | Not established |
+| Go, Narrow, Refine or Hold decision | Pending |
+
+A live Pilot 01 requires a separate charter and every applicable prerequisite
+at Pass. Neither the superseded two-wedge research plan nor this specification
+authorises Sprint 1, confidential data, recruitment or a maturity transition.
 
 ## Gate P1 — functional proof of concept after Sprint 9
 
@@ -45,9 +70,9 @@ P1 requires a user-evidence and architecture review, re-estimation of Sprints
 
 | Gate | Product | Technical | Legal | UX | Evaluation |
 |---|---|---|---|---|---|
-| P2 | Gates 1–3 solve a selected end-to-end alignment and configuration use case | Scenario testing, independent conformance harness, governed runtime provenance, and verified configuration manifest | Template, jurisdiction, permitted-use, and human-authority boundaries reviewed | Target users can align, configure, test, challenge and understand configuration integrity | Conformance and usability evidence meet predeclared thresholds |
-| P3 | Gates 4–6 create reviewable structured-case and human-adjudication value | Evidence graph, Resolution Officer, human cockpit, challenge round, settlement firewall, and black-box verifier | Procedural controls, confidentiality separation, and human decision responsibility reviewed | Human reviewers can trace, challenge, modify, reject and request evidence | Auditability, challenge quality, and authority comprehension meet predeclared thresholds |
-| V1 | A controlled pilot supports the approved narrow market and use case | Security, privacy, reliability, incident, and supervised-operation controls pass review | Pilot terms, data duties, professional roles, and regulatory boundaries approved | Supervised real users complete selected alignment matters safely | Independent legal, AI, human-factors, and field evidence is reported without overclaiming |
+| P2 | I0 supports the selected end-to-end systems-integration alignment use case | Scenario testing, sealed response handling, typed statuses, governed runtime provenance and exact version integrity | Template, status, authority, permitted-use and external-adoption boundaries reviewed | Target users can answer, confirm, compare, resolve or preserve openness | Conformance and usability evidence meet predeclared thresholds |
+| P3 | Deferred until an I0 Go/Narrow decision | No Gate 4–6 build is authorised by Pilot 01 | Later procedural and neutrality review required | No current target-user claim | No current evidence claim |
+| V1 | Contract Alignment Pilot 01 supports the approved systems-integration use case | Security, privacy, reliability, incident and supervised-operation controls pass review | Pilot terms, data duties, professional roles and regulatory boundaries approved | Supervised real users complete selected I0 matters safely | Track A and Track B evidence is reported against the predeclared thresholds |
 | R1 | A sustainable production offer and operating model are approved | Integrations, reliability, administration, governed releases, monitoring, and recovery meet service targets | Production governance, contracting, accountability, and jurisdictional scope approved | Operational users complete critical tasks accessibly and reliably | Release and post-market evidence supports the specific production claims made |
 
 All dates and estimates beyond the authorised stage are provisional. The 70-week
@@ -61,16 +86,15 @@ sequential total is arithmetic only and is not a funding or delivery commitment.
 - [x] Claims mapped to evidence, prohibited variants, thresholds, status, and review dates
 - [x] Release gates cover product, technical, legal, UX, and evaluation evidence
 - [x] Automated terminology checks implemented and passing
-- [x] Current public-pilot implementation typecheck, lint, full 66-test suite, production build and `git diff --check` passed on 2026-07-18
+- [x] Pilot 01 product direction and specification recorded without claiming execution or evidence
 - [x] Three-layer, six-gate operating model implemented in the C0 demonstrator
-- [x] Current `/`, `/reference`, complete `/demo` journey and `/feedback` form/success path passed local browser verification on 2026-07-18 without contacting FormSubmit
-- [x] Responsive mobile breakpoint passed at the browser surface's 520 px minimum with no horizontal overflow
-- [ ] Exact 390 px preview/production recheck
+- [x] Current `/`, `/demo`, `/demo/align`, `/reference` and `/feedback` routes passed local browser smoke on 2026-07-24 without contacting FormSubmit
+- [x] Desktop and 390 px target responsive checks passed without horizontal overflow; the browser reported 389 CSS px after viewport rounding
 - [ ] FormSubmit production activation and second-submission mailbox delivery
-- [ ] Product/founder approval
+- [x] Product-direction approval recorded for Contract Alignment on 2026-07-24
 - [ ] Legal-framing and authority-boundary review
 - [ ] Privacy-governance review of the temporary feedback processor
-- [ ] Corporate-governance and partner-ownership review
+- [ ] Pilot 01 data-flow, retention and security review
 - [ ] Unfamiliar arbitration/dispute-resolution reviewer evidence
 - [ ] Unfamiliar business/commercial/investment reviewer evidence
 
