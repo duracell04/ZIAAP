@@ -1,9 +1,10 @@
 # ZIAAP Operating Model
 
-**Version:** 1.2
+**Version:** 1.3
 
-**Status:** Normative future operating model; product/founder,
-legal-framing, corporate-governance and unfamiliar-reader review pending
+**Status:** Normative future operating model; product direction approved
+2026-07-24; legal-framing, privacy, security and unfamiliar-reader review
+pending
 
 **Current implementation boundary:** C0 synthetic interactive concept
 demonstrator
@@ -12,8 +13,8 @@ demonstrator
 
 > **ZIAAP stands for Zero-Instance Algorithmic Arbitration Protocol.**
 
-“Zero Instance” describes the pre-conflict stage in which parties align
-expectations and configure how a future dispute should be handled. The
+“Zero Instance” describes the pre-conflict stage in which parties compare
+operational expectations and govern material differences before signing. The
 hyphenated form belongs to the expanded product name; the standalone concept is
 written without a hyphen.
 
@@ -22,35 +23,35 @@ does not grant AI arbitral authority, create a legal appointment, or imply that
 configuration predetermines a future result. Independent human arbitrators
 retain authority and responsibility.
 
-## North-star ambition
+## Active product and staged ambition
 
-> **ZIAAP aims to transform arbitration from a largely bespoke,
-> document-driven professional service into a structured, technology-native
-> production system.**
->
-> The parties align critical rules before conflict. Software organises the
-> record and performs explicit calculations. AI maintains source-linked,
-> structured and contestable analysis. Independent human arbitrators retain
-> full authority over procedure, judgment and any future award.
->
-> The objective is not to automate arbitral authority. It is to make
-> professional authority usable across a substantially broader range of
-> commercial disputes.
+> **ZIAAP Contract Alignment is a scenario-based contract-alignment system for
+> complex commercial agreements. It converts selected clauses into concrete
+> operational scenarios, collects the parties' independent expectations,
+> identifies materially different outcomes, and produces a versioned record of
+> what was aligned, deliberately left open, or incorporated into the
+> contract.**
 
-This is a future operating-model ambition. The current repository does not
-operate an arbitral institution, appoint an arbitrator, accept confidential
-matters, produce an award or create legal effect.
+The sole active commercial wedge is pre-signature alignment for selected
+high-impact clauses in complex enterprise systems-integration MSAs. The
+[Pilot 01 Protocol](pilot-01-protocol.md) is canonical for the active product
+and validation design.
+
+The same governed data model may later support lifecycle re-alignment,
+confidential mediation and structured handover to independent human
+adjudication. Those are deferred architectural extensions, not the initial
+sales proposition. The current repository does not implement Contract
+Alignment, accept confidential matters, operate a neutral process, appoint an
+arbitrator, produce an award or create legal effect.
 
 ## Category thesis
 
-> **Traditional arbitration standardises procedural rules. ZIAAP also
-> standardises the production environment through which a case is prepared,
-> examined and decided.**
+> **Computational Private Ordering**
 
-The case is not intended to begin as an unstructured document collection and
-end as AI-generated prose. The intended product is a governed decision
-environment whose facts, evidence, calculations, objections, uncertainty and
-human interventions remain structured, versioned and inspectable.
+The long-term category standardises how selected contractual meaning,
+operational expectations, amendments and later authorised handovers remain
+structured, versioned and inspectable. The category thesis is not a claim that
+the whole architecture is one current product.
 
 ## AI-convex product doctrine
 
@@ -70,10 +71,10 @@ ambiguity, incomplete agreement, separately recorded expectations or
 unresolved divergence. An amendment changes the authoritative agreement only
 when it is formally incorporated through the applicable process.
 
-This doctrine applies across both research wedges: an embedded bilateral I0
-interpretation-gap diagnostic and an institution/tribunal-facing
-case-intelligence workspace. It does not select either wedge, alter I0–I2 or
-the six gates, reorder the roadmap, or authorise technical implementation.
+This doctrine applies first to ZIAAP Contract Alignment. The earlier two-wedge
+comparison was superseded on 2026-07-24. I0–I2 and the six gates remain the
+long-term architecture, but downstream implementation requires an I0 Go or
+Narrow decision and separate authority.
 
 The intended future architecture is **provider-flexible,
 protocol-authoritative and model-version-specific**. Those terms do not claim
@@ -82,51 +83,26 @@ transferable approval. **Local-capable** and **sovereign-deployable** are
 reserved for future architectures that satisfy their own evaluation, security
 and data-boundary requirements; they are not current C0 properties.
 
-## Institutional thesis
+## Neutrality architecture
 
-> **The future ZIAAP institution is intended to be owned and professionally
-> governed by participating arbitrator partners, supported by a shared
-> engineering and case-administration platform.**
+> **ZIAAP OpCo owns the software and commercial relationships but does not
+> exercise mediation, appointment, adjudicative or award authority.**
 
-ZIAAP intends to explore an arbitration practice jointly owned by arbitrators
-around a shared AI-native production system. Any description of that practice
-as the “first” of its kind is an aspirational category claim. Competitive
-substantiation is pending, and the current company structure does not implement
-this target model.
+Alignment facilitators may operate I0 under disclosed engagement terms but may
+not mediate or adjudicate a dispute arising from that engagement. Any later
+mediator or arbitrator is independently engaged or appointed, uses an isolated
+workspace and receives professional compensation that is not linked to outcome
+or platform use. Arbitrators have no ZIAAP equity, platform revenue share,
+sales duty or referral commission under the default design.
 
-Arbitrator partners would define professional standards and retain judgment.
-Engineering would build and operate the common production environment. The
-future institution would administer rules and operations without deciding case
-merits. Partner participation in shared value would not permit access to other
-arbitrators’ confidential matters or case-revenue information.
-
-## Economic thesis
-
-> **By reducing repeated reconstruction, administration and drafting, ZIAAP
-> seeks to make independent human arbitration operationally faster, more
-> predictable and economically viable for lower-value and higher-volume
-> commercial disputes.**
-
-The initial market hypothesis is recurring or operational disputes valued at
-CHF 50,000–500,000 involving SaaS, platforms, technology services, supply,
-logistics, payment, delivery and service-level obligations.
-
-The range, categories and expected benefits are hypotheses requiring
-validation. ZIAAP currently claims no measured cost reduction, speed
-improvement, capacity increase, addressable market, dispute prevention or
-economic viability.
+The former partner-owned institution remains a historical, non-canonical
+hypothesis. It is not the active corporate or product plan. No “first” category
+claim, dispute-value range, margin, speed, capacity or market result is claimed.
 
 ## Operating principle
 
-> **Commercial aviation made safe flight scalable by standardising everything
-> around the pilot. ZIAAP aims to make high-quality arbitration scalable by
-> standardising everything around the arbitrator.**
-
-> **Standardise the cockpit. Automate the instruments. Preserve the captain.**
-
-The analogy describes governed systems around professional judgment. It does
-not imply mechanical outcomes, aviation-grade certification, predictable legal
-results or delegation of arbitral authority to software.
+> **Sell the narrow product. Preserve the larger architecture. Prove the bridge
+> between them.**
 
 ## Three protocol layers
 
@@ -160,19 +136,19 @@ private human deliberation.
 | I2 · Captain in Command | 5. Independent Adjudication | Preserve independent human review with zero algorithmic presumption | Simulated preliminary assessment and human review controls |
 | I2 · Captain in Command | 6. Award & Black Box | Produce any future human-signed award and preserve the procedural record | **Simulated Outcome & Procedural Black Box**; never an award |
 
-The five-step public projection remains Align, Test, Dispute, Review and
-Outcome. It is an interface projection, not a second lifecycle:
+The five-step public walkthrough distinguishes current product from deferred
+architecture. It is an interface projection, not a second lifecycle:
 
 | Public step | Canonical gate projection |
 |---|---|
-| Align | Gate 1 |
-| Test | Gate 2 and the configuration-integrity portion of Gate 3 |
-| Dispute | Gate 4 |
-| Review | Gate 5 |
-| Outcome | Gate 6 |
+| Align | Gate 1 · current product |
+| Test scenarios | Gate 2 · current product |
+| Structure dispute | Gate 4 · future extension |
+| Human review | Gate 5 · future extension |
+| Procedural record | Gate 6 · future extension |
 
-The legal appointment portion of Gate 3 is unavailable in the public
-simulation.
+Gate 3 and its legal appointment portion are not represented as part of the
+current public product. The expert reference retains all six long-term gates.
 
 ## Constitution as control plane
 
@@ -195,7 +171,26 @@ The control plane governs:
 guards. It does not mean that the Constitution, software or configuration
 legally enforces an agreement or award.
 
-## Structured case state
+## Structured alignment and later case state
+
+The initial technical product is a versioned alignment environment:
+
+```text
+Contract version
+→ Selected high-impact clauses
+→ Approved operational scenarios
+→ Sealed original responses
+→ Party-confirmed representations
+→ Material alignment and divergence
+→ Resolution, conscious openness or deferral
+→ Typed adoption status
+→ Version-locked record
+```
+
+Every legal-status transition requires an attributable human act. AI-derived
+text remains separate from party-authored text.
+
+The later structured case state is a deferred extension:
 
 The primary technical product is a live decision environment:
 
@@ -253,9 +248,8 @@ machine-generated.
 
 Data-boundary choices remain subject to applicable law and formal
 controller/processor duties. Engineers and investors have no live-case merits
-authority. A transaction platform must not control an award; technical
-operators must not alter professional judgment; arbitrator partners must not
-alter technical records.
+authority. A transaction platform must not control an award, and technical
+operators must not alter professional judgment or neutral records.
 
 ## Scalability thesis
 
@@ -269,11 +263,10 @@ Shared engineering
 → more professional capacity
 ```
 
-This is a hypothesis at three levels:
+This remains a deferred hypothesis at three levels:
 
 1. individual leverage from prepared, source-linked case material;
-2. institutional leverage from shared engineering, governance and
-   administration; and
+2. lifecycle leverage from shared engineering and reusable structures; and
 3. knowledge leverage from rights-cleared, de-identified professional
    corrections used as evaluation cases and protocol improvements.
 
@@ -305,13 +298,9 @@ External evidence establishes context, not ZIAAP performance:
 - [UNCITRAL](https://uncitral.un.org/en/texts/arbitration/conventions/foreign_arbitral_awards/status2)
   lists the parties to the New York Convention. Convention participation does
   not establish enforceability of any ZIAAP process or output.
-- [JAMS](https://www.jamsadr.com/about) and its
-  [ownership safeguards](https://www.jamsadr.com/neutrality) provide an
-  organisational precedent for shared infrastructure and neutral ownership.
-  They do not prove the feasibility or performance of the ZIAAP target model.
-- [ICC statistics](https://iccwbo.org/dispute-resolution/resources/icc-dispute-resolution-statistics/)
-  show scaled administration of standardised and expedited procedures. They do
-  not establish a causal scalability claim for ZIAAP.
+- The [IBA Guidelines on Conflicts of Interest](https://www.ibanet.org/document?id=guidelines-on-conflicts-of-interest-in-international-arbitration-2024)
+  use fact-sensitive independence, impartiality and disclosure tests. They do
+  not make every economic connection an automatic award-invalidity rule.
 
 The governing rule is:
 
@@ -321,12 +310,11 @@ The governing rule is:
 
 | Evidence or approval | Status |
 |---|---|
-| Product/founder approval | Pending |
+| Product direction | Approved 2026-07-24 |
 | Legal-framing review | Pending |
-| Corporate-governance review | Pending |
-| Competitive substantiation of “first” | Pending |
+| Privacy and security review | Pending |
 | Unfamiliar business-reader comprehension | Pending |
 | Unfamiliar dispute-professional comprehension | Pending |
-| Economic, speed, capacity or scalability evidence | Not established |
+| Pilot, market, economic, speed, capacity or scalability evidence | Not established |
 
 No approval or positive result is inferred from this document.

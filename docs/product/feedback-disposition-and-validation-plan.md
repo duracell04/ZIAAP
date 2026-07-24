@@ -4,8 +4,8 @@
 
 **Record date:** 2026-07-23, Europe/Zurich
 
-**Status:** Active research-control record; execution evidence and every human
-approval remain pending
+**Status:** Superseded strategy record; preserved as historical research input
+and not authoritative for current product selection or Pilot 01
 
 **Applies to:** The anonymised external red-team memorandum supplied on
 2026-07-23
@@ -16,6 +16,14 @@ local legal-AI market. They inform the doctrine and validation hypotheses only.
 Their vendor, model-availability, licensing, performance, deployment and cost
 statements require dated primary-source re-verification before external use or
 consequential reliance.
+
+> **Supersession notice — 2026-07-24:** The two-wedge comparison and
+> partner-owned-institution direction in this document were superseded as
+> current execution strategy by the decision selecting ZIAAP Contract
+> Alignment as the sole active wedge. The canonical current specification is
+> the [Pilot 01 Protocol](pilot-01-protocol.md). This document remains available
+> to preserve research history; its Pending rows do not reopen product
+> selection or authorise either wedge.
 
 ## Decision
 
